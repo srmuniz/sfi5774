@@ -1,0 +1,60 @@
+
+# Project information
+site_name: SFI5774
+site_description: Complemento _online_ às aulas da disciplina de Mecânica Quântica Aplicada do IFSC/USP 
+site_author: Sérgio R. Muniz @IFSC/USP
+site_url: https://srmuniz.github.io/sfi5774/
+
+# Repository
+repo_name: sfi5774/Aulas/
+repo_url: https://srmuniz.github.io/sfi5774/Aulas/
+
+# Copyright
+copyright: Copyright &copy; 2020  Sérgio R. Muniz  (CC-BY-NC-SA)
+
+
+# Configuration
+theme:
+  name: material  #cinder
+  language: pt
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Navigation
+nav:
+    - Home: index.md
+    - Aulas S5: Aulas-S5.md 
+#    - Aulas S6: Aulas-S6.md
+    - About: about.md
+
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - footnotes
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.tilde
+
+extra_javascript:
+  - javascripts/extra.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
