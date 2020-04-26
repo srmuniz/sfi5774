@@ -248,7 +248,7 @@ $$ a_1 |\phi_1\rangle + a_2 |\phi_2\rangle + \dots + a_n |\phi_n\rangle = 0$$
 implica que todos os coeficientes são nulos, $c_1=c_2=...=c_n=0$. Em outras palavras, não há nenhuma combinação (não trivial) que produza o vetor nulo.
 
 > **Dimensão do espaço**
-> O número de elmentos (vetores) da base fornece a dimensão do espaço vetorial.
+> O número de vetores da base fornece a dimensão do espaço vetorial.
 
 **Condição 3:**
 Um conjunto ortonormal $\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}$ constitue uma base se e somente se satisfaz a **relação de completeza**
@@ -256,26 +256,30 @@ Um conjunto ortonormal $\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle 
 $$ \sum_{i=1}^n |\phi_i\rangle \langle \phi_i| = 1 $$
 
 ### Procedimento de Gram-Schmidt
-Se tivermos um conjunto de vetores $\{ |u_i\rangle \}$ que não é ortonormal, é possível usar este procedimento para construir uma base ortonormal Para simplificar o entendimento do processo, iremos considerar um exemplo com 3 vetores de base (espaço de dimensção 3). 
+Se tivermos um conjunto de vetores $\{ |u_i\rangle \}$ que não é ortonormal, é possível usar o procedimento de Gram-Schmidt para construir uma base ortonormal a partir desse conjunto inicial. Para simplificar o entendimento do processo, consideramos um exemplo com 3 vetores de base (num espaço de dimensção 3). 
+
 Começamos selecionando um dos vetores do conjunto $\{ |u_i\rangle \}$ e  definindo o vetor:
 
 $$ |w_1\rangle = |u_1\rangle  $$
 
-A partir disso, constroi-se sucessivamente os vetores seguintes, subtraindo as componentes de $|w_1\rangle$ em $|u_1\rangle$, conforme:
+A partir disso, constroi-se sucessivamente os vetores seguintes da base subtraindo deles as componentes nas direções ortonais àquelas já construídas. Neste caso, por exemplo, as direções $|w_2\rangle$ e $|w_3\rangle$ são construídas subtraindo as componente na direção de $|w_1\rangle$ e $|w_2\rangle$, conforme:
 
 $$\begin{array}{c}
 &&|w_2 \rangle =& |u_2\rangle - \frac{\langle w_1 | u_2 \rangle}{\langle w_1 | w_1 \rangle} |w_1\rangle \\ \\
 &&|w_3\rangle =& |u_3\rangle - \frac{\langle w_1 | u_3 \rangle }{\langle w_1 | w_1 \rangle} |w_1\rangle - \frac{\langle w_2 | u_3 \rangle }{\langle w_2 | w_2 \rangle} |w_2\rangle \end{array}$$
 
-Finalmente, para obter um conjunto ortonormal $\{ |k_i\rangle \}$, nós podemos normalizar cada um dos vetores $|w_i\rangle$:
+Finalmente, para obter um conjunto ortonormal $\{ |v_i\rangle \}$, nós podemos normalizar cada um dos vetores $|w_i\rangle$:
 
-$$|k_1\rangle = \frac{ |w_1 \rangle }{\langle w_1 | w_1 \rangle}; \,
-|k_2\rangle = \frac{ |w_2 \rangle }{\langle w_2 | w_2 \rangle}; \,
-|k_3\rangle = \frac{ |w_3 \rangle }{\langle w_3 | w_3 \rangle}$$
+$$|v_1\rangle = \frac{ |w_1 \rangle }{\langle w_1 | w_1 \rangle}; \,
+|v_2\rangle = \frac{ |w_2 \rangle }{\langle w_2 | w_2 \rangle}; \,
+|v_3\rangle = \frac{ |w_3 \rangle }{\langle w_3 | w_3 \rangle}$$
 
-De forma geral, para um cojunto finito de vetores $\{u_k\}$, de dimensão $d$, pode-se escrever os vetores ortonormais $\{w_k\}$ fazendo:
+De forma geral, para um cojunto finito de vetores $\{u_k\}$, de um espaço vetorial $\mathcal{U}$ de dimensão $d$, pode-se escrever os vetores ortonormais $\{v_k\}$ através da construindo:
+
+$$
+\left|v_{k+1}\right\rangle \equiv \frac{\left|w_{k+1}\right\rangle-\sum_{i=1}^{k}\left\langle v_{i} | w_{k+1}\right\rangle\left|v_{i}\right\rangle}{\|\left|w_{k+1}\right\rangle-\sum_{i=1}^{k}\left\langle v_{i} | w_{k+1}\right\rangle\left|v_{i}\right\rangle \|}.
+$$
   
-
 
 ### Algebra de Dirac
 Vejamos como expressar vetores inteiramente em termos do *kets* da base e manipular *bras* e *kets* de forma algébrica.
@@ -300,9 +304,8 @@ $$ \langle \alpha \psi| = \alpha^* \langle \psi|$$
     - b) Calcule o produto interno $\langle \phi|\psi\rangle$ e mostre que igual seu conjugado.
     - c) Sendo $a = 3 + 3i$, calcule $|a\psi\rangle$. 
     - d) Ache as expressões de $|\psi+\phi\rangle$ e  $|\psi-\phi\rangle$
-    - e) Calcule $\langle a \psi |$ e compare com $a^* \langle \psi|$. 
-
-
+    - e) Calcule $\langle a \psi |$ e compare com $a^* \langle \psi|$.
+    - f) Normalize o vetor  $\langle a \psi |$.
 
 
 

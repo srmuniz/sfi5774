@@ -1,1 +1,6 @@
+# Jekyll site settings
+title: Aulas SFI5774
+author: Sergio Muniz
+email: srmuniz@ifsc.usp.br
+
 theme: jekyll-theme-dinky
