@@ -6,7 +6,7 @@ site_url: https://srmuniz.github.io/sfi5774/
 
 # Repository
 repo_name: sfi5774/Aulas/
-repo_url: https://srmuniz.github.io/sfi5774/Aulas/
+repo_url: https://srmuniz.github.io/sfi5774
 
 # Copyright
 copyright: Copyright &copy; 2020  Sérgio R. Muniz  (CC-BY-NC-SA)
@@ -25,7 +25,7 @@ theme:
 # Navigation
 nav:
     - Home: index.md
-    - Aulas S5: Aulas-S5.md 
+    - Aulas S5 & S6: Aulas-S5.md 
 #    - Aulas S6: Aulas-S6.md
     - About: about.md
 

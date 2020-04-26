@@ -12,7 +12,7 @@ Embora ainda em num estágio preliminar, ela já oferece acesso às notas de aul
 
 * [`Aula 8`](./Aulas-S5/#5-estrutura-matematica-da-mecanica-quantica)
 * [`Aula 9`](./Aulas-S5/#53-espacos-de-hilbert-espacos-vetoriais-da-mq)
-* [`Aula 10`](./Aulas-S5/#53-espacos-de-hilbert-espacos-vetoriais-da-mq)
+* [`Aula 10`](./Aulas-S5/#algebra-de-dirac)
 
 <p></p>
 ### **Conteúdos oficiais desta disciplina** ###

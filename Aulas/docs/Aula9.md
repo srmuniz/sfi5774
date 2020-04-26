@@ -1,3 +1,6 @@
+$\newcommand{\bra}[1]{\left\langle #1 \right|}$
+$\newcommand{\ket}[1]{\left| #1 \right\rangle}$
+$\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}$
 
 ## 5.3 Espaços de Hilbert: espaços vetoriais da MQ
 Na mecânica quântica são usados espaços vetoriais com algumas propriedades e estruturas adicionais, para garantir certas propriedades físicas desejáveis da teoria. É comum, principalmente entre os físicos, chamar esses estados de estados de Hilbert. Os espaços de Hilbert podem ser finitos (com dimensão \(d\)) ou infinitos, por exemplo, quando os vetores são funções contínuas. 
