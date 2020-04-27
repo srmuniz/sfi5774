@@ -19,6 +19,7 @@ theme:
     primary: indigo
     accent: indigo
   font:
+    #text: Ubuntu
     text: Roboto
     code: Roboto Mono
 
@@ -37,21 +38,34 @@ markdown_extensions:
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
-  - pymdownx.critic
+  #- pymdownx.critic
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.inlinehilite
+  #- pymdownx.emoji:
+  #    emoji_index: !!python/name:materialx.emoji.twemoji
+  #    emoji_generator: !!python/name:materialx.emoji.to_svg
+  #- pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tabbed
-  - pymdownx.tilde
+  #- pymdownx.tasklist:
+  #    custom_checkbox: true
+  #- pymdownx.tabbed
+  #- pymdownx.tilde
+
+plugins:
+  - search:
+      lang:
+        - pt
+        #- en
+  - git-revision-date-localized
 
 extra_javascript:
-  - javascripts/extra.js
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+#  - javascripts/load-mathjax.js
+#  - load-mathjax.js
+#  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_SVG
+#  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=AM_SVG
+#  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/MathJax.js?config=TeX-MML-AM_CHTML
+#  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js
+#  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
