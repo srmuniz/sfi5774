@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 
+=======
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+>>>>>>> ae6873a22f651dfa793822e8cb8deb03785a7845
 $\newcommand{\bra}[1]{\left\langle #1 \right|}$
 $\newcommand{\ket}[1]{\left| #1 \right\rangle}$
 $\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}$
