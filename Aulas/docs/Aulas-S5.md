@@ -1,3 +1,4 @@
+
 $\newcommand{\bra}[1]{\left\langle #1 \right|}$
 $\newcommand{\ket}[1]{\left| #1 \right\rangle}$
 $\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}$
@@ -58,7 +59,7 @@ Dentro do que vimos até aqui, podemos, ainda de uma maneira informal, dizer que
 >$c_n = \int \psi^*_n(x) \Psi(x)dx$ ; onde $\sum_n |c_n|^2 = 1$
 >
 >$<A_{_{\Psi}}> = \int \Psi^*(x) A \Psi(x) dx$  
- 
+
 
 De fato, pode-se extender e generalizar essas ideias para expressar
 esses objetos em termos mais abstratos e gerais, através do conceito de
