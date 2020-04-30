@@ -1,18 +1,18 @@
 # SFI5774 - Mecânica Quântica Aplicada (2020)
 **Prof. Sérgio R. Muniz @ IFSC/USP**
 
-!!! warning
+!!! warning "Atenção!!"
     *Esta página está em construção e atualização permanente...*
 
-Embora ainda em num estágio preliminar, ela já oferece acesso às notas de aulas mais recentes. Basta acessar os links abaixo (ou na barra de navegação, acima, separadas por semanas).
+Embora ainda num estágio preliminar, este site oferece acesso às notas de aulas mais recentes da disciplina. Basta acessar os links abaixo (ou as barras de navegação, ao lado).
 
 <p></p> 
 
 ## Notas de aulas 
 
-* [`Aula 8`](./Aulas-S5/#5-estrutura-matematica-da-mecanica-quantica)
-* [`Aula 9`](./Aulas-S5/#53-espacos-de-hilbert-espacos-vetoriais-da-mq)
-* [`Aula 10`](./Aulas-S5/#algebra-de-dirac)
+* [`Aula 8`](./Aulas_S5-S6/#5-estrutura-matematica-da-mecanica-quantica)
+* [`Aula 9`](./Aulas_S5-S6/#53-espacos-de-hilbert-espacos-vetoriais-da-mq)
+* [`Aula 10`](./Aulas_S5-S6/#algebra-de-dirac)
 
 <p></p>
 ### **Conteúdos oficiais desta disciplina** ###

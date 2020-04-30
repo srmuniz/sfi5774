@@ -1,0 +1,1191 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+    \usepackage{iftex}
+    \ifPDFTeX
+    	\usepackage[T1]{fontenc}
+    	\usepackage{mathpazo}
+    \else
+    	\usepackage{fontspec}
+    \fi
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    %\usepackage{mathtools}
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range
+    \makeatletter % fix for grffile with XeLaTeX
+    \def\Gread@@xetex#1{%
+      \IfFileExists{"\Gin@base".bb}%
+      {\Gread@eps{\Gin@base.bb}}%
+      {\Gread@@xetex@aux#1}%
+    }
+    \makeatother
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Aulas-S5}
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    \makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+            \catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+        
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+    
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        \ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    \(\newcommand{\bra}[1]{\left\langle #1 \right|}\)
+\(\newcommand{\ket}[1]{\left| #1 \right\rangle}\)
+\(\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}\)
+
+\hypertarget{estrutura-matemuxe1tica-da-mecuxe2nica-quuxe2ntica}{%
+\section{5. Estrutura matemática da Mecânica
+Quântica}\label{estrutura-matemuxe1tica-da-mecuxe2nica-quuxe2ntica}}
+
+Até este ponto, discutimos, em linhas gerais, como expressar e resolver
+problemas físicos na mecânica quântica, em termos da Equação de
+Schrödinger (EqS). Discutimos, de uma maneira ampla, as estratégias para
+resolver a EqS no caso geral e, em particular, discutimos a resolução da
+equação independente do tempo, resolvendo alguns exemplos emblemáticos
+de potencias unidimencionais simples. Visto sob essa perspectiva,
+pode-se ter a impressão que mecânica quântica se resume à solução da
+EqS, usando métodos matemáticos mais ou menos familiares (solução de
+equações diferenciais parciais). Embora essa seja uma estratégia válida
+e efetiva em alguns casos, ela é bastante limitada e seria um grande
+equívoco pensar que as estratégias da mecânica quântica se limitam
+simplesmente a soluções da Eq. de Schrödinger.
+
+O roteiro seguido até aqui teve uma motivação didática e, deliberamente,
+procurou enfatizar os aspectos físicos do problema. Apresentando apenas
+a matemática necessária para formular e resolver o problema. Por essa
+razão, não temos sido muito rigorosos com o formalismo. Trocando rigor
+matemático por intuição física, sempre que possível, para não obscurecer
+desnecessariamente a ``Física'' do problema. Essa estratégia é bastante
+razoável para uma introdução ao assunto. Apesar disso, o domínio do
+formalismo matemático também é importante e necessário para ser bem
+sucedido na resolução de problemas gerais da MQ, ou mesmo para entender
+muitos temas de pesquisa contemporânea. A situação ideal é aquela onde
+consegue-se combinar ambas habilidades, que é um dos objetivos
+secundários deste curso.
+
+Neste capitulo, portanto, seguiremos uma estratégia diferente e
+complementar àquela seguida até agora. O foco agora será ampliar a
+linguagem e abstração do problema, apresentadno de modo mais formal a
+estrutura matemática da mecânica quântica moderna. A prioridade ainda
+permanecerá com a Física e não a Matemática. Portanto, não se almeja
+mero rigor matemático, mas, sim, introduzir novos conceitos e
+representações que serão muito úteis para expandir os horizontes dentro
+da teoria e, como iremos explorar nos próximos capítulos, serão
+fundamentais para entender a linguagem contemporânea dessa importante
+disciplina científica.
+
+\hypertarget{espauxe7o-de-estados}{%
+\subsection{5.1 Espaço de estados}\label{espauxe7o-de-estados}}
+
+Resumindo o que vimos até aqui, podemos, ainda de uma maneira informal,
+dizer que as soluções estacionárias \( \psi_n(x) \) da EqS são funções de
+ondas que representam os possíveis estados do sistema, com energia
+\(E_n\). Outra forma de dizer isso, motivada pela forma da equação
+\( H\psi_n(x)=E_n\psi_n(x) \), é dizer que \( \{ \psi_n(x) \} \) é o conjunto
+de autofunções do operador (H), representando os autoestados do sistema
+com autovalores \(E_n\). Vimos nos exemplos discutidos, como no caso da
+caixa infinita, que \( \psi_n(x) \) possui uma série de propriedades
+interessantes e úteis. Entre elas:
+
+Dentro do que vimos até aqui, podemos, ainda de uma maneira informal,
+dizer que as soluções estacionárias \(\psi_n(x)\) da EqS são funções de
+ondas que representam os possíveis estados do sistema, com energia
+\(E_n\). Outra forma de dizer isso, observando a forma da equação
+\(H\psi_n(x)=E_n\psi_n(x)\), é dizer que \(\{\psi_n(x)\}\) é o conjunto
+de autofunções do operador \(H\), representando os autoestados do
+sistema com autovalores \(E_n\). Vimos nos exemplos discutidos, como no
+caso da caixa infinita, que \(\psi_n(x)\) possui uma série de
+propriedades interessantes e úteis. Entre elas:
+\textgreater{}\(\int \psi^*_n(x)\psi_m(x)dx=\delta_{nm}\) \textgreater{}
+\textgreater{}\(\Psi(x)=\sum_n c_n \psi_n(x)\)\\
+\textgreater{} \textgreater{}\(c_n = \int \psi^*_n(x) \Psi(x)dx\) ; onde
+\(\sum_n |c_n|^2 = 1\) \textgreater{}
+\textgreater{}\(<A_{_{\Psi}}> = \int \Psi^*(x) A \Psi(x) dx\)
+
+    De fato, pode-se extender e generalizar essas ideias para expressar
+esses objetos em termos mais abstratos e gerais, através do conceito de
+espaço vetorial linear. Como os estados \(\psi_n(x)\) e os operadores
+(que nesse contexto serão transformações lineares) nesses estados devem
+satisfazer um certas propriedades para representar um sistema físico,
+esses espaços vetoriais devem ter conjunto de estruturas e propriedades
+especiais que veremos logo mais. Por simplicidade, iremos nos referir a
+esses espaços como \emph{espaços de Hilbert}.
+
+    Para deixar esse ponto mais claro, vamos relembrar/introduzir algumas
+definições e conceitos, para formalizar e definir melhor essa ideia.
+
+    \hypertarget{espauxe7o-vetorial-linear}{%
+\subsection{5.2 Espaço vetorial
+linear}\label{espauxe7o-vetorial-linear}}
+
+Partido da definição mais geral e abstrata:
+
+\textbf{Definição 1} \textgreater{} Grupo comutativo sob adição,
+\(\mathcal{V}\), com multiplicação por escalar definida sobre um campo
+complexo \(\mathcal{F}\), satisfazendo propriedades associativa e
+distributiva. Os elementos do espaço \(\mathcal{V}\) são chamados de
+\emph{vetores} e os elementos do campo \(\mathcal{F}\) são
+\emph{escalares}.
+
+As propriedades associativa e distributiva da multiplicação por escalar
+implica:
+
+Se \(\mathcal{V}=\{\vec{u},\vec{v},\vec{w},...\}\) e
+\(\mathcal{F}=\{\lambda,\mu,\kappa,...\}\), temos que:
+\(\lambda(\mu\vec{v})=(\lambda\mu)\vec{v}\),\\
+\(\lambda(\vec{v}+\vec{u})=\lambda\vec{v}+\lambda\vec{u}\) e
+\((\lambda+\mu)\vec{u}=\lambda\vec{u}+\mu\vec{u}\).
+
+Vale lembrar algumas outras definições (\emph{Grupo} e \emph{Campo}), da
+Algebra:
+
+\begin{quote}
+\textbf{Grupo:} Conjunto de elementos, que inclui inversos e identidade,
+com uma operação (\(*\)) fechada que satisfaz associatividade. Grupos
+não precisam ser comutativos, mas quando apresentam essa propriedade são
+chamados de grupos comutativos ou Abelianos. \textgreater{} 1.
+\emph{Fechado}: \(\forall\, x,y \in G \rightarrow x*y \in G\)
+\textgreater{} 2. \emph{Associativo}:
+\(\forall\, x,y,z \in G \rightarrow (x*y)*z=x*(y*z)\) \textgreater{} 3.
+\emph{Identidade}:
+\(\exists\, e\in G \rightarrow e*x=x*e=x; \,\, \forall\, x \in G\)
+\textgreater{} 4. \emph{Inverso}:
+\(\forall\, x \in G, \exists\, x^{-1} \rightarrow (x^{-1})*x=x*(x^{-1})=e\)
+
+\textbf{Campo:} De maneira simples, são conjuntos de elementos onde são
+definidas as quatro operações aritméticas
+(\(+\),\(-\),\(\times\),\(\div\)) de forma comutativa. Como as operações
+(\(-\), \(\div\)) são, na verdade, operações inversas de
+(\(+\),\(\times\)), são definidos em termos dessas duas operações.
+\textgreater{} Formalmente, campos são conjuntos de elementos com
+operações de adição e multiplicação (\(+\),\(\times\)) definida; sendo
+comutativo para (\(+\)) e comutativo para (\(\times\)) omitindo o
+elemento nulo (zero). Satisfaz ainda a propriedade distributiva
+\(a\times(b+c)=a\times b + a\times c\).
+
+Campos são, portanto, dois grupos comutativos com duas operações
+(\(+\),\(\times\)). Exemplos importantes são os campos dos números
+reais, complexos e racionais.
+\end{quote}
+
+Alternativamente, uma definição um pouco mais familiar de \textbf{espaço
+vetorial} é:
+
+\textbf{Definição 2:} \textgreater{} Conjunto
+\(\mathcal{V}\ne\emptyset\) (não vazio) de elementos, chamados vetores,
+que é fechado sob adição e multiplicação por um escalar de um campo
+complexo \(\mathcal{F}\).
+
+Ou seja, se \(\mathcal{V}=\{\vec{u},\vec{v},\vec{w},...\}\) e
+\(\mathcal{F}=\{\lambda,\mu,\kappa,...\}\), temos que:
+\(\forall\, \vec{u},\vec{w}\in \mathcal{V}\) e
+\(\forall\, \lambda,\mu \in \mathcal{F} \rightarrow \lambda\vec{u}+\mu\vec{w} \in \mathcal{V}\)
+
+Se o campo \(\mathcal{F}\) é complexo (real) o espaço é dito ser um
+espaço vetorial linear complexo (real).
+
+\hypertarget{dimensuxe3o-do-espauxe7o}{%
+\subsubsection{Dimensão do espaço}\label{dimensuxe3o-do-espauxe7o}}
+
+Um conjunto de vetores \(\{\phi_n \}\) é dito linearmente independente
+(LI) se não há nenhuma combinação linear não-trivial que leve ao vetor
+nulo, isto é:
+\(\sum_n c_n \phi_n = 0 \rightarrow c_n = 0\, \forall\, n\). A dimensão
+\(d\) do espaço vetorial é dada pelo número máximo de vetores LI desse
+espaço. Qualquer vetor do espaço pode ser escrito como uma combinação
+linear dos vetores da base desse espaço, formado por vetores LI do
+espaço. Como veremos adiante, os espaçcos de Hilbert da MQ podem ser
+infinitos.
+
+\hypertarget{espauxe7os-de-hilbert-espauxe7os-vetoriais-da-mq}{%
+\subsection{5.3 Espaços de Hilbert: espaços vetoriais da
+MQ}\label{espauxe7os-de-hilbert-espauxe7os-vetoriais-da-mq}}
+
+Na mecânica quântica são usados espaços vetoriais com algumas
+propriedades e estruturas adicionais, para garantir certas propriedades
+físicas desejáveis da teoria. É comum, principalmente entre os físicos,
+chamar esses estados de estados de Hilbert. Os espaços de Hilbert podem
+ser finitos (com dimensão (d)) ou infinitos, por exemplo, quando os
+vetores são funções contínuas.
+
+Embora essa terminologia não seja muito precisa, dado que os espaços
+vetoriais usados na MQ são apenas um tipo particular de espaço de
+Hilbert (neste contexto: os espaços cujos vetores são funções
+\emph{quadrado-integráveis}, também chamados de espaços de Lebesgue do
+tipo (L\_2)), nós usaremos essa ``convenção'', para simplificar a
+linguagem.
+
+\hypertarget{produto-interno}{%
+\subsubsection{Produto interno}\label{produto-interno}}
+
+Uma das estruturas adicionais dos espaços de Hilbert é o produto interno
+que leva dois vetores do espaço num número complexo, segundo a
+definição:
+
+\[\forall\, \phi, \psi \in \mathcal{H} \rightarrow (\phi,\psi) = \int \phi^*(x)\psi(x)\,dx\]
+
+No caso de um espaço discreto de dimensão (d), o produto interno é
+definido como
+
+\[(w,v)=\sum_{i=1}^{d} w_i^* v_i\]
+
+Note que o produto interno resulta num escalar complexo, que não é um
+elemento do espaço de Hilbert. O produto interno tem as seguintes
+propriedades: \textgreater{} \((\phi,\psi) = \lambda \in \mathbb{C}\)
+(número complexo) \textgreater{} \textgreater{}
+\((\phi,\psi) = (\psi,\phi)^*\) \textgreater{} \textgreater{}
+\((\phi, c_1 \psi_1 + c_2 \psi_2 ) = c_1(\phi, \psi_1) + c_2(\phi,\psi_2 )\)
+\textgreater{} \textgreater{}
+\((c_1 \psi_1 + c_2 \psi_2, \phi ) = c_1^* (\psi_1, \phi) + c_2^*(\psi_2, \phi)\)
+\textgreater{} \textgreater{} \((\phi,\phi) \ge 0\), sendo nulo apenas
+quando \(\phi=0\)
+
+\hypertarget{comprimentos-e-uxe2ngulos}{%
+\subsubsection{Comprimentos e ângulos}\label{comprimentos-e-uxe2ngulos}}
+
+O conceito de produto interno nos permite generalizar os conceitos de
+comprimento (norma) e medidas de ângulos entre vetores em espaços de
+dimensões e elementos arbitrários. Embora os vetores agora não sejam
+mais ``setas'' no espaço tridimensional Euclidiano, pode-se explorar a
+analogia com o conceito de produto escalar (o produto interno) daquele
+espaço, para definir a norma do vetor, através do produto interno de um
+vetor por ele mesmo:
+
+\[(\phi,\phi) = \int \phi^*(x)\phi(x)\,dx = |\phi|^2\]
+
+\[(v,v) = \sum_{i=1}^{d} v^*_i v_i = |v|^2\]
+
+\[||\phi|| = \sqrt{|\phi|^2}\]
+
+\[||v|| = \sqrt{|v|^2}\]
+
+Observe que a norma é sempre um número real, tal que \(||\phi|| \ge 0\)
+e \(||v|| \ge 0\), conforme nos assegura a desigualdade de Schwartz:
+
+\[ |(\psi,\phi)|^2 \le (\psi,\psi)(\phi,\phi).\]
+
+Também é satisfeito o teorema de desigualdade triangular:
+
+\[ ||(\psi + \phi)|| \le ||\psi|| + ||\phi|| .\]
+
+Para ambos os casos, a desigualdade só é válida quando um dos vetores é
+múltiplo do outro.
+
+Dois veltores são tido ortogonais quando seu produto interno é nulo. Da
+mesma forma, um conjunto de vetores \(\{\phi_n\}\) é dito
+\emph{ortonormal} quando o produto interno entre pares de seus elementos
+obedece a relação \((\phi_n,\phi_m)=\delta_{nm}\).
+
+    \hypertarget{expansuxe3o-de-vetores}{%
+\subsubsection{Expansão de vetores}\label{expansuxe3o-de-vetores}}
+
+No caso em que \(\mathcal{H}\) é finito, com dimensão \(d\), dado um
+vetor arbitrário \(\psi\) e uma base \(\{ \phi_n \}\) de vetores
+linearmente independentes, podemos expressar o vetor
+\(\psi = \sum_n c_n \phi_n\), onde \(c_n=(\phi_n,\psi)\) e
+\((\phi_n,\phi_m)=\delta_{nm}\). Podemos pensar nos coeficientes \(c_n\)
+como sendo as componentes do vetor no espaço de Hilbert, análogos às
+componentes de um vetor no espaço Euclidiano. Porém, é importante
+lembrar que essas componentes são expressas por números complexos. As
+componente do vetor de estado têm toda a informação relativa ao estado,
+determinando completamente o vetor (estado) do sistema.
+
+Também de modo análogo, podemos expressar as soma de dois vetore em
+termos dessas componentes
+
+\[\Psi_a + \Psi_b = \sum_n (a_i + b_n) \psi_n.\]
+
+\[\lambda \Psi_a= \sum_n \lambda a_i \psi_n.\]
+
+    \begin{quote}
+\textbf{\emph{Pare, Pense \& Contemple!}}
+
+Antes de prosseguir, pare e reflita por um momento no significado e
+amplitude esses resultados. Lembre-se que o espaço \(\mathcal{H}\) pode
+ter dimensõe infinitas, tanto no número de elemento (vetores), como nas
+dimensões (número de componentes) desses vetores. Esses resultados, nada
+óbvios, são extremamente poderosos e úteis, justificando plenamente o
+tempo investido em generalizar e abstrair a descrição dos nossos
+problemas usando esse formalismo.
+\end{quote}
+
+    \hypertarget{notauxe7uxe3o-de-dirac}{%
+\subsection{5.4 Notação de Dirac}\label{notauxe7uxe3o-de-dirac}}
+
+Introduzimos agora a notação de Dirac, bastante popular na mecânica
+quântica, onde o vetor de estado é chamado de ``\emph{ket}'' e
+representado pelo símbolo \(|\psi\rangle\). O vetor correspondente do
+\emph{espaço dual} é chamado de ``\emph{bra}'' é representado por
+\(\langle\psi|\), de tal forma que o produto interno pode ser
+representado por \((\psi,\psi)=\langle\psi|\psi\rangle\).
+
+Note que \(\langle\psi|=|\psi\rangle^*\), corresponde ao complexo
+conjugado transposto do vetor de estado \(|\psi\rangle\). Isso fica
+claro, quando observamos a representação matricial desse vetores.
+Considere, por exemplo, que o vetor de estado tenha \(n\) componentes
+(\(c_1,c_2,...,c_n\)). Neste caso, o ``\emph{ket}'' \(|\psi\rangle\) é
+escrito como um vetor coluna, enquanto o seu vetor dual ``\emph{bra}'' é
+um vetor linha, conforme indicado abaixo:
+
+\[
+|\psi\rangle = 
+\left[ 
+\begin{array} 
+c_1\\ c_2\\ ...\\ c_n 
+\end{array} 
+\right] \, 
+\Rightarrow \,\,\,
+\langle\psi| =
+\left[ 
+\begin{array} c_1^* & c_2^* & ... & c_n^* \end{array} 
+\right].\]
+
+Nesta representação, todas as propriedades anteriores são equivalentes a
+operações sobre matrizes (ou vetores linha/coluna), como, por exemplo,
+soma (subtração), multiplicação por escalares e combinações lineares
+dessas operações. O produto interno (\emph{``braket''}), como é fácil
+perceber, corresponde a uma multiplicação de matrizes, resultando num
+escalar:
+
+\[\langle\phi|\psi\rangle = 
+\left[ \begin{array}{l} b^*_1 & b^*_2 & ... & b^*_n \end{array} \right]
+\left[ \begin{array}{c} c_1 \\ c_2 \\ ... \\ c_n \end{array} \right] 
+= \begin{array}{l} b^*_1\,c_1 & b^*_2\,c_2 & ...& b^*_n\,c_n \end{array}
+= \sum_{k=1}^n b^*_k\,c_k.\]
+
+\hypertarget{propriedades-do-produto-interno}{%
+\subsubsection{Propriedades do produto
+interno}\label{propriedades-do-produto-interno}}
+
+Reescrevemos aqui as propriedade dos produto interno, na notação de
+Dirac. Para os vetores \(|\psi\rangle\) e \(|\phi\rangle\), pertencentes
+ao espaço \(\mathcal{H}\), e os escalares \(\alpha\) e \(\beta\) do
+campo complexo \(\mathcal{F}\), as seguintes propriedades são
+satisfeitas:
+
+\[\begin{array}{ll}
+1.\, &\langle\psi|\phi\rangle = \langle\phi|\psi\rangle ^* \\
+2.\, &\langle\psi|(\alpha|\phi\rangle+\beta|\eta\rangle) = 
+  \alpha\langle\psi|\phi\rangle + \beta\langle\psi|\eta\rangle \\
+3.\, &(\alpha\langle\phi| +\beta\langle\eta|)|\psi\rangle = 
+  \alpha^*\langle\phi|\psi\rangle + \beta^*\langle\eta|\psi\rangle \\
+4.\, &\langle\psi|\psi\rangle \ge 0 \textrm{   sendo igual só se } 
+|\psi \rangle = 0 \end{array}\]
+
+Se \(\langle\psi|\Phi\rangle=0\), os vetores são ortogonais. Os
+comprimentos (normas) dos vetores são expressos por:
+
+\textbf{Norma do vetor}:
+
+\[||\psi|| = \sqrt{\langle\psi|\psi\rangle}.\]
+
+\textbf{Vetor normalizado} quando:
+
+\[||\psi|| = \sqrt{\langle\psi|\psi\rangle}=1.\]
+
+\textbf{Vetores ortonormais}:
+
+\[\langle u_j | u_k \rangle = \delta_{jk}\]
+
+\[ \delta_{jk} = \left\{ \begin{array}{c} 1 & \textrm{ se }j=k \\ 0 & \textrm{ caso contrário}\end{array}  \right. \]
+
+    \hypertarget{vetores-de-base}{%
+\subsection{5.5 Vetores de base}\label{vetores-de-base}}
+
+O conjunto de vetore
+\(\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}\) formam
+uma base do espaço se eles satisfazem os seguinte critérios:
+
+\begin{quote}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  É possível escrever qualquer vetor do espaço como uma combinação
+  linear única dos vetores \(\{ \phi_i \}\).
+\item
+  O conjunto
+  \(\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}\) é
+  linearmente indenpendente.
+\item
+  Satisfaz a relação de completeza.
+\end{enumerate}
+\end{quote}
+
+\textbf{Condição 1:} Se o conjunto
+\(\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}\) estende
+todo o espaço \(\mathcal{H}\), é possível escrever um vetor
+\(|\Psi\rangle\) arbitrário como uma combinção linear dos vetores da
+base
+
+\[ |\Psi\rangle = c_1 |\phi_1\rangle + c_2 |\phi_2\rangle + \dots + c_n |\phi_n\rangle = \sum_{i=1}^n c_i |\phi_i\rangle\]
+
+onde os coeficientes da expansão são números complexos dados por
+
+\[ c_i = \langle \phi_i | \Psi \rangle.\]
+
+\textbf{Condição 2:} A conjunto
+\(\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}\) é dito
+linearmente independente quando a equação
+
+\[ a_1 |\phi_1\rangle + a_2 |\phi_2\rangle + \dots + a_n |\phi_n\rangle = 0\]
+
+implica que todos os coeficientes são nulos, \(c_1=c_2=...=c_n=0\). Em
+outras palavras, não há nenhuma combinação (não trivial) que produza o
+vetor nulo.
+
+\begin{quote}
+\textbf{Dimensão do espaço} O número de vetores da base fornece a
+dimensão do espaço vetorial.
+\end{quote}
+
+\textbf{Condição 3:} Um conjunto ortonormal
+\(\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}\) constitue
+uma base se e somente se satisfaz a \textbf{relação de completeza}
+
+\[ \sum_{i=1}^n |\phi_i\rangle \langle \phi_i| = 1 \]
+
+\hypertarget{procedimento-de-gram-schmidt}{%
+\subsubsection{Procedimento de
+Gram-Schmidt}\label{procedimento-de-gram-schmidt}}
+
+Se tivermos um conjunto de vetores \(\{ |u_i\rangle \}\) que não é
+ortonormal, é possível usar o procedimento de Gram-Schmidt para
+construir uma base ortonormal a partir desse conjunto inicial. Para
+simplificar o entendimento do processo, consideramos um exemplo com 3
+vetores de base (num espaço de dimensção 3).
+
+Começamos selecionando um dos vetores do conjunto \(\{ |u_i\rangle \}\)
+e definindo o vetor:
+
+\[ |w_1\rangle = |u_1\rangle  \]
+
+A partir disso, constroi-se sucessivamente os vetores seguintes da base
+subtraindo deles as componentes nas direções ortonais àquelas já
+construídas. Neste caso, por exemplo, as direções \(|w_2\rangle\) e
+\(|w_3\rangle\) são construídas subtraindo as componente na direção de
+\(|w_1\rangle\) e \(|w_2\rangle\), conforme:
+
+\[\begin{array}{c}
+&&|w_2 \rangle =& |u_2\rangle - \frac{\langle w_1 | u_2 \rangle}{\langle w_1 | w_1 \rangle} |w_1\rangle \\ \\
+&&|w_3\rangle =& |u_3\rangle - \frac{\langle w_1 | u_3 \rangle }{\langle w_1 | w_1 \rangle} |w_1\rangle - \frac{\langle w_2 | u_3 \rangle }{\langle w_2 | w_2 \rangle} |w_2\rangle \end{array}\]
+
+Finalmente, para obter um conjunto ortonormal \(\{ |v_i\rangle \}\), nós
+podemos normalizar cada um dos vetores \(|w_i\rangle\):
+
+\[|v_1\rangle = \frac{ |w_1 \rangle }{||\langle w_1 | w_1 \rangle||}; \,
+|v_2\rangle = \frac{ |w_2 \rangle }{||\langle w_2 | w_2 \rangle}||; \,
+|v_3\rangle = \frac{ |w_3 \rangle }{||\langle w_3 | w_3 \rangle||}\]
+
+De forma geral, para um cojunto finito de vetores \(\{u_k\}\), de um
+espaço vetorial \(\mathcal{U}\) de dimensão \(d\), pode-se escrever os
+vetores ortonormais \(\{v_k\}\) através da construindo:
+
+\[
+\left|v_{k+1}\right\rangle \equiv \frac{\left|w_{k+1}\right\rangle-\sum_{i=1}^{k}\left\langle v_{i} | w_{k+1}\right\rangle\left|v_{i}\right\rangle}{\|\left|w_{k+1}\right\rangle-\sum_{i=1}^{k}\left\langle v_{i} | w_{k+1}\right\rangle\left|v_{i}\right\rangle \|}.
+\]
+
+    \hypertarget{algebra-de-dirac}{%
+\subsubsection{Algebra de Dirac}\label{algebra-de-dirac}}
+
+Vejamos como expressar vetores inteiramente em termos do \emph{kets} da
+base e manipular \emph{bras} e \emph{kets} de forma algébrica.
+
+\textbf{Representando um \emph{ket} como \emph{bra}}
+
+Para obter o \emph{bra} correspondente a um dado \emph{ket},
+\(| \phi\rangle = \alpha |\psi\rangle\), basta tomar o complexo
+conjugado:
+
+\[\langle \phi|  = (\alpha |\psi\rangle)^* = \alpha \langle \psi| \]
+
+podemos também escrever \(|\alpha \psi\rangle = \alpha |\psi\rangle\). O
+mesmo pode ser feito para o \emph{bra}, mas deve-se tomar um cuidado
+extra, neste caso:
+
+\[ \langle \alpha \psi| = \alpha^* \langle \psi|\]
+
+    \begin{quote}
+\textbf{Exercício sugerido}
+
+Suponha que \(\{ |u_1 \rangle, |u_2 \rangle, |u_3 \rangle \}\) seja uma
+base ortonormal. Nesta base temos:
+\[| \psi \rangle = 2i |u_1 \rangle - 3|u_2 \rangle + i|u_3 \rangle\]
+\[ | \phi\rangle = 3 |u_1 \rangle - 2|u_2 \rangle + 4|u_3 \rangle \]
+
+\begin{itemize}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \tightlist
+  \item
+    Ache \(\langle\psi|\) e \(\langle \phi|\).\\
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{1}
+  \tightlist
+  \item
+    Calcule o produto interno \(\langle \phi|\psi\rangle\) e mostre que
+    igual seu conjugado.
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{2}
+  \tightlist
+  \item
+    Sendo \(a = 3 + 3i\), calcule \(|a\psi\rangle\).
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{3}
+  \tightlist
+  \item
+    Ache as expressões de \(|\psi+\phi\rangle\) e \(|\psi-\phi\rangle\)
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{4}
+  \tightlist
+  \item
+    Calcule \(\langle a \psi |\) e compare com \(a^* \langle \psi|\).
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{5}
+  \tightlist
+  \item
+    Normalize o vetor \(| \psi \rangle\).
+  \end{enumerate}
+\end{itemize}
+\end{quote}
+
+    \textbf{Encontrando os coeficientes da expansão}
+
+Da mesma forma que fazemos os vetores do espaço Euclidiano, para
+encontrar as componentes de um vetor no espaço de Hilber basta fazer o
+produto escalar (interno) do vetor com o correspondente verto da base.
+Em notação de Dirac, se o vetor é dado por \[
+|\psi\rangle=c_{1}\left|u_{1}\right\rangle+c_{2}\left|u_{2}\right\rangle+\cdots+c_{n}\left|u_{n}\right\rangle=\sum_{i=1}^{n} c_{i}\left|u_{i}\right\rangle
+\]\\
+os coeficientes são dados por \[
+c_i = \left\langle\ u_i | \psi \right\rangle
+\] que podem ser convenientemente escritos na forma
+
+\[
+| \psi \rangle \rightarrow\left( \begin{array}{c} \left\langle u_{1} | \psi\right\rangle \\ \left\langle u_{2} | \psi\right\rangle \\ \vdots \\ \left\langle u_{n} | \psi\right\rangle \end{array} \right) = 
+\left(\begin{array}{c} c_{1} \\ c_{2} \\ \vdots \\ c_{n} \end{array}\right)
+\]
+
+Note, porém, que um vetor pode ser escrito em termos de diversas bases
+diferentes (o vetor tem existência indepentende da base) e em cada uma
+delas os valores das componentes serão diferentes.
+
+\textbf{\emph{Exemplo:}} Considere o vetor abaixo, expresso em termos de
+uma base ortonormal:
+\[ |\psi\rangle=2 i\left|u_{1}\right\rangle-3\left|u_{2}\right\rangle+i\left|u_{3}\right\rangle\]
+
+    Neste caso, o velor coluna dos coeficientes representando
+\(|\psi\rangle\) é dado por
+
+\[
+|\psi\rangle = 
+\left( \begin{array}{c} \left\langle u_{1} | \psi\right\rangle \\ \left\langle u_{2} | \psi\right\rangle \\ \left\langle u_{3} |\psi\right\rangle \end{array}\right) = 
+\left( \begin{array}{c} 2 i \\ -3 \\ i \end{array} \right).
+\]
+
+Da mesma forma, o vetor dual (``\emph{bra}'') correspondente ao vetor
+\(\psi\rangle\) pode ser representado na forma de um vetor linha
+
+\[
+\left\langle\psi\left|=\left(\left\langle\psi | u_{1}\right\rangle\left\langle\psi | u_{2}\right\rangle\left\langle\psi | u_{3}\right\rangle\right)=\left(\left\langle u_{1} | \psi\right\rangle^{*}\left\langle u_{2} | \psi\right\rangle^{*}\left\langle u_{3} | \psi\right\rangle^{*}\right)\right.\right.
+\]
+
+e portanto
+
+\[
+\langle\psi|=\left((2 i)^{*}(-3)^{*}(i)^{*}\right)=(-2 i-3-i).
+\]
+
+\hypertarget{operadores-lineares}{%
+\subsection{5.6 Operadores lineares}\label{operadores-lineares}}
+
+Grandezas físicas observáveis, que podem ser medidas no laboratório,
+como posição e momento, são representandos dentro da estrutura
+matemática da mecânica quântica por operadores lineares num espaço
+vetorial de Hhilbert. Matematicamente, esses operadores são mapas que
+levam (transformam) um vetor em outro vetor. Isto é, são receitas ou
+regras de transformação de um dado vetor num novo vetor, geralmente
+diferente do primeiro. Frequentemente usa-se como símbolo uma letra
+maíscula com ``chapel'' (sinal circunflexo) sobre a letra para indicar
+um operador. Assim, na notação de Dirac, escreve-se, por exemplo: \[
+\hat{T}|\psi\rangle=|\phi \rangle.
+\]
+
+Os operadores que mais nos interessam na MQ são os operadores lineares.
+Um operador \(\hat{T}:\mathcal{H}\rightarrow\mathcal{H}\) é linear no
+espaço \(\mathcal{H}\) se, dados escalares
+\(\alpha, \beta \in \mathbb{C}\) e vetores
+\(|u\rangle, |v\rangle \in \mathcal{H}\), ele satisfaz a relação: \[
+\hat{T}(\alpha|u\rangle+\beta|v\rangle)=\alpha\, \hat{T}|u\rangle+\beta\, \hat{T}|v\rangle.
+\]
+
+Além disso, os operadores lineare também satisfazem as seguintes
+relações:
+
+\[
+(\hat{T}+\hat{S})\ket{u}=\hat{T}\ket{u} + \hat{S}\ket{u}
+\]
+
+\[ 
+(\hat{T}\,\hat{S})\ket{u}=\hat{T}(\hat{S}\ket{u})
+\]
+
+Operadores atuam tanto nos vetores \emph{kets} como nos vetores duais
+\emph{bras}, seguindo a seguinte notação (atenção para a ordem!): \[ 
+\hat{T}\ket{u} \quad \text{ ou } \quad \bra{u} \hat{T}
+\] mas nunca \((\,\ket{u} \hat{T}\,)\) ou \((\,\hat{T} \bra{u}\,)\), que
+são formas incorretas (inválidas)!
+
+\hypertarget{exemplos-importantes}{%
+\subsubsection{Exemplos importantes}\label{exemplos-importantes}}
+
+\begin{itemize}
+\item
+  \textbf{Operador Identidade:} o operador mais simples \[
+  \mathbb{1}\ket{u}=\ket{u}
+  \]
+\item
+  \textbf{Produto externo (definição):} o produto externo entre
+  \emph{kets} e \emph{bras} é dado por \[
+  \ket{\psi}\bra{\phi} = \hat{P}
+  \] note que o produto externo resulta num operador e não num escalar!
+  Essa construção será muito útil, como veremos adiante.
+\item
+  \textbf{Operador projetor:} usando o produto externo, podemos calcular
+  as projeções de um dado vetor numa base \(\{ u_i \}\), fazendo
+\end{itemize}
+
+\[
+\begin{array}{ll}
+\hat{P}_{u_i} = | u_i \rangle \langle u_i |  &\rightarrow \quad \hat{P}_{u_i} | \chi\rangle = | u_i \rangle (\langle u_i |\chi\rangle) = \beta | u_i \rangle \\
+\hat{P}_{u} = \sum_i | u_i \rangle \langle u_i |  &\rightarrow \quad  {P}_{u} | \chi\rangle = \sum_i \,c_i | u_i \rangle = | \chi\rangle
+\end{array}
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Relação de completeza:} usando os resultados anteriores
+  podemos observar que
+\end{itemize}
+
+\[
+|\psi\rangle=\sum_{i=1}^{n}c_i\left|u_{i}\right\rangle = \sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i} | \psi\right\rangle=\left(\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right|\right)|\psi\rangle
+\]
+
+\[
+\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right| = \mathbb{1}
+\]
+
+    \hypertarget{representauxe7uxe3o-de-operadores}{%
+\subsubsection{Representação de
+operadores}\label{representauxe7uxe3o-de-operadores}}
+
+A operação matemática de transformar um vetor de um espaço vetorial
+linear num outro vetor, através da ação de um operador linear, pode ser
+representada de várias formas. Uma delas é a representação matricial,
+onde os operadores são representados por matrizes quadradas e os vetores
+por matrizes linhas e colunas. Neste caso, a transformação linear
+torna-se uma mera multiplicação dessas matrizes.
+
+É importante lembrar que, da mesma forma que os vetores do espaço, os
+operadores têm existência e significado próprios no espaço vetorial e
+sua ação independe da representação ou da base escolhida. Por outro
+lado, sua representação matricial, em geral, depende da base escolhida.
+Devemos lembrar, porém, que a forma matricial é apenas uma das
+representações possíveis de um operador linear.
+
+\textbf{Representação matricial}
+
+A matriz de um operador numa dada base pode ser obtida a partir da ação
+do operador em cada vetor da base. Assim, se \(\{ u_i \}\) representa o
+conjunto de vetores da base, as componentes do operador \(\hat{T}\)
+podem ser obtidas através da operação
+
+\[
+T_{i j}=\left\langle u_{i}|\hat{T}| u_{j}\right\rangle.
+\]
+
+Em um espaço vetorial de dimensão n, as componentes do operador podem
+ser arranjadas na forma de uma matriz quadrada \(n \times n\), onde
+\(T_{i j}\) representa o elemento na linha \(i\) e coluna \(j\),
+conforme:
+
+\[
+\begin{aligned}
+\hat{T} \rightarrow\left(T_{i j}\right) &=\left(\begin{array}{cccc}
+T_{11} & T_{12} & \dots & T_{1 n} \\
+T_{21} & T_{22} & \dots & T_{2 n} \\
+\vdots & \vdots & \ddots & \vdots \\
+T_{n 1} & T_{n 2} & \dots & T_{n n}
+\end{array}\right) \\
+&=\left(\begin{array}{cccc}
+\left\langle u_{1}|\hat{T}| u_{1}\right\rangle & \left\langle u_{1}|\hat{T}| u_{2}\right\rangle & \dots & \left\langle u_{1}|\hat{T}| u_{n}\right\rangle \\
+\left\langle u_{2} \hat{T} | u_{1}\right\rangle & \left\langle u_{2}|\hat{T}| u_{2}\right\rangle & \dots & \left\langle u_{2}|\hat{T}| u_{n}\right\rangle \\
+\vdots & \vdots & \ddots & \vdots \\
+\left\langle u_{n}|\hat{T}| u_{1}\right\rangle & \left\langle u_{n}|\hat{T}| u_{2}\right\rangle & \dots & \left\langle u_{n}|\hat{T}| u_{n}\right\rangle
+\end{array}\right)
+\end{aligned}
+\]
+
+\begin{quote}
+\textbf{\emph{Exercício sugerido}}
+
+Suponha uma base ortonormal
+\(\left\{\left|u_{1}\right\rangle,\left|u_{2}\right\rangle,\left|u_{3}\right\rangle\right\}\),
+um operador \(\hat{A}\) cuja a ação é dada por: \[
+\begin{array}{l}
+\hat{A}\left|u_{1}\right\rangle=2\left|u_{1}\right\rangle; \\
+\hat{A}\left|u_{2}\right\rangle=3\left|u_{1}\right\rangle-i\left|u_{3}\right\rangle; \\
+\hat{A}\left|u_{3}\right\rangle=-\left|u_{2}\right\rangle
+\end{array}
+\] Escreve a matriz que representa o operador nesta base.
+\end{quote}
+
+    \textbf{\emph{Definição} : Traço de um operador}
+
+O traço de um operador \(\hat{T}\), denotado por \(\text{Tr}(\hat{T})\),
+é definido como sendo a soma dos elementos na diagonal principal da
+matriz que o representa
+
+\[
+\text{Tr}(\hat{T})=T_{11}+T_{22}+\ldots+T_{n n}=\sum_{i=1}^{n} T_{i i}.
+\]
+
+Alternativamente, o traço também pode ser escrito como:
+
+\[
+\text{Tr}(\hat{T})=\left\langle u_{1}|\hat{T}| u_{2}\right\rangle+\left\langle u_{2}|\hat{T}| u_{2}\right\rangle+\ldots+\left\langle u_{n}|\hat{T}| u_{n}\right\rangle=\sum_{i=1}^{n}\left\langle u_{i}|\hat{T}| u_{i}\right\rangle
+\]
+
+\begin{quote}
+\textbf{Exercício sugerido}
+
+O traço de um operador obedece uma relação cíclica, como indicado \[
+\operatorname{Tr}(A B C)=\operatorname{Tr}(B C A)=\operatorname{Tr}(C A B)   
+\] Prove isso para o caso de dois operadores \(A\) e \(B\), i.e.~prove
+que \(\operatorname{Tr}(AB)=\operatorname{Tr}(B A)\)
+\end{quote}
+
+\hypertarget{valores-esperados}{%
+\subsubsection{Valores esperados}\label{valores-esperados}}
+
+O valore esperado de um operador com relação a um estado \(\Psi\) é dado
+por
+
+\[
+\langle\hat{A}\rangle=\langle\Psi|\hat{A}| \Psi\rangle
+\]
+
+\begin{quote}
+\textbf{Exercício sugerido}
+
+Considere uma partícula no estado \[
+|\Psi\rangle=2 i\left|u_{1}\right\rangle-\left|u_{2}\right\rangle+4 i\left|u_{3}\right\rangle
+\] e um operador \[
+\hat{A}=\left|u_{1}\right\rangle\left\langle u_{1}| -2 i| u_{1}\right\rangle\left\langle u_{2}|+| u_{3}\right\rangle\left\langle u_{3}\right|
+\] Considerando que \(\{ |u_i\rangle \}\) é uma base ortonormal, calcule
+\(\langle \hat{A} \rangle\) nesse estado.
+\end{quote}
+
+    \hypertarget{autovalores-e-autovetores}{%
+\subsubsection{Autovalores e
+autovetores}\label{autovalores-e-autovetores}}
+
+Quando um operador age sobre um dado vetor e o resultado é o mesmo vetor
+multiplicado por um escalar, o vetor é chamado de autovetor e o escalar
+de autovalor. Assim, por exemplo, no caso da energia total \[
+\hat{H}|\psi_n\rangle = E_n |\psi_n \rangle
+\]
+
+    No contexto da mecânica quântica, operadores de observáveis físicos têm
+como autovalores o conjunto de todas as possíveis medidas daquela
+grandeza física, num dado sistema quântico. Os autovetores de um
+operador são autoestados do sistema quântico.
+
+\ldots{}
+
+\hypertarget{conjugauxe7uxe3o-hermitiana}{%
+\subsubsection{Conjugação
+Hermitiana}\label{conjugauxe7uxe3o-hermitiana}}
+
+\ldots{}
+
+\hypertarget{operadores-hermitianos-e-unituxe1rios}{%
+\subsubsection{Operadores Hermitianos e
+Unitários}\label{operadores-hermitianos-e-unituxe1rios}}
+
+\ldots{}
+
+\hypertarget{comutadores}{%
+\subsubsection{Comutadores}\label{comutadores}}
+
+\ldots{}
+
+\hypertarget{transformauxe7uxf5es-lineares-e-mudanuxe7as-de-base}{%
+\subsection{5.7 Transformações lineares e mudanças de
+base}\label{transformauxe7uxf5es-lineares-e-mudanuxe7as-de-base}}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}

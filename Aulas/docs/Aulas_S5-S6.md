@@ -1,55 +1,20 @@
-...
 $\newcommand{\bra}[1]{\left\langle #1 \right|}$
 $\newcommand{\ket}[1]{\left| #1 \right\rangle}$
 $\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}$
 
 # 5. Estrutura matemática da Mecânica Quântica
 
-Até este ponto, discutimos, em linhas gerais, como expressar e resolver
-problemas físicos na mecânica quântica, em termos da Equação de
-Schrödinger (EqS). Discutimos, de uma maneira ampla, as estratégias para
-resolver a EqS no caso geral e, em particular, discutimos a resolução da equação  independente do tempo, resolvendo alguns exemplos emblemáticos 
-de potencias unidimencionais simples. 
-Visto sob essa perspectiva, pode-se ter a impressão que mecânica quântica se resume à solução da EqS, usando métodos matemáticos mais ou menos
-familiares (solução de equações diferenciais parciais). Embora essa seja
-uma estratégia válida e efetiva em alguns casos, ela é bastante limitada 
-e seria um grande equívoco pensar que as estratégias da mecânica quântica 
-se limitam simplesmente a soluções da Eq. de Schrödinger.
+Até este ponto, discutimos, em linhas gerais, como expressar e resolver problemas físicos na mecânica quântica, em termos da Equação de
+Schrödinger (EqS). Discutimos, de uma maneira ampla, as estratégias para resolver a EqS no caso geral e, em particular, discutimos a resolução da equação  independente do tempo, resolvendo alguns exemplos emblemáticos de potencias unidimencionais simples. 
+Visto sob essa perspectiva, pode-se ter a impressão que mecânica quântica se resume à solução da EqS, usando métodos matemáticos mais ou menos familiares (solução de equações diferenciais parciais). Embora essa seja uma estratégia válida e efetiva em alguns casos, ela é bastante limitada 
+e seria um grande equívoco pensar que as estratégias da mecânica quântica se limitam simplesmente a soluções da Eq. de Schrödinger.
 
-O roteiro seguido até aqui teve uma motivação didática e, deliberamente,
-procurou enfatizar os aspectos físicos do problema. Apresentando apenas a
-matemática necessária para formular e resolver o problema. Por essa
-razão, não temos sido muito rigorosos com o formalismo. Trocando rigor
-matemático por intuição física, sempre que possível, para não obscurecer
-desnecessariamente a "Física" do problema. Essa estratégia é bastante
-razoável para uma introdução ao assunto. Apesar disso, o domínio do
-formalismo matemático também é importante e necessário para ser bem
-sucedido na resolução de problemas gerais da MQ, ou mesmo para entender
-muitos temas de pesquisa contemporânea. A situação ideal é aquela onde
-consegue-se combinar ambas habilidades, que é um dos objetivos
-secundários deste curso.
+O roteiro seguido até aqui teve uma motivação didática e, deliberamente, procurou enfatizar os aspectos físicos do problema. Apresentando apenas a matemática necessária para formular e resolver o problema. Por essa razão, não temos sido muito rigorosos com o formalismo. Trocando rigor matemático por intuição física, sempre que possível, para não obscurecer desnecessariamente a "Física" do problema. Essa estratégia é bastante razoável para uma introdução ao assunto. Apesar disso, o domínio do formalismo matemático também é importante e necessário para ser bem sucedido na resolução de problemas gerais da MQ, ou mesmo para entender muitos temas de pesquisa contemporânea. A situação ideal é aquela onde consegue-se combinar ambas habilidades, que é um dos objetivos secundários deste curso.
 
-Neste capitulo, portanto, seguiremos uma estratégia diferente e
-complementar àquela seguida até agora. O foco agora será ampliar a
-linguagem e abstração do problema, apresentadno de modo mais formal a
-estrutura matemática da mecânica quântica moderna. A prioridade ainda
-permanecerá com a Física e não a Matemática. Portanto, não se almeja mero
-rigor matemático, mas, sim, introduzir novos conceitos e
-representações que serão muito úteis para expandir os horizontes
-dentro da teoria e, como iremos explorar nos próximos capítulos, serão
-fundamentais para entender a linguagem contemporânea dessa importante
-disciplina científica.
+Neste capitulo, portanto, seguiremos uma estratégia diferente e complementar àquela seguida até agora. O foco agora será ampliar a linguagem e abstração do problema, apresentadno de modo mais formal a estrutura matemática da mecânica quântica moderna. A prioridade ainda permanecerá com a Física e não a Matemática. Portanto, não se almeja mero rigor matemático, mas, sim, introduzir novos conceitos e representações que serão muito úteis para expandir os horizontes dentro da teoria e, como iremos explorar nos próximos capítulos, serão fundamentais para entender a linguagem contemporânea dessa importante disciplina científica.
 
 ## 5.1  Espaço de estados
-Resumindo o que vimos até aqui, podemos, ainda de uma maneira informal,
-dizer que as soluções estacionárias \(\psi_n(x)\) da EqS são funções de
-ondas que representam os possíveis estados do sistema, com energia
-\(E_n\). Outra forma de dizer isso, motivada pela forma da equação
-\(H\psi_n(x)=E_n\psi_n(x)\), é dizer que \(\{\psi_n(x)\}\) é o conjunto
-de autofunções do operador \(H\), representando os autoestados do
-sistema com autovalores \(E_n\). Vimos nos exemplos discutidos, como no
-caso da caixa infinita, que \(\psi_n(x)\) possui uma série de
-propriedades interessantes e úteis. Entre elas:
+Resumindo o que vimos até aqui, podemos, ainda de uma maneira informal, dizer que as soluções estacionárias \(\psi_n(x)\) da EqS são funções de ondas que representam os possíveis estados do sistema, com energia \(E_n\). Outra forma de dizer isso, motivada pela forma da equação \(H\psi_n(x)=E_n\psi_n(x)\), é dizer que \(\{\psi_n(x)\}\) é o conjunto de autofunções do operador \(H\), representando os autoestados do sistema com autovalores \(E_n\). Vimos nos exemplos discutidos, como no caso da caixa infinita, que \(\psi_n(x)\) possui uma série de propriedades interessantes e úteis. Entre elas:
 
 Dentro do que vimos até aqui, podemos, ainda de uma maneira informal, dizer que as soluções estacionárias $\psi_n(x)$ da EqS são funções de ondas que representam os possíveis estados do sistema, com energia $E_n$. Outra forma de dizer isso, observando a forma da equação $H\psi_n(x)=E_n\psi_n(x)$, é dizer que $\{\psi_n(x)\}$ é o conjunto de autofunções do operador $H$, representando os autoestados do sistema com autovalores $E_n$. Vimos nos exemplos discutidos, como no caso da caixa infinita, que $\psi_n(x)$ possui uma série de propriedades interessantes e úteis. Entre elas: 
 >$\int \psi^*_n(x)\psi_m(x)dx=\delta_{nm}$
@@ -61,14 +26,7 @@ Dentro do que vimos até aqui, podemos, ainda de uma maneira informal, dizer que
 >$<A_{_{\Psi}}> = \int \Psi^*(x) A \Psi(x) dx$  
 
 
-De fato, pode-se extender e generalizar essas ideias para expressar
-esses objetos em termos mais abstratos e gerais, através do conceito de
-espaço vetorial linear. Como os estados \(\psi_n(x)\) e os operadores
-(que nesse contexto serão transformações lineares) nesses estados devem 
-satisfazer um certas propriedades para representar um sistema físico, 
-esses espaços vetoriais devem ter conjunto de estruturas e propriedades 
-especiais que veremos logo mais. Por simplicidade, iremos nos referir a esses espaços como *espaços de Hilbert*.
-
+De fato, pode-se extender e generalizar essas ideias para expressar esses objetos em termos mais abstratos e gerais, através do conceito de espaço vetorial linear. Como os estados \(\psi_n(x)\) e os operadores (que nesse contexto serão transformações lineares) nesses estados devem  satisfazer um certas propriedades para representar um sistema físico,  esses espaços vetoriais devem ter conjunto de estruturas e propriedades  especiais que veremos logo mais. Por simplicidade, iremos nos referir a esses espaços como *espaços de Hilbert*.
 
 Para deixar esse ponto mais claro, vamos relembrar/introduzir algumas definições e conceitos, para formalizar e definir melhor essa ideia.
 
@@ -346,7 +304,7 @@ $$
 \left( \begin{array}{c} 2 i \\ -3 \\ i \end{array} \right).
 $$
 
-Da mesma forma, o vetor dual ("_bra_") correspondente ao vetor $\psi\rangle$ pode ser representado na forma de um vetor linha
+Da mesma forma, o vetor dual ("_bra_") correspondente ao vetor $|\psi\rangle$ pode ser representado na forma de um vetor linha
 
 $$
 \left\langle\psi\left|=\left(\left\langle\psi | u_{1}\right\rangle\left\langle\psi | u_{2}\right\rangle\left\langle\psi | u_{3}\right\rangle\right)=\left(\left\langle u_{1} | \psi\right\rangle^{*}\left\langle u_{2} | \psi\right\rangle^{*}\left\langle u_{3} | \psi\right\rangle^{*}\right)\right.\right.
@@ -360,7 +318,7 @@ $$
 
 ## 5.6 Operadores lineares
 
-Grandezas físicas observáveis, que podem ser medidas no laboratório, como posição e momento, são representandos dentro da estrutura matemática da mecânica quântica por operadores lineares num espaço vetorial de Hhilbert. Matematicamente, esses operadores são mapas que levam (transformam) um vetor em outro vetor. Isto é, são receitas ou regras de transformação de um dado vetor num novo vetor, geralmente diferente do primeiro. Frequentemente usa-se como símbolo uma letra maíscula com "chapel" (sinal circunflexo) sobre a letra para indicar um operador. Assim, na notação de Dirac, escreve-se, por exemplo:
+Grandezas físicas observáveis, que podem ser medidas no laboratório, como posição e momento, são representandos dentro da estrutura matemática da mecânica quântica por operadores lineares num espaço vetorial de Hilbert. Matematicamente, esses operadores são mapas que levam (transformam) um vetor em outro vetor. Isto é, são receitas ou regras de transformação de um dado vetor num novo vetor, geralmente diferente do primeiro. Frequentemente usa-se como símbolo uma letra maíscula com "chapel" (sinal circunflexo) sobre a letra para indicar um operador. Assim, na notação de Dirac, escreve-se, por exemplo:
 $$
 \hat{T}|\psi\rangle=|\phi \rangle.
 $$
@@ -507,30 +465,224 @@ $$
 
 ### Autovalores e autovetores
 
-Quando um operador age sobre um dado vetor e o resultado é o mesmo vetor multiplicado por um escalar, o vetor é chamado de autovetor e o escalar de autovalor. Assim, por exemplo, no caso da energia total
+Quando um operador age sobre um dado vetor (estado) e o resultado é o mesmo vetor (estado) multiplicado por um escalar, o vetor é chamado de autovetor (autoestado) e o escalar de autovalor. Assim, por exemplo, no caso da energia total
 $$
 \hat{H}|\psi_n\rangle = E_n |\psi_n \rangle
 $$
 
 
-No contexto da mecânica quântica, operadores de observáveis físicos têm como autovalores o conjunto de todas as possíveis medidas daquela grandeza física, num dado sistema quântico. Os autovetores de um operador são autoestados do sistema quântico.
+No contexto da mecânica quântica, operadores de observáveis físicos têm como autovalores o conjunto de todas as possíveis medidas daquela grandeza física, num dado sistema quântico. Os autovetores de um operador são autoestados do sistema quântico e são muito importantes, pois esses autovetores formam uma base do espaço e permitem represetar qualquer estado do sistema. A seguir temos uma breve revisão de como calcular autovalores e autovetores, a partir de conceitos e métodos de Algebra Linear.
 
-...
+**Cálculo dos autovalores**
+
+Dado um operador linear $\hat{T}$, como já vimos, pode-se sempre representá-lo por uma matriz $T$. O conjunto de autovalores $\lambda$ dessa matriz podem ser determinados através da _equação característica_ (também chamada de _equação secular_), para o determinante abaixo:
+$$
+\operatorname{det}(T-\lambda I)=0$$
+onde $I=\mathbb{1}$ é a matriz identidade. A solução da equação característica fornece os autovalores $\lambda$, que são as raizes do _polinônimo_ (_característico_), indicado acima.
+
+!!! question "Exercício sugerido"
+    Escreva o equação característica e ache os autovalores da matriz
+
+    $$
+    A = 
+    \begin{pmatrix}
+    7i & -1 \\ 
+    2 & -6i
+    \end{pmatrix} 
+    $$
+
+**Cálculo dos autovetores**
+
+A partir dos autovalores pode-se determinar os autovetores da matriz $T$, que pode ser então escrita na forma diagonal. Para ilustrar melhor isso, usaremos um exemplo, a partir do problema proposto a seguir.
+
+!!! question "Exercício sugerido"
+    Considere o operador $\hat{T}=\ket{\phi_1}\bra{\phi_1}+2\ket{\phi_1}\bra{\phi_2}+\ket{\phi_2}\bra{\phi_1}$, expresso numa base ortonormal. Ache a matriz $T$, que representa o operador nesta base, e determine os autovetores normalizados do operador, com seus autovalores. Considere que o espaço é bidimensional.
+
+Antes de seguir, você deve resolver o problema proposto acima, em detalhe, pelo menos até onde puder, para ter certeza de que está entendo todos os passos necessários à resolução do problema. Ao fazer isso irá encontrar os valores que usaremos na resolução que exemplificada o cálculo de um dos autovetores, a seguir
+
+!!! example "Exemplo: resolução dos autovetores"              
+    Os autovalores do problema anterio são $\lambda_1=2$ e $\lambda_2=-1$. 
+
+    Substitui-se, então, esses valores, um de cada vez, na equação de autovalores $\hat{T}\ket{u_i}=\lambda_i \ket{u_i}$ para determinar os autovetores $\{ \ket{u_1},\ket{u_2} \}$, como é mostrado abaixo para $\ket{u_2}$.
+
+    $$
+    \begin{pmatrix}
+    1 & 2 \\ 
+    1 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+    a \\ 
+    b
+    \end{pmatrix} = -
+    \begin{pmatrix}
+    a \\
+    b
+    \end{pmatrix}
+    $$
+
+    $$
+    \Rightarrow a + 2b = -a, \text{ ou } b = -a.
+    $$
+
+    portanto,
+
+    $$
+    \ket{u_2}= 
+    \begin{pmatrix}
+    a \\
+    -a
+    \end{pmatrix}.
+    $$
+
+    Normalizando o vetor temos:
+
+    $$
+    \bra{u_2} u_2 \rangle = 1 \rightarrow 2a^2 = 1 \Rightarrow a=\frac{1}{\sqrt{2}},
+    $$
+
+    portanto, finalmente, temos:
+
+    $$
+    \ket{u_2} = 
+    \frac{1}{\sqrt{2}}
+    \begin{pmatrix}
+    1 \\
+    -1
+    \end{pmatrix}.
+    $$
+
+    Verifique agora que 
+    
+    $$ 
+    \ket{u_1} = \frac{1}{\sqrt{5}} 
+    \begin{pmatrix} 
+    2 \\ 
+    1 
+    \end{pmatrix}.
+    $$
+
+
 
 ### Conjugação Hermitiana
 
-...
+Até agora vimos que um operador age num _ket_ para produzir um novo _ket_, de acordo com $\hat{T} \ket{u} = \ket{v}.$ Vejamos agora, mais atentamente, sua ação dentro de um produto interno $\bra{w}v\rangle = \braket{w}{\hat{T}}{u}$. Sabemos que isso resulta num escalar (número) complexo. 
 
-### Operadores Hermitianos e Unitários 
+Podemos tomar complexo conjugado desse número, usando a relação $\bra{w}v\rangle = \bra{v}w\rangle^*$. Observe atentamente o que ocorre com o operador
 
-...
+$$
+\braket{w}{\hat{T}}{v} = \braket{v}{\hat{T}}{w}^* =\braket{w}{\hat{T^{\dagger}}}{v}
+$$
+
+onde $\hat{T^{\dagger}}$ (pronuncia-se "T _dagger_") é chamado de Hermitiado conjugaddo ou adjunto do operador $\hat{T}$. 
+
+!!! note "**Como formar o Adjunto de uma expressão geral?**"
+    1. Substitua qualquer constante por seu complexo conjugado.
+    2. Substitua _kets_ pelos _bras_ associados, e vice-versa.
+    3. Substitua cada operador por seu Adjunto.
+    4. Inverta a ordem de todos os fatores na expressão.
+
+
+**O Hermitiado Conjugado de uma matriz**
+
+Já sabemos como encontrar a matriz $M$ de um operador $\hat{M}$ qualquer. Para encontrar a matriz do Adjunto desse, simbolizada por $M^{dagger}$, basta seguir os seguintes passos:
+
+!!! note "**Matriz Adjunta**"
+    1. Calcule a matriz transposta $M^T$, trocando as linhas pelas colunas.
+    2. Tome o complexo conjugado de cada elemento de $M^T.$
+
+De forma resumida:
+
+$$
+M^{\dagger}= \left( M^T \right)^*.
+$$
+
+**Propriedade da operação de transposição**
+
+!!! note ""
+    1. $(A+B)^T = A^T + B^T.$
+    2. $(A^T)^T = A.$
+    3. $(aA)^T= a A^T.$
+    4. $(AB)^T = B^T A^T.$
+ 
+### Operadores Hermitianos 
+
+Um operador é dito Hermitiano quando $\hat{T}^{\dagger}=\hat{T}$. Para um operador Hemitiano, temos que
+
+$$
+\braket{w}{\hat{T}}{v}=\braket{v}{\hat{T}}{w}^*
+$$
+
+Veremos que os operadores de observáveis físicos na mecânica quântica devem ser sempre operadores Hermitianos. Como esse operadores podem ser representado por matrizes, é interessante ver com determinar se uma matriz é Hemitiana.
+
+**Matriz Hermitiana**
+
+Uma matriz $M$ é Hermitiana se satisfaz:
+
+$$
+M = M^{\dagger}.
+$$
+
+Como vimos, $M^{\dagger}$ corresponde ao complexo conjugado da matriz transposta. Portanto, para satisfazer essa condição, os elementos da diagonal principal da matriz devem ser todos números reais (não complexos). Como consequência, o traço do operador (matriz) será, necessariamente um número real.
+
+**Autovalores de um operador Hermitiano**
+
+Pode-se demonstrar que operadores Hermitianos tem autovalores reais (verifique!). Por conta dessa propriedade, requer-se que todos os observáveis físicos na mecânica quântica, sejam representados por operadores Hermitianos. Portanto, tanto o traço como os autovalores de um operador Hermitiano são números reais. 
+
+**Operador anti-Hermitiano**
+
+Um operador $\hat{A}$ é dito anti-Hermitiano se:
+
+$$
+A^{\dagger}=-A
+$$
+
+Verifique que, neste caso, os elementos da diagonal principal do operador (matriz) anti-Hermitiano(a) são todos números imaginários puros.
+
+
+### Operadores Unitários 
+
+Um operador $\hat{U}$ (de matriz $U$) é unitário se:
+
+$$
+UU^{\dagger} = U^{\dagger} U = \mathbb{1}
+$$
+
+Isso significa que
+
+$$
+U^{\dagger} = U^{-1}
+$$
+
+ou seja, que a matriz adjunta é igual a matriz inversa.
+
+Outra importante característica das matrizes unitárias é que as linhas e colunas dessa matrizes formam um conjunto de vetores ortonormais. 
 
 ### Comutadores
 
-...
+Seja $\hat{A}$ e $\hat{B}$ dois operadores lineares do espaço. Em geral, temos que $\hat{A}\hat{B} \ne \hat{B}\hat{A}.$ Assim, define-se o comutador $[\hat{A},\hat{B}]$ como sendo
 
-## 5.7 Transformações lineares e mudanças de base
+$$
+[\hat{A},\hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}.
+$$
 
+Se $[\hat{A},\hat{B}]=0$, dizemos que os operadores comutam. Dois operadores comutam se, e apenas se, eles compartilham uma mesma base de autovetores comuns.
 
+**Propriedades do comutador**
+
+!!! note ""
+    1. $[A,B]=-[B,A]$
+    2. $[A+B,C]=[A,C]+[B,C]$
+    3. $[A,BC]=[A,B]C+B[A,C]$
+    4. Se $\hat{X}$ e $\hat{P}$ representam os operadores posição e momento linear, então $[\hat{X}$, $\hat{P}]=i\hbar$, enquanto $[\hat{X}$, $\hat{X}]= [\hat{P}$, $\hat{P}]=0.$ 
+
+### Conjunto Completo de Observáveis que Comutam (CCOC) 
+
+Um conjunto de operadores $\hat{A}$, $\hat{B}$, $\hat{C}, \dots$ forma um CCCO se todos os subpares desses operadores comutam entre si.
+
+$$
+[\hat{A},\hat{B}] = [\hat{B},\hat{C}] = [\hat{A},\hat{C}] = \dots= 0
+$$
+
+Isso implica que existe uma base comum de autovetores que é única para todos eles, exceto por um fator mutiplicativo.
 
 
