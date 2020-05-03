@@ -686,3 +686,4 @@ $$
 Isso implica que existe uma base comum de autovetores que é única para todos eles, exceto por um fator mutiplicativo.
 
 
+Para avançar para os tópicos das próximas aulas, use o menu de navegação ou [clique aqui](../Aulas_S7/).

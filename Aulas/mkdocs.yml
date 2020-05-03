@@ -27,7 +27,7 @@ theme:
 nav:
     - Home: index.md
     - Aulas S5 & S6: Aulas_S5-S6.md 
-#    - Aulas S7: Aulas_S7.md
+    - Aulas S7: Aulas_S7.md
     - About: about.md
 
 # Extensions
