@@ -11,7 +11,7 @@ Para retornar aos tópicos das aulas anteriores, use o menu de navegação ou [c
 
 ## 5.7 Transformações lineares e mudanças de base
 
-Na aula anterior nós discutimos como encontrar os autovetores de um operador. Surgiu, então, a questão se os autovetores do operador deveriam ser sempre ortogonais e poderiam formar uma base. Vamos, assim, iniciar aqui esta discussão com a questão, geral, se os autovetores de um operador podem sempre formam uma base do espaço vetorial.
+Na aula anterior nós discutimos como encontrar os autovetores de um operador. Surgiu, então, a questão se os autovetores do operador deveriam ser sempre ortogonais e poderiam formar uma base. Aqui, vamos iniciar esta discussão com a questão, geral, se os autovetores de um operador podem sempre formam uma base do espaço vetorial. Nos casos onde isso é possível, como construí-la?
 
 Primeiro, vamos relembrar que condições um conjunto deve satisfazer para formar uma base. De maneira simples, para formar uma base do espaço (ou subespaço) um conjunto de autovetores devem satisfazer duas condições:
 
@@ -130,7 +130,7 @@ O operador $\hat{Z}$ é um exemplo de operador na forma diagonal.
     Um operador é dito _diagonalizável_ quando pode ser escrito na forma diagonal. A representação diagonal também é chamada de _decomposição ortogonal_. Nem todos os operadores de um espaço vetorial tem forma diagonal.
 
 
-Na última aula, vimos também que
+Na última aula, vimos também um exemplo em que
 
 $$
 M = 
@@ -156,7 +156,35 @@ $$
 
 Será que é possível reescrever o operador $M$ numa forma diagonal? Aliás, qual seria o significado disso e quais propriedades tal operação deveria satisfazer, se existisse? Mais importante ainda, qual seria sua utilidade?  
 
-Mais adiante veremos quais são as condições necessárias para um operador ser diagonalizável. Veremos também como fazer para diagonalizá-lo. Antes, vamos introduzir mais um conceito importante. O conceito de _transformações de similaridade_.
+Mais adiante veremos quais são as condições necessárias para um operador ser diagonalizável. Veremos também como fazer para diagonalizá-lo. Antes, vamos introduzir mais dois conceitos importantes. Os conceitos de _mudança de base_ e _transformações de similaridade_.
+
+
+### Mudança de base
+
+Para efeito de comparação e analogia, podemos pensar na mudança de base como algo parecido à mudança de sistema de coordenadas, com o qual já estamos acostumados na Física. 
+
+Como sabemos, a representação de um vetor (ou operador), por exemplo, na forma matricial irá depender da base usada para representá-lo, pois em geral os valores das compenentes serão diferentes, mas isso não altera o significado de cada um desses objetos. 
+
+Dado um vetor qualquer
+
+$$
+\ket{v} = \sum_i b_i \ket{b_i} = \sum_i c_i \ket{c_i},
+$$ 
+
+expresso nas bases $\{ \ket{b_i} \}$ e $\{ \ket{c_i} \}$, é sempre possível achar uma transformação de coordenadas que permita expressar as coordenadas $c_i$ desse vetor a partir das coordenadas $b_i$.
+
+Para vazer isso, basta encontrar a matriz (operador linear), $S$, que leva cada vetor $\ket{b_i}$  no correspondente vetor $\ket{c_i}$:
+
+$$
+\ket{c_i} = S \ket{b_i} \rightarrow \ket{b_i} = S^{-1} \ket{c_i}
+\Rightarrow c_i = b_i (S^{-1}).
+$$
+
+Uma forma de pensar nisso é que a transformação $S$ leva os vetores da base $\ket{b_i}$ nos vetores da base $\ket{c_i}$. Neste caso, $S$ é efetivamente um mapa de como fazer essa transformação dos vetores da base, e é uma receita (mapa) de como "levar" cada ponto de um sistema de coordenadas no ponto correspondente no outro sistema de coordenadas. Na verdade, é importante lembrar que aqui estamos interessados nas coordenadas (representação) do vetor, que está sendo representado nas diferentes bases (sistemas de coordenadas).  
+
+Note, porém, que nessa interpretação todo o sistema de coordenadas é transformado. Ou seja, o _grid_ de pontos do espaço, onde cada ponto é espaçado pelos versores (vetores unitários) da base é transformado. Isso, em geral, representa "deformação" do espaço (mais estritamente, do grid de prontos representando o espaço). Se for linear, essa tranformação fará com que um conjunto de pontos igualmente espaçados continue igualmente espaçados, mas como eles podem sofrer uma mudança de escala, os comprimentos e áreas do _grid_ não são necessariamente conservados. Na verdade, pode-se demonstar que as áreas serão escaladas por uma fator exatamente igual ao determinante da matriz de transformação.
+
+Como escrever a matriz de transformação? 
 
 
 ### Transformações de similaridade
