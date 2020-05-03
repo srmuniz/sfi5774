@@ -573,7 +573,7 @@ $$
 \braket{w}{\hat{T}}{v} = \braket{v}{\hat{T}}{w}^* =\braket{w}{\hat{T^{\dagger}}}{v}
 $$
 
-onde $\hat{T^{\dagger}}$ (pronuncia-se "T _dagger_") é chamado de Hermitiado conjugaddo ou adjunto do operador $\hat{T}$. 
+onde $\hat{T^{\dagger}}$ (pronuncia-se "T _dagger_") é chamado de conjugado Hermitiano, ou Hermitiado conjugado, ou ainda **adjunto** do operador $\hat{T}$. 
 
 !!! note "**Como formar o Adjunto de uma expressão geral?**"
     1. Substitua qualquer constante por seu complexo conjugado.
@@ -582,9 +582,9 @@ onde $\hat{T^{\dagger}}$ (pronuncia-se "T _dagger_") é chamado de Hermitiado co
     4. Inverta a ordem de todos os fatores na expressão.
 
 
-**O Hermitiado Conjugado de uma matriz**
+**O conjugado Hermitiado de uma matriz**
 
-Já sabemos como encontrar a matriz $M$ de um operador $\hat{M}$ qualquer. Para encontrar a matriz do Adjunto desse, simbolizada por $M^{dagger}$, basta seguir os seguintes passos:
+Já sabemos como encontrar a matriz $M$ de um operador $\hat{M}$ qualquer. Para encontrar a matriz do Adjunto desse, simbolizada por $M^{\dagger}$, basta seguir os seguintes passos:
 
 !!! note "**Matriz Adjunta**"
     1. Calcule a matriz transposta $M^T$, trocando as linhas pelas colunas.
@@ -606,7 +606,7 @@ $$
  
 ### Operadores Hermitianos 
 
-Um operador é dito Hermitiano quando $\hat{T}^{\dagger}=\hat{T}$. Para um operador Hemitiano, temos que
+Um operador é dito Hermitiano quando é auto-adjunto: $\hat{T}^{\dagger}=\hat{T}$. Isto é, quando o seu adjunto é ele próprio. Para um operador Hemitiano, temos que
 
 $$
 \braket{w}{\hat{T}}{v}=\braket{v}{\hat{T}}{w}^*
@@ -639,6 +639,17 @@ $$
 Verifique que, neste caso, os elementos da diagonal principal do operador (matriz) anti-Hermitiano(a) são todos números imaginários puros.
 
 
+### Operadores Normais
+
+Um operador $A$ é dito ser _normal_ se 
+
+$$
+AA^{\dagger} = A^{\dagger}A.
+$$ 
+
+Claramente, um operador Hermitiano também é um operador normal. Operadores normais são interessantes pois há um teorema importante relacionado à sua representação que garante que eles podem ser escritos numa forma chamada de _decomposição espectral_, e que será bastante útil mais adiante. Voltaremos a falar deles quando discutirmos o processo de diagonalização de um operador.
+
+
 ### Operadores Unitários 
 
 Um operador $\hat{U}$ (de matriz $U$) é unitário se:
@@ -655,9 +666,15 @@ $$
 
 ou seja, que a matriz adjunta é igual a matriz inversa.
 
-Outra importante característica das matrizes unitárias é que as linhas e colunas dessa matrizes formam um conjunto de vetores ortonormais. 
+Outra importante característica das matrizes unitárias é que as linhas e colunas dessa matrizes formam um conjunto de vetores ortonormais. Pode-se perceber ainda que operadores unitários também são operadores normais e, portanto, podem tem uma decomposição spectral, como veremos depois. 
 
-### Comutadores
+Finalmente, outra característica importante desses operadores é que geometricamente eles preservam o produto interno entre vetores, com pode ser facilmente verificado
+
+$$
+( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbb{1}}{w}=\bra{v}w\rangle. 
+$$
+
+### Comutadores e anticomutadores
 
 Seja $\hat{A}$ e $\hat{B}$ dois operadores lineares do espaço. Em geral, temos que $\hat{A}\hat{B} \ne \hat{B}\hat{A}.$ Assim, define-se o comutador $[\hat{A},\hat{B}]$ como sendo
 
@@ -674,6 +691,15 @@ Se $[\hat{A},\hat{B}]=0$, dizemos que os operadores comutam. Dois operadores com
     2. $[A+B,C]=[A,C]+[B,C]$
     3. $[A,BC]=[A,B]C+B[A,C]$
     4. Se $\hat{X}$ e $\hat{P}$ representam os operadores posição e momento linear, então $[\hat{X}$, $\hat{P}]=i\hbar$, enquanto $[\hat{X}$, $\hat{X}]= [\hat{P}$, $\hat{P}]=0.$ 
+
+**Anticomutador**
+
+Define-se o anticomutador $\{\hat{A},\hat{B}\}$ como sendo
+
+$$
+\{ \hat{A},\hat{B} \} = \hat{A}\hat{B} + \hat{B}\hat{A}.
+$$
+
 
 ### Conjunto Completo de Observáveis que Comutam (CCOC) 
 
