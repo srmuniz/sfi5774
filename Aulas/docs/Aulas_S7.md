@@ -284,6 +284,10 @@ $$
 
 onde $\lambda_i$ são os autovalores de $C$ e $D$.
 
-Será que esse procedimento funciona sempre? Não, nem sempre! Nem todas as matrizes são diagnalizáveis. Para isso algumas condições devem ser satisfeitas pela matriz $C$. Pode-se mostrar, porém, que toda matriz _normal_ é diagonalizável.
- 
+Será que esse procedimento funciona sempre? Não, nem sempre! Nem todas as matrizes são diagnalizáveis. Para isso algumas condições devem ser satisfeitas pela matriz $C$. 
+
+A primeira condição é que para ser diagonalizável uma matriz deve ter autovetores que geram o espaço. Assim, se todos os autovetores forem distintos, há uma boa chance dela ser diagonalizável. Mesmo quando há raízes múltiplias (degenerescência), em alguns casos, a matriz ainda pode ser diagonalizada, mas não sempre.
+
+Pode-se mostrar, porém, que toda matriz _normal_ é diagonalizável. Embora, essa não é uma condição necessária. Além disso, todas as matrizes hermitianas e todas as matrizes unitárias também são diagonalizáveis.
+
 

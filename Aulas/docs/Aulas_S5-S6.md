@@ -628,6 +628,17 @@ Como vimos, $M^{\dagger}$ corresponde ao complexo conjugado da matriz transposta
 
 Pode-se demonstrar que operadores Hermitianos tem autovalores reais (verifique!). Por conta dessa propriedade, requer-se que todos os observáveis físicos na mecânica quântica, sejam representados por operadores Hermitianos. Portanto, tanto o traço como os autovalores de um operador Hermitiano são números reais. 
 
+**Autovetores de um operador Hermitiano**
+
+Outra propriedade importante dos operadores (matrizes) hermetianos é que os autovalores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (_verifique!_), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível, portanto, construir uma base (ortonormal) que gere o espaço.
+
+!!! info "Propriedades de operadores hermitianos"
+    1. Autovalores reais
+    2. Autovetores ortogonais, para autovalores diferentes
+    3. Autovetores geram o espaço (podem formar uma base)
+
+
+
 **Operador anti-Hermitiano**
 
 Um operador $\hat{A}$ é dito anti-Hermitiano se:
