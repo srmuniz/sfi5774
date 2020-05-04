@@ -5,7 +5,7 @@ $\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}$
 
 # 5. Estrutura matemática da MQ (parte 2)
 
-Nesta semana continuaremos a discutir a estrutura matemática da teoria quântica, complementando a discussão a respeito de transformações lineares e, em particular, mudanças de bases. Também iremos apresentar alguns casos importantes como os operadores projetores e o produto tensorial de espaços de Hilbert  . ... ==(NEEDS SOME WORK HERE!!)==
+Nesta semana continuaremos a discutir a estrutura matemática da teoria quântica, complementando a discussão a respeito de transformações lineares e, em particular, mudanças de bases e o processo de diagonalização de um operador (matriz). Também iremos apresentar alguns casos importantes como os operadores projetores em subespaços e o produto tensorial que permite expandir espaços de Hilbert.
 
 Para retornar aos tópicos das aulas anteriores, use o menu de navegação ou [clique aqui](../Aulas_S5-S6/).
 
