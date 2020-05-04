@@ -245,7 +245,8 @@ Para simplificar a notação, vamos expressar os operadores por matrizes, mas o 
 !!! info "Matrizes (transformações) similares"
     * Uma matriz $B$ é dita similar a uma matriz $A$ se $B = S^{-1}A\,S$ para qualquer matriz inversível $S$.
     * Se $B$ é similar a $A$, então $B$ tem os mesmo autovalores de $A$. Isso pode ser facilmente demonstrado (_verifique!_). 
-    * Como consequência de ter os mesmos autovalores, as duas matrizes terão também o mesmo traço (soma dos autovalores) e determinante (produto dos autovalores). 
+    * Como consequência de ter os mesmos autovalores, as duas matrizes terão também o mesmo traço (soma dos autovalores) e determinante (produto dos autovalores).
+    * Se a matriz $S$ for _unitária_ ela preservará normas e ângulos, de modo que se $A$ for uma representação do operador $\hat{A}$ numa base ortonormal, então $B$ também o será. Como sempre trabalhamos com bases ortogonais, estaremos interessados geralmente em transformações _unitárias_ de similaridade. 
 
 Uma questão interessante agora é se seria possível, em geral, encontrar uma transformação $S$ que transforme os autovetores de uma matriz $M$, geral, de tal modo que a eles passem a formar uma base do espaço. Algo, por exemplo, inverso ao mostrado na Figura 1. Em outras palavras, será que é possível encontrar uma transformação de similiaridade $S$ que coloque a matriz $M$ numa forma diagonal (i.e., que diagonalize $M$)?
 
@@ -282,4 +283,7 @@ D =
 $$
 
 onde $\lambda_i$ são os autovalores de $C$ e $D$.
+
+Será que esse procedimento funciona sempre? Não, nem sempre! Nem todas as matrizes são diagnalizáveis. Para isso algumas condições devem ser satisfeitas pela matriz $C$. Pode-se mostrar, porém, que toda matriz _normal_ é diagonalizável.
+ 
 
