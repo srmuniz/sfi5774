@@ -173,7 +173,7 @@ $$
 
 expresso nas bases $\{ \ket{b_i} \}$ e $\{ \ket{c_i} \}$, é sempre possível achar uma transformação de coordenadas que permita expressar as coordenadas $c_i$ desse vetor a partir das coordenadas $b_i$.
 
-Para vazer isso, basta encontrar a matriz (operador linear), $S$, que leva cada vetor $\ket{b_i}$  no correspondente vetor $\ket{c_i}$:
+Para isso, basta encontrar a matriz (operador linear), $S$, que leva cada vetor $\ket{b_i}$  no correspondente vetor $\ket{c_i}$:
 
 $$
 \ket{c_i} = S \ket{b_i} \rightarrow \ket{b_i} = S^{-1} \ket{c_i}
@@ -182,9 +182,60 @@ $$
 
 Uma forma de pensar nisso é que a transformação $S$ leva os vetores da base $\ket{b_i}$ nos vetores da base $\ket{c_i}$. Neste caso, $S$ é efetivamente um mapa de como fazer essa transformação dos vetores da base, e é uma receita (mapa) de como "levar" cada ponto de um sistema de coordenadas no ponto correspondente no outro sistema de coordenadas. Na verdade, é importante lembrar que aqui estamos interessados nas coordenadas (representação) do vetor, que está sendo representado nas diferentes bases (sistemas de coordenadas).  
 
+![picture](figuras/grid-transform3.png)
+**Figura 1: _Efeito de uma tranformação linear (S) num grid de pontos e nos versores da base_**
+
 Note, porém, que nessa interpretação todo o sistema de coordenadas é transformado. Ou seja, o _grid_ de pontos do espaço, onde cada ponto é espaçado pelos versores (vetores unitários) da base é transformado. Isso, em geral, representa "deformação" do espaço (mais estritamente, do grid de prontos representando o espaço). Se for linear, essa tranformação fará com que um conjunto de pontos igualmente espaçados continue igualmente espaçados, mas como eles podem sofrer uma mudança de escala, os comprimentos e áreas do _grid_ não são necessariamente conservados. Na verdade, pode-se demonstar que as áreas serão escaladas por uma fator exatamente igual ao determinante da matriz de transformação.
 
-Como escrever a matriz de transformação? 
+Como determinar a matriz de transformação?
+
+Na verdade, é bem simples. Basta considerar o efeito nos vetores da base. Usaremos a Fig. 1, acima, para ilustrar com um exemplo que nos ajudará a entender o processo. Imaginando que estamos indo da base $\ket{b_i}$, com os vetores indicados pelas setas potilhadas, e cujas coordenadas são 
+
+$$
+\ket{b_1} = \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix};  
+\quad
+\ket{b_2} = \begin{pmatrix} 0 \\ 1 \\ \end{pmatrix}
+$$ 
+ 
+os novos vetores da base $\ket{c_i}$ são dados por
+
+$$
+\ket{c_1}= 
+\left(
+\begin{array}{c}
+ \frac{1}{2} \\
+ \frac{3}{4} \\
+\end{array}
+\right);  
+\quad
+\ket{c_2}= 
+\left(
+\begin{array}{c}
+ -\frac{1}{3} \\
+ \frac{1}{2} \\
+\end{array}
+\right)
+\Rightarrow \quad 
+S = 
+\left(
+\begin{array}{cc}
+ \frac{1}{2} & -\frac{1}{3} \\
+ \frac{3}{4} & \frac{1}{2} \\
+\end{array}
+\right)
+$$
+
+Portanto, as colunas da matriz de transformação correspondem aos vetores transformados da nova "base" (agora não mais ortonormal).
+
+Dada a matriz de transformação $S$, sabemos como todos os vetores do espaço se transformam, pois sabemos como os vetores da base se transformam. Assim,  podemos facilmente traduzir as coordenadas de uma base na outra, com facilidade. Mas como são transformados (ou representado) os operadores lineares de uma base para outra?
+
+A resposta simples é, novamente, ver o efeito da ação sobre os vetores expressos nas duas representações (bases) e usar as relações de transformação entre os vetores das buas bases para expressar os elementos de matriz do operador na nova base.
+
+Pode-se demonstrar (_verifique!_) que, se $L$ for a representação matricial de um operador $\hat{L}$ na primeira base $\ket{b_i}$, a sua representação matricial na segunda base será dada por
+
+$$
+\tilde{L} = S^{-1}L\,S.
+$$
 
 
 ### Transformações de similaridade
@@ -196,7 +247,7 @@ Para simplificar a notação, vamos expressar os operadores por matrizes, mas o 
     * Se $B$ é similar a $A$, então $B$ tem os mesmo autovalores de $A$. Isso pode ser facilmente demonstrado (_verifique!_). 
     * Como consequência de ter os mesmos autovalores, as duas matrizes terão também o mesmo traço (soma dos autovalores) e determinante (produto dos autovalores). 
 
-Uma questão interessante agora é se seria possível, em geral, encontrar uma transformação $S$ que transforme os autovetores de uma matriz $M$ de tal modo que a eles formem uma base do espaço. Em outras palavras, será que é possível encontrar uma transformação de similiaridade $S$ que coloque a matriz $M$ numa forma diagonal (i.e., que diagonalize $M$)?
+Uma questão interessante agora é se seria possível, em geral, encontrar uma transformação $S$ que transforme os autovetores de uma matriz $M$, geral, de tal modo que a eles passem a formar uma base do espaço. Algo, por exemplo, inverso ao mostrado na Figura 1. Em outras palavras, será que é possível encontrar uma transformação de similiaridade $S$ que coloque a matriz $M$ numa forma diagonal (i.e., que diagonalize $M$)?
 
 Como vimos, nesta formulação da MQ usamos operadores lineares para representar grandezas físicas observáveis. Nesse contexto, vimos que os autovalores do operador estão associados aos valores das medidas daquele observável. Portanto, é muito desejável preservar os autovalores de um operador que represente grandezas físicas, se quiseremos buscar tranformação que o diagonalize. Para esse efeito, portanto, usaremos transformações de similidares. Mas como encontrar tais transformações? Como diagonalizar $M$?
 
