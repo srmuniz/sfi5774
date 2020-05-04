@@ -17,7 +17,7 @@
         <meta name="author" content="Sérgio R. Muniz @IFSC/USP">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
     
     
       
@@ -25,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.62d34fff.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.89dc9fe3.min.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/palette.c8acc6db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecd4686e.min.css">
       
       
         
@@ -118,7 +118,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            
+            Digite para iniciar a busca
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -395,6 +395,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#operadores-normais" class="md-nav__link">
+    Operadores Normais
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#operadores-unitarios" class="md-nav__link">
     Operadores Unitários
   </a>
@@ -402,8 +409,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comutadores" class="md-nav__link">
-    Comutadores
+  <a href="#comutadores-e-anticomutadores" class="md-nav__link">
+    Comutadores e anticomutadores
   </a>
   
 </li>
@@ -424,6 +431,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aulas_S7/" title="Aulas S7" class="md-nav__link">
+      Aulas S7
+    </a>
   </li>
 
     
@@ -623,6 +642,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#operadores-normais" class="md-nav__link">
+    Operadores Normais
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#operadores-unitarios" class="md-nav__link">
     Operadores Unitários
   </a>
@@ -630,8 +656,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comutadores" class="md-nav__link">
-    Comutadores
+  <a href="#comutadores-e-anticomutadores" class="md-nav__link">
+    Comutadores e anticomutadores
   </a>
   
 </li>
@@ -1376,7 +1402,7 @@ a \\
 \braket{w}{\hat{T}}{v} = \braket{v}{\hat{T}}{w}^* =\braket{w}{\hat{T^{\dagger}}}{v}
 </script>
 </div>
-<p>onde <span><span class="MathJax_Preview">\hat{T^{\dagger}}</span><script type="math/tex">\hat{T^{\dagger}}</script></span> (pronuncia-se "T <em>dagger</em>") é chamado de Hermitiado conjugaddo ou adjunto do operador <span><span class="MathJax_Preview">\hat{T}</span><script type="math/tex">\hat{T}</script></span>. </p>
+<p>onde <span><span class="MathJax_Preview">\hat{T^{\dagger}}</span><script type="math/tex">\hat{T^{\dagger}}</script></span> (pronuncia-se "T <em>dagger</em>") é chamado de conjugado Hermitiano, ou Hermitiado conjugado, ou ainda <strong>adjunto</strong> do operador <span><span class="MathJax_Preview">\hat{T}</span><script type="math/tex">\hat{T}</script></span>. </p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Como formar o Adjunto de uma expressão geral?</strong></p>
 <ol>
@@ -1386,8 +1412,8 @@ a \\
 <li>Inverta a ordem de todos os fatores na expressão.</li>
 </ol>
 </div>
-<p><strong>O Hermitiado Conjugado de uma matriz</strong></p>
-<p>Já sabemos como encontrar a matriz <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> de um operador <span><span class="MathJax_Preview">\hat{M}</span><script type="math/tex">\hat{M}</script></span> qualquer. Para encontrar a matriz do Adjunto desse, simbolizada por <span><span class="MathJax_Preview">M^{dagger}</span><script type="math/tex">M^{dagger}</script></span>, basta seguir os seguintes passos:</p>
+<p><strong>O conjugado Hermitiado de uma matriz</strong></p>
+<p>Já sabemos como encontrar a matriz <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> de um operador <span><span class="MathJax_Preview">\hat{M}</span><script type="math/tex">\hat{M}</script></span> qualquer. Para encontrar a matriz do Adjunto desse, simbolizada por <span><span class="MathJax_Preview">M^{\dagger}</span><script type="math/tex">M^{\dagger}</script></span>, basta seguir os seguintes passos:</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Matriz Adjunta</strong></p>
 <ol>
@@ -1414,7 +1440,7 @@ M^{\dagger}= \left( M^T \right)^*.
 </ol>
 </div>
 <h3 id="operadores-hermitianos">Operadores Hermitianos</h3>
-<p>Um operador é dito Hermitiano quando <span><span class="MathJax_Preview">\hat{T}^{\dagger}=\hat{T}</span><script type="math/tex">\hat{T}^{\dagger}=\hat{T}</script></span>. Para um operador Hemitiano, temos que</p>
+<p>Um operador é dito Hermitiano quando é auto-adjunto: <span><span class="MathJax_Preview">\hat{T}^{\dagger}=\hat{T}</span><script type="math/tex">\hat{T}^{\dagger}=\hat{T}</script></span>. Isto é, quando o seu adjunto é ele próprio. Para um operador Hemitiano, temos que</p>
 <div>
 <div class="MathJax_Preview">
 \braket{w}{\hat{T}}{v}=\braket{v}{\hat{T}}{w}^*
@@ -1437,6 +1463,16 @@ M = M^{\dagger}.
 <p>Como vimos, <span><span class="MathJax_Preview">M^{\dagger}</span><script type="math/tex">M^{\dagger}</script></span> corresponde ao complexo conjugado da matriz transposta. Portanto, para satisfazer essa condição, os elementos da diagonal principal da matriz devem ser todos números reais (não complexos). Como consequência, o traço do operador (matriz) será, necessariamente um número real.</p>
 <p><strong>Autovalores de um operador Hermitiano</strong></p>
 <p>Pode-se demonstrar que operadores Hermitianos tem autovalores reais (verifique!). Por conta dessa propriedade, requer-se que todos os observáveis físicos na mecânica quântica, sejam representados por operadores Hermitianos. Portanto, tanto o traço como os autovalores de um operador Hermitiano são números reais. </p>
+<p><strong>Autovetores de um operador Hermitiano</strong></p>
+<p>Outra propriedade importante dos operadores (matrizes) hermetianos é que os autovalores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (<em>verifique!</em>), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível, portanto, construir uma base (ortonormal) que gere o espaço.</p>
+<div class="admonition info">
+<p class="admonition-title">Propriedades de operadores hermitianos</p>
+<ol>
+<li>Autovalores reais</li>
+<li>Autovetores ortogonais, para autovalores diferentes</li>
+<li>Autovetores geram o espaço (podem formar uma base)</li>
+</ol>
+</div>
 <p><strong>Operador anti-Hermitiano</strong></p>
 <p>Um operador <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span> é dito anti-Hermitiano se:</p>
 <div>
@@ -1448,6 +1484,17 @@ A^{\dagger}=-A
 </script>
 </div>
 <p>Verifique que, neste caso, os elementos da diagonal principal do operador (matriz) anti-Hermitiano(a) são todos números imaginários puros.</p>
+<h3 id="operadores-normais">Operadores Normais</h3>
+<p>Um operador <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> é dito ser <em>normal</em> se </p>
+<div>
+<div class="MathJax_Preview">
+AA^{\dagger} = A^{\dagger}A.
+</div>
+<script type="math/tex; mode=display">
+AA^{\dagger} = A^{\dagger}A.
+</script>
+</div>
+<p>Claramente, um operador Hermitiano também é um operador normal. Operadores normais são interessantes pois há um teorema importante relacionado à sua representação que garante que eles podem ser escritos numa forma chamada de <em>decomposição espectral</em>, e que será bastante útil mais adiante. Voltaremos a falar deles quando discutirmos o processo de diagonalização de um operador.</p>
 <h3 id="operadores-unitarios">Operadores Unitários</h3>
 <p>Um operador <span><span class="MathJax_Preview">\hat{U}</span><script type="math/tex">\hat{U}</script></span> (de matriz <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span>) é unitário se:</p>
 <div>
@@ -1468,8 +1515,17 @@ U^{\dagger} = U^{-1}
 </script>
 </div>
 <p>ou seja, que a matriz adjunta é igual a matriz inversa.</p>
-<p>Outra importante característica das matrizes unitárias é que as linhas e colunas dessa matrizes formam um conjunto de vetores ortonormais. </p>
-<h3 id="comutadores">Comutadores</h3>
+<p>Outra importante característica das matrizes unitárias é que as linhas e colunas dessa matrizes formam um conjunto de vetores ortonormais. Pode-se perceber ainda que operadores unitários também são operadores normais e, portanto, podem tem uma decomposição spectral, como veremos depois. </p>
+<p>Finalmente, outra característica importante desses operadores é que geometricamente eles preservam o produto interno entre vetores, com pode ser facilmente verificado</p>
+<div>
+<div class="MathJax_Preview">
+( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbb{1}}{w}=\bra{v}w\rangle. 
+</div>
+<script type="math/tex; mode=display">
+( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbb{1}}{w}=\bra{v}w\rangle. 
+</script>
+</div>
+<h3 id="comutadores-e-anticomutadores">Comutadores e anticomutadores</h3>
 <p>Seja <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span> e <span><span class="MathJax_Preview">\hat{B}</span><script type="math/tex">\hat{B}</script></span> dois operadores lineares do espaço. Em geral, temos que <span><span class="MathJax_Preview">\hat{A}\hat{B} \ne \hat{B}\hat{A}.</span><script type="math/tex">\hat{A}\hat{B} \ne \hat{B}\hat{A}.</script></span> Assim, define-se o comutador <span><span class="MathJax_Preview">[\hat{A},\hat{B}]</span><script type="math/tex">[\hat{A},\hat{B}]</script></span> como sendo</p>
 <div>
 <div class="MathJax_Preview">
@@ -1489,6 +1545,16 @@ U^{\dagger} = U^{-1}
 <li>Se <span><span class="MathJax_Preview">\hat{X}</span><script type="math/tex">\hat{X}</script></span> e <span><span class="MathJax_Preview">\hat{P}</span><script type="math/tex">\hat{P}</script></span> representam os operadores posição e momento linear, então <span><span class="MathJax_Preview">[\hat{X}</span><script type="math/tex">[\hat{X}</script></span>, <span><span class="MathJax_Preview">\hat{P}]=i\hbar</span><script type="math/tex">\hat{P}]=i\hbar</script></span>, enquanto <span><span class="MathJax_Preview">[\hat{X}</span><script type="math/tex">[\hat{X}</script></span>, <span><span class="MathJax_Preview">\hat{X}]= [\hat{P}</span><script type="math/tex">\hat{X}]= [\hat{P}</script></span>, <span><span class="MathJax_Preview">\hat{P}]=0.</span><script type="math/tex">\hat{P}]=0.</script></span> </li>
 </ol>
 </div>
+<p><strong>Anticomutador</strong></p>
+<p>Define-se o anticomutador <span><span class="MathJax_Preview">\{\hat{A},\hat{B}\}</span><script type="math/tex">\{\hat{A},\hat{B}\}</script></span> como sendo</p>
+<div>
+<div class="MathJax_Preview">
+\{ \hat{A},\hat{B} \} = \hat{A}\hat{B} + \hat{B}\hat{A}.
+</div>
+<script type="math/tex; mode=display">
+\{ \hat{A},\hat{B} \} = \hat{A}\hat{B} + \hat{B}\hat{A}.
+</script>
+</div>
 <h3 id="conjunto-completo-de-observaveis-que-comutam-ccoc">Conjunto Completo de Observáveis que Comutam (CCOC)</h3>
 <p>Um conjunto de operadores <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span>, <span><span class="MathJax_Preview">\hat{B}</span><script type="math/tex">\hat{B}</script></span>, <span><span class="MathJax_Preview">\hat{C}, \dots</span><script type="math/tex">\hat{C}, \dots</script></span> forma um CCCO se todos os subpares desses operadores comutam entre si.</p>
 <div>
@@ -1500,6 +1566,7 @@ U^{\dagger} = U^{-1}
 </script>
 </div>
 <p>Isso implica que existe uma base comum de autovetores que é única para todos eles, exceto por um fator mutiplicativo.</p>
+<p>Para avançar para os tópicos das próximas aulas, use o menu de navegação ou <a href="../Aulas_S7/">clique aqui</a>.</p>
                 
                   
                     
@@ -1508,7 +1575,7 @@ U^{\dagger} = U^{-1}
 <div class="md-source-date">
   <small>
     
-      Última atualização: 30 de abril de 2020
+      Última atualização: 4 de maio de 2020
     
   </small>
 </div>
@@ -1546,13 +1613,13 @@ U^{\dagger} = U^{-1}
           </a>
         
         
-          <a href="../about/" title="About" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Aulas_S7/" title="Aulas S7" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Próximo
                 </span>
-                About
+                Aulas S7
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -1583,15 +1650,15 @@ U^{\dagger} = U^{-1}
       
     </div>
     
-      <script src="../assets/javascripts/vendor.f81b9e8b.min.js"></script>
-      <script src="../assets/javascripts/bundle.23546af0.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados"}</script>
+      <script src="../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
