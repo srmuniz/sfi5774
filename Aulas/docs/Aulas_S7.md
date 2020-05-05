@@ -266,8 +266,8 @@ Como fazemos para encontrar a transformação $S$?
 !!! info "Procedimento para encontrar a transformação S"
     1. Encontre os autovalore e autovetores da matriz $C$
     2. Normalize os autovetores de $C$
-    3. Forme a matriz $S^{-1}$ de modo que as colunas dessa matriz sejam os autovetores (colunas) normalizados de $C$
-    4. A matriz $S$ é a matriz inversa de $S^{-1}$, tal que $S^{-1}S=SS^{-1}=\mathbb{1}$.
+    3. Forme a matriz $S$ de modo que as colunas dessa matriz sejam os autovetores (colunas) normalizados de $C$
+    4. A matriz $S^{-1}$ é a matriz inversa* de $S$, tal que $S^{-1}S=SS^{-1}=\mathbb{1}$.
 
 Fica como um **exercício sugerido** demonstrar que este procedimento resulta na forma diagonal
 
@@ -290,4 +290,43 @@ A primeira condição é que para ser diagonalizável uma matriz deve ter autove
 
 Pode-se mostrar, porém, que toda matriz _normal_ é diagonalizável. Embora, essa não é uma condição necessária. Além disso, todas as matrizes hermitianas e todas as matrizes unitárias também são diagonalizáveis.
 
+<hr>
+!!! info "(*) Como calcular a matriz inversa"
 
+Seja $A$ uma matriz não singular 3x3, sua inversa é dada por:
+
+$$
+\mathbf{A}^{-1}=\frac{1}{|\mathbf{A}|}
+\left[\begin{array}{lll}
+\left|\begin{array}{ll}
+a_{22} & a_{23} \\
+a_{32} & a_{33}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{13} & a_{12} \\
+a_{33} & a_{32}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{12} & a_{13} \\
+a_{22} & a_{23}
+\end{array}\right| \\
+\left|\begin{array}{ll}
+a_{23} & a_{21} \\
+a_{33} & a_{31}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{11} & a_{13} \\
+a_{31} & a_{33}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{13} & a_{11} \\
+a_{23} & a_{21}
+\end{array}\right| \\
+\left|\begin{array}{ll}
+a_{21} & a_{22} \\
+a_{31} & a_{32}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{12} & a_{11} \\
+a_{32} & a_{31}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right|
+\end{array} \right]
+$$
