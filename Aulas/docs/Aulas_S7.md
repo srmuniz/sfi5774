@@ -532,8 +532,8 @@ A_{m 1} B & \dots & \dots & A_{m n} B
 \end{array}\right)
 \]
 
-Um vetor coluna em duas dimensões possui duas linhas e uma coluna. Como o produto tensorial entre uma matriz $(m \times n )$ 
-e uma matriz $(p \times q)$ tem $m p$ linhas e $n q$ colunas, o produto tensorial entre as duas matrizes $(2 \times 1)$ terá $(2 \times 2)=4$ linhas e $(1 \times 1)=1$ coluna. A forma de calcular isso é:
+Um vetor coluna em duas dimensões possui duas linhas e uma coluna. Como o produto tensorial entre uma matriz 
+$(m \times n)$ e uma matriz $(p \times q)$ tem $m p$ linhas e $n q$ colunas, o produto tensorial entre as duas matrizes $(2 \times 1)$ terá $(2 \times 2) = 4$ linhas e $(1 \times 1) = 1$ coluna. A forma de calcular isso é:
 
 \[
 \left(\begin{array}{l}
@@ -575,7 +575,6 @@ c w & c x & d w & d x \\
 c y & c z & d y & d z
 \end{array}\right)
 \]
-
 
 
 
