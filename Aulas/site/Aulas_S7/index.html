@@ -289,6 +289,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#59-subespacos-e-projetores" class="md-nav__link">
+    5.9 Subespaços e projetores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#510-funcoes-de-operadores" class="md-nav__link">
+    5.10 Funções de operadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#511-generalizacao-para-espacos-continuos" class="md-nav__link">
+    5.11 Generalização para espaços contínuos
+  </a>
+  
+    <nav class="md-nav" aria-label="5.11 Generalização para espaços contínuos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-de-ondas" class="md-nav__link">
+    Funções de ondas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#512-produto-tensorial" class="md-nav__link">
+    5.12 Produto tensorial
+  </a>
+  
+    <nav class="md-nav" aria-label="5.12 Produto tensorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#representacao-matricial-do-produto-tensorial" class="md-nav__link">
+    Representaçao matricial do produto tensorial
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -371,6 +425,60 @@
   <a href="#58-diagonalizacao-de-operadores" class="md-nav__link">
     5.8 Diagonalização de operadores
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-subespacos-e-projetores" class="md-nav__link">
+    5.9 Subespaços e projetores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#510-funcoes-de-operadores" class="md-nav__link">
+    5.10 Funções de operadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#511-generalizacao-para-espacos-continuos" class="md-nav__link">
+    5.11 Generalização para espaços contínuos
+  </a>
+  
+    <nav class="md-nav" aria-label="5.11 Generalização para espaços contínuos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-de-ondas" class="md-nav__link">
+    Funções de ondas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#512-produto-tensorial" class="md-nav__link">
+    5.12 Produto tensorial
+  </a>
+  
+    <nav class="md-nav" aria-label="5.12 Produto tensorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#representacao-matricial-do-produto-tensorial" class="md-nav__link">
+    Representaçao matricial do produto tensorial
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -764,8 +872,8 @@ D = S^{-1}C\,S.
 <ol>
 <li>Encontre os autovalore e autovetores da matriz <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></li>
 <li>Normalize os autovetores de <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></li>
-<li>Forme a matriz <span><span class="MathJax_Preview">S^{-1}</span><script type="math/tex">S^{-1}</script></span> de modo que as colunas dessa matriz sejam os autovetores (colunas) normalizados de <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></li>
-<li>A matriz <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> é a matriz inversa de <span><span class="MathJax_Preview">S^{-1}</span><script type="math/tex">S^{-1}</script></span>, tal que <span><span class="MathJax_Preview">S^{-1}S=SS^{-1}=\mathbb{1}</span><script type="math/tex">S^{-1}S=SS^{-1}=\mathbb{1}</script></span>.</li>
+<li>Forme a matriz <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> de modo que as colunas dessa matriz sejam os autovetores (colunas) normalizados de <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></li>
+<li>A matriz <span><span class="MathJax_Preview">S^{-1}</span><script type="math/tex">S^{-1}</script></span> é a matriz inversa<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> de <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>, tal que <span><span class="MathJax_Preview">S^{-1}S=SS^{-1}=\mathbb{1}</span><script type="math/tex">S^{-1}S=SS^{-1}=\mathbb{1}</script></span>.</li>
 </ol>
 </div>
 <p>Fica como um <strong>exercício sugerido</strong> demonstrar que este procedimento resulta na forma diagonal</p>
@@ -795,6 +903,536 @@ D =
 <p>Será que esse procedimento funciona sempre? Não, nem sempre! Nem todas as matrizes são diagnalizáveis. Para isso algumas condições devem ser satisfeitas pela matriz <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>. </p>
 <p>A primeira condição é que para ser diagonalizável uma matriz deve ter autovetores que geram o espaço. Assim, se todos os autovetores forem distintos, há uma boa chance dela ser diagonalizável. Mesmo quando há raízes múltiplias (degenerescência), em alguns casos, a matriz ainda pode ser diagonalizada, mas não sempre.</p>
 <p>Pode-se mostrar, porém, que toda matriz <em>normal</em> é diagonalizável. Embora, essa não é uma condição necessária. Além disso, todas as matrizes hermitianas e todas as matrizes unitárias também são diagonalizáveis.</p>
+<h2 id="59-subespacos-e-projetores">5.9 Subespaços e projetores</h2>
+<p>Considere um espaço n-dimensional <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> com um base ortonormal <span><span class="MathJax_Preview">\ket{1},\ket{2},\dots,\ket{n}</span><script type="math/tex">\ket{1},\ket{2},\dots,\ket{n}</script></span>. Um subespaço <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> de <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> é um subconjunto de <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> tal que <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> é ele próprio um espaço vetorial, com respeito as operações de soma e multplicação por um escalar. Podemos verificar que <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> é um espaço vetorial usando os mesmos critérios usuais, mas se <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> for um subconjunto de <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span>, basta verificar dois critérios</p>
+<ol>
+<li>O vetor <em>zero</em> (nulo) pertence a <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span></li>
+<li>Para todos os  vetores <span><span class="MathJax_Preview">\ket{u}</span><script type="math/tex">\ket{u}</script></span>, <span><span class="MathJax_Preview">\ket{v}</span><script type="math/tex">\ket{v}</script></span> em <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> e escalar <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>, temos que <span><span class="MathJax_Preview">\ket{u}+\ket{v}</span><script type="math/tex">\ket{u}+\ket{v}</script></span> e <span><span class="MathJax_Preview">\alpha \ket{u}</span><script type="math/tex">\alpha \ket{u}</script></span> pertencem a <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span>.  </li>
+</ol>
+<p>Para isso é útil usar o operador projetor, que já discutimos na <a href="../Aulas_S5-S6/#56-operadores-lineares">seção 5.6</a>. Relembrando sua definição:</p>
+<div class="admonition info">
+<p class="admonition-title">Operador de projeção: projetor</p>
+<p>Suponha um subespaço de dimensão <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>, onde <span><span class="MathJax_Preview">m&lt;n</span><script type="math/tex">m<n</script></span>, que tem uma base ortonormal <span><span class="MathJax_Preview">\mathcal{U} = \{ \ket{u_1},\ket{u_2},\dots,\ket{u_m} \}</span><script type="math/tex">\mathcal{U} = \{ \ket{u_1},\ket{u_2},\dots,\ket{u_m} \}</script></span>. O operador de projeção <span><span class="MathJax_Preview">\hat{P}_u</span><script type="math/tex">\hat{P}_u</script></span> é dado por</p>
+<div>
+<div class="MathJax_Preview">
+\hat{P}_u =\sum_{i=1}^{m} \ket{u_i]} \bra{u_i}.
+</div>
+<script type="math/tex; mode=display">
+\hat{P}_u =\sum_{i=1}^{m} \ket{u_i]} \bra{u_i}.
+</script>
+</div>
+<p>O operador de projeção tem duas propriedades importantes:</p>
+<ol>
+<li><span><span class="MathJax_Preview">\hat{P}=\hat{P}^\dagger</span><script type="math/tex">\hat{P}=\hat{P}^\dagger</script></span>, isto é, ele é um operador hermitiano.</li>
+<li><span><span class="MathJax_Preview">\hat{P}=\hat{P}\hat{P} \equiv \hat{P}^2</span><script type="math/tex">\hat{P}=\hat{P}\hat{P} \equiv \hat{P}^2</script></span>, é igual ao seu quadrado.</li>
+</ol>
+<p>Podemos formar o projetor de apenas um vetor da base <span><span class="MathJax_Preview">\hat{P}_i=\ket{u_i}\bra{u_i}</span><script type="math/tex">\hat{P}_i=\ket{u_i}\bra{u_i}</script></span> (imagine que o somatório estende-se apenas ao vetor <span><span class="MathJax_Preview">\ket{u_i}</span><script type="math/tex">\ket{u_i}</script></span>). Esse operador é totalmente válico e obedece as duas propriedades acima. Ele claramente é hermitiano, por exemplo, e também obedece a segunda propriedade (<em>verifique!</em>). </p>
+</div>
+<p>Considere, por exemplo, o efeito de <span><span class="MathJax_Preview">\hat{P}_i \ket{\Psi}</span><script type="math/tex">\hat{P}_i \ket{\Psi}</script></span>:</p>
+<div>
+<div class="MathJax_Preview">
+\hat{P}_i \ket{\Psi} = \ket{u_i} \bra{u_i} \Psi\rangle = (\bra{U_i}\Psi\rangle) \ket{u_i}.
+</div>
+<script type="math/tex; mode=display">
+\hat{P}_i \ket{\Psi} = \ket{u_i} \bra{u_i} \Psi\rangle = (\bra{U_i}\Psi\rangle) \ket{u_i}.
+</script>
+</div>
+<p>Veja que isso efetivamente "projeta" a componente de <span><span class="MathJax_Preview">\ket{\Psi}</span><script type="math/tex">\ket{\Psi}</script></span> na direção do vetor da base <span><span class="MathJax_Preview">\ket{u_i}</span><script type="math/tex">\ket{u_i}</script></span>. </p>
+<p>Observe também que o projetor de um dado espaço (subespaço) é igual ao opeador identidade daquele espaço (subespaço), satisfazendo a relação de completeza daquele espaço (subespaço):</p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{I}_m = \sum_{i=1}^{m} \ket{u_i} \bra{u_i} = \sum_{i=1}^{m} P_i = \mathbb{1}_m
+</div>
+<script type="math/tex; mode=display">
+\mathbf{I}_m = \sum_{i=1}^{m} \ket{u_i} \bra{u_i} = \sum_{i=1}^{m} P_i = \mathbb{1}_m
+</script>
+</div>
+<p>onde <span><span class="MathJax_Preview">\mathbf{I}_m=\mathbb{1}_m</span><script type="math/tex">\mathbf{I}_m=\mathbb{1}_m</script></span> expressa explicitamente uma matriz identidade de ordem <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>.</p>
+<h2 id="510-funcoes-de-operadores">5.10 Funções de operadores</h2>
+<p>Assim como podemos expandir uma função ordinária <span><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> numa série de Taylor<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>:</p>
+<div>
+<div class="MathJax_Preview">
+f(x) = \sum_{i=0}^{\infty} a_i x^i
+</div>
+<script type="math/tex; mode=display">
+f(x) = \sum_{i=0}^{\infty} a_i x^i
+</script>
+</div>
+<p>podemos, de forma similar, generalizar essa ideia para definir a função de um operador <span><span class="MathJax_Preview">F(\hat{A})</span><script type="math/tex">F(\hat{A})</script></span>:</p>
+<div>
+<div class="MathJax_Preview">
+F(\hat{A}) = \sum_{i=0}^{\infty} a_i \hat{A}^i
+</div>
+<script type="math/tex; mode=display">
+F(\hat{A}) = \sum_{i=0}^{\infty} a_i \hat{A}^i
+</script>
+</div>
+<p>Note, porém, que em geral os coeficientes <span><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> podem ser números complexos.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo: exponencial de um operador</p>
+<p>Vamos considerar um exemplo bastante importante na mecânica quântica, que é a exponencial de um operador. Usando a relação que aprendemos entre operadores e matrizes, usaremos a notação de matrizes, para simplificar.</p>
+<div>
+<div class="MathJax_Preview">
+\operatorname{exp}(H) = \operatorname{e}^H = \sum_{k=0}^{\infty} \frac{1}{k!} H^k = \mathbf{I} + H + \frac{1}{2} H^2 + \frac{1}{6} H^3 + \dots 
+</div>
+<script type="math/tex; mode=display">
+\operatorname{exp}(H) = \operatorname{e}^H = \sum_{k=0}^{\infty} \frac{1}{k!} H^k = \mathbf{I} + H + \frac{1}{2} H^2 + \frac{1}{6} H^3 + \dots 
+</script>
+</div>
+<p>onde <span><span class="MathJax_Preview">\mathbf{I}</span><script type="math/tex">\mathbf{I}</script></span> é matriz identidade, e <span><span class="MathJax_Preview">H^k</span><script type="math/tex">H^k</script></span> é potência <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> da matriz <span><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span>. </p>
+</div>
+<h2 id="511-generalizacao-para-espacos-continuos">5.11 Generalização para espaços contínuos</h2>
+<p>Para ajudar a fixar as ideias de espaços vetorias, aproveitando a analogia com os vetores do espaço euclidiano, que estamos acostumados na Física, até este ponto temos nos limitado à espaços discretos de dimensões finitas. Porém, o formalismo de espaços vetorias pode ser facilmente extendido também a espaços mais gerais, como espaços contínuos e infinitos. </p>
+<p>Neste caso, em geral, estamos falando do espaço das funções contínuas. Na verdade, mesmo sem perceber, já temos alguma familiaridade com esse tipo de espaço, mesmo na mecânica quântica, pois começamos a nossa discussão neste curso, falando da equação de Schrödinger e funções de ondas. Pois então, como seria de se esperar, as funçãos de ondas da mecânica quântica formam um espaço vetorial, com as mesmas propriedades dos espaços discretos que temos discutidos até agora. </p>
+<p>A seguir fazeremos uma breve introdução da notação usada para descrever espaços vetorias contínuos na mecânica quântica.</p>
+<p><strong>Vetores</strong></p>
+<p>Assim como os vetores de um espaço discreto e finito podem ser expandidos numa base ortonormal <span><span class="MathJax_Preview">\{ \ket{u_i},\ i=1,2,\dots  \}</span><script type="math/tex">\{ \ket{u_i},\ i=1,2,\dots  \}</script></span> com um número finito de componentes, os vetores de um espaço contínuo são representados numa base ortonomal <span><span class="MathJax_Preview">\{ \ket{w_{\alpha}},\ x_1 \le \alpha \le x_2  \}</span><script type="math/tex">\{ \ket{w_{\alpha}},\ x_1 \le \alpha \le x_2  \}</script></span> por um número infinito de pontos no intervalo <span><span class="MathJax_Preview">[a,b]</span><script type="math/tex">[a,b]</script></span>. Isto é, os (infinitos) coeficientes da expansão são representados por uma função <span><span class="MathJax_Preview">c(\alpha)</span><script type="math/tex">c(\alpha)</script></span>, nesse intervalo. Neste caso a expansão é escrita como:</p>
+<div>
+<div class="MathJax_Preview">
+\ket{\psi} = \int c(\alpha) \ket{w_{\alpha}} d \alpha 
+</div>
+<script type="math/tex; mode=display">
+\ket{\psi} = \int c(\alpha) \ket{w_{\alpha}} d \alpha 
+</script>
+</div>
+<p><strong>Produto interno</strong></p>
+<p>Sendo o vetor <span><span class="MathJax_Preview">\ket{\phi}=\int b(\alpha) \ket{w_{\alpha}} d \alpha</span><script type="math/tex">\ket{\phi}=\int b(\alpha) \ket{w_{\alpha}} d \alpha</script></span>. O produto interno dos vetores <span><span class="MathJax_Preview">\ket{\phi}</span><script type="math/tex">\ket{\phi}</script></span> e <span><span class="MathJax_Preview">\ket{\psi}</span><script type="math/tex">\ket{\psi}</script></span>, sendo os dois vetores expressos na base <span><span class="MathJax_Preview">\ket{w_{\alpha}}</span><script type="math/tex">\ket{w_{\alpha}}</script></span> é dado por:  </p>
+<div>
+<div class="MathJax_Preview">
+\bra{\phi}\psi\rangle = \int b(\alpha)^* c(\alpha) d\alpha
+</div>
+<script type="math/tex; mode=display">
+\bra{\phi}\psi\rangle = \int b(\alpha)^* c(\alpha) d\alpha
+</script>
+</div>
+<p><strong>Bases ortonormal</strong></p>
+<p>No espaço discreto temos:</p>
+<div>
+<div class="MathJax_Preview">
+\langle u_i | u_j \rangle = \delta_{ij}
+</div>
+<script type="math/tex; mode=display">
+\langle u_i | u_j \rangle = \delta_{ij}
+</script>
+</div>
+<p>onde <span><span class="MathJax_Preview">\delta_{ij}</span><script type="math/tex">\delta_{ij}</script></span> é o delta de Kronecker.</p>
+<p>No espaço contínuo temos:</p>
+<div>
+<div class="MathJax_Preview">
+\langle w_{\alpha} | w_{\alpha'} \rangle = \delta(\alpha-\alpha')
+</div>
+<script type="math/tex; mode=display">
+\langle w_{\alpha} | w_{\alpha'} \rangle = \delta(\alpha-\alpha')
+</script>
+</div>
+<p>onde <span><span class="MathJax_Preview">\delta(\alpha-\alpha')</span><script type="math/tex">\delta(\alpha-\alpha')</script></span> é a função delta de Dirac.</p>
+<p><strong>Relação de completeza</strong></p>
+<div>
+<div class="MathJax_Preview">
+\sum_i \ket{u_i} \bra{u_i} = \mathbf{\hat{1}}
+</div>
+<script type="math/tex; mode=display">
+\sum_i \ket{u_i} \bra{u_i} = \mathbf{\hat{1}}
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
+\int \ket{w_{\alpha}} \bra{w_{\alpha}} d\alpha = \mathbf{\hat{1}}
+</div>
+<script type="math/tex; mode=display">
+\int \ket{w_{\alpha}} \bra{w_{\alpha}} d\alpha = \mathbf{\hat{1}}
+</script>
+</div>
+<p><strong>Representação de operadores</strong></p>
+<p>Podemos também estender a representação de um operador para um espaço contínuo de maneira bastante similar e natural. Se imaginarmos uma representação matricial, o operador corresponderia a uma matriz "infinita", com um número infito de linhas e colunas, e os elementos de matrizes são pontos: </p>
+<div>
+<div class="MathJax_Preview">
+\hat{A} \Rightarrow\left(\begin{array}{ccc}
+\ddots &amp; \vdots &amp; \cdots \\
+\cdots &amp; A (\alpha, \alpha^{\prime} ) &amp; \cdots \\
+\cdots &amp; \cdots &amp; \ddots
+\end{array}\right).
+</div>
+<script type="math/tex; mode=display">
+\hat{A} \Rightarrow\left(\begin{array}{ccc}
+\ddots & \vdots & \cdots \\
+\cdots & A (\alpha, \alpha^{\prime} ) & \cdots \\
+\cdots & \cdots & \ddots
+\end{array}\right).
+</script>
+</div>
+<p>Seguindo numa analogia geométrica, podemos imaginar um plano de pontos (elementos de matriz) cujos valores são dados por uma função de duas varíaveis <span><span class="MathJax_Preview">A(\alpha, \alpha^{\prime})</span><script type="math/tex">A(\alpha, \alpha^{\prime})</script></span>, determinador por:</p>
+<div>
+<div class="MathJax_Preview">
+A(\alpha, \alpha^{\prime}) = \int \bra{w_{\alpha}} A \ket{w_{\alpha}} d \alpha
+</div>
+<script type="math/tex; mode=display">
+A(\alpha, \alpha^{\prime}) = \int \bra{w_{\alpha}} A \ket{w_{\alpha}} d \alpha
+</script>
+</div>
+<h3 id="funcoes-de-ondas">Funções de ondas</h3>
+<p>A generalização para espaços contínuos nos permite conectar as diferenes representações da mecânica quântica, assim como várias ideias já discutidas neste curso, mas que pareciam estar, literalmente, em "espaços" (contextos) diferentes. Por exemplo, nos permite conectar a mecânica ondulatória com a mecância matricial, assim como formulação em termos de funções de ondas <span><span class="MathJax_Preview">\psi(x)</span><script type="math/tex">\psi(x)</script></span> com o vetor <span><span class="MathJax_Preview">\ket{\psi}</span><script type="math/tex">\ket{\psi}</script></span>.</p>
+<p>Na linguagem dos espaços vetoriais contínuos, a função contínua <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> é uma representação (coeficientes) do vetor <span><span class="MathJax_Preview">\ket{x}</span><script type="math/tex">\ket{x}</script></span>, da mesma forma, o momento linear está relacionado a um vetor <span><span class="MathJax_Preview">\ket{p}</span><script type="math/tex">\ket{p}</script></span>. Nesta descrição, as função de ondas <span><span class="MathJax_Preview">\psi(x)</span><script type="math/tex">\psi(x)</script></span> e <span><span class="MathJax_Preview">\bar{\psi}(p)</span><script type="math/tex">\bar{\psi}(p)</script></span> são dadas por </p>
+<div>
+<div class="MathJax_Preview">
+\psi(x) = \bra{x} \psi \rangle, \qquad \bar{\psi}(p) = \bra{p} \psi \rangle
+</div>
+<script type="math/tex; mode=display">
+\psi(x) = \bra{x} \psi \rangle, \qquad \bar{\psi}(p) = \bra{p} \psi \rangle
+</script>
+</div>
+<p>e correspondem, respectivamente, às representações do vetor <span><span class="MathJax_Preview">\ket{\psi}</span><script type="math/tex">\ket{\psi}</script></span> nas bases de posição e momento, definidas pelas funções</p>
+<div>
+<div class="MathJax_Preview">
+\xi_{x_0}(x)=\delta(x-x_0), \qquad v_{p_0}=\frac{1}{\sqrt{2\pi}\hbar}e^{ip_0x/\hbar}.
+</div>
+<script type="math/tex; mode=display">
+\xi_{x_0}(x)=\delta(x-x_0), \qquad v_{p_0}=\frac{1}{\sqrt{2\pi}\hbar}e^{ip_0x/\hbar}.
+</script>
+</div>
+<p>Observe que essas funções de base satisfazem as condições necessárias</p>
+<div>
+<div class="MathJax_Preview">
+\bra{x}x'\rangle = \delta(x-x'), \qquad \mathbf{\hat{1}}=\int \ket{x} \bra{x} dx
+</div>
+<script type="math/tex; mode=display">
+\bra{x}x'\rangle = \delta(x-x'), \qquad \mathbf{\hat{1}}=\int \ket{x} \bra{x} dx
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
+\bra{p}p'\rangle = \delta(p-p'), \qquad \mathbf{\hat{1}}=\int \ket{p} \bra{p} dp
+</div>
+<script type="math/tex; mode=display">
+\bra{p}p'\rangle = \delta(p-p'), \qquad \mathbf{\hat{1}}=\int \ket{p} \bra{p} dp
+</script>
+</div>
+<p>Além disso, o produto interno entre posição e momento é dado por</p>
+<div>
+<div class="MathJax_Preview">
+\bra{x}p\rangle = \bra{p}x\rangle^* = \frac{1}{\sqrt{2\pi}\hbar}e^{i p_0 x /\hbar}.
+</div>
+<script type="math/tex; mode=display">
+\bra{x}p\rangle = \bra{p}x\rangle^* = \frac{1}{\sqrt{2\pi}\hbar}e^{i p_0 x /\hbar}.
+</script>
+</div>
+<p>Finalmente, usando a relação de completeza podemos mostrar que as funções de ondas nos espaços da posição e momento estão relacionados através de uma transformada de Fourier:</p>
+<div>
+<div class="MathJax_Preview">
+\begin{aligned}
+\psi(x) &amp;=\langle x | \psi\rangle=\langle x|1| \psi\rangle=\left\langle x\left|\left(\int|p\rangle\langle p| d p\right)\right| \psi\right&gt;  \\
+&amp;=\int\langle x | p\rangle\langle p | \psi\rangle d p \\
+&amp;=\frac{1}{\sqrt{2 \pi} \hbar} \int e^{i \frac{p x}{\hbar}} \bar{\psi}(p) d p
+\end{aligned}
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\psi(x) &=\langle x | \psi\rangle=\langle x|1| \psi\rangle=\left\langle x\left|\left(\int|p\rangle\langle p| d p\right)\right| \psi\right>  \\
+&=\int\langle x | p\rangle\langle p | \psi\rangle d p \\
+&=\frac{1}{\sqrt{2 \pi} \hbar} \int e^{i \frac{p x}{\hbar}} \bar{\psi}(p) d p
+\end{aligned}
+</script>
+</div>
+<h2 id="512-produto-tensorial">5.12 Produto tensorial</h2>
+<p>Se um <span><span class="MathJax_Preview">\mathcal{V}</span><script type="math/tex">\mathcal{V}</script></span> é um espaço de dimensão <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> e <span><span class="MathJax_Preview">\mathcal{W}</span><script type="math/tex">\mathcal{W}</script></span> é um espaço de dimensão <span><span class="MathJax_Preview">q</span><script type="math/tex">q</script></span>, então o espaço</p>
+<div>
+<div class="MathJax_Preview">
+V \otimes W
+</div>
+<script type="math/tex; mode=display">
+V \otimes W
+</script>
+</div>
+<p>tem dimensão <span><span class="MathJax_Preview">p q</span><script type="math/tex">p q</script></span>. </p>
+<p>Seja <span><span class="MathJax_Preview">|v\rangle \in V</span><script type="math/tex">|v\rangle \in V</script></span> e <span><span class="MathJax_Preview">|w\rangle \in W</span><script type="math/tex">|w\rangle \in W</script></span> dois vetores desses espaços. Então o vetor <span><span class="MathJax_Preview">|v\rangle \otimes|w\rangle \in V \otimes W</span><script type="math/tex">|v\rangle \otimes|w\rangle \in V \otimes W</script></span>. </p>
+<p>Notações alternativas do vetor <span><span class="MathJax_Preview">|v\rangle \otimes|w\rangle</span><script type="math/tex">|v\rangle \otimes|w\rangle</script></span> incluem <span><span class="MathJax_Preview">|v\rangle|w\rangle</span><script type="math/tex">|v\rangle|w\rangle</script></span> e <span><span class="MathJax_Preview">|v w\rangle</span><script type="math/tex">|v w\rangle</script></span>. </p>
+<p>Se <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> é um operador que atua no espaço <span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> e <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> é um operador que atua no espaço <span><span class="MathJax_Preview">W,</span><script type="math/tex">W,</script></span> então o operador formado pelo produto tensorial dado por </p>
+<div>
+<div class="MathJax_Preview">
+A \otimes B
+</div>
+<script type="math/tex; mode=display">
+A \otimes B
+</script>
+</div>
+<p>atua nos vetores <span><span class="MathJax_Preview">|v\rangle \otimes|w\rangle</span><script type="math/tex">|v\rangle \otimes|w\rangle</script></span> da seguinte maneira:</p>
+<div>
+<div class="MathJax_Preview">
+(A \otimes B)|v\rangle|w\rangle=(A|v\rangle)(B|w\rangle)
+</div>
+<script type="math/tex; mode=display">
+(A \otimes B)|v\rangle|w\rangle=(A|v\rangle)(B|w\rangle)
+</script>
+</div>
+<p>Considerando agora a norma de um vetor que pertença a <span><span class="MathJax_Preview">V \otimes W .</span><script type="math/tex">V \otimes W .</script></span> Suponha que </p>
+<div>
+<div class="MathJax_Preview">
+|\psi\rangle=|v\rangle|w\rangle.
+</div>
+<script type="math/tex; mode=display">
+|\psi\rangle=|v\rangle|w\rangle.
+</script>
+</div>
+<p>Neste caso, a norma  é dada por </p>
+<div>
+<div class="MathJax_Preview">
+\langle\psi | \psi\rangle=\langle v | v\rangle\langle w | w\rangle
+</div>
+<script type="math/tex; mode=display">
+\langle\psi | \psi\rangle=\langle v | v\rangle\langle w | w\rangle
+</script>
+</div>
+<h3 id="representacao-matricial-do-produto-tensorial">Representaçao matricial do produto tensorial</h3>
+<p>Seja <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> uma matriz <span><span class="MathJax_Preview">(m \times n)</span><script type="math/tex">(m \times n)</script></span> e <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> uma matriz <span><span class="MathJax_Preview">(p \times q)</span><script type="math/tex">(p \times q)</script></span>. O produto tensorial <span><span class="MathJax_Preview">A \otimes B</span><script type="math/tex">A \otimes B</script></span> é a matriz com <span><span class="MathJax_Preview">m p</span><script type="math/tex">m p</script></span> linhas e <span><span class="MathJax_Preview">n q</span><script type="math/tex">n q</script></span> colunas. Os elementos desta matriz são construídos pelas submatrizes:</p>
+<div>
+<div class="MathJax_Preview">
+A_{i j} B
+</div>
+<script type="math/tex; mode=display">
+A_{i j} B
+</script>
+</div>
+<p>ou seja, multiplique <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> por cada componente de <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> e arrange essas submatrizes numa matriz maior. A matriz completa, representando o produto tensorial é dada por:</p>
+<div>
+<div class="MathJax_Preview">
+A=\left(\begin{array}{cccc}
+A_{11} B &amp; A_{12} B &amp; \dots &amp; A_{1 n} B \\
+A_{21} B &amp; A_{22} B &amp; \dots &amp; \vdots \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+A_{m 1} B &amp; \dots &amp; \dots &amp; A_{m n} B
+\end{array}\right)
+</div>
+<script type="math/tex; mode=display">
+A=\left(\begin{array}{cccc}
+A_{11} B & A_{12} B & \dots & A_{1 n} B \\
+A_{21} B & A_{22} B & \dots & \vdots \\
+\vdots & \vdots & \ddots & \vdots \\
+A_{m 1} B & \dots & \dots & A_{m n} B
+\end{array}\right)
+</script>
+</div>
+<p>Um vetor coluna em duas dimensões possui duas linhas e uma coluna. Como o produto tensorial entre uma matriz 
+<span><span class="MathJax_Preview">(m \times n)</span><script type="math/tex">(m \times n)</script></span> e uma matriz <span><span class="MathJax_Preview">(p \times q)</span><script type="math/tex">(p \times q)</script></span> tem <span><span class="MathJax_Preview">m p</span><script type="math/tex">m p</script></span> linhas e <span><span class="MathJax_Preview">n q</span><script type="math/tex">n q</script></span> colunas, o produto tensorial entre as duas matrizes <span><span class="MathJax_Preview">(2 \times 1)</span><script type="math/tex">(2 \times 1)</script></span> terá <span><span class="MathJax_Preview">(2 \times 2) = 4</span><script type="math/tex">(2 \times 2) = 4</script></span> linhas e <span><span class="MathJax_Preview">(1 \times 1) = 1</span><script type="math/tex">(1 \times 1) = 1</script></span> coluna. A forma de calcular isso é:</p>
+<div>
+<div class="MathJax_Preview">
+\left(\begin{array}{l}
+a \\
+b
+\end{array}\right) \otimes\left(\begin{array}{l}
+c \\
+d
+\end{array}\right)=\left(\begin{array}{l}
+a c \\
+a d \\
+b c \\
+b d
+\end{array}\right)
+</div>
+<script type="math/tex; mode=display">
+\left(\begin{array}{l}
+a \\
+b
+\end{array}\right) \otimes\left(\begin{array}{l}
+c \\
+d
+\end{array}\right)=\left(\begin{array}{l}
+a c \\
+a d \\
+b c \\
+b d
+\end{array}\right)
+</script>
+</div>
+<p>Agora considere o produto tensorial de duas matrizes <span><span class="MathJax_Preview">2 \times 2</span><script type="math/tex">2 \times 2</script></span>.  </p>
+<div>
+<div class="MathJax_Preview">
+A=\left(\begin{array}{ll}
+a &amp; b \\
+c &amp; d
+\end{array}\right), \quad B=\left(\begin{array}{ll}
+w &amp; x \\
+y &amp; z
+\end{array}\right)
+</div>
+<script type="math/tex; mode=display">
+A=\left(\begin{array}{ll}
+a & b \\
+c & d
+\end{array}\right), \quad B=\left(\begin{array}{ll}
+w & x \\
+y & z
+\end{array}\right)
+</script>
+</div>
+<p>Esse produto tensorial será uma matriz <span><span class="MathJax_Preview">(4 \times 4)</span><script type="math/tex">(4 \times 4)</script></span>: </p>
+<div>
+<div class="MathJax_Preview">
+A \otimes B=\left(\begin{array}{cc}
+a B &amp; b B \\
+c B &amp; d B
+\end{array}\right)=\left(\begin{array}{cccc}
+a w &amp; a x &amp; b w &amp; b x \\
+a y &amp; a z &amp; b y &amp; b z \\
+c w &amp; c x &amp; d w &amp; d x \\
+c y &amp; c z &amp; d y &amp; d z
+\end{array}\right)
+</div>
+<script type="math/tex; mode=display">
+A \otimes B=\left(\begin{array}{cc}
+a B & b B \\
+c B & d B
+\end{array}\right)=\left(\begin{array}{cccc}
+a w & a x & b w & b x \\
+a y & a z & b y & b z \\
+c w & c x & d w & d x \\
+c y & c z & d y & d z
+\end{array}\right)
+</script>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<div class="admonition info">
+<p class="admonition-title">Como calcular a matriz inversa</p>
+</div>
+<p>Se <span><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> uma matriz não singular, sua inversa é dada por:</p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{A}^{-1}=\frac{1}{|\mathbf{A}|} \mathbf{C}^{\mathrm{T}}=\frac{1}{|\mathbf{A}|}\left(\begin{array}{cccc}
+\mathbf{C}_{11} &amp; \mathbf{C}_{21} &amp; \cdots &amp; \mathbf{C}_{n 1} \\
+\mathbf{C}_{12} &amp; \mathbf{C}_{22} &amp; \cdots &amp; \mathbf{C}_{n 2} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\mathbf{C}_{1 n} &amp; \mathbf{C}_{2 n} &amp; \cdots &amp; \mathbf{C}_{n n}
+\end{array}\right)  
+</div>
+<script type="math/tex; mode=display">
+\mathbf{A}^{-1}=\frac{1}{|\mathbf{A}|} \mathbf{C}^{\mathrm{T}}=\frac{1}{|\mathbf{A}|}\left(\begin{array}{cccc}
+\mathbf{C}_{11} & \mathbf{C}_{21} & \cdots & \mathbf{C}_{n 1} \\
+\mathbf{C}_{12} & \mathbf{C}_{22} & \cdots & \mathbf{C}_{n 2} \\
+\vdots & \vdots & \ddots & \vdots \\
+\mathbf{C}_{1 n} & \mathbf{C}_{2 n} & \cdots & \mathbf{C}_{n n}
+\end{array}\right)  
+</script>
+</div>
+<p>onde <span><span class="MathJax_Preview">\mathbf{C}</span><script type="math/tex">\mathbf{C}</script></span> é a matriz de cofatores <span><span class="MathJax_Preview">\mathbf{C_{ij}} = (-1)^{i+j}\ \mathbf{D_{ij}}</span><script type="math/tex">\mathbf{C_{ij}} = (-1)^{i+j}\ \mathbf{D_{ij}}</script></span>, sendo <span><span class="MathJax_Preview">\mathbf{D_{ij}}</span><script type="math/tex">\mathbf{D_{ij}}</script></span> o determinante da matriz menor <span><span class="MathJax_Preview">\mathbf{\tilde{A}_{ij}}</span><script type="math/tex">\mathbf{\tilde{A}_{ij}}</script></span>, obtida a partir da exclusão da linha <span><span class="MathJax_Preview">\mathbf{i}</span><script type="math/tex">\mathbf{i}</script></span> e coluna <span><span class="MathJax_Preview">\mathbf{j}</span><script type="math/tex">\mathbf{j}</script></span> da matriz <span><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span>. O termo <span><span class="MathJax_Preview">|\mathbf{A}|=\operatorname{det}(\mathbf{A})</span><script type="math/tex">|\mathbf{A}|=\operatorname{det}(\mathbf{A})</script></span> representa o determinante de  <span><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span>.  </p>
+<p>Se <span><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> for uma matriz 3x3, sua inversa é dada por:</p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{A}^{-1}=\frac{1}{|\mathbf{A}|}
+\left(\begin{array}{lll}
+\left|\begin{array}{ll}
+a_{22} &amp; a_{23} \\
+a_{32} &amp; a_{33}
+\end{array}\right| &amp; \left|\begin{array}{ll}
+a_{13} &amp; a_{12} \\
+a_{33} &amp; a_{32}
+\end{array}\right| &amp; \left|\begin{array}{ll}
+a_{12} &amp; a_{13} \\
+a_{22} &amp; a_{23}
+\end{array}\right| \\
+\left|\begin{array}{ll}
+a_{23} &amp; a_{21} \\
+a_{33} &amp; a_{31}
+\end{array}\right| &amp; \left|\begin{array}{ll}
+a_{11} &amp; a_{13} \\
+a_{31} &amp; a_{33}
+\end{array}\right| &amp; \left|\begin{array}{ll}
+a_{13} &amp; a_{11} \\
+a_{23} &amp; a_{21}
+\end{array}\right| \\
+\left|\begin{array}{ll}
+a_{21} &amp; a_{22} \\
+a_{31} &amp; a_{32}
+\end{array}\right| &amp; \left|\begin{array}{ll}
+a_{12} &amp; a_{11} \\
+a_{32} &amp; a_{31}
+\end{array}\right| &amp; \left|\begin{array}{ll}
+a_{11} &amp; a_{12} \\
+a_{21} &amp; a_{22}
+\end{array}\right|
+\end{array} \right)
+</div>
+<script type="math/tex; mode=display">
+\mathbf{A}^{-1}=\frac{1}{|\mathbf{A}|}
+\left(\begin{array}{lll}
+\left|\begin{array}{ll}
+a_{22} & a_{23} \\
+a_{32} & a_{33}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{13} & a_{12} \\
+a_{33} & a_{32}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{12} & a_{13} \\
+a_{22} & a_{23}
+\end{array}\right| \\
+\left|\begin{array}{ll}
+a_{23} & a_{21} \\
+a_{33} & a_{31}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{11} & a_{13} \\
+a_{31} & a_{33}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{13} & a_{11} \\
+a_{23} & a_{21}
+\end{array}\right| \\
+\left|\begin{array}{ll}
+a_{21} & a_{22} \\
+a_{31} & a_{32}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{12} & a_{11} \\
+a_{32} & a_{31}
+\end{array}\right| & \left|\begin{array}{ll}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right|
+\end{array} \right)
+</script>
+</div>
+<p>Se <span><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> for uma matriz 2x2, sua inversa é simplesmente:</p>
+<div>
+<div class="MathJax_Preview">\mathbf{A}^{-1}=\left(\begin{array}{ll}
+a &amp; b \\
+c &amp; d
+\end{array}\right)^{-1}=\frac{1}{\operatorname{det}(\mathbf{A})}\left(\begin{array}{rr}
+d &amp; -b \\
+-c &amp; a
+\end{array}\right)=\frac{1}{a d-b c}\left(\begin{array}{rr}
+d &amp; -b \\
+-c &amp; a
+\end{array}\right)</div>
+<script type="math/tex; mode=display">\mathbf{A}^{-1}=\left(\begin{array}{ll}
+a & b \\
+c & d
+\end{array}\right)^{-1}=\frac{1}{\operatorname{det}(\mathbf{A})}\left(\begin{array}{rr}
+d & -b \\
+-c & a
+\end{array}\right)=\frac{1}{a d-b c}\left(\begin{array}{rr}
+d & -b \\
+-c & a
+\end{array}\right)</script>
+</div>
+<p><a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<hr>
+
+<div class="admonition info">
+<p class="admonition-title">Séries de Taylor</p>
+</div>
+<p>Para uma função contínua <span><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span>, que seja infinitamente diferenciável, a série de Taylor é uma sua expansão em série de potencias do tipo:</p>
+<div>
+<div class="MathJax_Preview">
+f(x_0) = \sum_{k=1}^{\infty} \frac{1}{k!} \left(\frac{df}{dx}\right)^k_{x=x_0} (x-x_0)^k = \sum_{k=1}^{\infty} \frac{f^{('k)}(x_0)}{k!} (x-x_0)^k.
+</div>
+<script type="math/tex; mode=display">
+f(x_0) = \sum_{k=1}^{\infty} \frac{1}{k!} \left(\frac{df}{dx}\right)^k_{x=x_0} (x-x_0)^k = \sum_{k=1}^{\infty} \frac{f^{('k)}(x_0)}{k!} (x-x_0)^k.
+</script>
+</div>
+<p><a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
                   
                     
@@ -803,7 +1441,7 @@ D =
 <div class="md-source-date">
   <small>
     
-      Última atualização: 4 de maio de 2020
+      Última atualização: 7 de maio de 2020
     
   </small>
 </div>
