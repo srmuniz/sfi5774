@@ -432,7 +432,7 @@ $$
 A(\alpha, \alpha^{\prime}) = \int \bra{w_{\alpha}} A \ket{w_{\alpha}} d \alpha
 $$
 
-**Funções de ondas**
+### Funções de ondas
 
 A generalização para espaços contínuos nos permite conectar as diferenes representações da mecânica quântica, assim como várias ideias já discutidas neste curso, mas que pareciam estar, literalmente, em "espaços" (contextos) diferentes. Por exemplo, nos permite conectar a mecânica ondulatória com a mecância matricial, assim como formulação em termos de funções de ondas $\psi(x)$ com o vetor $\ket{\psi}$.
 
@@ -513,7 +513,7 @@ Neste caso, a norma  é dada por
 \]
 
 
-**Representaçao matricial do produto tensorial**
+### Representaçao matricial do produto tensorial
 
 Seja $A$ uma matriz $(m \times n)$ e $B$ uma matriz $(p \times q)$. O produto tensorial $A \otimes B$ é a matriz com $m p$ linhas e $n q$ colunas. Os elementos desta matriz são construídos pelas submatrizes:
 
