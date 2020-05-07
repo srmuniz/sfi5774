@@ -14,7 +14,7 @@ Embora ainda num estágio preliminar, este site oferece acesso às notas de aula
 * [`Aula 9`](./Aulas_S5-S6/#53-espacos-de-hilbert-espacos-vetoriais-da-mq)
 * [`Aula 10`](./Aulas_S5-S6/#algebra-de-dirac)
 * [`Aula 11`](./Aulas_S7/)
-* [`Aula 12`](./Aulas_S7/#58-diagonalizacao-de-operadores)
+* [`Aula 12`](./Aulas_S7/#59-subespacos-e-projetores)
 
 <p></p>
 ### **Conteúdos oficiais desta disciplina** ###
