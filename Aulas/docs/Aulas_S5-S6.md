@@ -357,7 +357,7 @@ $$
 $$
 note que o produto externo resulta num operador e não num escalar! Essa construção será muito útil, como veremos adiante.
 
-- **Operador projetor:** usando o produto externo, podemos calcular as projeções de um dado vetor numa base $\{ u_i \}$, fazendo 
+- **Operador projetor:** usando o produto externo, podemos calcular as projeções de um dado vetor numa certa direção $\ket{u_i}$, ou numa base $\{ u_i \}$, fazendo 
 
 $$
 \begin{array}{ll}
