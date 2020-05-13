@@ -23,7 +23,8 @@ A seguir nós iremos nos concentra em como usar esse ambiente para as atividades
 <hr>
 
 ## Números e operações básicas
-Python é uma linguagem interpretada, em contraste com liguagens compiladas, o que significa que, além de gerar programas (scripts) você também pode interagir diretamente com o interpretador e, por exemplo, fazer cáculos como numa calculadora. 
+Python é uma linguagem interpretada, em contraste com linguagens compiladas, o que significa que, além de gerar programas (scripts) você também pode interagir diretamente com o interpretador e, por exemplo, fazer cálculos como numa calculadora. 
+
 
 
 ```python
@@ -73,7 +74,9 @@ Python é uma linguagem interpretada, em contraste com liguagens compiladas, o q
 
 
 
+
 ### Números complexos
+
 
 
 ```python
@@ -111,7 +114,9 @@ Python é uma linguagem interpretada, em contraste com liguagens compiladas, o q
 
 
 
+
 Podemos definir variáveis, atribuindo valores numéricos (tanto reais, como complexos) a essas variáveis 
+
 
 
 ```python
@@ -127,7 +132,9 @@ z
 
 
 
-Usando o método **.conjugate()** é possível acessar o complexo cojugado do valor associado a uma variável.
+
+Usando o método **.conjugate()** é possível acessar o complexo conjugado do valor associado a uma variável.
+
 
 
 ```python
@@ -153,9 +160,10 @@ r.conjugate()
 
 
 
-(😃) **Variáveis dinâmicas:** em Python a atribuição de variáveis é feita dinamicamente, no sentido que o tipo da variável <br>(i.e., como ela é armazenada internamente na memória) é determinado automaticamente, dependo do valor atribuído a ela. <br>Por isso não é necessário escolher _a priori_ o tipo da variável. É só usar...  ( _mas tome cuidado!_ )
+(😃) **Variáveis dinâmicas:** em Python a atribuição de variáveis é feita dinamicamente, no sentido que o tipo da variável (i.e., como ela é armazenada internamente na memória) é determinado automaticamente, dependo do valor atribuído a ela. <br>Por isso não é necessário escolher _a priori_ o tipo da variável. É só usar...  ( _mas tome cuidado!_ )
 
 ### Listas
+
 
 
 ```python
@@ -171,6 +179,7 @@ lista  #mostra os resultados (valor da variável)
 
 
 Você pode acessar e "manipular" os valores dos elementos na lista, usando seu índice. Os índices em Python sempre começam no elemento "zero"...
+
 
 
 ```python
@@ -211,6 +220,7 @@ lista[-1]  # e este, consegue imaginar??
 Listas podem ter diferentes tipos de elementos, não apenas números:
 
 
+
 ```python
 lista2 = ['a', 'b', 'c', 'd','texto também pode!','😉','👍😃✌']
 lista + lista2  # o que será que vai sair disso?? (que operação é essa?)
@@ -227,24 +237,27 @@ Para mais informações sobre como usar listas, acesse este [link para o tutoria
 
  <hr>
 
-## Estendendo a funcionalidade com bibliotecas
-A linguagem Python tem um número gigantesco de  **bibliotecas** (extensões da linguagem) especializadas em tarefas específicas. Elas aumentam muito o funcionalidade e os recursos da liguagem. Além da [Biblioteca Padrão](https://docs.python.org/pt-br/3.7/library/index.html#library-index), existe um grande número de bibliotecas produzidas pela comunidade de código aberto, especialmente na [área científica](https://scipy.org). 
 
-A filosofia da liguagem é diferene de várias outras liguagens, mantendo apenas um _core_ (núcleo) mínimo de palavras reservadas ("keywords" e [identificadores](https://docs.python.org/pt-br/3.7/reference/lexical_analysis.html#identifiers)), deixando funcionalidades mais específicas para essas bibliotecas especializadas. Assim, especialmente para o uso científico do Python, nós precisaremo usar essas extensões. 
+## Estendendo a funcionalidade com bibliotecas
+A linguagem Python tem um número gigantesco de  **bibliotecas** (extensões da linguagem) especializadas em tarefas específicas. Elas aumentam muito o funcionalidade e os recursos da linguagem. Além da [Biblioteca Padrão](https://docs.python.org/pt-br/3.7/library/index.html#library-index), existe um grande número de bibliotecas produzidas pela comunidade de código aberto, especialmente na [área científica](https://scipy.org). 
+
+A filosofia da linguagem é diferente de várias outras linguagens, mantendo apenas um _core_ (núcleo) mínimo de palavras reservadas ("keywords" e [identificadores](https://docs.python.org/pt-br/3.7/reference/lexical_analysis.html#identifiers)), deixando funcionalidades mais específicas para essas bibliotecas especializadas. Assim, especialmente para o uso científico do Python, nós precisaremos usar essas extensões. 
 
 Usaremos várias delas ao longo deste curso, principalmente [Numpy](https://numpy.org/doc/stable/user/index.html), [Scipy](https://scipy.org/), [Matplotlib](https://matplotlib.org/) e [SymPy](https://www.sympy.org/en/index.html), além, claro do próprio Jupyter, que também é uma extensão da linguagem, como resultado da evolução do [IPython](https://ipython.org/). 
 
 Abaixo eu mostro como carregar algumas delas.
 
 
+
 ```python
-from numpy import array, dot, outer, sqrt, matrix, linspace, sin, cos
+from numpy import array, matrix, dot, outer, sqrt, sin
 from numpy.linalg import eig, eigvals
 from matplotlib.pyplot import hist, plot
 %matplotlib inline
 ```
 
 Outra forma de fazer isso é:
+
 
 
 ```python
@@ -254,11 +267,12 @@ import numpy.linalg as la
 
 ### Vetores
 Praticamente toda linguagem de programação possui algum tipo de estrutura para armazenar dados de um determinado tipo (geralmente números, mas também caracteres). Geralmente são chamados de "**arrays**" (que no caso do Python, estão na biblioteca [Numpy](https://numpy.org/doc/stable/), que foi carregado acima). No nosso idioma eles são normalmente traduzido como "vetores". <br>
-Esses vetores são parecidos, mas _nem sempre equivalentes_ , ao conceito de vetores usado na Física ou na Algebra Linear.
+Esses vetores são parecidos, mas _nem sempre equivalentes_ , ao conceito de vetores usado na Física ou na Álgebra Linear.
 
-Podemos, porém, definir e usar formalmente algo análogo aos vetores que temos usado neste curso, mesmo no sentido de espaços vetorias complexos...
+Podemos, porém, definir e usar formalmente algo análogo aos vetores que temos usado neste curso, mesmo no sentido de espaços vetoriais complexos...
 
 Abaixo eu mostro como definir vetores **linhas** e **colunas**, como os usados na MQ.
+
 
 
 ```python
@@ -320,6 +334,10 @@ dot(vc,vl)  # CUIDADO!! A ordem faz diferença... (porque??!)
     ValueError: shapes (3,1) and (3,) not aligned: 1 (dim 1) != 3 (dim 0)
 
 
+Acima você vê como é uma **mensagem de erro** no Python... 🔺
+
+Observe atentamente e verá que tem a ver com as dimensões das matrizes que se tentou multiplicar.
+
 
 ```python
 outer (vc,vl)  # retorna um operador linear (não um escalar!)
@@ -348,7 +366,38 @@ outer (vl,vc) # note que a ordem dos vetores mudou, assim como a matriz do opera
 
 
 
+Você pode aplicar operação matemáticas sobre vetores e matrizes, atuando em cada elemento, como seria de se esperar...
+
+
+```python
+sin(vc)  # calcula o seno de cada elemento do vetor vc
+```
+
+
+
+
+    array([[-0.7568025 ],
+           [-0.95892427],
+           [-0.2794155 ]])
+
+
+
+
+```python
+sin(outer (vc,vl))  # calcula o seno de cada elemento da matriz
+```
+
+
+
+
+    array([[-0.7568025 ,  0.98935825, -0.53657292],
+           [-0.95892427, -0.54402111,  0.65028784],
+           [-0.2794155 , -0.53657292, -0.75098725]])
+
+
+
 ### Vetores de números complexos (como no espaço de Hilbert)
+
 
 
 ```python
@@ -369,7 +418,7 @@ v1*v1  # produto (direto) de dois vetores complexos (você entendeu o resultado?
 
 
 ```python
-v1*v1.conjugate()  # multiplicando pelo complexo conjutado (retorna um real)
+v1*v1.conjugate()  # multiplicando pelo complexo conjugado (retorna um real)
 ```
 
 
@@ -404,7 +453,8 @@ dot(v1.conjugate(),v1)   # use o dot() para obter o produtor interno (escalar)
 
 
 ### Matrizes
-Podemos também, claro, definir matrizes, que são objetos muito importantes neste curso. Na linguagem Python (usando a Numpy), podemos definir matrizes de duas formas. Uma é usando o mesmo comando **array**, que, na verdade, funciona para "vetores multdimensionais" dentro da linguagem. A outra forma será mostrada também nos exemplos.
+Podemos também, claro, definir matrizes, que são objetos muito importantes neste curso. Na linguagem Python (usando a Numpy), podemos definir matrizes de duas formas. Uma é usando o mesmo comando **array**, que, na verdade, funciona para "vetores multidimensionais" dentro da linguagem. A outra forma será mostrada também nos exemplos.
+
 
 
 
@@ -467,6 +517,7 @@ dot(m1,array([ 0, 1]))
 ### Buscando ajuda com os comandos "_?_"  e " _help()_ " 
 
 
+
 ```python
 # use o sinal de interrogação para acessar o comando help() 
 eig?
@@ -477,7 +528,7 @@ eig?
 # assim também funciona... (mas o resultado é diferente)
 help(eig)
 ```
-   
+
     Help on function eig in module numpy.linalg:
     
     eig(a)
@@ -596,8 +647,8 @@ help(eig)
         array([1., 1.])
         array([[1., 0.],
                [0., 1.]])
-
-
+    
+    
 
 <hr>
 <hr>
@@ -611,6 +662,7 @@ Lembra aquele exemplo...
 $$
 M = \begin{pmatrix} 1 & 2 \\ 1 & 0 \end{pmatrix}
 $$
+
 
 
 ```python
@@ -629,6 +681,7 @@ M
 Quais os autovalores e autovetores? 
 
 
+
 ```python
 eig(M)
 ```
@@ -645,11 +698,13 @@ eig(M)
 Vamos explorar os elementos desse objeto, atribuindo-o a uma variável.
 
 
+
 ```python
 autos = eig(M)
 ```
 
 Ao fazer isso, a função eig(M) retorna um objeto diferente dos que vimos até agora, chamado **Tuple**. Esse objeto é também uma coleção de elementos ordenados, parecido com uma lista, mas é indicado pelo símbolo de parênteses, ao invés dos colchetes. Podemos acessar os elementos de um **tuple**, de forma parecida com as **listas** e **arrays**. Veja os exemplos:
+
 
 
 ```python
@@ -679,6 +734,7 @@ autos[1]
 Observer que este elemento (o segundo elemento do tuple) é uma matriz Numpy. Seus elementos podem ser acessados como qualquer matriz (ou array) no numpy. Por exemplo, para acessar o primeiro vetor linha
 
 
+
 ```python
 autos[1][0]
 ```
@@ -705,6 +761,7 @@ dot(autos[1][0],M)  # multiplicação à esquerda de um vetor linha pelo operado
 Você já deve ter notado que **eig(M)** retorna os autovalores de **M**, no primeiro elemento do tuple, e os autovetores, no segundo elemento do tuple. Os autovetores estão na forma de vetores colunas.
 
 
+
 ```python
 autoV = autos[1]   # transpondo a matriz
 autoV
@@ -718,7 +775,8 @@ autoV
 
 
 
-podemos calcular a norma dos vetores colunas através do método **numpy.linalg.norm()**, que aqui pode ser acessado de uma forma abrevidas, pois já carregamos essa numpy.linalg com o alias  "$\textrm{la}$"
+podemos calcular a norma dos vetores colunas através do método **numpy.linalg.norm()**, que aqui pode ser acessado de uma forma abreviada, pois já carregamos essa numpy.linalg com o alias  "$\textrm{la}$"
+
 
 
 ```python
@@ -732,7 +790,8 @@ la.norm(autoV.T[1])
 
 
 
-Talvez lhe seja mais familiar, se divindo por $\sqrt2$ e $\sqrt5$ (fatorando esses termos), como fizemos nas aulas.
+Talvez lhe seja mais familiar, se dividirmos por $\sqrt2$ e $\sqrt5$ (fatorando esses termos), como fizemos nas aulas.
+
 
 
 ```python
@@ -763,8 +822,9 @@ autoV.T[0].T/sqrt(5)
 podemos agora testar se os autovetores estão corretos, aplicando o operador sobre eles
 
 
+
 ```python
-dot(M,autoV.T[1].T)/sqrt(2)  # resulta no autovetor multplicado por seu autovalor
+dot(M,autoV.T[1].T)/sqrt(2)  # resulta no autovetor multiplicado por seu autovalor
 ```
 
 
@@ -777,7 +837,7 @@ dot(M,autoV.T[1].T)/sqrt(2)  # resulta no autovetor multplicado por seu autovalo
 
 
 ```python
-dot(M,autoV.T[0].T)/sqrt(5)  # resulta no autovetor multplicado por seu autovalor
+dot(M,autoV.T[0].T)/sqrt(5)  # resulta no autovetor multiplicado por seu autovalor
 ```
 
 
@@ -788,12 +848,12 @@ dot(M,autoV.T[0].T)/sqrt(5)  # resulta no autovetor multplicado por seu autovalo
 
 
 
-Vale lembrar que um autovetor continua sendo um autovetor quando multiplicado por um escalar (a direção não muda!), portanto fatores multiplicativos não são relevanes para autovetores. Você pode observar, por exemplo, que o o primeiro autovetores acima, tem um fator de 2 com relação ao que havíamos determinado manualmente, na aula. 
-
+Vale lembrar que um autovetor continua sendo um autovetor quando multiplicado por um escalar (a direção não muda!), portanto fatores multiplicativos não são relevantes para autovetores. Você pode observar, por exemplo, que o o primeiro autovetores acima, tem um fator de 2 com relação ao que havíamos determinado manualmente, na aula. 
 
 **Transformação de similaridade**
 
-Podemos faze mais um exemplo de uso desse rescusos para demostrar o método de diagonalização discutido nas últimas aulas. Vimos que a a transformação **S** pode ser construída com os autovetores do operador (neste caso, a matriz **M**). Neste caso, a matriz **S** será exatamente a matriz autoV, calculada acima...
+Podemos faze mais um exemplo de uso desse recursos para demostrar o método de diagonalização discutido nas últimas aulas. Vimos que a a transformação **S** pode ser construída com os autovetores do operador (neste caso, a matriz **M**). Neste caso, a matriz **S** será exatamente a matriz autoV, calculada acima...
+
 
 
 ```python
@@ -852,8 +912,8 @@ B=
 \end{pmatrix}
 $$
 
-
 **Agora é sua vez:** comece escrevendo essas matriz num formato que a linguagem Python entenda. 
+
 
 
 ```python
@@ -861,6 +921,7 @@ $$
 ```
 
 Depois calcule as duas **inversas** (na lista foi pedido apenas de A) e **verifique se elas comutam**.
+
 
 
 ```python
@@ -875,10 +936,10 @@ _Numpy_ faria todo o trabalho pesado para você!! Parece-me motivação suficien
 
 <hr>
 
-
 ### Exemplo 3
 
 Como último exemplo, vamos considerar agora o uma aplicação de distribuição estatística. Por exemplo, considere que foram feitas várias medidas de um observável o resultado é dado por uma lista de valores, como a abaixo.
+
 
 
 ```python
@@ -899,7 +960,7 @@ n1, bins1, patches1 = hist(m,bins=5,range=(5,14))
 ```
 
 
-![png](./figuras/output_89_0.png)
+![png](./figuras/output_87_0.png)
 
 
 
@@ -922,7 +983,7 @@ n2, bins2, patches2 = hist(vetor,bins=5,range=(1,14))
 ```
 
 
-![png](./figuras/output_91_0.png)
+![png](./figuras/output_89_0.png)
 
 
 
@@ -938,6 +999,7 @@ n2
 
 
 Podemos agora facilmente calcular a probabilidade (a partir das medidas, não a teórica) dos resultados dessas medidas.
+
 
 
 ```python
@@ -977,6 +1039,7 @@ print("A soma de todas as probabilidades pvals2 =",np.sum(pvals2))
     
 
 Vamos nos aprofundar um pouco mais nisso, pois vale a pena...
+
 
 
 ```python
@@ -1032,6 +1095,7 @@ $$
 $$
 
 
+
 ```python
 m2 = dot(p,m**2)
 m2
@@ -1064,12 +1128,13 @@ hist(pm,100);
 ```
 
 
-![png](./figuras/output_104_0.png)
+![png](./figuras/output_102_0.png)
 
 
 $$
 p(x)=\frac{1}{\sigma \sqrt{2\pi} } \exp \left(\frac{-(x - \langle m \rangle)^2}{2 \sigma^2} \right)
 $$
+
 
 
 ```python
@@ -1081,13 +1146,13 @@ plt.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) *
 ```
 
 
-![png](./figuras/output_106_0.png)
+![png](./figuras/output_104_0.png)
 
 
 **Sugestão:**  tenta agora usar esses dados para calcular a probabilidade de se obter um determinado valor $m_k$ (ou, mais estritamente falando, um intervalo entre $m_k$ e  $m_k + dm$.). Agora você teria, provavelmente, muito mais chances de fazer uma boa comparação com os valores teóricos calculados (analiticamente) para um operador observável físico.
 
 
+
 ```python
 
 ```
-
