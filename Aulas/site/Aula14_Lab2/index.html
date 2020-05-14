@@ -1,0 +1,960 @@
+
+
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complemento _online_ às aulas da disciplina de Mecânica Quântica Aplicada do IFSC/USP">
+      
+      
+        <link rel="canonical" href="https://srmuniz.github.io/sfi5774/Aula14_Lab2/">
+      
+      
+        <meta name="author" content="Sérgio R. Muniz @IFSC/USP">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Aula 14 - Lab 2 - SFI5774</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.89dc9fe3.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-2-computacao-simbolica-em-python" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://srmuniz.github.io/sfi5774/" title="SFI5774" class="md-header-nav__button md-logo" aria-label="SFI5774">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SFI5774
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Aula 14 - Lab 2
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Digite para iniciar a busca
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://srmuniz.github.io/sfi5774" title="Ir ao repositório" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sfi5774/Aulas/
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://srmuniz.github.io/sfi5774/" title="SFI5774" class="md-nav__button md-logo" aria-label="SFI5774">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    SFI5774
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://srmuniz.github.io/sfi5774" title="Ir ao repositório" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sfi5774/Aulas/
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aulas_S5-S6/" title="Aulas S5 & S6" class="md-nav__link">
+      Aulas S5 & S6
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aulas_S7/" title="Aulas S7" class="md-nav__link">
+      Aulas S7
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula13_Lab1/" title="Aula 13 - Lab 1" class="md-nav__link">
+      Aula 13 - Lab 1
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Aula 14 - Lab 2
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Aula 14 - Lab 2" class="md-nav__link md-nav__link--active">
+      Aula 14 - Lab 2
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computacao-simbolica" class="md-nav__link">
+    Computação Simbólica
+  </a>
+  
+    <nav class="md-nav" aria-label="Computação Simbólica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-usar-variaveis-simbolicas" class="md-nav__link">
+    Como usar?  - variáveis simbólicas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcoes-e-graficos" class="md-nav__link">
+    Funções e gráficos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrizes" class="md-nav__link">
+    Matrizes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculo" class="md-nav__link">
+    Cálculo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#series-de-potencias" class="md-nav__link">
+    Séries de potências
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#series-de-fourier" class="md-nav__link">
+    Séries de Fourier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformada-de-fourier" class="md-nav__link">
+    Transformada de Fourier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-e-exercicios" class="md-nav__link">
+    Exemplos e exercícios
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos e exercícios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1" class="md-nav__link">
+    Exemplo 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2" class="md-nav__link">
+    Exemplo 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computacao-simbolica" class="md-nav__link">
+    Computação Simbólica
+  </a>
+  
+    <nav class="md-nav" aria-label="Computação Simbólica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-usar-variaveis-simbolicas" class="md-nav__link">
+    Como usar?  - variáveis simbólicas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcoes-e-graficos" class="md-nav__link">
+    Funções e gráficos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrizes" class="md-nav__link">
+    Matrizes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculo" class="md-nav__link">
+    Cálculo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#series-de-potencias" class="md-nav__link">
+    Séries de potências
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#series-de-fourier" class="md-nav__link">
+    Séries de Fourier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformada-de-fourier" class="md-nav__link">
+    Transformada de Fourier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-e-exercicios" class="md-nav__link">
+    Exemplos e exercícios
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos e exercícios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1" class="md-nav__link">
+    Exemplo 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2" class="md-nav__link">
+    Exemplo 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="lab-2-computacao-simbolica-em-python">Lab 2: Computação Simbólica em Python</h1>
+<p>Neste notebook veremos como utilizar recursos de computação algébrica, com expressões analíticas, dentro do ambiente Jupyter notebook. Para isso, usaremos a biblioteca <a href="https://www.sympy.org/pt/index.html">SymPy</a>. A intenção aqui é fornecer uma introdução básica ao tema, concentrando-se em como usar esses recursos no contexto do nosso curso. Para mais informações, você pode consultar a excelente <a href="https://docs.sympy.org/latest/index.html">documentação</a> do <strong>SymPy</strong> que está disponível online. Um bom ponto de partida é o <a href="https://docs.sympy.org/latest/tutorial/index.html">Tutorial do SymPy</a>.</p>
+<p>Em particular, <strong>não deixe de ler</strong> <a href="https://docs.sympy.org/latest/tutorial/gotchas.html#symbols">Gotchas!</a>, para evitar problemas comuns de sintaxe!! 😉</p>
+<h2 id="computacao-simbolica">Computação Simbólica</h2>
+<p>A computação simbólica envolve a computação de objetos matemáticos simbolicamente. Isso significa que os objetos matemáticos são representados exatamente, não aproximadamente, e expressões matemáticas com variáveis não avaliadas são deixadas em forma simbólica, ou algébrica.</p>
+<p>Para entender a diferença veja os exemplos abaixo</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A raiz de 9 é:&#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A raiz de 8 é:&#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+</code></pre></div>
+
+<pre><code>A raiz de 9 é: 3.0
+A raiz de 8 é: 2.8284271247461903
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A raiz de 9 é:&#39;</span><span class="p">,</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A raiz de 8 é:&#39;</span><span class="p">,</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+</code></pre></div>
+
+<pre><code>A raiz de 9 é: 3
+A raiz de 8 é: 2*sqrt(2)
+</code></pre>
+<p>Na aula passada, alguém perguntou porque o seno de <span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span> não era exatamente zero num dos resultados. Expliquei que isso era devido a aproximação finita que sempre existe ao representar um número no computador. As ferramentas de computação algébrica (CAS - <a href="https://en.wikipedia.org/wiki/List_of_computer_algebra_systems"> <em>Computer Algebra System</em> </a> ), como o SymPy, usam recursos especiais para representar um número sem aproximações na memória do computador. Isso vem com um custo computacional, mas é bastante útil em várias situações, como veremos. Veja abaixo como SymPy avalia o <span><span class="MathJax_Preview">\text{sen}(\pi)</span><script type="math/tex">\text{sen}(\pi)</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">sympy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>  <span class="c1"># resultado do seno de pi, com o SymPy</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle 0</span><script type="math/tex">\displaystyle 0</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>    <span class="c1"># resultado do seno de pi, com a biblioteca padrão do Python</span>
+</code></pre></div>
+
+<pre><code>1.2246467991473532e-16
+</code></pre>
+<p>Além de eliminar os <strong>erros de arredondamento</strong>, a computação algébrica permite manipular algebricamente expressões matemática e até mesmo aplicar ferramentas de Cálculo, como derivadas e integrais. Veremos exemplos mais adiante.</p>
+<h3 id="como-usar-variaveis-simbolicas">🤔 Como usar?  - variáveis simbólicas</h3>
+<p>De maneira bem resumida, além de carregar a biblioteca <strong>SymPy</strong> e aprender sua sintaxe, o primeiro passo principal é definir uma <strong>variável como simbólica</strong>, como é mostrado nos exemplos abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y z t&#39;</span><span class="p">)</span> 
+</code></pre></div>
+
+<p>Agora os identificadores (variáveis) "x, y, z, t" são variáveis simbólicas e serão tratadas como objetos sympy, e não mais como identificadores usuais do Python. Podemos, então definir funções com essas variáveis e usá-las em expressões algébricas. O exemplo abaixo, calcula a derivada de <span><span class="MathJax_Preview">e^{-2x^2}</span><script type="math/tex">e^{-2x^2}</script></span>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle - 4 x e^{- 2 x^{2}}</span><script type="math/tex">\displaystyle - 4 x e^{- 2 x^{2}}</script></span></p>
+<p>Para simplificar a sintaxe, e evitar ficar digitando <strong>sympy.</strong> o tempo todo, podemos carregar as funções diretamente (mas cuidado com isso!!), ou usar uma atalho (alias), com já mostramos na última aula. Aqui, para simplificar, eu vou carregar todas as funções que usaremos neste tutorial, na linha abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">series</span><span class="p">,</span> <span class="n">solve</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span><span class="n">oo</span>
+<span class="n">diff</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle - 4 x e^{- 2 x^{2}}</span><script type="math/tex">\displaystyle - 4 x e^{- 2 x^{2}}</script></span></p>
+<p>Podemos usar <strong>solve</strong> para resolver equações, como, por exemplo <span><span class="MathJax_Preview">x^2 - 8 = 0</span><script type="math/tex">x^2 - 8 = 0</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>[-2*sqrt(2), 2*sqrt(2)]
+</code></pre>
+<p>para tornar a apresentação das resposta mais agradável, podemos usar o comando</p>
+<div class="highlight"><pre><span></span><code><span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \left[ - 2 \sqrt{2}, \  2 \sqrt{2}\right]</span><script type="math/tex">\displaystyle \left[ - 2 \sqrt{2}, \  2 \sqrt{2}\right]</script></span></p>
+<p>Ou simplificar expressões algébricas</p>
+<div class="highlight"><pre><span></span><code><span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> 
+<span class="n">simplify</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+
+<pre><code> 3    2        
+x  + x  - x - 1
+───────────────
+   2           
+  x  + 2⋅x + 1
+</code></pre>
+<p><span><span class="MathJax_Preview">\displaystyle x - 1</span><script type="math/tex">\displaystyle x - 1</script></span></p>
+<hr>
+
+<h2 id="funcoes-e-graficos">Funções e gráficos</h2>
+<p>A forma mais simples de definir uma função no SymPy é simplesmente definir uma nova variável atribuindo uma expressão com variáveis simbólicas</p>
+<div class="highlight"><pre><span></span><code><span class="n">expr</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">expr</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle x^{3} - 5 x^{2} + 3 x + 2</span><script type="math/tex">\displaystyle x^{3} - 5 x^{2} + 3 x + 2</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">sympy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">expr</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>  <span class="c1"># é fácil plotar o gráfico de uma função</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_24_0.png" /></p>
+<p>Para mais informações veja a <a href="https://docs.sympy.org/latest/modules/functions/index.html?highlight=function#module-sympy.functions">documentação online</a>.</p>
+<hr>
+
+<h2 id="matrizes">Matrizes</h2>
+<p>É possível definir matrizes com o comando <strong>Matrix()</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># define M com a nossa velha conhecida matriz...</span>
+<span class="n">M</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \left[\begin{matrix}1 &amp; 2\\1 &amp; 0\end{matrix}\right]</span><script type="math/tex">\displaystyle \left[\begin{matrix}1 & 2\\1 & 0\end{matrix}\right]</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>   <span class="c1"># calcula o determinante da matriz M</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle -2</span><script type="math/tex">\displaystyle -2</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">M</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>   <span class="c1"># matriz inversa</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \left[\begin{matrix}0 &amp; 1\\\frac{1}{2} &amp; - \frac{1}{2}\end{matrix}\right]</span><script type="math/tex">\displaystyle \left[\begin{matrix}0 & 1\\\frac{1}{2} & - \frac{1}{2}\end{matrix}\right]</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">M</span><span class="o">.</span><span class="n">eigenvals</span><span class="p">()</span>   <span class="c1"># autovalores</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \left\{ -1 : 1, \  2 : 1\right\}</span><script type="math/tex">\displaystyle \left\{ -1 : 1, \  2 : 1\right\}</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">M</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()</span>  <span class="c1"># autovetores</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \left[ \left( -1, \  1, \  \left[ \left[\begin{matrix}-1\\1\end{matrix}\right]\right]\right), \  \left( 2, \  1, \  \left[ \left[\begin{matrix}2\\1\end{matrix}\right]\right]\right)\right]</span><script type="math/tex">\displaystyle \left[ \left( -1, \  1, \  \left[ \left[\begin{matrix}-1\\1\end{matrix}\right]\right]\right), \  \left( 2, \  1, \  \left[ \left[\begin{matrix}2\\1\end{matrix}\right]\right]\right)\right]</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">sympy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># matriz identidade de ordem 4</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1\end{matrix}\right]</span><script type="math/tex">\displaystyle \left[\begin{matrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & 1\end{matrix}\right]</script></span></p>
+<p>Podemos também definir uma matriz de variáveis e funções simbólicas! 😉</p>
+<div class="highlight"><pre><span></span><code><span class="n">G</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">x</span><span class="p">],[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">G</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \left[\begin{matrix}x^{2} &amp; x + y\\2 x^{3} y &amp; 5 y^{3}\end{matrix}\right]</span><script type="math/tex">\displaystyle \left[\begin{matrix}x^{2} & x + y\\2 x^{3} y & 5 y^{3}\end{matrix}\right]</script></span></p>
+<p>Para mais informações e recursos, veja a <a href="https://docs.sympy.org/latest/tutorial/matrices.html?highlight=matrix">documentação online</a>. Vale a pena ver a parte de <strong>diagonalização</strong>.</p>
+<hr>
+
+<h2 id="calculo">Cálculo</h2>
+<p>Vejamos alguns exemplos de como usar sympy em Cálculo...</p>
+<p><strong>Derivadas</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle e^{x} \sin{\left(x \right)} + e^{x} \cos{\left(x \right)}</span><script type="math/tex">\displaystyle e^{x} \sin{\left(x \right)} + e^{x} \cos{\left(x \right)}</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">diff</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># calcula a terceira derivada de exp(2*x) </span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle 8 e^{2 x}</span><script type="math/tex">\displaystyle 8 e^{2 x}</script></span></p>
+<p>Podemos aplicar derivadas em objetos mais complexos, como matrizes, por exemplo.</p>
+<div class="highlight"><pre><span></span><code><span class="n">diff</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># a matriz G foi definida acima</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \left[\begin{matrix}2 x &amp; 1\\6 x^{2} y &amp; 0\end{matrix}\right]</span><script type="math/tex">\displaystyle \left[\begin{matrix}2 x & 1\\6 x^{2} y & 0\end{matrix}\right]</script></span></p>
+<p>Para calcular <strong>derivadas parciais</strong>, como <span><span class="MathJax_Preview">\frac{\partial^2}{\partial x \partial y} e^{(x^2+y^3)}</span><script type="math/tex">\frac{\partial^2}{\partial x \partial y} e^{(x^2+y^3)}</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">diff</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">3</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># derivadas parciais com relação a x e y</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle 6 x y^{2} e^{x^{2} + y^{3}}</span><script type="math/tex">\displaystyle 6 x y^{2} e^{x^{2} + y^{3}}</script></span></p>
+<p><strong>Integração</strong> 
+- integrais indefinidas: <code>integrate(expr, variável)</code>
+- integrais definidas:   <code>integrate(expr, (var_int, lim_inf, lim_sup))</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">integrate</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \sin{\left(x \right)}</span><script type="math/tex">\displaystyle \sin{\left(x \right)}</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># integral de uma gaussiana no intervalo {0,oo}</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>  <span class="c1"># O símbolo &quot;oo&quot; representa infinito</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \frac{\sqrt{\pi}}{2}</span><script type="math/tex">\displaystyle \frac{\sqrt{\pi}}{2}</script></span></p>
+<p>Há ainda outra forma de definir de a integral, que pode ser conveniente</p>
+<div class="highlight"><pre><span></span><code><span class="n">integral</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Integral</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+<span class="n">integral</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \int \sin{\left(x^{2} \right)}\, dx</span><script type="math/tex">\displaystyle \int \sin{\left(x^{2} \right)}\, dx</script></span></p>
+<p>A variável <em>integral</em> representa a integração indicada acima. Para realizar o cálculo, pode-se usar <strong>.doit()</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">integral</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \frac{3 \sqrt{2} \sqrt{\pi} S\left(\frac{\sqrt{2} x}{\sqrt{\pi}}\right) \Gamma\left(\frac{3}{4}\right)}{8 \Gamma\left(\frac{7}{4}\right)}</span><script type="math/tex">\displaystyle \frac{3 \sqrt{2} \sqrt{\pi} S\left(\frac{\sqrt{2} x}{\sqrt{\pi}}\right) \Gamma\left(\frac{3}{4}\right)}{8 \Gamma\left(\frac{7}{4}\right)}</script></span></p>
+<p>O método <strong>.doit()</strong> pode ser usado em outros contextos também.</p>
+<hr>
+
+<h2 id="series-de-potencias">Séries de potências</h2>
+<p>Podemos facilmente expandir em <strong>série de Taylor</strong>, usando o comando <strong>series()</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">series</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + \frac{x^{5}}{120} + O\left(x^{6}\right)</span><script type="math/tex">\displaystyle 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + \frac{x^{5}}{120} + O\left(x^{6}\right)</script></span></p>
+<p>Se definirmos uma expressão (ou função), podemos fazer a sua expansão usando o método <strong>.series()</strong>. Neste caso, a sintaxe geral tem a forma: <code>f(x).series(x, x0, n)</code>, onde <code>x0</code> indica o ponto de expansão e <code>n</code> indica a ordem da expansão.</p>
+<div class="highlight"><pre><span></span><code><span class="n">expr</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle 1 - 2 x^{2} + 2 x^{4} - \frac{4 x^{6}}{3} + \frac{2 x^{8}}{3} + O\left(x^{9}\right)</span><script type="math/tex">\displaystyle 1 - 2 x^{2} + 2 x^{4} - \frac{4 x^{6}}{3} + \frac{2 x^{8}}{3} + O\left(x^{9}\right)</script></span></p>
+<h2 id="series-de-fourier">Séries de Fourier</h2>
+<p>Também é possível expandir em <strong>Série de Fourier</strong>. Para isso, vamos carregar a função  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">fourier_series</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">fourier_series</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle - 4 \cos{\left(x \right)} + \cos{\left(2 x \right)} + \frac{\pi^{2}}{3} + \ldots</span><script type="math/tex">\displaystyle - 4 \cos{\left(x \right)} + \cos{\left(2 x \right)} + \frac{\pi^{2}}{3} + \ldots</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#sympy.init_printing(pretty_print=True,use_unicode=True)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">fourier_series</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">fourier_series</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>                        2    
+                       π     
+-4⋅cos(x) + cos(2⋅x) + ── + …
+                       3     
+                                                ⎛           3⎞             
+                        ⎛   3   3⋅π⎞            ⎜  4⋅π   2⋅π ⎟             
+⎛           3⎞          ⎜- π  + ───⎟⋅sin(2⋅x)   ⎜- ─── + ────⎟⋅sin(3⋅x)    
+⎝-12⋅π + 2⋅π ⎠⋅sin(x)   ⎝        2 ⎠            ⎝   9     3  ⎠             
+───────────────────── + ───────────────────── + ─────────────────────── + …
+          π                       π                        π
+</code></pre>
+<p>É possível definir melhor o ponto de expansão, o intervalo e a ordem da expansão</p>
+<div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="n">fourier_series</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">pi</span><span class="p">,</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">s</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle - 4 \cos{\left(x \right)} + \cos{\left(2 x \right)} - \frac{4 \cos{\left(3 x \right)}}{9} + \frac{\cos{\left(4 x \right)}}{4} + \frac{\pi^{2}}{3}</span><script type="math/tex">\displaystyle - 4 \cos{\left(x \right)} + \cos{\left(2 x \right)} - \frac{4 \cos{\left(3 x \right)}}{9} + \frac{\cos{\left(4 x \right)}}{4} + \frac{\pi^{2}}{3}</script></span></p>
+<h2 id="transformada-de-fourier">Transformada de Fourier</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">fourier_transform</span><span class="p">,</span> <span class="n">exp</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span>
+<span class="n">fourier_transform</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \frac{\sqrt{3} \sqrt{\pi} e^{- \frac{\pi^{2} k^{2}}{3}}}{3}</span><script type="math/tex">\displaystyle \frac{\sqrt{3} \sqrt{\pi} e^{- \frac{\pi^{2} k^{2}}{3}}}{3}</script></span></p>
+<p>Para mais detalhes e informações, consulte a <a href="https://docs.sympy.org/latest/modules/integrals/integrals.html?highlight=fourier#sympy.integrals.transforms._fourier_transform">documentação online</a>.</p>
+<p><hr>
+<hr></p>
+<h2 id="exemplos-e-exercicios">Exemplos e exercícios</h2>
+<h3 id="exemplo-1">Exemplo 1</h3>
+<p>Vamos resolver aqui o <strong>Exemplo 2.6</strong> do livro do <strong>Griffiths</strong>, para ilustrar alguns recursos interessantes.</p>
+<p>Para mais aprender mais sobre <strong>Funções Especiais</strong> do sympy, veja a <a href="https://docs.sympy.org/latest/modules/functions/special.html#">documentação online</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Heaviside</span><span class="p">,</span> <span class="n">DiracDelta</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">oo</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">sin</span>
+<span class="n">psi</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;psi, A, a&#39;</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(((</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span> <span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">));</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(((</span><span class="n">a</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span> <span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">));</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_68_0.png" /></p>
+<p><img alt="png" src="../figuras/output_68_1.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">psi</span> <span class="o">=</span> <span class="n">h</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+<span class="n">psi</span>
+<span class="c1">#psi1 = psi.subs(((A,1),(a,1)))</span>
+<span class="c1">#psi1</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \frac{\sqrt{2} A \left(- \theta\left(- a + x\right) + \theta\left(a + x\right)\right)}{2 \sqrt{a}}</span><script type="math/tex">\displaystyle \frac{\sqrt{2} A \left(- \theta\left(- a + x\right) + \theta\left(a + x\right)\right)}{2 \sqrt{a}}</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">psi1</span> <span class="o">=</span> <span class="n">psi</span><span class="o">.</span><span class="n">subs</span><span class="p">(((</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">psi1</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_70_0.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="n">integrate</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
+<span class="n">phi</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \frac{\begin{cases} - \frac{1.0 i e^{1.0 i a k}}{k} + \frac{1.0 i e^{- 1.0 i a k}}{k} &amp; \text{for}\: k &gt; -\infty \wedge k &lt; \infty \wedge k \neq 0 \\2 a &amp; \text{otherwise} \end{cases}}{2 \sqrt{\pi} \sqrt{a}}</span><script type="math/tex">\displaystyle \frac{\begin{cases} - \frac{1.0 i e^{1.0 i a k}}{k} + \frac{1.0 i e^{- 1.0 i a k}}{k} & \text{for}\: k > -\infty \wedge k < \infty \wedge k \neq 0 \\2 a & \text{otherwise} \end{cases}}{2 \sqrt{\pi} \sqrt{a}}</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">phi</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \begin{cases} \frac{1.0 \sin{\left(1.0 a k \right)}}{\sqrt{\pi} \sqrt{a} k} &amp; \text{for}\: k &gt; -\infty \wedge k &lt; \infty \wedge k \neq 0 \\\frac{\sqrt{a}}{\sqrt{\pi}} &amp; \text{otherwise} \end{cases}</span><script type="math/tex">\displaystyle \begin{cases} \frac{1.0 \sin{\left(1.0 a k \right)}}{\sqrt{\pi} \sqrt{a} k} & \text{for}\: k > -\infty \wedge k < \infty \wedge k \neq 0 \\\frac{\sqrt{a}}{\sqrt{\pi}} & \text{otherwise} \end{cases}</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">phi1</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">phi1</span><span class="p">,(</span><span class="n">k</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_73_0.png" /></p>
+<hr>
+
+<h3 id="exemplo-2">Exemplo 2</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Heaviside</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">dsolve</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">Derivative</span> <span class="k">as</span> <span class="n">D</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x, k, a, A, n&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;psi&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_76_0.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">eq</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">D</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">psi</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">eq</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle k^{2} \psi{\left(x \right)} + \frac{d^{2}}{d x^{2}} \psi{\left(x \right)} = 0</span><script type="math/tex">\displaystyle k^{2} \psi{\left(x \right)} + \frac{d^{2}}{d x^{2}} \psi{\left(x \right)} = 0</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">psi</span><span class="p">)</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \psi{\left(x \right)} = C_{1} \sin{\left(x \left|{k}\right| \right)} + C_{2} \cos{\left(k x \right)}</span><script type="math/tex">\displaystyle \psi{\left(x \right)} = C_{1} \sin{\left(x \left|{k}\right| \right)} + C_{2} \cos{\left(k x \right)}</script></span></p>
+<p>Ao analisar a solução acima, nos limites em que <span><span class="MathJax_Preview">x=0</span><script type="math/tex">x=0</script></span> e <span><span class="MathJax_Preview">x=a</span><script type="math/tex">x=a</script></span>, onde <span><span class="MathJax_Preview">\psi \rightarrow 0</span><script type="math/tex">\psi \rightarrow 0</script></span>, temos que</p>
+<div>
+<div class="MathJax_Preview">
+\psi(0) = C_1 \sin(0)+ C_2 \cos(0) = C_2 =0 \\
+A = C_1
+</div>
+<script type="math/tex; mode=display">
+\psi(0) = C_1 \sin(0)+ C_2 \cos(0) = C_2 =0 \\
+A = C_1
+</script>
+</div>
+<p>e</p>
+<div>
+<div class="MathJax_Preview">
+\psi(a) = A \sin(a k) = 0 \\
+\sin(ak) = 0 \rightarrow \quad k = \frac{n\pi}{a}, \quad n=1,2,3,\dots
+</div>
+<script type="math/tex; mode=display">
+\psi(a) = A \sin(a k) = 0 \\
+\sin(ak) = 0 \rightarrow \quad k = \frac{n\pi}{a}, \quad n=1,2,3,\dots
+</script>
+</div>
+<p>Como pode-se verificar</p>
+<div class="highlight"><pre><span></span><code><span class="n">psi</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+<span class="n">norma</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">psi</span><span class="o">*</span><span class="n">psi</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">norma</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \begin{cases} \frac{A^{2} a \left(\pi n - \frac{\sin{\left(2 \pi n \right)}}{2}\right)}{2 \pi n} &amp; \text{for}\: \frac{\pi n}{a} \neq 0 \\0 &amp; \text{otherwise} \end{cases}</span><script type="math/tex">\displaystyle \begin{cases} \frac{A^{2} a \left(\pi n - \frac{\sin{\left(2 \pi n \right)}}{2}\right)}{2 \pi n} & \text{for}\: \frac{\pi n}{a} \neq 0 \\0 & \text{otherwise} \end{cases}</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span> <span class="n">norma</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">A</span>  <span class="p">)</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \left[ - \sqrt{2} \sqrt{\frac{1}{a}}, \  \sqrt{2} \sqrt{\frac{1}{a}}\right]</span><script type="math/tex">\displaystyle \left[ - \sqrt{2} \sqrt{\frac{1}{a}}, \  \sqrt{2} \sqrt{\frac{1}{a}}\right]</script></span></p>
+<p>Portanto, a condição de normalização resulta em <span><span class="MathJax_Preview">A=\sqrt{\frac{2}{a}}</span><script type="math/tex">A=\sqrt{\frac{2}{a}}</script></span>, e os estados estacionários são</p>
+<div>
+<div class="MathJax_Preview">
+\psi_n (x) = \sqrt{\frac{2}{a}} \text{sen}\left( \frac{n \pi}{a} x \right)
+</div>
+<script type="math/tex; mode=display">
+\psi_n (x) = \sqrt{\frac{2}{a}} \text{sen}\left( \frac{n \pi}{a} x \right)
+</script>
+</div>
+<p>Para visualizar estes estados, podemos fazer <span><span class="MathJax_Preview">a=1</span><script type="math/tex">a=1</script></span> e plotar para <span><span class="MathJax_Preview">n=1,2,3</span><script type="math/tex">n=1,2,3</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="n">psi</span><span class="o">.</span><span class="n">subs</span><span class="p">(((</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\displaystyle \sin{\left(\pi n x \right)}</span><script type="math/tex">\displaystyle \sin{\left(\pi n x \right)}</script></span></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">51</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_84_0.png" /></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última atualização: 14 de maio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../Aula13_Lab1/" title="Aula 13 - Lab 1" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Aula 13 - Lab 1
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../about/" title="About" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Próximo
+                </span>
+                About
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020  Sérgio R. Muniz  (CC-BY-NC-SA)
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_SVG"></script>
+      
+    
+  </body>
+</html>

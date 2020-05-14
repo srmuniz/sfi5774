@@ -1,0 +1,1334 @@
+
+
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complemento _online_ às aulas da disciplina de Mecânica Quântica Aplicada do IFSC/USP">
+      
+      
+        <link rel="canonical" href="https://srmuniz.github.io/sfi5774/Aula13_Lab1/">
+      
+      
+        <meta name="author" content="Sérgio R. Muniz @IFSC/USP">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Aula 13 - Lab 1 - SFI5774</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.89dc9fe3.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-1-introducao-ao-jupyter-notebook" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://srmuniz.github.io/sfi5774/" title="SFI5774" class="md-header-nav__button md-logo" aria-label="SFI5774">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SFI5774
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Aula 13 - Lab 1
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Digite para iniciar a busca
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://srmuniz.github.io/sfi5774" title="Ir ao repositório" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sfi5774/Aulas/
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://srmuniz.github.io/sfi5774/" title="SFI5774" class="md-nav__button md-logo" aria-label="SFI5774">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    SFI5774
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://srmuniz.github.io/sfi5774" title="Ir ao repositório" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sfi5774/Aulas/
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aulas_S5-S6/" title="Aulas S5 & S6" class="md-nav__link">
+      Aulas S5 & S6
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aulas_S7/" title="Aulas S7" class="md-nav__link">
+      Aulas S7
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Aula 13 - Lab 1
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Aula 13 - Lab 1" class="md-nav__link md-nav__link--active">
+      Aula 13 - Lab 1
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notebook-basics" class="md-nav__link">
+    Notebook Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeros-e-operacoes-basicas" class="md-nav__link">
+    Números e operações básicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Números e operações básicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeros-complexos" class="md-nav__link">
+    Números complexos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas" class="md-nav__link">
+    Listas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estendendo-a-funcionalidade-com-bibliotecas" class="md-nav__link">
+    Estendendo a funcionalidade com bibliotecas
+  </a>
+  
+    <nav class="md-nav" aria-label="Estendendo a funcionalidade com bibliotecas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vetores" class="md-nav__link">
+    Vetores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vetores-de-numeros-complexos-como-no-espaco-de-hilbert" class="md-nav__link">
+    Vetores de números complexos (como no espaço de Hilbert)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrizes" class="md-nav__link">
+    Matrizes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscando-ajuda-com-os-comandos-e-help" class="md-nav__link">
+    Buscando ajuda com os comandos "?"  e " help() "
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-e-exercicios-para-praticar" class="md-nav__link">
+    Exemplos e exercícios para praticar
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos e exercícios para praticar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1" class="md-nav__link">
+    Exemplo 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2" class="md-nav__link">
+    Exemplo 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-3" class="md-nav__link">
+    Exemplo 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula14_Lab2/" title="Aula 14 - Lab 2" class="md-nav__link">
+      Aula 14 - Lab 2
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notebook-basics" class="md-nav__link">
+    Notebook Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeros-e-operacoes-basicas" class="md-nav__link">
+    Números e operações básicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Números e operações básicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeros-complexos" class="md-nav__link">
+    Números complexos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas" class="md-nav__link">
+    Listas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estendendo-a-funcionalidade-com-bibliotecas" class="md-nav__link">
+    Estendendo a funcionalidade com bibliotecas
+  </a>
+  
+    <nav class="md-nav" aria-label="Estendendo a funcionalidade com bibliotecas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vetores" class="md-nav__link">
+    Vetores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vetores-de-numeros-complexos-como-no-espaco-de-hilbert" class="md-nav__link">
+    Vetores de números complexos (como no espaço de Hilbert)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrizes" class="md-nav__link">
+    Matrizes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscando-ajuda-com-os-comandos-e-help" class="md-nav__link">
+    Buscando ajuda com os comandos "?"  e " help() "
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-e-exercicios-para-praticar" class="md-nav__link">
+    Exemplos e exercícios para praticar
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos e exercícios para praticar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1" class="md-nav__link">
+    Exemplo 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2" class="md-nav__link">
+    Exemplo 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-3" class="md-nav__link">
+    Exemplo 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="lab-1-introducao-ao-jupyter-notebook">Lab 1: Introdução ao Jupyter notebook</h1>
+<p>Neste notebook veremos uma breve introdução ao ambiente <a href="https://jupyter.org/">Jupyter</a> e a linguagem <a href="https://docs.python.org/pt-br/3.7/tutorial/index.html">Python</a>. Veremos também como utilizar alguns elementos básicos de interesse do nosso curso. Como, por exemplo, expressar números complexos, vetores e matrizes, além de escrever e usar funções matemáticas e produzir gráficos em Python. </p>
+<p>Na próxima aula prática, veremos como usar ferramentas de computação algébrica, com expressões analíticas.</p>
+<hr>
+
+<h2 id="notebook-basics">Notebook Basics</h2>
+<p>O <em>Jupyter notebook</em> permite reunir num mesmo documento um ambiente interativo com <strong>textos</strong> e <strong>fórmulas matemáticas</strong>, <strong>figuras</strong> e <strong>gráficos</strong>, <strong>código em Python</strong> (ou outras linguagens), <strong>código HTML</strong> e <strong>widgets interativos</strong>, tudo num só lugar, interagindo de forma integral. É ótimo tanto para testar e explorar ideias, como comunicá-las a outras pessoas.</p>
+<p>Para ter informaçãos de como funciona o ambiente do notebook Jupyter, acesse os links:</p>
+<ul>
+<li><a href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/What%20is%20the%20Jupyter%20Notebook.ipynb">What is Jupyter Notebook</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Notebook%20Basics.ipynb">Notebook basics</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Working%20With%20Markdown%20Cells.ipynb">Working with Markdown cells</a></li>
+<li><a href="https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Typesetting%20Equations.ipynb">Typesetting Equations (with LaTeX)</a></li>
+</ul>
+<p>Para facilitar, ainda mais e também permitir você explorar/modificar os códigos fontes, eu incluí uma cópia do diretórios de exemplos aqui, na sua área neste servidor. Basta procurar o diretório <strong>Jupyter_Tutorial/examples/Notebook</strong> no diretório principal, quando você faz o <em>login</em> neste servidor. Alternativamente, poderá acessar esse exemplos no <a href="https://github.com/jupyter/notebook/tree/master/docs/source/examples/Notebook">GitHub</a>.</p>
+<p>Não deixe de acessar e explorar o link acima (além de acessar o código neste servidor, você pode baixar o <em>notebook</em> e explorar o código localmente, para entender seus elementos -- é uma ótima forma de aprender rapidamente!). Para acessar o Jupyter (Python) no seu computador (localmente), eu recomendo instalar a distribuição <a href="https://www.anaconda.com/products/individual">Anaconda</a>.</p>
+<p>A seguir nós iremos nos concentra em como usar esse ambiente para as atividades e tarefas desta disciplina.
+<hr></p>
+<h2 id="numeros-e-operacoes-basicas">Números e operações básicas</h2>
+<p>Python é uma linguagem interpretada, em contraste com linguagens compiladas, o que significa que, além de gerar programas (scripts) você também pode interagir diretamente com o interpretador e, por exemplo, fazer cálculos como numa calculadora. </p>
+<div class="highlight"><pre><span></span><code><span class="mi">3</span><span class="o">+</span><span class="mi">4</span>
+</code></pre></div>
+
+<pre><code>7
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="mi">3</span><span class="o">*</span><span class="mi">7</span>
+</code></pre></div>
+
+<pre><code>21
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="mi">7</span><span class="o">/</span><span class="mi">3</span>
+</code></pre></div>
+
+<pre><code>2.3333333333333335
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="mi">7</span><span class="o">//</span><span class="mi">3</span>  <span class="c1">#divisão inteira</span>
+</code></pre></div>
+
+<pre><code>2
+</code></pre>
+<h3 id="numeros-complexos">Números complexos</h3>
+<div class="highlight"><pre><span></span><code> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="n">j</span>
+</code></pre></div>
+
+<pre><code>(3+4j)
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">7</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>(10+7j)
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">7</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="mi">511</span>
+</code></pre></div>
+
+<pre><code>(520+37j)
+</code></pre>
+<p>Podemos definir variáveis, atribuindo valores numéricos (tanto reais, como complexos) a essas variáveis </p>
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="n">j</span>
+<span class="n">z</span>
+</code></pre></div>
+
+<pre><code>(3+4j)
+</code></pre>
+<p>Usando o método <strong>.conjugate()</strong> é possível acessar o complexo conjugado do valor associado a uma variável.</p>
+<div class="highlight"><pre><span></span><code><span class="n">z</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
+</code></pre></div>
+
+<pre><code>(3-4j)
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">r</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
+</code></pre></div>
+
+<pre><code>7
+</code></pre>
+<p>(😃) <strong>Variáveis dinâmicas:</strong> em Python a atribuição de variáveis é feita dinamicamente, no sentido que o tipo da variável (i.e., como ela é armazenada internamente na memória) é determinado automaticamente, dependo do valor atribuído a ela. <br>Por isso não é necessário escolher <em>a priori</em> o tipo da variável. É só usar...  ( <em>mas tome cuidado!</em> )</p>
+<h3 id="listas">Listas</h3>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>  <span class="c1"># atribui a lista a uma variável</span>
+<span class="n">lista</span>  <span class="c1">#mostra os resultados (valor da variável)</span>
+</code></pre></div>
+
+<pre><code>[1, 4, 9, 16, 25]
+</code></pre>
+<p>Você pode acessar e "manipular" os valores dos elementos na lista, usando seu índice. Os índices em Python sempre começam no elemento "zero"...</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># acessa o terceiro elemento da lista</span>
+</code></pre></div>
+
+<pre><code>9
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># este é o primeiro elemento</span>
+</code></pre></div>
+
+<pre><code>1
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># e este, consegue imaginar?? </span>
+</code></pre></div>
+
+<pre><code>25
+</code></pre>
+<p>Listas podem ter diferentes tipos de elementos, não apenas números:</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;texto também pode!&#39;</span><span class="p">,</span><span class="s1">&#39;😉&#39;</span><span class="p">,</span><span class="s1">&#39;👍😃✌&#39;</span><span class="p">]</span>
+<span class="n">lista</span> <span class="o">+</span> <span class="n">lista2</span>  <span class="c1"># o que será que vai sair disso?? (que operação é essa?)</span>
+</code></pre></div>
+
+<pre><code>[1, 4, 9, 16, 25, 'a', 'b', 'c', 'd', 'texto também pode!', '😉', '👍😃✌']
+</code></pre>
+<p>Para mais informações sobre como usar listas, acesse este <a href="https://docs.python.org/3.7/tutorial/introduction.html#lists">link para o tutorial do Python</a>.</p>
+<hr>
+
+<h2 id="estendendo-a-funcionalidade-com-bibliotecas">Estendendo a funcionalidade com bibliotecas</h2>
+<p>A linguagem Python tem um número gigantesco de  <strong>bibliotecas</strong> (extensões da linguagem) especializadas em tarefas específicas. Elas aumentam muito o funcionalidade e os recursos da linguagem. Além da <a href="https://docs.python.org/pt-br/3.7/library/index.html#library-index">Biblioteca Padrão</a>, existe um grande número de bibliotecas produzidas pela comunidade de código aberto, especialmente na <a href="https://scipy.org">área científica</a>. </p>
+<p>A filosofia da linguagem é diferente de várias outras linguagens, mantendo apenas um <em>core</em> (núcleo) mínimo de palavras reservadas ("keywords" e <a href="https://docs.python.org/pt-br/3.7/reference/lexical_analysis.html#identifiers">identificadores</a>), deixando funcionalidades mais específicas para essas bibliotecas especializadas. Assim, especialmente para o uso científico do Python, nós precisaremos usar essas extensões. </p>
+<p>Usaremos várias delas ao longo deste curso, principalmente <a href="https://numpy.org/doc/stable/user/index.html">Numpy</a>, <a href="https://scipy.org/">Scipy</a>, <a href="https://matplotlib.org/">Matplotlib</a> e <a href="https://www.sympy.org/en/index.html">SymPy</a>, além, claro do próprio Jupyter, que também é uma extensão da linguagem, como resultado da evolução do <a href="https://ipython.org/">IPython</a>. </p>
+<p>Abaixo eu mostro como carregar algumas delas.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span><span class="p">,</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">outer</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">sin</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">eig</span><span class="p">,</span> <span class="n">eigvals</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">hist</span><span class="p">,</span> <span class="n">plot</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</code></pre></div>
+
+<p>Outra forma de fazer isso é:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>        <span class="c1"># aqui atribui-se um &quot;apelido&quot; (&#39;alias&#39;) para o nome da biblioteca</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">la</span>
+</code></pre></div>
+
+<h3 id="vetores">Vetores</h3>
+<p>Praticamente toda linguagem de programação possui algum tipo de estrutura para armazenar dados de um determinado tipo (geralmente números, mas também caracteres). Geralmente são chamados de "<strong>arrays</strong>" (que no caso do Python, estão na biblioteca <a href="https://numpy.org/doc/stable/">Numpy</a>, que foi carregado acima). No nosso idioma eles são normalmente traduzido como "vetores". <br>
+Esses vetores são parecidos, mas <em>nem sempre equivalentes</em> , ao conceito de vetores usado na Física ou na Álgebra Linear.</p>
+<p>Podemos, porém, definir e usar formalmente algo análogo aos vetores que temos usado neste curso, mesmo no sentido de espaços vetoriais complexos...</p>
+<p>Abaixo eu mostro como definir vetores <strong>linhas</strong> e <strong>colunas</strong>, como os usados na MQ.</p>
+<div class="highlight"><pre><span></span><code><span class="n">vl</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># um vetor linha</span>
+<span class="n">vl</span>
+</code></pre></div>
+
+<pre><code>array([1, 2, 3])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">vc</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">],[</span><span class="mi">6</span><span class="p">]])</span>  <span class="c1"># um vetor coluna</span>
+<span class="n">vc</span>
+</code></pre></div>
+
+<pre><code>array([[4],
+       [5],
+       [6]])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">dot</span><span class="p">(</span><span class="n">vl</span><span class="p">,</span><span class="n">vc</span><span class="p">)</span> <span class="c1"># produto escalar (produto interno): retorna um escalar</span>
+</code></pre></div>
+
+<pre><code>array([32])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">dot</span><span class="p">(</span><span class="n">vc</span><span class="p">,</span><span class="n">vl</span><span class="p">)</span>  <span class="c1"># CUIDADO!! A ordem faz diferença... (porque??!)</span>
+</code></pre></div>
+
+<pre><code>---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-21-84108f792119&gt; in &lt;module&gt;
+----&gt; 1 dot(vc,vl)  # CUIDADO!! A ordem faz diferença... (porque??!)
+
+
+&lt;__array_function__ internals&gt; in dot(*args, **kwargs)
+
+
+ValueError: shapes (3,1) and (3,) not aligned: 1 (dim 1) != 3 (dim 0)
+</code></pre>
+<p>Acima você vê como é uma <strong>mensagem de erro</strong> no Python... 🔺</p>
+<p>Observe atentamente e verá que tem a ver com as dimensões das matrizes que se tentou multiplicar.</p>
+<div class="highlight"><pre><span></span><code><span class="n">outer</span> <span class="p">(</span><span class="n">vc</span><span class="p">,</span><span class="n">vl</span><span class="p">)</span>  <span class="c1"># retorna um operador linear (não um escalar!)</span>
+</code></pre></div>
+
+<pre><code>array([[ 4,  8, 12],
+       [ 5, 10, 15],
+       [ 6, 12, 18]])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">outer</span> <span class="p">(</span><span class="n">vl</span><span class="p">,</span><span class="n">vc</span><span class="p">)</span> <span class="c1"># note que a ordem dos vetores mudou, assim como a matriz do operador (como?)</span>
+</code></pre></div>
+
+<pre><code>array([[ 4,  5,  6],
+       [ 8, 10, 12],
+       [12, 15, 18]])
+</code></pre>
+<p>Você pode aplicar operação matemáticas sobre vetores e matrizes, atuando em cada elemento, como seria de se esperar...</p>
+<div class="highlight"><pre><span></span><code><span class="n">sin</span><span class="p">(</span><span class="n">vc</span><span class="p">)</span>  <span class="c1"># calcula o seno de cada elemento do vetor vc</span>
+</code></pre></div>
+
+<pre><code>array([[-0.7568025 ],
+       [-0.95892427],
+       [-0.2794155 ]])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">sin</span><span class="p">(</span><span class="n">outer</span> <span class="p">(</span><span class="n">vc</span><span class="p">,</span><span class="n">vl</span><span class="p">))</span>  <span class="c1"># calcula o seno de cada elemento da matriz</span>
+</code></pre></div>
+
+<pre><code>array([[-0.7568025 ,  0.98935825, -0.53657292],
+       [-0.95892427, -0.54402111,  0.65028784],
+       [-0.2794155 , -0.53657292, -0.75098725]])
+</code></pre>
+<h3 id="vetores-de-numeros-complexos-como-no-espaco-de-hilbert">Vetores de números complexos (como no espaço de Hilbert)</h3>
+<div class="highlight"><pre><span></span><code><span class="n">v1</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="mi">4</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">v1</span><span class="o">*</span><span class="n">v1</span>  <span class="c1"># produto (direto) de dois vetores complexos (você entendeu o resultado??!)</span>
+</code></pre></div>
+
+<pre><code>array([-3. +4.j,  5.+12.j, 24.+10.j, 16. +0.j])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">v1</span><span class="o">*</span><span class="n">v1</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>  <span class="c1"># multiplicando pelo complexo conjugado (retorna um real)</span>
+</code></pre></div>
+
+<pre><code>array([ 5.+0.j, 13.+0.j, 26.+0.j, 16.+0.j])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>(-3+4j)
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(),</span><span class="n">v1</span><span class="p">)</span>   <span class="c1"># use o dot() para obter o produtor interno (escalar)</span>
+</code></pre></div>
+
+<pre><code>(60+0j)
+</code></pre>
+<h3 id="matrizes">Matrizes</h3>
+<p>Podemos também, claro, definir matrizes, que são objetos muito importantes neste curso. Na linguagem Python (usando a Numpy), podemos definir matrizes de duas formas. Uma é usando o mesmo comando <strong>array</strong>, que, na verdade, funciona para "vetores multidimensionais" dentro da linguagem. A outra forma será mostrada também nos exemplos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># a two-dimensional array</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">m1</span>
+</code></pre></div>
+
+<pre><code>array([[1, 0],
+       [1, 2]])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># pode calcular a matriz transpostas, com o método T</span>
+<span class="n">m1</span><span class="o">.</span><span class="n">T</span>
+</code></pre></div>
+
+<pre><code>array([[1, 1],
+       [0, 2]])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># podemos também calcular (facilmente!) os autovalores e autovetores!! </span>
+<span class="n">eig</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>(array([2., 1.]),
+ array([[ 0.        ,  0.70710678],
+        [ 1.        , -0.70710678]]))
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># é fácil verificar o resultado também</span>
+<span class="n">dot</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>
+
+<pre><code>array([0, 2])
+</code></pre>
+<h3 id="buscando-ajuda-com-os-comandos-e-help">Buscando ajuda com os comandos "<em>?</em>"  e " <em>help()</em> "</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># use o sinal de interrogação para acessar o comando help() </span>
+<span class="n">eig</span><span class="err">?</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># assim também funciona... (mas o resultado é diferente)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">eig</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>Help on function eig in module numpy.linalg:
+
+eig(a)
+    Compute the eigenvalues and right eigenvectors of a square array.
+
+    Parameters
+    ----------
+    a : (..., M, M) array
+        Matrices for which the eigenvalues and right eigenvectors will
+        be computed
+
+    Returns
+    -------
+    w : (..., M) array
+        The eigenvalues, each repeated according to its multiplicity.
+        The eigenvalues are not necessarily ordered. The resulting
+        array will be of complex type, unless the imaginary part is
+        zero in which case it will be cast to a real type. When `a`
+        is real the resulting eigenvalues will be real (0 imaginary
+        part) or occur in conjugate pairs
+
+    v : (..., M, M) array
+        The normalized (unit "length") eigenvectors, such that the
+        column ``v[:,i]`` is the eigenvector corresponding to the
+        eigenvalue ``w[i]``.
+
+    Raises
+    ------
+    LinAlgError
+        If the eigenvalue computation does not converge.
+
+    See Also
+    --------
+    eigvals : eigenvalues of a non-symmetric array.
+
+    eigh : eigenvalues and eigenvectors of a real symmetric or complex
+           Hermitian (conjugate symmetric) array.
+
+    eigvalsh : eigenvalues of a real symmetric or complex Hermitian
+               (conjugate symmetric) array.
+
+    Notes
+    -----
+
+    .. versionadded:: 1.8.0
+
+    Broadcasting rules apply, see the `numpy.linalg` documentation for
+    details.
+
+    This is implemented using the ``_geev`` LAPACK routines which compute
+    the eigenvalues and eigenvectors of general square arrays.
+
+    The number `w` is an eigenvalue of `a` if there exists a vector
+    `v` such that ``dot(a,v) = w * v``. Thus, the arrays `a`, `w`, and
+    `v` satisfy the equations ``dot(a[:,:], v[:,i]) = w[i] * v[:,i]``
+    for :math:`i \in \{0,...,M-1\}`.
+
+    The array `v` of eigenvectors may not be of maximum rank, that is, some
+    of the columns may be linearly dependent, although round-off error may
+    obscure that fact. If the eigenvalues are all different, then theoretically
+    the eigenvectors are linearly independent. Likewise, the (complex-valued)
+    matrix of eigenvectors `v` is unitary if the matrix `a` is normal, i.e.,
+    if ``dot(a, a.H) = dot(a.H, a)``, where `a.H` denotes the conjugate
+    transpose of `a`.
+
+    Finally, it is emphasized that `v` consists of the *right* (as in
+    right-hand side) eigenvectors of `a`.  A vector `y` satisfying
+    ``dot(y.T, a) = z * y.T`` for some number `z` is called a *left*
+    eigenvector of `a`, and, in general, the left and right eigenvectors
+    of a matrix are not necessarily the (perhaps conjugate) transposes
+    of each other.
+
+    References
+    ----------
+    G. Strang, *Linear Algebra and Its Applications*, 2nd Ed., Orlando, FL,
+    Academic Press, Inc., 1980, Various pp.
+
+    Examples
+    --------
+    &gt;&gt;&gt; from numpy import linalg as LA
+
+    (Almost) trivial example with real e-values and e-vectors.
+
+    &gt;&gt;&gt; w, v = LA.eig(np.diag((1, 2, 3)))
+    &gt;&gt;&gt; w; v
+    array([1., 2., 3.])
+    array([[1., 0., 0.],
+           [0., 1., 0.],
+           [0., 0., 1.]])
+
+    Real matrix possessing complex e-values and e-vectors; note that the
+    e-values are complex conjugates of each other.
+
+    &gt;&gt;&gt; w, v = LA.eig(np.array([[1, -1], [1, 1]]))
+    &gt;&gt;&gt; w; v
+    array([1.+1.j, 1.-1.j])
+    array([[0.70710678+0.j        , 0.70710678-0.j        ],
+           [0.        -0.70710678j, 0.        +0.70710678j]])
+
+    Complex-valued matrix with real e-values (but complex-valued e-vectors);
+    note that ``a.conj().T == a``, i.e., `a` is Hermitian.
+
+    &gt;&gt;&gt; a = np.array([[1, 1j], [-1j, 1]])
+    &gt;&gt;&gt; w, v = LA.eig(a)
+    &gt;&gt;&gt; w; v
+    array([2.+0.j, 0.+0.j])
+    array([[ 0.        +0.70710678j,  0.70710678+0.j        ], # may vary
+           [ 0.70710678+0.j        , -0.        +0.70710678j]])
+
+    Be careful about round-off error!
+
+    &gt;&gt;&gt; a = np.array([[1 + 1e-9, 0], [0, 1 - 1e-9]])
+    &gt;&gt;&gt; # Theor. e-values are 1 +/- 1e-9
+    &gt;&gt;&gt; w, v = LA.eig(a)
+    &gt;&gt;&gt; w; v
+    array([1., 1.])
+    array([[1., 0.],
+           [0., 1.]])
+</code></pre>
+<p><hr>
+<hr></p>
+<h2 id="exemplos-e-exercicios-para-praticar">Exemplos e exercícios para praticar</h2>
+<h3 id="exemplo-1">Exemplo 1</h3>
+<p>Lembra aquele exemplo...</p>
+<div>
+<div class="MathJax_Preview">
+M = \begin{pmatrix} 1 &amp; 2 \\ 1 &amp; 0 \end{pmatrix}
+</div>
+<script type="math/tex; mode=display">
+M = \begin{pmatrix} 1 & 2 \\ 1 & 0 \end{pmatrix}
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">M</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">M</span>
+</code></pre></div>
+
+<pre><code>matrix([[1, 2],
+        [1, 0]])
+</code></pre>
+<p>Quais os autovalores e autovetores? </p>
+<div class="highlight"><pre><span></span><code><span class="n">eig</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>(array([ 2., -1.]),
+ matrix([[ 0.89442719, -0.70710678],
+         [ 0.4472136 ,  0.70710678]]))
+</code></pre>
+<p>Vamos explorar os elementos desse objeto, atribuindo-o a uma variável.</p>
+<div class="highlight"><pre><span></span><code><span class="n">autos</span> <span class="o">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Ao fazer isso, a função eig(M) retorna um objeto diferente dos que vimos até agora, chamado <strong>Tuple</strong>. Esse objeto é também uma coleção de elementos ordenados, parecido com uma lista, mas é indicado pelo símbolo de parênteses, ao invés dos colchetes. Podemos acessar os elementos de um <strong>tuple</strong>, de forma parecida com as <strong>listas</strong> e <strong>arrays</strong>. Veja os exemplos:</p>
+<div class="highlight"><pre><span></span><code><span class="n">autos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+
+<pre><code>array([ 2., -1.])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">autos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
+<pre><code>matrix([[ 0.89442719, -0.70710678],
+        [ 0.4472136 ,  0.70710678]])
+</code></pre>
+<p>Observer que este elemento (o segundo elemento do tuple) é uma matriz Numpy. Seus elementos podem ser acessados como qualquer matriz (ou array) no numpy. Por exemplo, para acessar o primeiro vetor linha</p>
+<div class="highlight"><pre><span></span><code><span class="n">autos</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+
+<pre><code>matrix([[ 0.89442719, -0.70710678]])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">dot</span><span class="p">(</span><span class="n">autos</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">M</span><span class="p">)</span>  <span class="c1"># multiplicação à esquerda de um vetor linha pelo operador M</span>
+</code></pre></div>
+
+<pre><code>matrix([[0.18732041, 1.78885438]])
+</code></pre>
+<p>Você já deve ter notado que <strong>eig(M)</strong> retorna os autovalores de <strong>M</strong>, no primeiro elemento do tuple, e os autovetores, no segundo elemento do tuple. Os autovetores estão na forma de vetores colunas.</p>
+<div class="highlight"><pre><span></span><code><span class="n">autoV</span> <span class="o">=</span> <span class="n">autos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># transpondo a matriz</span>
+<span class="n">autoV</span>
+</code></pre></div>
+
+<pre><code>matrix([[ 0.89442719, -0.70710678],
+        [ 0.4472136 ,  0.70710678]])
+</code></pre>
+<p>podemos calcular a norma dos vetores colunas através do método <strong>numpy.linalg.norm()</strong>, que aqui pode ser acessado de uma forma abreviada, pois já carregamos essa numpy.linalg com o alias  "<span><span class="MathJax_Preview">\textrm{la}</span><script type="math/tex">\textrm{la}</script></span>"</p>
+<div class="highlight"><pre><span></span><code><span class="n">la</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">autoV</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div>
+
+<pre><code>1.0
+</code></pre>
+<p>Talvez lhe seja mais familiar, se dividirmos por <span><span class="MathJax_Preview">\sqrt2</span><script type="math/tex">\sqrt2</script></span> e <span><span class="MathJax_Preview">\sqrt5</span><script type="math/tex">\sqrt5</script></span> (fatorando esses termos), como fizemos nas aulas.</p>
+<div class="highlight"><pre><span></span><code><span class="n">autoV</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>matrix([[-0.5],
+        [ 0.5]])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">autoV</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>matrix([[0.4],
+        [0.2]])
+</code></pre>
+<p>podemos agora testar se os autovetores estão corretos, aplicando o operador sobre eles</p>
+<div class="highlight"><pre><span></span><code><span class="n">dot</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">autoV</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># resulta no autovetor multiplicado por seu autovalor</span>
+</code></pre></div>
+
+<pre><code>matrix([[ 0.5],
+        [-0.5]])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">dot</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">autoV</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># resulta no autovetor multiplicado por seu autovalor</span>
+</code></pre></div>
+
+<pre><code>matrix([[0.8],
+        [0.4]])
+</code></pre>
+<p>Vale lembrar que um autovetor continua sendo um autovetor quando multiplicado por um escalar (a direção não muda!), portanto fatores multiplicativos não são relevantes para autovetores. Você pode observar, por exemplo, que o o primeiro autovetores acima, tem um fator de 2 com relação ao que havíamos determinado manualmente, na aula. </p>
+<p><strong>Transformação de similaridade</strong></p>
+<p>Podemos faze mais um exemplo de uso desse recursos para demostrar o método de diagonalização discutido nas últimas aulas. Vimos que a a transformação <strong>S</strong> pode ser construída com os autovetores do operador (neste caso, a matriz <strong>M</strong>). Neste caso, a matriz <strong>S</strong> será exatamente a matriz autoV, calculada acima...</p>
+<div class="highlight"><pre><span></span><code><span class="n">S</span> <span class="o">=</span> <span class="n">autoV</span>
+<span class="n">Si</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>  <span class="c1"># calcula a matriz inversa</span>
+
+<span class="n">dot</span><span class="p">(</span><span class="n">Si</span><span class="p">,</span><span class="n">dot</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">S</span><span class="p">))</span>
+</code></pre></div>
+
+<pre><code>matrix([[ 2.00000000e+00,  2.22044605e-16],
+        [ 0.00000000e+00, -1.00000000e+00]])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># você pode &quot;limpar&quot; os erros numéricos de arredondamento, se preferir</span>
+<span class="n">dot</span><span class="p">(</span><span class="n">Si</span><span class="p">,</span><span class="n">dot</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">S</span><span class="p">))</span><span class="o">.</span><span class="n">round</span><span class="p">()</span>
+</code></pre></div>
+
+<pre><code>matrix([[ 2.,  0.],
+        [ 0., -1.]])
+</code></pre>
+<p>Onde podemos ver que a matriz está agora na forma sua forma diagonal.  😉</p>
+<hr>
+
+<h3 id="exemplo-2">Exemplo 2</h3>
+<p>Para praticar um pouco, agora é sua vez! Vamos usar as matrizes do <strong>Problema 3</strong>  da <strong>Lista 3</strong>:</p>
+<div>
+<div class="MathJax_Preview">
+A=
+\begin{pmatrix}
+-1 &amp; 2i &amp; 0 \\
+ 0 &amp;  4 &amp; 0 \\
+ 1 &amp;  0 &amp; 1
+\end{pmatrix}
+</div>
+<script type="math/tex; mode=display">
+A=
+\begin{pmatrix}
+-1 & 2i & 0 \\
+ 0 &  4 & 0 \\
+ 1 &  0 & 1
+\end{pmatrix}
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
+B=
+\begin{pmatrix}
+ 0 &amp; 2  &amp; i \\
+-i &amp; 2i &amp; 0 \\
+ 0 &amp;  1 &amp; 4
+\end{pmatrix}
+</div>
+<script type="math/tex; mode=display">
+B=
+\begin{pmatrix}
+ 0 & 2  & i \\
+-i & 2i & 0 \\
+ 0 &  1 & 4
+\end{pmatrix}
+</script>
+</div>
+<p><strong>Agora é sua vez:</strong> comece escrevendo essas matriz num formato que a linguagem Python entenda. </p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<p>Depois calcule as duas <strong>inversas</strong> (na lista foi pedido apenas de A) e <strong>verifique se elas comutam</strong>.</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<p>Percebe agora os " <strong>super poderes</strong> " que isso te dá?? </p>
+<p>Poderia ser uma matriz de 10x10 ou 1000x1000 que o <span><span class="MathJax_Preview">\underline{seu}</span><script type="math/tex">\underline{seu}</script></span> trabalho seria essencialmente o mesmo! 😉</p>
+<p><em>Numpy</em> faria todo o trabalho pesado para você!! Parece-me motivação suficiente para aprender usar, não? </p>
+<hr>
+
+<h3 id="exemplo-3">Exemplo 3</h3>
+<p>Como último exemplo, vamos considerar agora o uma aplicação de distribuição estatística. Por exemplo, considere que foram feitas várias medidas de um observável o resultado é dado por uma lista de valores, como a abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="n">m</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">vetor</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>    <span class="c1">#importante converter para array primeiro!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vetor</span><span class="p">)</span>   <span class="c1"># usando a função print() para mostrar os valores das variáveis m e vetor</span>
+</code></pre></div>
+
+<pre><code>[10, 13, 14, 14, 6, 8, 7, 9, 12, 14, 13, 11, 10, 7, 7]
+[5.  6.5 7.  7.  3.  4.  3.5 4.5 6.  7.  6.5 5.5 5.  3.5 3.5]
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># podemos construi um histograma das medidas usando a função hist()</span>
+<span class="n">n1</span><span class="p">,</span> <span class="n">bins1</span><span class="p">,</span> <span class="n">patches1</span> <span class="o">=</span> <span class="n">hist</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_87_0.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># a frequência (# de ocorrências) em cada bin é dada por</span>
+<span class="n">n1</span>
+</code></pre></div>
+
+<pre><code>array([1., 4., 3., 2., 5.])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># observe que m é uma lista enquanto vetor é um array, mas isso não faz diferença p/ hist()</span>
+<span class="n">n2</span><span class="p">,</span> <span class="n">bins2</span><span class="p">,</span> <span class="n">patches2</span> <span class="o">=</span> <span class="n">hist</span><span class="p">(</span><span class="n">vetor</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_89_0.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">n2</span>
+</code></pre></div>
+
+<pre><code>array([4., 6., 5., 0., 0.])
+</code></pre>
+<p>Podemos agora facilmente calcular a probabilidade (a partir das medidas, não a teórica) dos resultados dessas medidas.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pvals1</span> <span class="o">=</span> <span class="n">n1</span><span class="o">/</span><span class="n">n1</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">pvals1</span>
+</code></pre></div>
+
+<pre><code>array([0.06666667, 0.26666667, 0.2       , 0.13333333, 0.33333333])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">pvals2</span> <span class="o">=</span> <span class="n">n2</span><span class="o">/</span><span class="n">n2</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">pvals2</span>
+</code></pre></div>
+
+<pre><code>array([0.26666667, 0.4       , 0.33333333, 0.        , 0.        ])
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># note que as somas estão normalizadas...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A soma de todas as probabilidades pvals1 =&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pvals1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A soma de todas as probabilidades pvals2 =&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pvals2</span><span class="p">))</span>
+</code></pre></div>
+
+<pre><code>A soma de todas as probabilidades pvals1 = 1.0
+A soma de todas as probabilidades pvals2 = 1.0
+</code></pre>
+<p>Vamos nos aprofundar um pouco mais nisso, pois vale a pena...</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># o valore médio de &lt;m&gt;</span>
+<span class="n">m</span> <span class="o">=</span>  <span class="mi">2</span><span class="o">*</span><span class="n">vetor</span> 
+<span class="n">sm</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">sm</span>
+</code></pre></div>
+
+<pre><code>155.0
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div>
+
+<pre><code>155.0
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">vetor</span><span class="o">/</span><span class="n">sm</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>  <span class="c1"># &lt;m&gt; : valor médio de m</span>
+<span class="n">m1</span>
+</code></pre></div>
+
+<pre><code>11.09032258064516
+</code></pre>
+<div>
+<div class="MathJax_Preview">
+\langle m \rangle = \sum_i p_i\ m_i
+</div>
+<script type="math/tex; mode=display">
+\langle m \rangle = \sum_i p_i\ m_i
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
+\langle m \rangle^2 = \sum_i p_i\ m_i^2
+</div>
+<script type="math/tex; mode=display">
+\langle m \rangle^2 = \sum_i p_i\ m_i^2
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
+\sigma^2 = \langle m^2 \rangle - \langle m \rangle^2
+</div>
+<script type="math/tex; mode=display">
+\sigma^2 = \langle m^2 \rangle - \langle m \rangle^2
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">m2</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">m</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">m2</span>
+</code></pre></div>
+
+<pre><code>130.13548387096773
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">sigma</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span> <span class="n">m2</span> <span class="o">-</span> <span class="n">m1</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+<span class="n">sigma</span>
+</code></pre></div>
+
+<pre><code>2.6721206799468824
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">pm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_102_0.png" /></p>
+<div>
+<div class="MathJax_Preview">
+p(x)=\frac{1}{\sigma \sqrt{2\pi} } \exp \left(\frac{-(x - \langle m \rangle)^2}{2 \sigma^2} \right)
+</div>
+<script type="math/tex; mode=display">
+p(x)=\frac{1}{\sigma \sqrt{2\pi} } \exp \left(\frac{-(x - \langle m \rangle)^2}{2 \sigma^2} \right)
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">count</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">ignored</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">pm</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span>
+               <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span> <span class="p">(</span><span class="n">bins</span> <span class="o">-</span> <span class="n">m1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">),</span>
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+<p><img alt="png" src="../figuras/output_104_0.png" /></p>
+<p><strong>Sugestão:</strong>  tenta agora usar esses dados para calcular a probabilidade de se obter um determinado valor <span><span class="MathJax_Preview">m_k</span><script type="math/tex">m_k</script></span> (ou, mais estritamente falando, um intervalo entre <span><span class="MathJax_Preview">m_k</span><script type="math/tex">m_k</script></span> e  <span><span class="MathJax_Preview">m_k + dm</span><script type="math/tex">m_k + dm</script></span>.). Agora você teria, provavelmente, muito mais chances de fazer uma boa comparação com os valores teóricos calculados (analiticamente) para um operador observável físico.</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última atualização: 13 de maio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../Aulas_S7/" title="Aulas S7" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Aulas S7
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../Aula14_Lab2/" title="Aula 14 - Lab 2" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Próximo
+                </span>
+                Aula 14 - Lab 2
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020  Sérgio R. Muniz  (CC-BY-NC-SA)
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_SVG"></script>
+      
+    
+  </body>
+</html>

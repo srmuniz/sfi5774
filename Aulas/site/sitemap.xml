@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://srmuniz.github.io/sfi5774/</loc>
-     <lastmod>2020-05-07</lastmod>
+     <lastmod>2020-05-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://srmuniz.github.io/sfi5774/Aulas_S5-S6/</loc>
-     <lastmod>2020-05-07</lastmod>
+     <lastmod>2020-05-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://srmuniz.github.io/sfi5774/Aulas_S7/</loc>
-     <lastmod>2020-05-07</lastmod>
+     <lastmod>2020-05-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://srmuniz.github.io/sfi5774/Aula13_Lab1/</loc>
+     <lastmod>2020-05-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://srmuniz.github.io/sfi5774/Aula14_Lab2/</loc>
+     <lastmod>2020-05-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://srmuniz.github.io/sfi5774/about/</loc>
-     <lastmod>2020-05-07</lastmod>
+     <lastmod>2020-05-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

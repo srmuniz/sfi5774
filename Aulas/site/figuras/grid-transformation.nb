@@ -1,0 +1,1715 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     63624,       1707]
+NotebookOptionsPosition[     60414,       1645]
+NotebookOutlinePosition[     60792,       1661]
+CellTagsIndexPosition[     60749,       1658]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"v", " ", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"j", ",", "i"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "2", ",", 
+      RowBox[{"-", "2"}], ",", 
+      RowBox[{"-", "1"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", 
+      RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"A", " ", "=", " ", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"1", "/", "2"}], 
+       RowBox[{
+        RowBox[{"-", "1"}], "/", "3"}]},
+      {
+       RowBox[{"3", "/", "4"}], 
+       RowBox[{"1", "/", "2"}]}
+     }], ")"}], "]"}]}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQrRQ21cnc+43jEsbrHiA6YGZiCIgu3XkmCkS3rMqp
+BdFmXaJNIHrOTQEeCyDtEi8MpqVWFgqAaAXto4IguiOfQRxExwucVwDRa3S+
+14Holi8OTSCa5+XBDhAto/C0B0SX1fXMBNHfNoXNBdFXNWcsAdFyN2aBafc5
+xXtAdNgjj8Mg2ih1/VkQ3fvqBphuSjt5FUSnTp54A0T7CXE+ANvb+QVMP/I2
+ZrAG0pMmZYFpj223+UG027Z7YHpXOIckiP6lzAOmxR5s++0ApP/EFPwB0ftC
+JsQ4g/Sns8SCaBXn6ikgep6m3lQQDQAmU5Bo
+  "],ExpressionUUID->"3c627abe-0f1d-4d2a-be95-f35f7d7a2463"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "2"}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7975312087135673`*^9, 3.7975313041024523`*^9, {3.7975313351265173`*^9, 
+   3.7975313509381914`*^9}, 3.797531669803398*^9, 3.7975327695328693`*^9, {
+   3.797532806587768*^9, 3.7975328152894964`*^9}, 3.797532859780508*^9, {
+   3.7975329077911015`*^9, 3.797532935623699*^9}, {3.797533688727518*^9, 
+   3.797533715037154*^9}, {3.7975337745679426`*^9, 3.7975337997595673`*^9}, 
+   3.7975339435978756`*^9, 3.797533989910016*^9, 3.7975342519503636`*^9, 
+   3.7975343208411193`*^9, 3.797534383394824*^9, 3.7975344727528353`*^9, 
+   3.7975388211136255`*^9, 3.797538945167877*^9, 3.797539018077857*^9, 
+   3.7975510771240387`*^9, 3.797555944789932*^9, 
+   3.7975563955509415`*^9},ExpressionUUID->"2ec14430-05aa-408d-a794-\
+4fcbe948e98c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     FractionBox["3", "4"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "3"]}], ",", 
+     FractionBox["1", "2"]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7975312087135673`*^9, 3.7975313041024523`*^9, {3.7975313351265173`*^9, 
+   3.7975313509381914`*^9}, 3.797531669803398*^9, 3.7975327695328693`*^9, {
+   3.797532806587768*^9, 3.7975328152894964`*^9}, 3.797532859780508*^9, {
+   3.7975329077911015`*^9, 3.797532935623699*^9}, {3.797533688727518*^9, 
+   3.797533715037154*^9}, {3.7975337745679426`*^9, 3.7975337997595673`*^9}, 
+   3.7975339435978756`*^9, 3.797533989910016*^9, 3.7975342519503636`*^9, 
+   3.7975343208411193`*^9, 3.797534383394824*^9, 3.7975344727528353`*^9, 
+   3.7975388211136255`*^9, 3.797538945167877*^9, 3.797539018077857*^9, 
+   3.7975510771240387`*^9, 3.797555944789932*^9, 
+   3.797556395561912*^9},ExpressionUUID->"30db4ea9-2cb6-4f0b-9920-\
+03b95f339fda"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"V", " ", "=", " ", 
+   RowBox[{"v", "//", "MatrixForm"}]}]}]], "Input",
+ CellChangeTimes->{{3.7975543929470625`*^9, 
+  3.7975544017674465`*^9}},ExpressionUUID->"fa2b74ad-f792-4cc1-b4f2-\
+da1c16fca221"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "2"}]},
+          {"2"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "1"}]},
+          {"2"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"0"},
+          {"2"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"1"},
+          {"2"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"2"},
+          {"2"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}]},
+     {
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "2"}]},
+          {"1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "1"}]},
+          {"1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"0"},
+          {"1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"1"},
+          {"1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"2"},
+          {"1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}]},
+     {
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "2"}]},
+          {"0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "1"}]},
+          {"0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"0"},
+          {"0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"1"},
+          {"0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"2"},
+          {"0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}]},
+     {
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "2"}]},
+          {
+           RowBox[{"-", "1"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "1"}]},
+          {
+           RowBox[{"-", "1"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"0"},
+          {
+           RowBox[{"-", "1"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"1"},
+          {
+           RowBox[{"-", "1"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"2"},
+          {
+           RowBox[{"-", "1"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}]},
+     {
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "2"}]},
+          {
+           RowBox[{"-", "2"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "1"}]},
+          {
+           RowBox[{"-", "2"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"0"},
+          {
+           RowBox[{"-", "2"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"1"},
+          {
+           RowBox[{"-", "2"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}], 
+      RowBox[{"(", "\[NoBreak]", 
+       TagBox[GridBox[{
+          {"2"},
+          {
+           RowBox[{"-", "2"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.5599999999999999]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Column], "\[NoBreak]", ")"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.797554402597224*^9},ExpressionUUID->"dd05930c-c5cb-400b-ae37-\
+f92f247cbfe2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"A", ".", "V"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.7975312272271047`*^9, 3.7975312532644167`*^9}, {
+  3.7975316784143677`*^9, 3.797531703483323*^9}, {3.797554327494088*^9, 
+  3.7975543776439614`*^9}, {3.7975544171283627`*^9, 
+  3.7975544177267942`*^9}},ExpressionUUID->"c383b1e2-9266-40ed-8713-\
+66971d6c83d9"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       FractionBox["1", "2"], ",", 
+       FractionBox["3", "4"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "3"]}], ",", 
+       FractionBox["1", "2"]}], "}"}]}], "}"}], ".", 
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "2"}]},
+            {"2"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "1"}]},
+            {"2"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"0"},
+            {"2"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"1"},
+            {"2"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"2"},
+            {"2"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}]},
+       {
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "2"}]},
+            {"1"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "1"}]},
+            {"1"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"0"},
+            {"1"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"1"},
+            {"1"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"2"},
+            {"1"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}]},
+       {
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "2"}]},
+            {"0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "1"}]},
+            {"0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"0"},
+            {"0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"1"},
+            {"0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"2"},
+            {"0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}]},
+       {
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "2"}]},
+            {
+             RowBox[{"-", "1"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "1"}]},
+            {
+             RowBox[{"-", "1"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"0"},
+            {
+             RowBox[{"-", "1"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"1"},
+            {
+             RowBox[{"-", "1"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"2"},
+            {
+             RowBox[{"-", "1"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}]},
+       {
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "2"}]},
+            {
+             RowBox[{"-", "2"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "1"}]},
+            {
+             RowBox[{"-", "2"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"0"},
+            {
+             RowBox[{"-", "2"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"1"},
+            {
+             RowBox[{"-", "2"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}], 
+        RowBox[{"(", "\[NoBreak]", 
+         TagBox[GridBox[{
+            {"2"},
+            {
+             RowBox[{"-", "2"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.5599999999999999]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Column], "\[NoBreak]", ")"}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]]}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.7975312343938847`*^9, 3.797531254155039*^9}, 
+   3.7975313066426573`*^9, {3.7975313376028585`*^9, 3.7975313547998652`*^9}, {
+   3.7975316828854094`*^9, 3.797531704140565*^9}, {3.7975510538821993`*^9, 
+   3.7975510572711344`*^9}, {3.797554330886013*^9, 3.7975543787480087`*^9}, 
+   3.7975544184308777`*^9},ExpressionUUID->"caf3c549-eafe-4479-91ad-\
+802d833f12d3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"g1", " ", "=", " ", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Black", ",", 
+        RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+        RowBox[{"Point", "[", "  ", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"v", ",", "1"}], "]"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Blue", ",", "Thick", ",", "Dashed", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0"}], "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Blue", ",", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          TemplateBox[{SubscriptBox["b", "1"]},
+           "Ket"], ",", 
+          RowBox[{"{", 
+           RowBox[{"1.15", ",", "0"}], "}"}]}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", "Thick", ",", "Dashed", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1"}], "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          TemplateBox[{SubscriptBox["b", "2"]},
+           "Ket"], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1.15"}], "}"}]}], "]"}]}], "}"}]}], "}"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "}"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"g2", " ", "=", " ", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Orange", ",", 
+        RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+        RowBox[{"Point", "[", "  ", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{
+           RowBox[{"v", ".", "A"}], ",", "1"}], "]"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Blue", ",", "Thick", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}], ".", "A"}], ",", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "0"}], "}"}], ".", "A"}]}], "}"}], "]"}]}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Blue", ",", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          TemplateBox[{SubscriptBox["c", "1"]},
+           "Ket"], ",", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1.15", ",", "0"}], "}"}], ".", "A"}]}], "]"}]}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", "Thick", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}], ".", "A"}], ",", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "1"}], "}"}], ".", "A"}]}], "}"}], "]"}]}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          TemplateBox[{SubscriptBox["c", "2"]},
+           "Ket"], ",", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1.2"}], "}"}], ".", "A"}]}], "]"}]}], "}"}]}], 
+     "}"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "}"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g12", "=", 
+   RowBox[{"Show", "[", 
+    RowBox[{"g1", ",", "g2"}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7975318279015703`*^9, 3.7975318820198355`*^9}, {
+   3.7975320618423915`*^9, 3.797532095042557*^9}, 3.7975322189451838`*^9, {
+   3.7975323283156757`*^9, 3.797532373033081*^9}, {3.79753241838878*^9, 
+   3.7975324282204857`*^9}, {3.7975326488296857`*^9, 
+   3.7975327235618176`*^9}, {3.7975330382551827`*^9, 3.797533039727244*^9}, {
+   3.7975331159164844`*^9, 3.7975332038981886`*^9}, {3.7975332669683065`*^9, 
+   3.7975333073752403`*^9}, {3.797533341555827*^9, 3.797533415099168*^9}, {
+   3.797533587785489*^9, 3.7975336121822443`*^9}, {3.7975336532065215`*^9, 
+   3.797533661396616*^9}, {3.797534010445097*^9, 3.7975340624850817`*^9}, {
+   3.797538786103258*^9, 3.797538794262436*^9}, {3.797538857336746*^9, 
+   3.797538902819107*^9}, {3.7975392093662777`*^9, 3.797539525875783*^9}, {
+   3.797539567646079*^9, 3.7975396577889853`*^9}, {3.797539700211581*^9, 
+   3.7975397205371685`*^9}, {3.797540565274987*^9, 3.7975405721117005`*^9}, {
+   3.797551111096181*^9, 3.797551142758501*^9}, {3.7975511761182814`*^9, 
+   3.79755117659002*^9}, {3.7975512112493258`*^9, 3.7975512335446963`*^9}, {
+   3.797551458950615*^9, 3.79755158525781*^9}, {3.7975516224922285`*^9, 
+   3.7975516286387897`*^9}, {3.7975516625909863`*^9, 3.797551723576882*^9}, {
+   3.7975517657062073`*^9, 3.7975517728461103`*^9}, {3.7975518041104965`*^9, 
+   3.7975518238985724`*^9}, {3.7975519192695293`*^9, 
+   3.7975519473414497`*^9}, {3.7975520140969152`*^9, 
+   3.7975520590786123`*^9}, {3.7975521311275415`*^9, 3.797552172360228*^9}, {
+   3.7975522819092474`*^9, 3.7975522903586435`*^9}, 3.797552342968939*^9, {
+   3.7975523907511487`*^9, 3.797552410162232*^9}, {3.797553391761368*^9, 
+   3.7975534279884806`*^9}, {3.7975534760050645`*^9, 
+   3.7975535614854455`*^9}, {3.7975535956819887`*^9, 
+   3.7975537094930415`*^9}},ExpressionUUID->"fd8ab66e-944f-4b7b-bce0-\
+e45f7edf3179"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {GrayLevel[0], PointSize[Large], 
+    PointBox[{{-2, 2}, {-1, 2}, {0, 2}, {1, 2}, {2, 2}, {-2, 1}, {-1, 1}, {0, 
+     1}, {1, 1}, {2, 1}, {-2, 0}, {-1, 0}, {0, 0}, {1, 0}, {2, 
+     0}, {-2, -1}, {-1, -1}, {0, -1}, {1, -1}, {2, -1}, {-2, -2}, {-1, -2}, {
+     0, -2}, {1, -2}, {2, -2}}]}, 
+   {RGBColor[0, 0, 1], Thickness[Large], Dashing[{Small, Small}], 
+    ArrowBox[{{0, 0}, {1, 0}}]}, 
+   {RGBColor[0, 0, 1], InsetBox[
+     TemplateBox[{SubscriptBox["b", "1"]},
+      "Ket"], {1.15, 0}]}, 
+   {RGBColor[1, 0, 0], Thickness[Large], Dashing[{Small, Small}], 
+    ArrowBox[{{0, 0}, {0, 1}}]}, 
+   {RGBColor[1, 0, 0], InsetBox[
+     TemplateBox[{SubscriptBox["b", "2"]},
+      "Ket"], {0, 1.15}]}},
+  Frame->True,
+  PlotRange->{{-2, 2}, {-2, 2}}]], "Output",
+ CellChangeTimes->{3.797553670453454*^9, 3.7975537104295397`*^9, 
+  3.797555973797349*^9, 
+  3.797556403015976*^9},ExpressionUUID->"6f35a752-5226-4fa7-962d-\
+e45e65379fb2"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 0.5, 0], PointSize[Large], 
+    PointBox[NCache[{{Rational[-5, 3], Rational[-1, 2]}, {
+       Rational[-7, 6], Rational[1, 4]}, {Rational[-2, 3], 1}, {
+       Rational[-1, 6], Rational[7, 4]}, {Rational[1, 3], Rational[5, 2]}, {
+       Rational[-4, 3], -1}, {Rational[-5, 6], Rational[-1, 4]}, {
+       Rational[-1, 3], Rational[1, 2]}, {Rational[1, 6], Rational[5, 4]}, {
+       Rational[2, 3], 2}, {-1, Rational[-3, 2]}, {
+       Rational[-1, 2], Rational[-3, 4]}, {0, 0}, {
+       Rational[1, 2], Rational[3, 4]}, {1, Rational[3, 2]}, {
+       Rational[-2, 3], -2}, {Rational[-1, 6], Rational[-5, 4]}, {
+       Rational[1, 3], Rational[-1, 2]}, {Rational[5, 6], Rational[1, 4]}, {
+       Rational[4, 3], 1}, {Rational[-1, 3], Rational[-5, 2]}, {
+       Rational[1, 6], Rational[-7, 4]}, {Rational[2, 3], -1}, {
+       Rational[7, 6], Rational[-1, 4]}, {
+       Rational[5, 3], Rational[
+        1, 2]}}, {{-1.6666666666666667`, -0.5}, {-1.1666666666666667`, 
+       0.25}, {-0.6666666666666666, 1}, {-0.16666666666666666`, 1.75}, {
+       0.3333333333333333, 
+       2.5}, {-1.3333333333333333`, -1}, {-0.8333333333333334, -0.25}, \
+{-0.3333333333333333, 0.5}, {0.16666666666666666`, 1.25}, {
+       0.6666666666666666, 2}, {-1, -1.5}, {-0.5, -0.75}, {0, 0}, {0.5, 
+       0.75}, {1, 
+        1.5}, {-0.6666666666666666, -2}, {-0.16666666666666666`, -1.25}, {
+       0.3333333333333333, -0.5}, {0.8333333333333334, 0.25}, {
+       1.3333333333333333`, 1}, {-0.3333333333333333, -2.5}, {
+       0.16666666666666666`, -1.75}, {0.6666666666666666, -1}, {
+       1.1666666666666667`, -0.25}, {1.6666666666666667`, 0.5}}]]}, 
+   {RGBColor[0, 0, 1], Thickness[Large], 
+    ArrowBox[NCache[{{0, 0}, {Rational[1, 2], Rational[3, 4]}}, {{0, 0}, {0.5,
+        0.75}}]]}, 
+   {RGBColor[0, 0, 1], InsetBox[
+     TemplateBox[{SubscriptBox["c", "1"]},
+      "Ket"], {0.575, 0.8624999999999999}]}, 
+   {RGBColor[1, 0, 0], Thickness[Large], 
+    ArrowBox[NCache[{{0, 0}, {Rational[-1, 3], Rational[1, 2]}}, {{0, 
+       0}, {-0.3333333333333333, 0.5}}]]}, 
+   {RGBColor[1, 0, 0], InsetBox[
+     TemplateBox[{SubscriptBox["c", "2"]},
+      "Ket"], {-0.39999999999999997, 0.6}]}},
+  Frame->True,
+  PlotRange->{{-2, 2}, {-2, 2}}]], "Output",
+ CellChangeTimes->{3.797553670453454*^9, 3.7975537104295397`*^9, 
+  3.797555973797349*^9, 
+  3.7975564030598583`*^9},ExpressionUUID->"3d782fa5-64f1-45fb-aa1a-\
+1fd7d3c4b12e"],
+
+Cell[BoxData[
+ GraphicsBox[{{
+    {GrayLevel[0], PointSize[Large], 
+     PointBox[{{-2, 2}, {-1, 2}, {0, 2}, {1, 2}, {2, 2}, {-2, 1}, {-1, 1}, {0,
+       1}, {1, 1}, {2, 1}, {-2, 0}, {-1, 0}, {0, 0}, {1, 0}, {2, 
+      0}, {-2, -1}, {-1, -1}, {0, -1}, {1, -1}, {2, -1}, {-2, -2}, {-1, -2}, {
+      0, -2}, {1, -2}, {2, -2}}]}, 
+    {RGBColor[0, 0, 1], Thickness[Large], Dashing[{Small, Small}], 
+     ArrowBox[{{0, 0}, {1, 0}}]}, 
+    {RGBColor[0, 0, 1], InsetBox[
+      TemplateBox[{SubscriptBox["b", "1"]},
+       "Ket"], {1.15, 0}]}, 
+    {RGBColor[1, 0, 0], Thickness[Large], Dashing[{Small, Small}], 
+     ArrowBox[{{0, 0}, {0, 1}}]}, 
+    {RGBColor[1, 0, 0], InsetBox[
+      TemplateBox[{SubscriptBox["b", "2"]},
+       "Ket"], {0, 1.15}]}}, {
+    {RGBColor[1, 0.5, 0], PointSize[Large], 
+     PointBox[NCache[{{Rational[-5, 3], Rational[-1, 2]}, {
+        Rational[-7, 6], Rational[1, 4]}, {Rational[-2, 3], 1}, {
+        Rational[-1, 6], Rational[7, 4]}, {Rational[1, 3], Rational[5, 2]}, {
+        Rational[-4, 3], -1}, {Rational[-5, 6], Rational[-1, 4]}, {
+        Rational[-1, 3], Rational[1, 2]}, {Rational[1, 6], Rational[5, 4]}, {
+        Rational[2, 3], 2}, {-1, Rational[-3, 2]}, {
+        Rational[-1, 2], Rational[-3, 4]}, {0, 0}, {
+        Rational[1, 2], Rational[3, 4]}, {1, Rational[3, 2]}, {
+        Rational[-2, 3], -2}, {Rational[-1, 6], Rational[-5, 4]}, {
+        Rational[1, 3], Rational[-1, 2]}, {Rational[5, 6], Rational[1, 4]}, {
+        Rational[4, 3], 1}, {Rational[-1, 3], Rational[-5, 2]}, {
+        Rational[1, 6], Rational[-7, 4]}, {Rational[2, 3], -1}, {
+        Rational[7, 6], Rational[-1, 4]}, {
+        Rational[5, 3], Rational[
+         1, 2]}}, {{-1.6666666666666667`, -0.5}, {-1.1666666666666667`, 
+        0.25}, {-0.6666666666666666, 1}, {-0.16666666666666666`, 1.75}, {
+        0.3333333333333333, 
+        2.5}, {-1.3333333333333333`, -1}, {-0.8333333333333334, -0.25}, \
+{-0.3333333333333333, 0.5}, {0.16666666666666666`, 1.25}, {
+        0.6666666666666666, 2}, {-1, -1.5}, {-0.5, -0.75}, {0, 0}, {0.5, 
+        0.75}, {1, 
+         1.5}, {-0.6666666666666666, -2}, {-0.16666666666666666`, -1.25}, {
+        0.3333333333333333, -0.5}, {0.8333333333333334, 0.25}, {
+        1.3333333333333333`, 1}, {-0.3333333333333333, -2.5}, {
+        0.16666666666666666`, -1.75}, {0.6666666666666666, -1}, {
+        1.1666666666666667`, -0.25}, {1.6666666666666667`, 0.5}}]]}, 
+    {RGBColor[0, 0, 1], Thickness[Large], 
+     ArrowBox[NCache[{{0, 0}, {Rational[1, 2], Rational[3, 4]}}, {{0, 0}, {
+        0.5, 0.75}}]]}, 
+    {RGBColor[0, 0, 1], InsetBox[
+      TemplateBox[{SubscriptBox["c", "1"]},
+       "Ket"], {0.575, 0.8624999999999999}]}, 
+    {RGBColor[1, 0, 0], Thickness[Large], 
+     ArrowBox[NCache[{{0, 0}, {Rational[-1, 3], Rational[1, 2]}}, {{0, 
+        0}, {-0.3333333333333333, 0.5}}]]}, 
+    {RGBColor[1, 0, 0], InsetBox[
+      TemplateBox[{SubscriptBox["c", "2"]},
+       "Ket"], {-0.39999999999999997, 0.6}]}}},
+  Frame->True,
+  PlotRange->{{-2, 2}, {-2, 2}}]], "Output",
+ CellChangeTimes->{3.797553670453454*^9, 3.7975537104295397`*^9, 
+  3.797555973797349*^9, 
+  3.797556403075817*^9},ExpressionUUID->"fff540ef-2aca-47e8-8208-\
+9b88b3a70459"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<g1.png\>\"", ",", "g1"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<g2.png\>\"", ",", "g2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<g12.png\>\"", ",", "g12"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7975404074232197`*^9, 3.7975404548134723`*^9}, {
+  3.797540502362481*^9, 3.7975405045556154`*^9}, {3.7975405355826344`*^9, 
+  3.797540539618843*^9}, {3.7975405780089293`*^9, 3.7975405790481505`*^9}, {
+  3.797551332820945*^9, 
+  3.797551407217971*^9}},ExpressionUUID->"39d9052b-e07e-45b4-80c6-\
+14d15eea4394"],
+
+Cell[BoxData["\<\"g1.png\"\>"], "Output",
+ CellChangeTimes->{{3.7975404316763515`*^9, 3.7975404562107353`*^9}, 
+   3.7975405061752853`*^9, 3.797540541685313*^9, 3.7975405817130237`*^9, 
+   3.7975512782122355`*^9, 3.797551409468951*^9, 3.7975520706247344`*^9, 
+   3.797552460735976*^9, 
+   3.7975537633360405`*^9},ExpressionUUID->"aed363c3-d2a5-4789-804b-\
+95455ba50904"],
+
+Cell[BoxData["\<\"g2.png\"\>"], "Output",
+ CellChangeTimes->{{3.7975404316763515`*^9, 3.7975404562107353`*^9}, 
+   3.7975405061752853`*^9, 3.797540541685313*^9, 3.7975405817130237`*^9, 
+   3.7975512782122355`*^9, 3.797551409468951*^9, 3.7975520706247344`*^9, 
+   3.797552460735976*^9, 
+   3.797553763678127*^9},ExpressionUUID->"78116f02-a22a-4603-bb51-\
+8283a00b6b55"],
+
+Cell[BoxData["\<\"g12.png\"\>"], "Output",
+ CellChangeTimes->{{3.7975404316763515`*^9, 3.7975404562107353`*^9}, 
+   3.7975405061752853`*^9, 3.797540541685313*^9, 3.7975405817130237`*^9, 
+   3.7975512782122355`*^9, 3.797551409468951*^9, 3.7975520706247344`*^9, 
+   3.797552460735976*^9, 
+   3.7975537640441475`*^9},ExpressionUUID->"667e2dbd-db5d-4ca7-b253-\
+3d7d9ec6f2af"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Directory", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7975404709995527`*^9, 3.7975404763093514`*^9}, {
+  3.797551327640796*^9, 
+  3.797551330328608*^9}},ExpressionUUID->"a236fefc-2720-46d2-9e37-\
+b106580e8071"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\SergioMuniz\\\\Documents\"\>"], "Output",
+ CellChangeTimes->{
+  3.7975404767830844`*^9},ExpressionUUID->"4fb0fe46-29e0-4a91-80e6-\
+e6fd9bec6348"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", "=", 
+   RowBox[{"(", GridBox[{
+      {"1"},
+      {"0"}
+     }], ")"}]}], ";", " ", 
+  RowBox[{"y", "=", 
+   RowBox[{"(", GridBox[{
+      {"0"},
+      {"1"}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", ".", "x"}], "//", "MatrixForm"}]}], "Input",
+ CellChangeTimes->{{3.79755583194462*^9, 3.7975559195683556`*^9}, {
+  3.7975559569254417`*^9, 
+  3.7975559604081287`*^9}},ExpressionUUID->"d5cbe56c-c340-4e59-854d-\
+b7ef67f0b013"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["1", "2"]},
+     {
+      FractionBox["3", "4"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.797555861546449*^9, 3.797555873869492*^9}, {
+  3.7975559048955956`*^9, 3.797555920700325*^9}, {3.7975559521970897`*^9, 
+  3.797555961086317*^9}},ExpressionUUID->"055a4f8b-1392-4f39-a6ff-\
+c7413f4b0c4c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", "=", 
+  RowBox[{"(", GridBox[{
+     {
+      RowBox[{"1", "/", "2"}], 
+      RowBox[{
+       RowBox[{"-", "1"}], "/", "3"}]},
+     {
+      RowBox[{"3", "/", "4"}], 
+      RowBox[{"1", "/", "2"}]}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.7975564661411495`*^9, 
+  3.797556470107543*^9}},ExpressionUUID->"8caf3880-9d8d-4f56-b3b5-\
+719bf360ed25"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "3"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "4"], ",", 
+     FractionBox["1", "2"]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.797556470743842*^9},ExpressionUUID->"d02dad89-7c33-4d24-9464-\
+08e416ba7ed3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"B", ".", "x"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.7975564726337857`*^9, 
+  3.7975564831915493`*^9}},ExpressionUUID->"6ef15b71-dd9a-4ac2-91e3-\
+50af5dde9fec"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["1", "2"]},
+     {
+      FractionBox["3", "4"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.797556474887757*^9, 
+  3.797556484057236*^9}},ExpressionUUID->"8691eb17-24bb-458c-93ca-\
+17541c560bc6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.797556506405465*^9, 
+  3.7975565506092424`*^9}},ExpressionUUID->"3cdb7959-2570-46d1-b751-\
+5e3cb5f384e5"],
+
+Cell["\<\
+\\left(
+\\begin{array}{cc}
+ \\frac{1}{2} & -\\frac{1}{3} \\\\
+ \\frac{3}{4} & \\frac{1}{2} \\\\
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{{3.7975565181879525`*^9, 
+  3.7975565539243774`*^9}},ExpressionUUID->"9dd2a96b-9c90-445d-a954-\
+269ae1f6099a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.797556913967967*^9, 3.797556917519471*^9}, {
+  3.7975576375728264`*^9, 3.7975576385751486`*^9}, {3.797557730157214*^9, 
+  3.79755773113161*^9}, {3.797557851900614*^9, 
+  3.7975578520851192`*^9}},ExpressionUUID->"daf9a23d-a0b1-445b-8ca4-\
+6b16002bd01c"],
+
+Cell["\<\
+\\left(
+\\begin{array}{cc}
+ \\frac{1}{2} & -\\frac{1}{3} \\\\
+ \\frac{3}{4} & \\frac{1}{2} \\\\
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{
+  3.797556918473916*^9, 3.79755763913465*^9, 3.797557732733323*^9, {
+   3.797557845596475*^9, 
+   3.7975578529976797`*^9}},ExpressionUUID->"913a1774-0525-44f9-a5ad-\
+aa38b5ffaf06"]
+}, Open  ]]
+},
+WindowSize->{759, 601},
+WindowMargins->{{271, Automatic}, {Automatic, 14}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1116, 31, 144, "Input",ExpressionUUID->"3c627abe-0f1d-4d2a-be95-f35f7d7a2463"],
+Cell[1699, 55, 3035, 94, 166, "Output",ExpressionUUID->"2ec14430-05aa-408d-a794-4fcbe948e98c"],
+Cell[4737, 151, 1039, 23, 69, "Output",ExpressionUUID->"30db4ea9-2cb6-4f0b-9920-03b95f339fda"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5813, 179, 259, 6, 95, "Input",ExpressionUUID->"fa2b74ad-f792-4cc1-b4f2-da1c16fca221"],
+Cell[6075, 187, 16378, 443, 304, "Output",ExpressionUUID->"dd05930c-c5cb-400b-ae37-f92f247cbfe2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22490, 635, 364, 7, 66, "Input",ExpressionUUID->"c383b1e2-9266-40ed-8713-66971d6c83d9"],
+Cell[22857, 644, 18209, 486, 304, "Output",ExpressionUUID->"caf3c549-eafe-4479-91ad-802d833f12d3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41103, 1135, 6031, 155, 997, "Input",ExpressionUUID->"fd8ab66e-944f-4b7b-bce0-e45f7edf3179"],
+Cell[47137, 1292, 964, 22, 570, "Output",ExpressionUUID->"6f35a752-5226-4fa7-962d-e45e65379fb2"],
+Cell[48104, 1316, 2445, 46, 570, "Output",ExpressionUUID->"3d782fa5-64f1-45fb-aa1a-1fd7d3c4b12e"],
+Cell[50552, 1364, 3203, 61, 570, "Output",ExpressionUUID->"fff540ef-2aca-47e8-8208-9b88b3a70459"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53792, 1430, 625, 12, 174, "Input",ExpressionUUID->"39d9052b-e07e-45b4-80c6-14d15eea4394"],
+Cell[54420, 1444, 370, 6, 49, "Output",ExpressionUUID->"aed363c3-d2a5-4789-804b-95455ba50904"],
+Cell[54793, 1452, 368, 6, 49, "Output",ExpressionUUID->"78116f02-a22a-4603-bb51-8283a00b6b55"],
+Cell[55164, 1460, 371, 6, 49, "Output",ExpressionUUID->"667e2dbd-db5d-4ca7-b253-3d7d9ec6f2af"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55572, 1471, 236, 5, 66, "Input",ExpressionUUID->"a236fefc-2720-46d2-9e37-b106580e8071"],
+Cell[55811, 1478, 178, 3, 49, "Output",ExpressionUUID->"4fb0fe46-29e0-4a91-80e6-e6fd9bec6348"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56026, 1486, 496, 17, 120, "Input",ExpressionUUID->"d5cbe56c-c340-4e59-854d-b7ef67f0b013"],
+Cell[56525, 1505, 850, 23, 113, "Output",ExpressionUUID->"055a4f8b-1392-4f39-a6ff-c7413f4b0c4c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57412, 1533, 377, 13, 66, "Input",ExpressionUUID->"8caf3880-9d8d-4f56-b3b5-719bf360ed25"],
+Cell[57792, 1548, 391, 14, 69, "Output",ExpressionUUID->"d02dad89-7c33-4d24-9464-08e416ba7ed3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58220, 1567, 212, 5, 66, "Input",ExpressionUUID->"6ef15b71-dd9a-4ac2-91e3-50af5dde9fec"],
+Cell[58435, 1574, 751, 22, 113, "Output",ExpressionUUID->"8691eb17-24bb-458c-93ca-17541c560bc6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59223, 1601, 184, 4, 66, "Input",ExpressionUUID->"3cdb7959-2570-46d1-b751-5e3cb5f384e5"],
+Cell[59410, 1607, 273, 10, 191, "Output",ExpressionUUID->"9dd2a96b-9c90-445d-a954-269ae1f6099a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59720, 1622, 331, 6, 66, "Input",ExpressionUUID->"daf9a23d-a0b1-445b-8ca4-6b16002bd01c"],
+Cell[60054, 1630, 344, 12, 191, "Output",ExpressionUUID->"913a1774-0525-44f9-a5ad-aa38b5ffaf06"]
+}, Open  ]]
+}
+]
+*)
+
