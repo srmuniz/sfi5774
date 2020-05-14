@@ -16,6 +16,7 @@ Embora ainda num estágio preliminar, este site oferece acesso às notas de aula
 * [`Aula 11`](./Aulas_S7/)
 * [`Aula 12`](./Aulas_S7/#59-subespacos-e-projetores)
 * [`Aula 13`](./Aula13_Lab1/)
+* [`Aula 14`](./Aula14_Lab2/)
 
 <p></p>
 ### **Conteúdos oficiais desta disciplina** ###
