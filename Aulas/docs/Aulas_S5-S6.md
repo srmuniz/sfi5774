@@ -5,13 +5,13 @@ $\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}$
 # 5. Estrutura matemática da Mecânica Quântica
 
 Até este ponto, discutimos, em linhas gerais, como expressar e resolver problemas físicos na mecânica quântica, em termos da Equação de
-Schrödinger (EqS). Discutimos, de uma maneira ampla, as estratégias para resolver a EqS no caso geral e, em particular, discutimos a resolução da equação  independente do tempo, resolvendo alguns exemplos emblemáticos de potencias unidimencionais simples. 
+Schrödinger (EqS). Discutimos, de uma maneira ampla, as estratégias para resolver a EqS no caso geral e, em particular, discutimos a resolução da equação  independente do tempo, resolvendo alguns exemplos emblemáticos de potencias unidimensionais simples. 
 Visto sob essa perspectiva, pode-se ter a impressão que mecânica quântica se resume à solução da EqS, usando métodos matemáticos mais ou menos familiares (solução de equações diferenciais parciais). Embora essa seja uma estratégia válida e efetiva em alguns casos, ela é bastante limitada 
 e seria um grande equívoco pensar que as estratégias da mecânica quântica se limitam simplesmente a soluções da Eq. de Schrödinger.
 
-O roteiro seguido até aqui teve uma motivação didática e, deliberamente, procurou enfatizar os aspectos físicos do problema. Apresentando apenas a matemática necessária para formular e resolver o problema. Por essa razão, não temos sido muito rigorosos com o formalismo. Trocando rigor matemático por intuição física, sempre que possível, para não obscurecer desnecessariamente a "Física" do problema. Essa estratégia é bastante razoável para uma introdução ao assunto. Apesar disso, o domínio do formalismo matemático também é importante e necessário para ser bem sucedido na resolução de problemas gerais da MQ, ou mesmo para entender muitos temas de pesquisa contemporânea. A situação ideal é aquela onde consegue-se combinar ambas habilidades, que é um dos objetivos secundários deste curso.
+O roteiro seguido até aqui teve uma motivação didática e, deliberadamente, procurou enfatizar os aspectos físicos do problema. Apresentando apenas a matemática necessária para formular e resolver o problema. Por essa razão, não temos sido muito rigorosos com o formalismo. Trocando rigor matemático por intuição física, sempre que possível, para não obscurecer desnecessariamente a "Física" do problema. Essa estratégia é bastante razoável para uma introdução ao assunto. Apesar disso, o domínio do formalismo matemático também é importante e necessário para ser bem sucedido na resolução de problemas gerais da MQ, ou mesmo para entender muitos temas de pesquisa contemporânea. A situação ideal é aquela onde consegue-se combinar ambas habilidades, que é um dos objetivos secundários deste curso.
 
-Neste capitulo, portanto, seguiremos uma estratégia diferente e complementar àquela seguida até agora. O foco agora será ampliar a linguagem e abstração do problema, apresentadno de modo mais formal a estrutura matemática da mecânica quântica moderna. A prioridade ainda permanecerá com a Física e não a Matemática. Portanto, não se almeja mero rigor matemático, mas, sim, introduzir novos conceitos e representações que serão muito úteis para expandir os horizontes dentro da teoria e, como iremos explorar nos próximos capítulos, serão fundamentais para entender a linguagem contemporânea dessa importante disciplina científica.
+Neste capitulo, portanto, seguiremos uma estratégia diferente e complementar àquela seguida até agora. O foco agora será ampliar a linguagem e abstração do problema, apresentando de modo mais formal a estrutura matemática da mecânica quântica moderna. A prioridade ainda permanecerá com a Física e não a Matemática. Portanto, não se almeja mero rigor matemático, mas, sim, introduzir novos conceitos e representações que serão muito úteis para expandir os horizontes dentro da teoria e, como iremos explorar nos próximos capítulos, serão fundamentais para entender a linguagem contemporânea dessa importante disciplina científica.
 
 ## 5.1  Espaço de estados
 Resumindo o que vimos até aqui, podemos, ainda de uma maneira informal, dizer que as soluções estacionárias \(\psi_n(x)\) da EqS são funções de ondas que representam os possíveis estados do sistema, com energia \(E_n\). Outra forma de dizer isso, motivada pela forma da equação \(H\psi_n(x)=E_n\psi_n(x)\), é dizer que \(\{\psi_n(x)\}\) é o conjunto de autofunções do operador \(H\), representando os autoestados do sistema com autovalores \(E_n\). Vimos nos exemplos discutidos, como no caso da caixa infinita, que \(\psi_n(x)\) possui uma série de propriedades interessantes e úteis. Entre elas:
@@ -66,7 +66,7 @@ $\forall\, \vec{u},\vec{w}\in \mathcal{V}$ e $\forall\, \lambda,\mu \in \mathcal
 Se o campo $\mathcal{F}$ é complexo (real) o espaço é dito ser um espaço vetorial linear complexo (real). 
 
 ### Dimensão do espaço
-Um conjunto de vetores $\{\phi_n \}$ é dito linearmente independente (LI) se não há nenhuma combinação linear não-trivial que leve ao vetor nulo, isto é:  $\sum_n c_n \phi_n = 0 \rightarrow c_n = 0\, \forall\, n$. A dimensão $d$ do espaço vetorial é dada pelo número máximo de vetores LI desse espaço. Qualquer vetor do espaço pode ser escrito como uma combinação linear dos vetores da base desse espaço, formado por vetores LI do espaço. Como veremos adiante, os espaçcos de Hilbert da MQ podem ser infinitos.
+Um conjunto de vetores $\{\phi_n \}$ é dito linearmente independente (LI) se não há nenhuma combinação linear não-trivial que leve ao vetor nulo, isto é:  $\sum_n c_n \phi_n = 0 \rightarrow c_n = 0\, \forall\, n$. A dimensão $d$ do espaço vetorial é dada pelo número máximo de vetores LI desse espaço. Qualquer vetor do espaço pode ser escrito como uma combinação linear dos vetores da base desse espaço, formado por vetores LI do espaço. Como veremos adiante, os espaços de Hilbert da MQ podem ser infinitos.
 
 ## 5.3 Espaços de Hilbert: espaços vetoriais da MQ
 Na mecânica quântica são usados espaços vetoriais com algumas propriedades e estruturas adicionais, para garantir certas propriedades físicas desejáveis da teoria. É comum, principalmente entre os físicos, chamar esses estados de estados de Hilbert. Os espaços de Hilbert podem ser finitos (com dimensão \(d\)) ou infinitos, por exemplo, quando os vetores são funções contínuas. 
@@ -115,13 +115,13 @@ $$ ||(\psi + \phi)|| \le ||\psi|| + ||\phi|| .$$
 
 Para ambos os casos, a desigualdade só é válida quando um dos vetores é múltiplo do outro.
 
-Dois veltores são tido ortogonais quando seu produto interno é nulo. Da mesma forma, um conjunto de vetores $\{\phi_n\}$ é dito *ortonormal* quando o produto interno entre pares de seus elementos obedece a relação $(\phi_n,\phi_m)=\delta_{nm}$.
+Dois vetores são tido ortogonais quando seu produto interno é nulo. Da mesma forma, um conjunto de vetores $\{\phi_n\}$ é dito *ortonormal* quando o produto interno entre pares de seus elementos obedece a relação $(\phi_n,\phi_m)=\delta_{nm}$.
 
 
 ### Expansão de vetores
 No caso em que $\mathcal{H}$ é finito, com dimensão $d$, dado um vetor arbitrário $\psi$ e uma base $\{ \phi_n \}$ de vetores linearmente independentes, podemos expressar o vetor $\psi = \sum_n c_n \phi_n$, onde $c_n=(\phi_n,\psi)$ e $(\phi_n,\phi_m)=\delta_{nm}$. Podemos pensar nos coeficientes $c_n$ como sendo as componentes do vetor no espaço de Hilbert, análogos às componentes de um vetor no espaço Euclidiano. Porém, é importante lembrar que essas componentes são expressas por números complexos. As componente do vetor de estado têm toda a informação relativa ao estado, determinando completamente o vetor (estado) do sistema.
 
-Também de modo análogo, podemos expressar as soma de dois vetore em termos dessas componentes 
+Também de modo análogo, podemos expressar as soma de dois vetores em termos dessas componentes 
 
 $$\Psi_a + \Psi_b = \sum_n (a_i + b_n) \psi_n.$$ 
 
@@ -129,7 +129,7 @@ $$\lambda \Psi_a= \sum_n \lambda a_i \psi_n.$$
 
 
 !!! info "Pare, Pense & Contemple!"
-    Antes de prosseguir, pare e reflita por um momento no significado e amplitude esses resultados. Lembre-se que o espaço $\mathcal{H}$ pode ter dimensõe infinitas, tanto no número de elemento (vetores), como nas dimensões (número de componentes) desses vetores. Esses resultados, nada óbvios, são extremamente poderosos e úteis, justificando plenamente o tempo investido em generalizar e abstrair a descrição dos nossos problemas usando esse formalismo.  
+    Antes de prosseguir, pare e reflita por um momento no significado e amplitude esses resultados. Lembre-se que o espaço $\mathcal{H}$ pode ter dimensões infinitas, tanto no número de elemento (vetores), como nas dimensões (número de componentes) desses vetores. Esses resultados, nada óbvios, são extremamente poderosos e úteis, justificando plenamente o tempo investido em generalizar e abstrair a descrição dos nossos problemas usando esse formalismo.  
 
 
 ## 5.4 Notação de Dirac
@@ -219,13 +219,13 @@ Um conjunto ortonormal $\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle 
 $$ \sum_{i=1}^n |\phi_i\rangle \langle \phi_i| = 1 $$
 
 ### Procedimento de Gram-Schmidt
-Se tivermos um conjunto de vetores $\{ |u_i\rangle \}$ que não é ortonormal, é possível usar o procedimento de Gram-Schmidt para construir uma base ortonormal a partir desse conjunto inicial. Para simplificar o entendimento do processo, consideramos um exemplo com 3 vetores de base (num espaço de dimensção 3). 
+Se tivermos um conjunto de vetores $\{ |u_i\rangle \}$ que não é ortonormal, é possível usar o procedimento de Gram-Schmidt para construir uma base ortonormal a partir desse conjunto inicial. Para simplificar o entendimento do processo, consideramos um exemplo com 3 vetores de base (num espaço de dimensão 3). 
 
 Começamos selecionando um dos vetores do conjunto $\{ |u_i\rangle \}$ e  definindo o vetor:
 
 $$ |w_1\rangle = |u_1\rangle  $$
 
-A partir disso, constroi-se sucessivamente os vetores seguintes da base subtraindo deles as componentes nas direções ortonais àquelas já construídas. Neste caso, por exemplo, as direções $|w_2\rangle$ e $|w_3\rangle$ são construídas subtraindo as componente na direção de $|w_1\rangle$ e $|w_2\rangle$, conforme:
+A partir disso, constrói-se sucessivamente os vetores seguintes da base subtraindo deles as componentes nas direções ortogonais àquelas já construídas. Neste caso, por exemplo, as direções $|w_2\rangle$ e $|w_3\rangle$ são construídas subtraindo as componente na direção de $|w_1\rangle$ e $|w_2\rangle$, conforme:
 
 $$\begin{array}{c}
 &&|w_2 \rangle =& |u_2\rangle - \frac{\langle w_1 | u_2 \rangle}{\langle w_1 | w_1 \rangle} |w_1\rangle \\ \\
@@ -237,7 +237,7 @@ $$|v_1\rangle = \frac{ |w_1 \rangle }{||\langle w_1 | w_1 \rangle||}; \,
 |v_2\rangle = \frac{ |w_2 \rangle }{||\langle w_2 | w_2 \rangle}||; \,
 |v_3\rangle = \frac{ |w_3 \rangle }{||\langle w_3 | w_3 \rangle||}$$
 
-De forma geral, para um cojunto finito de vetores $\{u_k\}$, de um espaço vetorial $\mathcal{U}$ de dimensão $d$, pode-se escrever os vetores ortonormais $\{v_k\}$ através da construindo:
+De forma geral, para um conjunto finito de vetores $\{u_k\}$, de um espaço vetorial $\mathcal{U}$ de dimensão $d$, pode-se escrever os vetores ortonormais $\{v_k\}$ através da construindo:
 
 $$
 \left|v_{k+1}\right\rangle \equiv \frac{\left|w_{k+1}\right\rangle-\sum_{i=1}^{k}\left\langle v_{i} | w_{k+1}\right\rangle\left|v_{i}\right\rangle}{\|\left|w_{k+1}\right\rangle-\sum_{i=1}^{k}\left\langle v_{i} | w_{k+1}\right\rangle\left|v_{i}\right\rangle \|}.
@@ -274,7 +274,7 @@ $$ \langle \alpha \psi| = \alpha^* \langle \psi|$$
 
 **Encontrando os coeficientes da expansão**
 
-Da mesma forma que fazemos os vetores do espaço Euclidiano, para encontrar as componentes de um vetor no espaço de Hilber basta fazer o produto escalar (interno) do vetor com o correspondente verto da base. Em notação de Dirac, se o vetor é dado por 
+Da mesma forma que fazemos os vetores do espaço Euclidiano, para encontrar as componentes de um vetor no espaço de Hilbert basta fazer o produto escalar (interno) do vetor com o correspondente verto da base. Em notação de Dirac, se o vetor é dado por 
 $$
 |\psi\rangle=c_{1}\left|u_{1}\right\rangle+c_{2}\left|u_{2}\right\rangle+\cdots+c_{n}\left|u_{n}\right\rangle=\sum_{i=1}^{n} c_{i}\left|u_{i}\right\rangle
 $$  
@@ -289,14 +289,14 @@ $$
 \left(\begin{array}{c} c_{1} \\ c_{2} \\ \vdots \\ c_{n} \end{array}\right)
 $$
 
-Note, porém, que um vetor pode ser escrito em termos de diversas bases diferentes (o vetor tem existência indepentende da base) e em cada uma delas os valores das componentes serão diferentes.
+Note, porém, que um vetor pode ser escrito em termos de diversas bases diferentes (o vetor tem existência independentemente da base) e em cada uma delas os valores das componentes serão diferentes.
 
 !!! example "Exemplo"
     Considere o vetor abaixo, expresso em termos de uma base ortonormal:
     $$ |\psi\rangle=2 i\left|u_{1}\right\rangle-3\left|u_{2}\right\rangle+i\left|u_{3}\right\rangle$$
 
 
-Neste caso, o velor coluna dos coeficientes representando $|\psi\rangle$ é dado por
+Neste caso, o vetor coluna dos coeficientes representando $|\psi\rangle$ é dado por
     
 $$
 |\psi\rangle = 
@@ -318,7 +318,7 @@ $$
 
 ## 5.6 Operadores lineares
 
-Grandezas físicas observáveis, que podem ser medidas no laboratório, como posição e momento, são representandos dentro da estrutura matemática da mecânica quântica por operadores lineares num espaço vetorial de Hilbert. Matematicamente, esses operadores são mapas que levam (transformam) um vetor em outro vetor. Isto é, são receitas ou regras de transformação de um dado vetor num novo vetor, geralmente diferente do primeiro. Frequentemente usa-se como símbolo uma letra maíscula com "chapel" (sinal circunflexo) sobre a letra para indicar um operador. Assim, na notação de Dirac, escreve-se, por exemplo:
+Grandezas físicas observáveis, que podem ser medidas no laboratório, como posição e momento, são representados dentro da estrutura matemática da mecânica quântica por operadores lineares num espaço vetorial de Hilbert. Matematicamente, esses operadores são mapas que levam (transformam) um vetor em outro vetor. Isto é, são receitas ou regras de transformação de um dado vetor num novo vetor, geralmente diferente do primeiro. Frequentemente usa-se como símbolo uma letra maiúscula com "chapel" (sinal circunflexo) sobre a letra para indicar um operador. Assim, na notação de Dirac, escreve-se, por exemplo:
 $$
 \hat{T}|\psi\rangle=|\phi \rangle.
 $$
@@ -328,7 +328,7 @@ $$
 \hat{T}(\alpha|u\rangle+\beta|v\rangle)=\alpha\, \hat{T}|u\rangle+\beta\, \hat{T}|v\rangle.
 $$ 
 
-Além disso, os operadores lineare também satisfazem as seguintes relações:
+Além disso, os operadores lineares também satisfazem as seguintes relações:
 
 $$
 (\hat{T}+\hat{S})\ket{u}=\hat{T}\ket{u} + \hat{S}\ket{u}
@@ -348,7 +348,7 @@ mas nunca $(\,\ket{u} \hat{T}\,)$ ou $(\,\hat{T} \bra{u}\,)$, que são formas in
 
 - **Operador Identidade:** o operador mais simples
 $$
-\mathbb{1}\ket{u}=\ket{u}
+\mathbf{\hat{1}}\ket{u}=\ket{u}
 $$
 
 - **Produto externo (definição):** o produto externo entre _kets_ e _bras_ é dado por
@@ -373,7 +373,7 @@ $$
 $$
 
 $$
-\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right| = \mathbb{1}
+\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right| = \mathbf{\hat{1}}
 $$
 
 
@@ -471,14 +471,14 @@ $$
 $$
 
 
-No contexto da mecânica quântica, operadores de observáveis físicos têm como autovalores o conjunto de todas as possíveis medidas daquela grandeza física, num dado sistema quântico. Os autovetores de um operador são autoestados do sistema quântico e são muito importantes, pois esses autovetores formam uma base do espaço e permitem represetar qualquer estado do sistema. A seguir temos uma breve revisão de como calcular autovalores e autovetores, a partir de conceitos e métodos de Algebra Linear.
+No contexto da mecânica quântica, operadores de observáveis físicos têm como autovalores o conjunto de todas as possíveis medidas daquela grandeza física, num dado sistema quântico. Os autovetores de um operador são autoestados do sistema quântico e são muito importantes, pois esses autovetores formam uma base do espaço e permitem representar qualquer estado do sistema. A seguir temos uma breve revisão de como calcular autovalores e autovetores, a partir de conceitos e métodos de Algebra Linear.
 
 **Cálculo dos autovalores**
 
 Dado um operador linear $\hat{T}$, como já vimos, pode-se sempre representá-lo por uma matriz $T$. O conjunto de autovalores $\lambda$ dessa matriz podem ser determinados através da _equação característica_ (também chamada de _equação secular_), para o determinante abaixo:
 $$
 \operatorname{det}(T-\lambda I)=0$$
-onde $I=\mathbb{1}$ é a matriz identidade. A solução da equação característica fornece os autovalores $\lambda$, que são as raizes do _polinônimo_ (_característico_), indicado acima.
+onde $I=(\mathbf{\hat{1}})$ é a matriz identidade. A solução da equação característica fornece os autovalores $\lambda$, que são as raízes do _polinômio_ (_característico_), indicado acima.
 
 !!! question "Exercício sugerido"
     Escreva o equação característica e ache os autovalores da matriz
@@ -501,7 +501,7 @@ A partir dos autovalores pode-se determinar os autovetores da matriz $T$, que po
 Antes de seguir, você deve resolver o problema proposto acima, em detalhe, pelo menos até onde puder, para ter certeza de que está entendo todos os passos necessários à resolução do problema. Ao fazer isso irá encontrar os valores que usaremos na resolução que exemplificada o cálculo de um dos autovetores, a seguir
 
 !!! example "Exemplo: resolução dos autovetores"              
-    Os autovalores do problema anterio são $\lambda_1=2$ e $\lambda_2=-1$. 
+    Os autovalores do problema anterior são $\lambda_1=2$ e $\lambda_2=-1$. 
 
     Substitui-se, então, esses valores, um de cada vez, na equação de autovalores $\hat{T}\ket{u_i}=\lambda_i \ket{u_i}$ para determinar os autovetores $\{ \ket{u_1},\ket{u_2} \}$, como é mostrado abaixo para $\ket{u_2}$.
 
@@ -573,7 +573,7 @@ $$
 \braket{w}{\hat{T}}{v} = \braket{v}{\hat{T}}{w}^* =\braket{w}{\hat{T^{\dagger}}}{v}
 $$
 
-onde $\hat{T^{\dagger}}$ (pronuncia-se "T _dagger_") é chamado de conjugado Hermitiano, ou Hermitiado conjugado, ou ainda **adjunto** do operador $\hat{T}$. 
+onde $\hat{T^{\dagger}}$ (pronuncia-se "T _dagger_") é chamado de conjugado Hermitiano, ou Hermitiano conjugado, ou ainda **adjunto** do operador $\hat{T}$. 
 
 !!! note "**Como formar o Adjunto de uma expressão geral?**"
     1. Substitua qualquer constante por seu complexo conjugado.
@@ -582,7 +582,7 @@ onde $\hat{T^{\dagger}}$ (pronuncia-se "T _dagger_") é chamado de conjugado Her
     4. Inverta a ordem de todos os fatores na expressão.
 
 
-**O conjugado Hermitiado de uma matriz**
+**O conjugado Hermitiano de uma matriz**
 
 Já sabemos como encontrar a matriz $M$ de um operador $\hat{M}$ qualquer. Para encontrar a matriz do Adjunto desse, simbolizada por $M^{\dagger}$, basta seguir os seguintes passos:
 
@@ -606,13 +606,13 @@ $$
  
 ### Operadores Hermitianos 
 
-Um operador é dito Hermitiano quando é auto-adjunto: $\hat{T}^{\dagger}=\hat{T}$. Isto é, quando o seu adjunto é ele próprio. Para um operador Hemitiano, temos que
+Um operador é dito Hermitiano quando é auto-adjunto: $\hat{T}^{\dagger}=\hat{T}$. Isto é, quando o seu adjunto é ele próprio. Para um operador Hermitiano, temos que
 
 $$
 \braket{w}{\hat{T}}{v}=\braket{v}{\hat{T}}{w}^*
 $$
 
-Veremos que os operadores de observáveis físicos na mecânica quântica devem ser sempre operadores Hermitianos. Como esse operadores podem ser representado por matrizes, é interessante ver com determinar se uma matriz é Hemitiana.
+Veremos que os operadores de observáveis físicos na mecânica quântica devem ser sempre operadores Hermitianos. Como esse operadores podem ser representado por matrizes, é interessante ver com determinar se uma matriz é Hermitiana.
 
 **Matriz Hermitiana**
 
@@ -630,9 +630,9 @@ Pode-se demonstrar que operadores Hermitianos tem autovalores reais (verifique!)
 
 **Autovetores de um operador Hermitiano**
 
-Outra propriedade importante dos operadores (matrizes) hermetianos é que os autovalores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (_verifique!_), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível, portanto, construir uma base (ortonormal) que gere o espaço.
+Outra propriedade importante dos operadores Hermitianos é que os autovetores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (_verifique!_), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível, portanto, construir uma base (ortonormal) que gere o espaço.
 
-!!! info "Propriedades de operadores hermitianos"
+!!! info "Propriedades de operadores Hermitianos"
     1. Autovalores reais
     2. Autovetores ortogonais, para autovalores diferentes
     3. Autovetores geram o espaço (podem formar uma base)
@@ -666,7 +666,7 @@ Claramente, um operador Hermitiano também é um operador normal. Operadores nor
 Um operador $\hat{U}$ (de matriz $U$) é unitário se:
 
 $$
-UU^{\dagger} = U^{\dagger} U = \mathbb{1}
+UU^{\dagger} = U^{\dagger} U = \mathbf{\hat{1}}
 $$
 
 Isso significa que
@@ -682,7 +682,7 @@ Outra importante característica das matrizes unitárias é que as linhas e colu
 Finalmente, outra característica importante desses operadores é que geometricamente eles preservam o produto interno entre vetores, com pode ser facilmente verificado
 
 $$
-( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbb{1}}{w}=\bra{v}w\rangle. 
+( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbf{\hat{1}}}{w}=\bra{v}w\rangle. 
 $$
 
 ### Comutadores e anticomutadores
@@ -720,7 +720,7 @@ $$
 [\hat{A},\hat{B}] = [\hat{B},\hat{C}] = [\hat{A},\hat{C}] = \dots= 0
 $$
 
-Isso implica que existe uma base comum de autovetores que é única para todos eles, exceto por um fator mutiplicativo.
+Isso implica que existe uma base comum de autovetores que é única para todos eles, exceto por um fator multiplicativo.
 
 
 Para avançar para os tópicos das próximas aulas, use o menu de navegação ou [clique aqui](../Aulas_S7/).

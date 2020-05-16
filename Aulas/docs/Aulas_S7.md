@@ -163,7 +163,7 @@ Mais adiante veremos quais são as condições necessárias para um operador ser
 
 Para efeito de comparação e analogia, podemos pensar na mudança de base como algo parecido à mudança de sistema de coordenadas, com o qual já estamos acostumados na Física. 
 
-Como sabemos, a representação de um vetor (ou operador), por exemplo, na forma matricial irá depender da base usada para representá-lo, pois em geral os valores das compenentes serão diferentes, mas isso não altera o significado de cada um desses objetos. 
+Como sabemos, a representação de um vetor (ou operador), por exemplo, na forma matricial irá depender da base usada para representá-lo, pois em geral os valores das componentes serão diferentes, mas isso não altera o significado de cada um desses objetos. 
 
 Dado um vetor qualquer
 
@@ -185,11 +185,11 @@ Uma forma de pensar nisso é que a transformação $S$ leva os vetores da base $
 ![picture](figuras/grid-transform3.png)
 **Figura 1: _Efeito de uma tranformação linear (S) num grid de pontos e nos versores da base_**
 
-Note, porém, que nessa interpretação todo o sistema de coordenadas é transformado. Ou seja, o _grid_ de pontos do espaço, onde cada ponto é espaçado pelos versores (vetores unitários) da base é transformado. Isso, em geral, representa "deformação" do espaço (mais estritamente, do grid de prontos representando o espaço). Se for linear, essa tranformação fará com que um conjunto de pontos igualmente espaçados continue igualmente espaçados, mas como eles podem sofrer uma mudança de escala, os comprimentos e áreas do _grid_ não são necessariamente conservados. Na verdade, pode-se demonstar que as áreas serão escaladas por uma fator exatamente igual ao determinante da matriz de transformação.
+Note, porém, que nessa interpretação todo o sistema de coordenadas é transformado. Ou seja, o _grid_ de pontos do espaço, onde cada ponto é espaçado pelos versores (vetores unitários) da base é transformado. Isso, em geral, representa "deformação" do espaço (mais estritamente, do grid de prontos representando o espaço). Se for linear, essa transformação fará com que um conjunto de pontos igualmente espaçados continue igualmente espaçados, mas como eles podem sofrer uma mudança de escala, os comprimentos e áreas do _grid_ não são necessariamente conservados. Na verdade, pode-se demonstrar que as áreas serão escaladas por uma fator exatamente igual ao determinante da matriz de transformação.
 
 Como determinar a matriz de transformação?
 
-Na verdade, é bem simples. Basta considerar o efeito nos vetores da base. Usaremos a Fig. 1, acima, para ilustrar com um exemplo que nos ajudará a entender o processo. Imaginando que estamos indo da base $\ket{b_i}$, com os vetores indicados pelas setas potilhadas, e cujas coordenadas são 
+Na verdade, é bem simples. Basta considerar o efeito nos vetores da base. Usaremos a Fig. 1, acima, para ilustrar com um exemplo que nos ajudará a entender o processo. Imaginando que estamos indo da base $\ket{b_i}$, com os vetores indicados pelas setas pontilhadas, e cujas coordenadas são 
 
 $$
 \ket{b_1} = \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix};  
@@ -243,19 +243,19 @@ $$
 Para simplificar a notação, vamos expressar os operadores por matrizes, mas o resultado discutido aqui é geral.
 
 !!! info "Matrizes (transformações) similares"
-    * Uma matriz $B$ é dita similar a uma matriz $A$ se $B = S^{-1}A\,S$ para qualquer matriz inversível $S$.
+    * Uma matriz $B$ é dita similar a uma matriz $A$ se $B = S^{-1}A\,S$ para qualquer matriz invertível $S$.
     * Se $B$ é similar a $A$, então $B$ tem os mesmo autovalores de $A$. Isso pode ser facilmente demonstrado (_verifique!_). 
     * Como consequência de ter os mesmos autovalores, as duas matrizes terão também o mesmo traço (soma dos autovalores) e determinante (produto dos autovalores).
     * Se a matriz $S$ for _unitária_ ela preservará normas e ângulos, de modo que se $A$ for uma representação do operador $\hat{A}$ numa base ortonormal, então $B$ também o será. Como sempre trabalhamos com bases ortogonais, estaremos interessados geralmente em transformações _unitárias_ de similaridade. 
 
-Uma questão interessante agora é se seria possível, em geral, encontrar uma transformação $S$ que transforme os autovetores de uma matriz $M$, geral, de tal modo que a eles passem a formar uma base do espaço. Algo, por exemplo, inverso ao mostrado na Figura 1. Em outras palavras, será que é possível encontrar uma transformação de similiaridade $S$ que coloque a matriz $M$ numa forma diagonal (i.e., que diagonalize $M$)?
+Uma questão interessante agora é se seria possível, em geral, encontrar uma transformação $S$ que transforme os autovetores de uma matriz $M$, geral, de tal modo que a eles passem a formar uma base do espaço. Algo, por exemplo, inverso ao mostrado na Figura 1. Em outras palavras, será que é possível encontrar uma transformação de similaridade $S$ que coloque a matriz $M$ numa forma diagonal (i.e., que diagonalize $M$)?
 
-Como vimos, nesta formulação da MQ usamos operadores lineares para representar grandezas físicas observáveis. Nesse contexto, vimos que os autovalores do operador estão associados aos valores das medidas daquele observável. Portanto, é muito desejável preservar os autovalores de um operador que represente grandezas físicas, se quiseremos buscar tranformação que o diagonalize. Para esse efeito, portanto, usaremos transformações de similidares. Mas como encontrar tais transformações? Como diagonalizar $M$?
+Como vimos, nesta formulação da MQ usamos operadores lineares para representar grandezas físicas observáveis. Nesse contexto, vimos que os autovalores do operador estão associados aos valores das medidas daquele observável. Portanto, é muito desejável preservar os autovalores de um operador que represente grandezas físicas, se quisermos buscar transformação que o diagonalize. Para esse efeito, portanto, usaremos transformações de similaridades. Mas como encontrar tais transformações? Como diagonalizar $M$?
 
 
 ## 5.8 Diagonalização de operadores
 
-Como estamos interessados e na diagonalização de operadores observáveis, vamos coniderar aqui uma operador Hermitiano $C$, qualquer, que representa uma dada grandeza física. Estamos interessados em escrever esse operador numa forma diagonal $D$, seguindo uma transformação de similiaridade $S$:
+Como estamos interessados e na diagonalização de operadores observáveis, vamos considerar aqui uma operador Hermitiano $C$, qualquer, que representa uma dada grandeza física. Estamos interessados em escrever esse operador numa forma diagonal $D$, seguindo uma transformação de similaridade $S$:
 
 $$
 D = S^{-1}C\,S.
@@ -264,7 +264,7 @@ $$
 Como fazemos para encontrar a transformação $S$?
 
 !!! info "Procedimento para encontrar a transformação S"
-    1. Encontre os autovalore e autovetores da matriz $C$
+    1. Encontre os autovalores e autovetores da matriz $C$
     2. Normalize os autovetores de $C$
     3. Forme a matriz $S$ de modo que as colunas dessa matriz sejam os autovetores (colunas) normalizados de $C$
     4. A matriz $S^{-1}$ é a matriz inversa[^1] de $S$, tal que $S^{-1}S=SS^{-1}=\mathbb{1}$.
@@ -284,16 +284,16 @@ $$
 
 onde $\lambda_i$ são os autovalores de $C$ e $D$.
 
-Será que esse procedimento funciona sempre? Não, nem sempre! Nem todas as matrizes são diagnalizáveis. Para isso algumas condições devem ser satisfeitas pela matriz $C$. 
+Será que esse procedimento funciona sempre? Não, nem sempre! Nem todas as matrizes são diagonalizáveis. Para isso algumas condições devem ser satisfeitas pela matriz $C$. 
 
-A primeira condição é que para ser diagonalizável uma matriz deve ter autovetores que geram o espaço. Assim, se todos os autovetores forem distintos, há uma boa chance dela ser diagonalizável. Mesmo quando há raízes múltiplias (degenerescência), em alguns casos, a matriz ainda pode ser diagonalizada, mas não sempre.
+A primeira condição é que para ser diagonalizável uma matriz deve ter autovetores que geram o espaço. Assim, se todos os autovetores forem distintos, há uma boa chance dela ser diagonalizável. Mesmo quando há raízes múltiplas (degenerescência), em alguns casos, a matriz ainda pode ser diagonalizada, mas não sempre.
 
-Pode-se mostrar, porém, que toda matriz _normal_ é diagonalizável. Embora, essa não é uma condição necessária. Além disso, todas as matrizes hermitianas e todas as matrizes unitárias também são diagonalizáveis.
+Pode-se mostrar, porém, que toda matriz _normal_ é diagonalizável. Embora, essa não é uma condição necessária. Além disso, todas as matrizes Hermitianas e todas as matrizes unitárias também são diagonalizáveis.
 
 
 ## 5.9 Subespaços e projetores
 
-Considere um espaço n-dimensional $\mathcal{H}$ com um base ortonormal $\ket{1},\ket{2},\dots,\ket{n}$. Um subespaço $\mathcal{S}$ de $\mathcal{H}$ é um subconjunto de $\mathcal{H}$ tal que $\mathcal{S}$ é ele próprio um espaço vetorial, com respeito as operações de soma e multplicação por um escalar. Podemos verificar que $\mathcal{S}$ é um espaço vetorial usando os mesmos critérios usuais, mas se $\mathcal{S}$ for um subconjunto de $\mathcal{H}$, basta verificar dois critérios
+Considere um espaço n-dimensional $\mathcal{H}$ com um base ortonormal $\ket{1},\ket{2},\dots,\ket{n}$. Um subespaço $\mathcal{S}$ de $\mathcal{H}$ é um subconjunto de $\mathcal{H}$ tal que $\mathcal{S}$ é ele próprio um espaço vetorial, com respeito as operações de soma e multiplicação por um escalar. Podemos verificar que $\mathcal{S}$ é um espaço vetorial usando os mesmos critérios usuais, mas se $\mathcal{S}$ for um subconjunto de $\mathcal{H}$, basta verificar dois critérios
 
 1. O vetor _zero_ (nulo) pertence a $\mathcal{S}$
 2. Para todos os  vetores $\ket{u}$, $\ket{v}$ em $\mathcal{S}$ e escalar $\alpha$, temos que $\ket{u}+\ket{v}$ e $\alpha \ket{u}$ pertencem a $\mathcal{S}$.  
@@ -513,7 +513,7 @@ Neste caso, a norma  é dada por
 \]
 
 
-### Representaçao matricial do produto tensorial
+### Representação matricial do produto tensorial
 
 Seja $A$ uma matriz $(m \times n)$ e $B$ uma matriz $(p \times q)$. O produto tensorial $A \otimes B$ é a matriz com $m p$ linhas e $n q$ colunas. Os elementos desta matriz são construídos pelas submatrizes:
 
