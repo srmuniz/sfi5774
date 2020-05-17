@@ -658,7 +658,7 @@ $$
 AA^{\dagger} = A^{\dagger}A.
 $$ 
 
-Claramente, um operador Hermitiano é também um operador normal. Operadores normais são importantes pois há um teorema que garante que eles podem ser escritos na forma de _decomposição espectral_, que estudaremos adiante e será muito útil. Voltaremos a falar deles ao discutir o processo de diagonalização de um operador.
+Claramente, um operador Hermitiano é também um operador normal. Operadores normais são importantes pois há um [teorema](https://en.wikipedia.org/wiki/Spectral_theorem) que garante que eles podem ser escritos na forma de _decomposição espectral_, que estudaremos adiante e será muito útil. Voltaremos a falar deles ao discutir o processo de diagonalização de um operador.
 
 
 ### Operadores Unitários 
