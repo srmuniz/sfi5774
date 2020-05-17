@@ -626,11 +626,11 @@ Como vimos, $M^{\dagger}$ corresponde ao complexo conjugado da matriz transposta
 
 **Autovalores de um operador Hermitiano**
 
-Pode-se demonstrar que operadores Hermitianos tem autovalores reais (verifique!). Por conta dessa propriedade, requer-se que todos os observáveis físicos na mecânica quântica, sejam representados por operadores Hermitianos. Portanto, tanto o traço como os autovalores de um operador Hermitiano são números reais. 
+Pode-se demonstrar que operadores Hermitianos têm autovalores reais (_verifique!_). Por conta dessa propriedade, requer-se que todos os observáveis físicos na mecânica quântica, sejam representados por operadores Hermitianos. Portanto, tanto o traço como os autovalores de um operador Hermitiano são números reais. 
 
 **Autovetores de um operador Hermitiano**
 
-Outra propriedade importante dos operadores Hermitianos é que os autovetores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (_verifique!_), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível, portanto, construir uma base (ortonormal) que gere o espaço.
+Outra propriedade importante dos operadores Hermitianos é que os autovetores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (_verifique!_), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível construir uma base (ortonormal) que gere o espaço.
 
 !!! info "Propriedades de operadores Hermitianos"
     1. Autovalores reais
@@ -647,18 +647,18 @@ $$
 A^{\dagger}=-A
 $$
 
-Verifique que, neste caso, os elementos da diagonal principal do operador (matriz) anti-Hermitiano(a) são todos números imaginários puros.
+Verifique que, neste caso, os elementos da diagonal principal da matriz do operador anti-Hermitiano(a) são todos números imaginários puros.
 
 
 ### Operadores Normais
 
-Um operador $A$ é dito ser _normal_ se 
+Um operador $A$ é dito ser _normal_ se ele comuta com seu adjunto:
 
 $$
 AA^{\dagger} = A^{\dagger}A.
 $$ 
 
-Claramente, um operador Hermitiano também é um operador normal. Operadores normais são interessantes pois há um teorema importante relacionado à sua representação que garante que eles podem ser escritos numa forma chamada de _decomposição espectral_, e que será bastante útil mais adiante. Voltaremos a falar deles quando discutirmos o processo de diagonalização de um operador.
+Claramente, um operador Hermitiano é também um operador normal. Operadores normais são importantes pois há um teorema que garante que eles podem ser escritos na forma de _decomposição espectral_, que estudaremos adiante e será muito útil. Voltaremos a falar deles ao discutir o processo de diagonalização de um operador.
 
 
 ### Operadores Unitários 

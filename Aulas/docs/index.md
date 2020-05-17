@@ -10,15 +10,15 @@ Embora ainda num estágio preliminar, este site oferece acesso às notas de aula
 
 ## Notas de aulas 
 
-* [`Aula 8`](./Aulas_S5-S6/#5-estrutura-matematica-da-mecanica-quantica): Estrutura matemática da MQ.
-* [`Aula 9`](./Aulas_S5-S6/#53-espacos-de-hilbert-espacos-vetoriais-da-mq): Espaços de Hilbert
+* [`Aula 8`](./Aulas_S5-S6/#5-estrutura-matematica-da-mecanica-quantica): $\,$ Estrutura matemática da MQ.
+* [`Aula 9`](./Aulas_S5-S6/#53-espacos-de-hilbert-espacos-vetoriais-da-mq): $\,$ Espaços de Hilbert
 * [`Aula 10`](./Aulas_S5-S6/#algebra-de-dirac): Algebra de Dirac
-* [`Aula 11`](./Aulas_S7/): Transf. e Diagonalização de operadores
+* [`Aula 11`](./Aulas_S7/): Transf. linear e Diagonalização de operadores
 * [`Aula 12`](./Aulas_S7/#59-subespacos-e-projetores): Subespaços, projetores e funções de operadores
 * [`Aula 13`](./Aula13_Lab1/): Lab 1 - Intro Jupyter notebook
 * [`Aula 14`](./Aula14_Lab2/): Lab 2 - Computação simbólica
 * [`Aula 15`](./Aula15/): Fundamentos da Mecânica Quântica
 
 <p></p>
-### **Conteúdos oficiais desta disciplina** ###
+### **Conteúdos no e-Disciplinas** ###
 O conteúdo oficial e atividades desta disciplina estão disponíveis no [e-Disciplinas](https://edisciplinas.usp.br/course/view.php?id=73735).
