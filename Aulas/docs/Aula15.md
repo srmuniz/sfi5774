@@ -276,19 +276,14 @@ Note que no caso degenerado, após se observar o resultado da medida $\lambda_m$
 
         onde $[\hat{A},\hat{H}]$ é o comutador do observável $\hat{A}$ e o Hamiltoniano $\hat{H}$.
 
-
-
-
-        
 <hr>
 
-
-<hr> 
-<hr>
-
-Lembrando sempre que ainda estamos falando de um sistema físico de uma partícula quântica isolada.
 
 ### Postulados & função de onda
+
+Lembrando sempre que ainda estamos falando de um sistema físico de uma partícula quântica isolada. Podemos agora expressar os postulados em termos das funções de ondas, ao invés da representação mais geral (e abstrata) de vetores de estados no espaço de Hilbert. 
+
+Na prática, para nós que já caminhamos até aqui, não há muita vantagem, mas acho que vale a pena fazer alguns comentários breves, por completeza e também para deixá-los mais confortáveis com diferentes livros textos (inclusive da bibliografia da disciplina), onde um formulação matemática mais simples é usada. Também farei isso como um forma de praticar os conceitos e ideias de representações e mudanças de bases. Mais importante ainda, a descrição em termos de funções de ondas pode trazer alguns elementos intuitivos e, sobretudo, merece uma discussão mais detalhada sobre as condições que devem ser satisfeitas pelas funções de ondas...
 
 Quando apropriado, e não houver ambiguidade, a coordenada de posição será representada por $r$ ou $\textbf{r}$ (ou ainda $\vec{r}$), ao invés da forma unidimensional simplificada, $x$, que temos usado até agora, por simplicidade. O número de dimensões, evidentemente, irá depender do sistema físico e do interesse particular num dado problema. 
 
@@ -296,40 +291,7 @@ Quando apropriado, e não houver ambiguidade, a coordenada de posição será re
     **Notação**: Sem perda de generalidade, o _diferencial_ $d\textbf{r}$, ou $dr$, será uma abreviação do **_diferencial de volume_** apropriado às dimensões do espaço considerado. Assim, $d\textbf{r}$ poderá representar igualmente: ($dx$), ou ($dx\,dy\,dz$) ou ($dr\,d\theta\,d\phi$), ou ainda ($dx_1\,dx_2\dots dx_n$), dependendo do contexto.
 
 
-...
 
-
-!!! note "**Postulados da mecânica quântica**"
-    - **^^Postulado 1^^:** Vetores de estado
-
-        _O estado de um sistema físico é descrito pelo **vetor de estado** $\ket{\psi}$ do seu espaço de Hilbert._ 
-        <hr>
-
-    - **^^Postulado 2^^:** Observáveis físicos
-    
-        _Medidas físicas são representas por **operadores Hermitianos** que atuam nos vetores de estado._
-        <hr>
-
-    - **^^Postulado 3^^:** Resultado de medidas
-
-        _Os possíveis resultados de uma medida são **autovalores do operador** correspondente._
-        <hr>  
-    
-    - **^^Postulado 4^^:** Probabilidades dos resultados
-
-        _As probabilidades de se observar os resultados são dados pelo **regra de Born**._
-        <hr> 
-
-    - **^^Postulado 5^^:** Estado posterior
-
-        _O estado de um sistema após uma medida estará no **subespaço dos autovetores** correspondentes._
-        <hr>
-
-    - **^^Postulado 6^^:** Evolução dinâmica
-
-        _A evolução temporal do estado é governada pela **equação de Schrödinger**._
-
-...
 
 <hr>
 [^1]:
