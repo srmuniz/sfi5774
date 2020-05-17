@@ -120,7 +120,7 @@ Um [_operador normal_](../Aulas_S5-S6/#operadores-normais) sempre pode ser escri
 
 A seguir discutimos como calcular as probabilidades de cada uma dessas medidas e como fica o estado do sistema após o processo de medida. O [processo de medida](https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics) é um dos pontos críticos na teoria quântica, havendo debates até hoje quando a sua completa interpretação.
 
-Neste primeiro contato com o conteúdo é preferível concentrar a atenção no tipo mais comum e conhecido, denominadas de **medidas projetivas**, devido ao tratamento introduzido por [John Von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann)[^1], e que são expressas em termos de operadores de projeção. A discussão abaixo deixará mais claro a razão do nome.
+Neste primeiro contato com o conteúdo é preferível concentrar a atenção no tipo mais comum e conhecido, denominadas de **medidas projetivas**, devido ao tratamento introduzido por [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann)[^1], e que são expressas em termos de operadores de projeção. A discussão abaixo deixará mais claro a razão do nome.
 
 Medidas projetivas não não são as únicas formas de medidas na mecânica quântica, mas são as mais simples de entender e, para fixar as ideias, nos concentraremos nelas aqui.
 <hr>
@@ -160,12 +160,12 @@ $$
 \hat{A} \ket{a_m^{k}} = \lambda_m \ket{a_m^{k}}, \quad k = 1,2,\dots, g_m.
 $$
 
-O conjunto $\{ \ket{a_m^{k}} \}$ constitui um subespaço $\mathcal{M}$ do espaço de Hilbert $\mathcal{H}$.
+O conjunto $\{ \ket{a_m^{k}} \}$ constitui um [subespaço](../Aulas_S7/#59-subespacos-e-projetores) $\mathcal{M}$ do espaço de Hilbert $\mathcal{H}$.
 
 No caso de degenerescência, a probabilidade de obter o resultado $\lambda_m$ é encontrado somando sobre os produtos internos de todos os autovetores do subespaço $\mathcal{M}$.
 
 $$
-P_m = \sum_{k=1}^{g_m} \left| \bra{a_m^{k}} \psi \rangle \right|^2.
+\mathcal{P}_m = \sum_{k=1}^{g_m} \left| \bra{a_m^{k}} \psi \rangle \right|^2.
 $$
 
 <hr>
@@ -178,9 +178,9 @@ Considerando apenas [medidas projetivas](https://en.wikipedia.org/wiki/Projectio
 !!! note ""
     - **Estado ^^_posterior_^^ em medidas projetivas**
 
-        _(i) **Caso não degenerado:** se o resultado for um ^^autovalor não degenerado^^ do operador $\hat{A}$ observável, teremos que **imediatamente** ^^após a medida^^ o estado $\ket{\tilde{\psi}}$ do sistema é dado pelo autovetor correspondente ao autovalor medido._
+        _(i) **Caso não degenerado:** se o resultado for um ^^autovalor não degenerado^^ $\lambda_i$, do operador $\hat{A}$ observável, teremos que **imediatamente** ^^após a medida^^ o estado $\ket{ \psi_i }$ do sistema é dado pelo vetor projetado no autovetor correspondente ao autovalor medido._
 
-        Se o estado for dado por
+        Se o estado antes da medida for dado por
 
         $$
         |\psi\rangle = \alpha_1 |a_1\rangle + \alpha_2 |a_2\rangle + \dots + \alpha_n |a_n \rangle 
@@ -198,8 +198,22 @@ Considerando apenas [medidas projetivas](https://en.wikipedia.org/wiki/Projectio
         onde  $\hat{P}_i$ é o projetor $\hat{P}_i=\ket{a_i}\bra{a_i}.$
         <hr>
 
-        _(ii) **Caso degenerado:**_ O entendimento processo de medida
+        _(ii) **Caso degenerado:**_ se o resultado for um ^^autovalor degenerado^^ $\lambda_m$, do operador $\hat{A}$, teremos que **imediatamente** ^^após a medida^^ o estado $\ket{ \psi_m }$ do sistema é o estado projetado no subespaço $\mathcal{M}$ dos autovetores correspondentes ao autovalor medido.
 
+        Se o estado $\ket{\psi}$ antes da medida for representado na base dos autovalores do observável, onde $\{ \ket{a_m^{k}} \}$ é um conjunto formado pelos autovetores correspondes ao autovalor $\lambda_m$, tal que $\hat{A} \ket{a_m^{k}} = \lambda_k \ket{a_m^{k}}$. 
+        
+        Supondo que a medida resultou no valor $\lambda_i$, o estado _imediatamente_ após a medida é dado por:
+
+        $$
+        \ket{\psi} \rightarrow \quad \ket{\psi_m} = 
+        \frac{1}{\sqrt{\braket{\psi}{ P_m }{\psi}}} \, \hat{P}_m \ket{\psi}
+        $$
+
+        onde  $\hat{P}_m$ é o [projetor no subespaço](/Aulas_S7/#59-subespacos-e-projetores) $\mathcal{M}$
+        
+        $$\hat{P}_m= \sum_{k=1}^{g_m} \ket{a_m^{k}} \bra{a_m^{k}}.$$
+
+Note que no caso degenerado, após se observar o resultado da medida $\lambda_m$, com degenerescência $g_m$, tudo que podemos dizer é que o estado posterior à medida é uma superposição (combinação linear) dos autovetores correspondentes ao autovalor $\lambda_m$.  
 <hr>
 
 
@@ -208,6 +222,8 @@ Considerando apenas [medidas projetivas](https://en.wikipedia.org/wiki/Projectio
 !!! note ""
     - **Dinâmica de um sistema quântico**
 
+        - _**^^Schrödinger Picture^^:**_
+        
         _A evolução temporal de um sistema quântico **fechado** é governada pela equação de Schrödinger._
 
         Assim, sendo $\ket{\psi(t_o)}$ o estado inicial, no instante de tempo $t_o$, o estado do sistema num instante $t$ posterior, $\ket{\psi(t)}$, pode ser derterminado a partir da equação 
@@ -219,10 +235,48 @@ Considerando apenas [medidas projetivas](https://en.wikipedia.org/wiki/Projectio
         onde $\hat{H}$ é o operador Hamiltoniano. Para um sistema isolado com Hamiltoniano independente do tempo, podemos integrar a equação anterrior, para obter
 
         $$
-        \ket{\psi(t)} = \exp \left( - \frac{i}{\hbar} H (t - t_o) \right) \ket{\psi(t_o)}
+        \ket{\psi(t)} = \exp \left( - \frac{i}{\hbar} \hat{H} (t - t_o) \right) \ket{\psi(t_o)}
         $$
         
-        onde temos a [exponencial do operador Hamiltoniano](../Aulas_S7/#510-funcoes-de-operadores), como visto numa aula anterior  .
+        onde temos a [exponencial do operador Hamiltoniano](../Aulas_S7/#510-funcoes-de-operadores), como visto numa aula anterior.
+
+        O termo exponencial pode ser entendido como um **operador de evolução temporal**, unitário, denotado $\hat{U}$ 
+
+        $$
+        \hat{U}(t,t_o) = \exp \left( - \frac{i}{\hbar} \hat{H} (t - t_o) \right)
+        $$ 
+
+        que evolui (_propaga no tempo_) o vetor de estado $\ket{\psi(t_o)} \rightarrow \ket{\psi(t)}$, tal que
+
+        $$
+        \ket{\psi(t)} = \hat{U}(t,t_o) \ket{\psi(t_o)}.
+        $$
+
+        <hr>
+
+        - _**^^Heisenberg Picture^^:**_
+        
+        Na representação de Schrödinger, o operador de evolução temporal evolui o vetor de estado do sistema. Uma representação alternativa, é a representação de Heisenberg, onde os vetores de estados são transformados por operadores que evoluem no tempo. Essas duas representações são completamente equivalentes, pois as predições da mecânica quântica são determinadas por produtos internos
+
+        $$
+        \braket{\psi(t)}{\hat{A}}{\psi(t)} = \braket{\psi(t_o)}{\hat{U}^{\dagger}\hat{A}\,\hat{U}}{\psi(t_o)} 
+        $$
+
+        Pode-se descrever a evolução temporal do sistema em termos de um operador
+
+        $$
+        \hat{A}(t) = \hat{U}^{\dagger}\hat{A}(t_o)\,\hat{U}
+        $$
+
+        Neste caso, a dinâmica do sistema é dada pela [equação de Heisenberg](https://en.wikipedia.org/wiki/Heisenberg_picture)
+
+        $$
+        \frac{d}{dt} \langle \hat{A} \rangle = \frac{1}{i \hbar} [\hat{A},\hat{H}] + \left< \frac{\partial \hat{A}}{\partial t} \right>
+        $$
+
+        onde $[\hat{A},\hat{H}]$ é o comutador do observável $\hat{A}$ e o Hamiltoniano $\hat{H}$.
+
+
 
 
         
@@ -279,7 +333,7 @@ Quando apropriado, e não houver ambiguidade, a coordenada de posição será re
 
 <hr>
 [^1]:
-    _Mathematical Foundations of Quantum Mechanics_, John Von Neumann (1932) [[texto original em Alemão](https://gdz.sub.uni-goettingen.de/id/PPN379400774)]. 
+    _Mathematical Foundations of Quantum Mechanics_, John von Neumann (1932) [[texto original em Alemão](https://gdz.sub.uni-goettingen.de/id/PPN379400774)]. 
  
     New Edition. Translated by Robert T. Beyer. Princeton University Press (2018) [[ISBN: 9781400889921](https://press.princeton.edu/books/hardcover/9780691178561/mathematical-foundations-of-quantum-mechanics)].
 
