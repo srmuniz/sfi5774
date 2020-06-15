@@ -13,7 +13,7 @@ Para concentrar a discussão na física, ao invés da programação, vou usar o 
 
 ### Aparato experimental
 
-<center><img src="\figuras/stern-gerlach-setup.png"></center>
+<center><img src="./figuras/stern-gerlach-setup.png"></center>
 
 
 Fonte: http://hyperphysics.phy-astr.gsu.edu/hbase/spin.html 
