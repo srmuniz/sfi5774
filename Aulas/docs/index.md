@@ -18,6 +18,7 @@ Embora ainda num estágio preliminar, este site oferece acesso às notas de aula
 * [`Aula 13`](./Aula13_Lab1/): Lab 1 - Intro Jupyter notebook
 * [`Aula 14`](./Aula14_Lab2/): Lab 2 - Computação simbólica
 * [`Aula 15`](./Aula15/): Fundamentos da Mecânica Quântica
+* [`Aula 21`](./Aula21_Lab3/): Lab3 - Experimento de Stern-Gerlach & spin 1/2
 
 <p></p>
 ### **Conteúdos no e-Disciplinas** ###
