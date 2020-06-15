@@ -476,6 +476,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../Aula15/" title="Aula 15" class="md-nav__link">
+      Aula 15
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula21_Lab3/" title="Aula 21 - Lab 3" class="md-nav__link">
+      Aula 21 - Lab 3
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../about/" title="About" class="md-nav__link">
       About
     </a>
@@ -719,11 +743,11 @@
 <span><span class="MathJax_Preview">\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}</span><script type="math/tex">\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}</script></span></p>
 <h1 id="5-estrutura-matematica-da-mecanica-quantica">5. Estrutura matemática da Mecânica Quântica</h1>
 <p>Até este ponto, discutimos, em linhas gerais, como expressar e resolver problemas físicos na mecânica quântica, em termos da Equação de
-Schrödinger (EqS). Discutimos, de uma maneira ampla, as estratégias para resolver a EqS no caso geral e, em particular, discutimos a resolução da equação  independente do tempo, resolvendo alguns exemplos emblemáticos de potencias unidimencionais simples. 
+Schrödinger (EqS). Discutimos, de uma maneira ampla, as estratégias para resolver a EqS no caso geral e, em particular, discutimos a resolução da equação  independente do tempo, resolvendo alguns exemplos emblemáticos de potencias unidimensionais simples. 
 Visto sob essa perspectiva, pode-se ter a impressão que mecânica quântica se resume à solução da EqS, usando métodos matemáticos mais ou menos familiares (solução de equações diferenciais parciais). Embora essa seja uma estratégia válida e efetiva em alguns casos, ela é bastante limitada 
 e seria um grande equívoco pensar que as estratégias da mecânica quântica se limitam simplesmente a soluções da Eq. de Schrödinger.</p>
-<p>O roteiro seguido até aqui teve uma motivação didática e, deliberamente, procurou enfatizar os aspectos físicos do problema. Apresentando apenas a matemática necessária para formular e resolver o problema. Por essa razão, não temos sido muito rigorosos com o formalismo. Trocando rigor matemático por intuição física, sempre que possível, para não obscurecer desnecessariamente a "Física" do problema. Essa estratégia é bastante razoável para uma introdução ao assunto. Apesar disso, o domínio do formalismo matemático também é importante e necessário para ser bem sucedido na resolução de problemas gerais da MQ, ou mesmo para entender muitos temas de pesquisa contemporânea. A situação ideal é aquela onde consegue-se combinar ambas habilidades, que é um dos objetivos secundários deste curso.</p>
-<p>Neste capitulo, portanto, seguiremos uma estratégia diferente e complementar àquela seguida até agora. O foco agora será ampliar a linguagem e abstração do problema, apresentadno de modo mais formal a estrutura matemática da mecânica quântica moderna. A prioridade ainda permanecerá com a Física e não a Matemática. Portanto, não se almeja mero rigor matemático, mas, sim, introduzir novos conceitos e representações que serão muito úteis para expandir os horizontes dentro da teoria e, como iremos explorar nos próximos capítulos, serão fundamentais para entender a linguagem contemporânea dessa importante disciplina científica.</p>
+<p>O roteiro seguido até aqui teve uma motivação didática e, deliberadamente, procurou enfatizar os aspectos físicos do problema. Apresentando apenas a matemática necessária para formular e resolver o problema. Por essa razão, não temos sido muito rigorosos com o formalismo. Trocando rigor matemático por intuição física, sempre que possível, para não obscurecer desnecessariamente a "Física" do problema. Essa estratégia é bastante razoável para uma introdução ao assunto. Apesar disso, o domínio do formalismo matemático também é importante e necessário para ser bem sucedido na resolução de problemas gerais da MQ, ou mesmo para entender muitos temas de pesquisa contemporânea. A situação ideal é aquela onde consegue-se combinar ambas habilidades, que é um dos objetivos secundários deste curso.</p>
+<p>Neste capitulo, portanto, seguiremos uma estratégia diferente e complementar àquela seguida até agora. O foco agora será ampliar a linguagem e abstração do problema, apresentando de modo mais formal a estrutura matemática da mecânica quântica moderna. A prioridade ainda permanecerá com a Física e não a Matemática. Portanto, não se almeja mero rigor matemático, mas, sim, introduzir novos conceitos e representações que serão muito úteis para expandir os horizontes dentro da teoria e, como iremos explorar nos próximos capítulos, serão fundamentais para entender a linguagem contemporânea dessa importante disciplina científica.</p>
 <h2 id="51-espaco-de-estados">5.1  Espaço de estados</h2>
 <p>Resumindo o que vimos até aqui, podemos, ainda de uma maneira informal, dizer que as soluções estacionárias <span><span class="MathJax_Preview">\psi_n(x)</span><script type="math/tex">\psi_n(x)</script></span> da EqS são funções de ondas que representam os possíveis estados do sistema, com energia <span><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>. Outra forma de dizer isso, motivada pela forma da equação <span><span class="MathJax_Preview">H\psi_n(x)=E_n\psi_n(x)</span><script type="math/tex">H\psi_n(x)=E_n\psi_n(x)</script></span>, é dizer que <span><span class="MathJax_Preview">\{\psi_n(x)\}</span><script type="math/tex">\{\psi_n(x)\}</script></span> é o conjunto de autofunções do operador <span><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span>, representando os autoestados do sistema com autovalores <span><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>. Vimos nos exemplos discutidos, como no caso da caixa infinita, que <span><span class="MathJax_Preview">\psi_n(x)</span><script type="math/tex">\psi_n(x)</script></span> possui uma série de propriedades interessantes e úteis. Entre elas:</p>
 <p>Dentro do que vimos até aqui, podemos, ainda de uma maneira informal, dizer que as soluções estacionárias <span><span class="MathJax_Preview">\psi_n(x)</span><script type="math/tex">\psi_n(x)</script></span> da EqS são funções de ondas que representam os possíveis estados do sistema, com energia <span><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>. Outra forma de dizer isso, observando a forma da equação <span><span class="MathJax_Preview">H\psi_n(x)=E_n\psi_n(x)</span><script type="math/tex">H\psi_n(x)=E_n\psi_n(x)</script></span>, é dizer que <span><span class="MathJax_Preview">\{\psi_n(x)\}</span><script type="math/tex">\{\psi_n(x)\}</script></span> é o conjunto de autofunções do operador <span><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span>, representando os autoestados do sistema com autovalores <span><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>. Vimos nos exemplos discutidos, como no caso da caixa infinita, que <span><span class="MathJax_Preview">\psi_n(x)</span><script type="math/tex">\psi_n(x)</script></span> possui uma série de propriedades interessantes e úteis. Entre elas: </p>
@@ -770,7 +794,7 @@ e seria um grande equívoco pensar que as estratégias da mecânica quântica se
 <span><span class="MathJax_Preview">\forall\, \vec{u},\vec{w}\in \mathcal{V}</span><script type="math/tex">\forall\, \vec{u},\vec{w}\in \mathcal{V}</script></span> e <span><span class="MathJax_Preview">\forall\, \lambda,\mu \in \mathcal{F} \rightarrow \lambda\vec{u}+\mu\vec{w} \in \mathcal{V}</span><script type="math/tex">\forall\, \lambda,\mu \in \mathcal{F} \rightarrow \lambda\vec{u}+\mu\vec{w} \in \mathcal{V}</script></span> </p>
 <p>Se o campo <span><span class="MathJax_Preview">\mathcal{F}</span><script type="math/tex">\mathcal{F}</script></span> é complexo (real) o espaço é dito ser um espaço vetorial linear complexo (real). </p>
 <h3 id="dimensao-do-espaco">Dimensão do espaço</h3>
-<p>Um conjunto de vetores <span><span class="MathJax_Preview">\{\phi_n \}</span><script type="math/tex">\{\phi_n \}</script></span> é dito linearmente independente (LI) se não há nenhuma combinação linear não-trivial que leve ao vetor nulo, isto é:  <span><span class="MathJax_Preview">\sum_n c_n \phi_n = 0 \rightarrow c_n = 0\, \forall\, n</span><script type="math/tex">\sum_n c_n \phi_n = 0 \rightarrow c_n = 0\, \forall\, n</script></span>. A dimensão <span><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> do espaço vetorial é dada pelo número máximo de vetores LI desse espaço. Qualquer vetor do espaço pode ser escrito como uma combinação linear dos vetores da base desse espaço, formado por vetores LI do espaço. Como veremos adiante, os espaçcos de Hilbert da MQ podem ser infinitos.</p>
+<p>Um conjunto de vetores <span><span class="MathJax_Preview">\{\phi_n \}</span><script type="math/tex">\{\phi_n \}</script></span> é dito linearmente independente (LI) se não há nenhuma combinação linear não-trivial que leve ao vetor nulo, isto é:  <span><span class="MathJax_Preview">\sum_n c_n \phi_n = 0 \rightarrow c_n = 0\, \forall\, n</span><script type="math/tex">\sum_n c_n \phi_n = 0 \rightarrow c_n = 0\, \forall\, n</script></span>. A dimensão <span><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> do espaço vetorial é dada pelo número máximo de vetores LI desse espaço. Qualquer vetor do espaço pode ser escrito como uma combinação linear dos vetores da base desse espaço, formado por vetores LI do espaço. Como veremos adiante, os espaços de Hilbert da MQ podem ser infinitos.</p>
 <h2 id="53-espacos-de-hilbert-espacos-vetoriais-da-mq">5.3 Espaços de Hilbert: espaços vetoriais da MQ</h2>
 <p>Na mecânica quântica são usados espaços vetoriais com algumas propriedades e estruturas adicionais, para garantir certas propriedades físicas desejáveis da teoria. É comum, principalmente entre os físicos, chamar esses estados de estados de Hilbert. Os espaços de Hilbert podem ser finitos (com dimensão <span><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>) ou infinitos, por exemplo, quando os vetores são funções contínuas. </p>
 <p>Embora essa terminologia não seja muito precisa, dado que os
@@ -823,10 +847,10 @@ espaços vetoriais usados na MQ são apenas um tipo particular de espaço de Hil
 <script type="math/tex; mode=display"> ||(\psi + \phi)|| \le ||\psi|| + ||\phi|| .</script>
 </div>
 <p>Para ambos os casos, a desigualdade só é válida quando um dos vetores é múltiplo do outro.</p>
-<p>Dois veltores são tido ortogonais quando seu produto interno é nulo. Da mesma forma, um conjunto de vetores <span><span class="MathJax_Preview">\{\phi_n\}</span><script type="math/tex">\{\phi_n\}</script></span> é dito <em>ortonormal</em> quando o produto interno entre pares de seus elementos obedece a relação <span><span class="MathJax_Preview">(\phi_n,\phi_m)=\delta_{nm}</span><script type="math/tex">(\phi_n,\phi_m)=\delta_{nm}</script></span>.</p>
+<p>Dois vetores são tido ortogonais quando seu produto interno é nulo. Da mesma forma, um conjunto de vetores <span><span class="MathJax_Preview">\{\phi_n\}</span><script type="math/tex">\{\phi_n\}</script></span> é dito <em>ortonormal</em> quando o produto interno entre pares de seus elementos obedece a relação <span><span class="MathJax_Preview">(\phi_n,\phi_m)=\delta_{nm}</span><script type="math/tex">(\phi_n,\phi_m)=\delta_{nm}</script></span>.</p>
 <h3 id="expansao-de-vetores">Expansão de vetores</h3>
 <p>No caso em que <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> é finito, com dimensão <span><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>, dado um vetor arbitrário <span><span class="MathJax_Preview">\psi</span><script type="math/tex">\psi</script></span> e uma base <span><span class="MathJax_Preview">\{ \phi_n \}</span><script type="math/tex">\{ \phi_n \}</script></span> de vetores linearmente independentes, podemos expressar o vetor <span><span class="MathJax_Preview">\psi = \sum_n c_n \phi_n</span><script type="math/tex">\psi = \sum_n c_n \phi_n</script></span>, onde <span><span class="MathJax_Preview">c_n=(\phi_n,\psi)</span><script type="math/tex">c_n=(\phi_n,\psi)</script></span> e <span><span class="MathJax_Preview">(\phi_n,\phi_m)=\delta_{nm}</span><script type="math/tex">(\phi_n,\phi_m)=\delta_{nm}</script></span>. Podemos pensar nos coeficientes <span><span class="MathJax_Preview">c_n</span><script type="math/tex">c_n</script></span> como sendo as componentes do vetor no espaço de Hilbert, análogos às componentes de um vetor no espaço Euclidiano. Porém, é importante lembrar que essas componentes são expressas por números complexos. As componente do vetor de estado têm toda a informação relativa ao estado, determinando completamente o vetor (estado) do sistema.</p>
-<p>Também de modo análogo, podemos expressar as soma de dois vetore em termos dessas componentes </p>
+<p>Também de modo análogo, podemos expressar as soma de dois vetores em termos dessas componentes </p>
 <div>
 <div class="MathJax_Preview">\Psi_a + \Psi_b = \sum_n (a_i + b_n) \psi_n.</div>
 <script type="math/tex; mode=display">\Psi_a + \Psi_b = \sum_n (a_i + b_n) \psi_n.</script>
@@ -837,7 +861,7 @@ espaços vetoriais usados na MQ são apenas um tipo particular de espaço de Hil
 </div>
 <div class="admonition info">
 <p class="admonition-title">Pare, Pense &amp; Contemple!</p>
-<p>Antes de prosseguir, pare e reflita por um momento no significado e amplitude esses resultados. Lembre-se que o espaço <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> pode ter dimensõe infinitas, tanto no número de elemento (vetores), como nas dimensões (número de componentes) desses vetores. Esses resultados, nada óbvios, são extremamente poderosos e úteis, justificando plenamente o tempo investido em generalizar e abstrair a descrição dos nossos problemas usando esse formalismo.  </p>
+<p>Antes de prosseguir, pare e reflita por um momento no significado e amplitude esses resultados. Lembre-se que o espaço <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> pode ter dimensões infinitas, tanto no número de elemento (vetores), como nas dimensões (número de componentes) desses vetores. Esses resultados, nada óbvios, são extremamente poderosos e úteis, justificando plenamente o tempo investido em generalizar e abstrair a descrição dos nossos problemas usando esse formalismo.  </p>
 </div>
 <h2 id="54-notacao-de-dirac">5.4 Notação de Dirac</h2>
 <p>Introduzimos agora a notação de Dirac, bastante popular na mecânica quântica, onde o vetor de estado é chamado de "<em>ket</em>" e representado pelo símbolo <span><span class="MathJax_Preview">|\psi\rangle</span><script type="math/tex">|\psi\rangle</script></span>. O vetor correspondente do <em>espaço dual</em> é chamado de "<em>bra</em>" é representado por <span><span class="MathJax_Preview">\langle\psi|</span><script type="math/tex">\langle\psi|</script></span>, de tal forma que o produto interno pode ser representado por <span><span class="MathJax_Preview">(\psi,\psi)=\langle\psi|\psi\rangle</span><script type="math/tex">(\psi,\psi)=\langle\psi|\psi\rangle</script></span>. </p>
@@ -957,13 +981,13 @@ Um conjunto ortonormal <span><span class="MathJax_Preview">\{ |\phi_1\rangle, |\
 <script type="math/tex; mode=display"> \sum_{i=1}^n |\phi_i\rangle \langle \phi_i| = 1 </script>
 </div>
 <h3 id="procedimento-de-gram-schmidt">Procedimento de Gram-Schmidt</h3>
-<p>Se tivermos um conjunto de vetores <span><span class="MathJax_Preview">\{ |u_i\rangle \}</span><script type="math/tex">\{ |u_i\rangle \}</script></span> que não é ortonormal, é possível usar o procedimento de Gram-Schmidt para construir uma base ortonormal a partir desse conjunto inicial. Para simplificar o entendimento do processo, consideramos um exemplo com 3 vetores de base (num espaço de dimensção 3). </p>
+<p>Se tivermos um conjunto de vetores <span><span class="MathJax_Preview">\{ |u_i\rangle \}</span><script type="math/tex">\{ |u_i\rangle \}</script></span> que não é ortonormal, é possível usar o procedimento de Gram-Schmidt para construir uma base ortonormal a partir desse conjunto inicial. Para simplificar o entendimento do processo, consideramos um exemplo com 3 vetores de base (num espaço de dimensão 3). </p>
 <p>Começamos selecionando um dos vetores do conjunto <span><span class="MathJax_Preview">\{ |u_i\rangle \}</span><script type="math/tex">\{ |u_i\rangle \}</script></span> e  definindo o vetor:</p>
 <div>
 <div class="MathJax_Preview"> |w_1\rangle = |u_1\rangle  </div>
 <script type="math/tex; mode=display"> |w_1\rangle = |u_1\rangle  </script>
 </div>
-<p>A partir disso, constroi-se sucessivamente os vetores seguintes da base subtraindo deles as componentes nas direções ortonais àquelas já construídas. Neste caso, por exemplo, as direções <span><span class="MathJax_Preview">|w_2\rangle</span><script type="math/tex">|w_2\rangle</script></span> e <span><span class="MathJax_Preview">|w_3\rangle</span><script type="math/tex">|w_3\rangle</script></span> são construídas subtraindo as componente na direção de <span><span class="MathJax_Preview">|w_1\rangle</span><script type="math/tex">|w_1\rangle</script></span> e <span><span class="MathJax_Preview">|w_2\rangle</span><script type="math/tex">|w_2\rangle</script></span>, conforme:</p>
+<p>A partir disso, constrói-se sucessivamente os vetores seguintes da base subtraindo deles as componentes nas direções ortogonais àquelas já construídas. Neste caso, por exemplo, as direções <span><span class="MathJax_Preview">|w_2\rangle</span><script type="math/tex">|w_2\rangle</script></span> e <span><span class="MathJax_Preview">|w_3\rangle</span><script type="math/tex">|w_3\rangle</script></span> são construídas subtraindo as componente na direção de <span><span class="MathJax_Preview">|w_1\rangle</span><script type="math/tex">|w_1\rangle</script></span> e <span><span class="MathJax_Preview">|w_2\rangle</span><script type="math/tex">|w_2\rangle</script></span>, conforme:</p>
 <div>
 <div class="MathJax_Preview">\begin{array}{c}
 &amp;&amp;|w_2 \rangle =&amp; |u_2\rangle - \frac{\langle w_1 | u_2 \rangle}{\langle w_1 | w_1 \rangle} |w_1\rangle \\ \\
@@ -981,7 +1005,7 @@ Um conjunto ortonormal <span><span class="MathJax_Preview">\{ |\phi_1\rangle, |\
 |v_2\rangle = \frac{ |w_2 \rangle }{||\langle w_2 | w_2 \rangle}||; \,
 |v_3\rangle = \frac{ |w_3 \rangle }{||\langle w_3 | w_3 \rangle||}</script>
 </div>
-<p>De forma geral, para um cojunto finito de vetores <span><span class="MathJax_Preview">\{u_k\}</span><script type="math/tex">\{u_k\}</script></span>, de um espaço vetorial <span><span class="MathJax_Preview">\mathcal{U}</span><script type="math/tex">\mathcal{U}</script></span> de dimensão <span><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>, pode-se escrever os vetores ortonormais <span><span class="MathJax_Preview">\{v_k\}</span><script type="math/tex">\{v_k\}</script></span> através da construindo:</p>
+<p>De forma geral, para um conjunto finito de vetores <span><span class="MathJax_Preview">\{u_k\}</span><script type="math/tex">\{u_k\}</script></span>, de um espaço vetorial <span><span class="MathJax_Preview">\mathcal{U}</span><script type="math/tex">\mathcal{U}</script></span> de dimensão <span><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>, pode-se escrever os vetores ortonormais <span><span class="MathJax_Preview">\{v_k\}</span><script type="math/tex">\{v_k\}</script></span> através da construindo:</p>
 <div>
 <div class="MathJax_Preview">
 \left|v_{k+1}\right\rangle \equiv \frac{\left|w_{k+1}\right\rangle-\sum_{i=1}^{k}\left\langle v_{i} | w_{k+1}\right\rangle\left|v_{i}\right\rangle}{\|\left|w_{k+1}\right\rangle-\sum_{i=1}^{k}\left\langle v_{i} | w_{k+1}\right\rangle\left|v_{i}\right\rangle \|}.
@@ -1024,7 +1048,7 @@ Um conjunto ortonormal <span><span class="MathJax_Preview">\{ |\phi_1\rangle, |\
 </ul>
 </div>
 <p><strong>Encontrando os coeficientes da expansão</strong></p>
-<p>Da mesma forma que fazemos os vetores do espaço Euclidiano, para encontrar as componentes de um vetor no espaço de Hilber basta fazer o produto escalar (interno) do vetor com o correspondente verto da base. Em notação de Dirac, se o vetor é dado por 
+<p>Da mesma forma que fazemos os vetores do espaço Euclidiano, para encontrar as componentes de um vetor no espaço de Hilbert basta fazer o produto escalar (interno) do vetor com o correspondente verto da base. Em notação de Dirac, se o vetor é dado por 
 $$
 |\psi\rangle=c_{1}\left|u_{1}\right\rangle+c_{2}\left|u_{2}\right\rangle+\cdots+c_{n}\left|u_{n}\right\rangle=\sum_{i=1}^{n} c_{i}\left|u_{i}\right\rangle
 $$<br />
@@ -1043,13 +1067,13 @@ que podem ser convenientemente escritos na forma</p>
 \left(\begin{array}{c} c_{1} \\ c_{2} \\ \vdots \\ c_{n} \end{array}\right)
 </script>
 </div>
-<p>Note, porém, que um vetor pode ser escrito em termos de diversas bases diferentes (o vetor tem existência indepentende da base) e em cada uma delas os valores das componentes serão diferentes.</p>
+<p>Note, porém, que um vetor pode ser escrito em termos de diversas bases diferentes (o vetor tem existência independentemente da base) e em cada uma delas os valores das componentes serão diferentes.</p>
 <div class="admonition example">
 <p class="admonition-title">Exemplo</p>
 <p>Considere o vetor abaixo, expresso em termos de uma base ortonormal:
 $$ |\psi\rangle=2 i\left|u_{1}\right\rangle-3\left|u_{2}\right\rangle+i\left|u_{3}\right\rangle$$</p>
 </div>
-<p>Neste caso, o velor coluna dos coeficientes representando <span><span class="MathJax_Preview">|\psi\rangle</span><script type="math/tex">|\psi\rangle</script></span> é dado por</p>
+<p>Neste caso, o vetor coluna dos coeficientes representando <span><span class="MathJax_Preview">|\psi\rangle</span><script type="math/tex">|\psi\rangle</script></span> é dado por</p>
 <div>
 <div class="MathJax_Preview">
 |\psi\rangle = 
@@ -1081,7 +1105,7 @@ $$ |\psi\rangle=2 i\left|u_{1}\right\rangle-3\left|u_{2}\right\rangle+i\left|u_{
 </script>
 </div>
 <h2 id="56-operadores-lineares">5.6 Operadores lineares</h2>
-<p>Grandezas físicas observáveis, que podem ser medidas no laboratório, como posição e momento, são representandos dentro da estrutura matemática da mecânica quântica por operadores lineares num espaço vetorial de Hilbert. Matematicamente, esses operadores são mapas que levam (transformam) um vetor em outro vetor. Isto é, são receitas ou regras de transformação de um dado vetor num novo vetor, geralmente diferente do primeiro. Frequentemente usa-se como símbolo uma letra maíscula com "chapel" (sinal circunflexo) sobre a letra para indicar um operador. Assim, na notação de Dirac, escreve-se, por exemplo:
+<p>Grandezas físicas observáveis, que podem ser medidas no laboratório, como posição e momento, são representados dentro da estrutura matemática da mecânica quântica por operadores lineares num espaço vetorial de Hilbert. Matematicamente, esses operadores são mapas que levam (transformam) um vetor em outro vetor. Isto é, são receitas ou regras de transformação de um dado vetor num novo vetor, geralmente diferente do primeiro. Frequentemente usa-se como símbolo uma letra maiúscula com "chapel" (sinal circunflexo) sobre a letra para indicar um operador. Assim, na notação de Dirac, escreve-se, por exemplo:
 $$
 \hat{T}|\psi\rangle=|\phi \rangle.
 $$</p>
@@ -1089,7 +1113,7 @@ $$</p>
 $$
 \hat{T}(\alpha|u\rangle+\beta|v\rangle)=\alpha\, \hat{T}|u\rangle+\beta\, \hat{T}|v\rangle.
 $$ </p>
-<p>Além disso, os operadores lineare também satisfazem as seguintes relações:</p>
+<p>Além disso, os operadores lineares também satisfazem as seguintes relações:</p>
 <div>
 <div class="MathJax_Preview">
 (\hat{T}+\hat{S})\ket{u}=\hat{T}\ket{u} + \hat{S}\ket{u}
@@ -1116,7 +1140,7 @@ mas nunca <span><span class="MathJax_Preview">(\,\ket{u} \hat{T}\,)</span><scrip
 <li>
 <p><strong>Operador Identidade:</strong> o operador mais simples
 $$
-\mathbb{1}\ket{u}=\ket{u}
+\mathbf{\hat{1}}\ket{u}=\ket{u}
 $$</p>
 </li>
 <li>
@@ -1157,10 +1181,10 @@ note que o produto externo resulta num operador e não num escalar! Essa constru
 </div>
 <div>
 <div class="MathJax_Preview">
-\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right| = \mathbb{1}
+\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right| = \mathbf{\hat{1}}
 </div>
 <script type="math/tex; mode=display">
-\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right| = \mathbb{1}
+\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right| = \mathbf{\hat{1}}
 </script>
 </div>
 <h3 id="representacao-de-operadores">Representação de operadores</h3>
@@ -1277,12 +1301,12 @@ Considerando que <span><span class="MathJax_Preview">\{ |u_i\rangle \}</span><sc
 $$
 \hat{H}|\psi_n\rangle = E_n |\psi_n \rangle
 $$</p>
-<p>No contexto da mecânica quântica, operadores de observáveis físicos têm como autovalores o conjunto de todas as possíveis medidas daquela grandeza física, num dado sistema quântico. Os autovetores de um operador são autoestados do sistema quântico e são muito importantes, pois esses autovetores formam uma base do espaço e permitem represetar qualquer estado do sistema. A seguir temos uma breve revisão de como calcular autovalores e autovetores, a partir de conceitos e métodos de Algebra Linear.</p>
+<p>No contexto da mecânica quântica, operadores de observáveis físicos têm como autovalores o conjunto de todas as possíveis medidas daquela grandeza física, num dado sistema quântico. Os autovetores de um operador são autoestados do sistema quântico e são muito importantes, pois esses autovetores formam uma base do espaço e permitem representar qualquer estado do sistema. A seguir temos uma breve revisão de como calcular autovalores e autovetores, a partir de conceitos e métodos de Algebra Linear.</p>
 <p><strong>Cálculo dos autovalores</strong></p>
 <p>Dado um operador linear <span><span class="MathJax_Preview">\hat{T}</span><script type="math/tex">\hat{T}</script></span>, como já vimos, pode-se sempre representá-lo por uma matriz <span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>. O conjunto de autovalores <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> dessa matriz podem ser determinados através da <em>equação característica</em> (também chamada de <em>equação secular</em>), para o determinante abaixo:
 $$
 \operatorname{det}(T-\lambda I)=0$$
-onde <span><span class="MathJax_Preview">I=\mathbb{1}</span><script type="math/tex">I=\mathbb{1}</script></span> é a matriz identidade. A solução da equação característica fornece os autovalores <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>, que são as raizes do <em>polinônimo</em> (<em>característico</em>), indicado acima.</p>
+onde <span><span class="MathJax_Preview">I=(\mathbf{\hat{1}})</span><script type="math/tex">I=(\mathbf{\hat{1}})</script></span> é a matriz identidade. A solução da equação característica fornece os autovalores <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>, que são as raízes do <em>polinômio</em> (<em>característico</em>), indicado acima.</p>
 <div class="admonition question">
 <p class="admonition-title">Exercício sugerido</p>
 <p>Escreva o equação característica e ache os autovalores da matriz</p>
@@ -1312,7 +1336,7 @@ A =
 <p>Antes de seguir, você deve resolver o problema proposto acima, em detalhe, pelo menos até onde puder, para ter certeza de que está entendo todos os passos necessários à resolução do problema. Ao fazer isso irá encontrar os valores que usaremos na resolução que exemplificada o cálculo de um dos autovetores, a seguir</p>
 <div class="admonition example">
 <p class="admonition-title">Exemplo: resolução dos autovetores</p>
-<p>Os autovalores do problema anterio são <span><span class="MathJax_Preview">\lambda_1=2</span><script type="math/tex">\lambda_1=2</script></span> e <span><span class="MathJax_Preview">\lambda_2=-1</span><script type="math/tex">\lambda_2=-1</script></span>. </p>
+<p>Os autovalores do problema anterior são <span><span class="MathJax_Preview">\lambda_1=2</span><script type="math/tex">\lambda_1=2</script></span> e <span><span class="MathJax_Preview">\lambda_2=-1</span><script type="math/tex">\lambda_2=-1</script></span>. </p>
 <p>Substitui-se, então, esses valores, um de cada vez, na equação de autovalores <span><span class="MathJax_Preview">\hat{T}\ket{u_i}=\lambda_i \ket{u_i}</span><script type="math/tex">\hat{T}\ket{u_i}=\lambda_i \ket{u_i}</script></span> para determinar os autovetores <span><span class="MathJax_Preview">\{ \ket{u_1},\ket{u_2} \}</span><script type="math/tex">\{ \ket{u_1},\ket{u_2} \}</script></span>, como é mostrado abaixo para <span><span class="MathJax_Preview">\ket{u_2}</span><script type="math/tex">\ket{u_2}</script></span>.</p>
 <div>
 <div class="MathJax_Preview">
@@ -1426,7 +1450,7 @@ a \\
 \braket{w}{\hat{T}}{v} = \braket{v}{\hat{T}}{w}^* =\braket{w}{\hat{T^{\dagger}}}{v}
 </script>
 </div>
-<p>onde <span><span class="MathJax_Preview">\hat{T^{\dagger}}</span><script type="math/tex">\hat{T^{\dagger}}</script></span> (pronuncia-se "T <em>dagger</em>") é chamado de conjugado Hermitiano, ou Hermitiado conjugado, ou ainda <strong>adjunto</strong> do operador <span><span class="MathJax_Preview">\hat{T}</span><script type="math/tex">\hat{T}</script></span>. </p>
+<p>onde <span><span class="MathJax_Preview">\hat{T^{\dagger}}</span><script type="math/tex">\hat{T^{\dagger}}</script></span> (pronuncia-se "T <em>dagger</em>") é chamado de conjugado Hermitiano, ou Hermitiano conjugado, ou ainda <strong>adjunto</strong> do operador <span><span class="MathJax_Preview">\hat{T}</span><script type="math/tex">\hat{T}</script></span>. </p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Como formar o Adjunto de uma expressão geral?</strong></p>
 <ol>
@@ -1436,7 +1460,7 @@ a \\
 <li>Inverta a ordem de todos os fatores na expressão.</li>
 </ol>
 </div>
-<p><strong>O conjugado Hermitiado de uma matriz</strong></p>
+<p><strong>O conjugado Hermitiano de uma matriz</strong></p>
 <p>Já sabemos como encontrar a matriz <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> de um operador <span><span class="MathJax_Preview">\hat{M}</span><script type="math/tex">\hat{M}</script></span> qualquer. Para encontrar a matriz do Adjunto desse, simbolizada por <span><span class="MathJax_Preview">M^{\dagger}</span><script type="math/tex">M^{\dagger}</script></span>, basta seguir os seguintes passos:</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Matriz Adjunta</strong></p>
@@ -1464,7 +1488,7 @@ M^{\dagger}= \left( M^T \right)^*.
 </ol>
 </div>
 <h3 id="operadores-hermitianos">Operadores Hermitianos</h3>
-<p>Um operador é dito Hermitiano quando é auto-adjunto: <span><span class="MathJax_Preview">\hat{T}^{\dagger}=\hat{T}</span><script type="math/tex">\hat{T}^{\dagger}=\hat{T}</script></span>. Isto é, quando o seu adjunto é ele próprio. Para um operador Hemitiano, temos que</p>
+<p>Um operador é dito Hermitiano quando é auto-adjunto: <span><span class="MathJax_Preview">\hat{T}^{\dagger}=\hat{T}</span><script type="math/tex">\hat{T}^{\dagger}=\hat{T}</script></span>. Isto é, quando o seu adjunto é ele próprio. Para um operador Hermitiano, temos que</p>
 <div>
 <div class="MathJax_Preview">
 \braket{w}{\hat{T}}{v}=\braket{v}{\hat{T}}{w}^*
@@ -1473,7 +1497,7 @@ M^{\dagger}= \left( M^T \right)^*.
 \braket{w}{\hat{T}}{v}=\braket{v}{\hat{T}}{w}^*
 </script>
 </div>
-<p>Veremos que os operadores de observáveis físicos na mecânica quântica devem ser sempre operadores Hermitianos. Como esse operadores podem ser representado por matrizes, é interessante ver com determinar se uma matriz é Hemitiana.</p>
+<p>Veremos que os operadores de observáveis físicos na mecânica quântica devem ser sempre operadores Hermitianos. Como esse operadores podem ser representado por matrizes, é interessante ver com determinar se uma matriz é Hermitiana.</p>
 <p><strong>Matriz Hermitiana</strong></p>
 <p>Uma matriz <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> é Hermitiana se satisfaz:</p>
 <div>
@@ -1486,11 +1510,11 @@ M = M^{\dagger}.
 </div>
 <p>Como vimos, <span><span class="MathJax_Preview">M^{\dagger}</span><script type="math/tex">M^{\dagger}</script></span> corresponde ao complexo conjugado da matriz transposta. Portanto, para satisfazer essa condição, os elementos da diagonal principal da matriz devem ser todos números reais (não complexos). Como consequência, o traço do operador (matriz) será, necessariamente um número real.</p>
 <p><strong>Autovalores de um operador Hermitiano</strong></p>
-<p>Pode-se demonstrar que operadores Hermitianos tem autovalores reais (verifique!). Por conta dessa propriedade, requer-se que todos os observáveis físicos na mecânica quântica, sejam representados por operadores Hermitianos. Portanto, tanto o traço como os autovalores de um operador Hermitiano são números reais. </p>
+<p>Pode-se demonstrar que operadores Hermitianos têm autovalores reais (<em>verifique!</em>). Por conta dessa propriedade, requer-se que todos os observáveis físicos na mecânica quântica, sejam representados por operadores Hermitianos. Portanto, tanto o traço como os autovalores de um operador Hermitiano são números reais. </p>
 <p><strong>Autovetores de um operador Hermitiano</strong></p>
-<p>Outra propriedade importante dos operadores (matrizes) hermetianos é que os autovalores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (<em>verifique!</em>), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível, portanto, construir uma base (ortonormal) que gere o espaço.</p>
+<p>Outra propriedade importante dos operadores Hermitianos é que os autovetores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (<em>verifique!</em>), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível construir uma base (ortonormal) que gere o espaço.</p>
 <div class="admonition info">
-<p class="admonition-title">Propriedades de operadores hermitianos</p>
+<p class="admonition-title">Propriedades de operadores Hermitianos</p>
 <ol>
 <li>Autovalores reais</li>
 <li>Autovetores ortogonais, para autovalores diferentes</li>
@@ -1507,9 +1531,9 @@ A^{\dagger}=-A
 A^{\dagger}=-A
 </script>
 </div>
-<p>Verifique que, neste caso, os elementos da diagonal principal do operador (matriz) anti-Hermitiano(a) são todos números imaginários puros.</p>
+<p>Verifique que, neste caso, os elementos da diagonal principal da matriz do operador anti-Hermitiano(a) são todos números imaginários puros.</p>
 <h3 id="operadores-normais">Operadores Normais</h3>
-<p>Um operador <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> é dito ser <em>normal</em> se </p>
+<p>Um operador <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> é dito ser <em>normal</em> se ele comuta com seu adjunto:</p>
 <div>
 <div class="MathJax_Preview">
 AA^{\dagger} = A^{\dagger}A.
@@ -1518,15 +1542,15 @@ AA^{\dagger} = A^{\dagger}A.
 AA^{\dagger} = A^{\dagger}A.
 </script>
 </div>
-<p>Claramente, um operador Hermitiano também é um operador normal. Operadores normais são interessantes pois há um teorema importante relacionado à sua representação que garante que eles podem ser escritos numa forma chamada de <em>decomposição espectral</em>, e que será bastante útil mais adiante. Voltaremos a falar deles quando discutirmos o processo de diagonalização de um operador.</p>
+<p>Claramente, um operador Hermitiano é também um operador normal. Operadores normais são importantes pois há um <a href="https://en.wikipedia.org/wiki/Spectral_theorem">teorema</a> que garante que eles podem ser escritos na forma de <em>decomposição espectral</em>, que estudaremos adiante e será muito útil. Voltaremos a falar deles ao discutir o processo de diagonalização de um operador.</p>
 <h3 id="operadores-unitarios">Operadores Unitários</h3>
 <p>Um operador <span><span class="MathJax_Preview">\hat{U}</span><script type="math/tex">\hat{U}</script></span> (de matriz <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span>) é unitário se:</p>
 <div>
 <div class="MathJax_Preview">
-UU^{\dagger} = U^{\dagger} U = \mathbb{1}
+UU^{\dagger} = U^{\dagger} U = \mathbf{\hat{1}}
 </div>
 <script type="math/tex; mode=display">
-UU^{\dagger} = U^{\dagger} U = \mathbb{1}
+UU^{\dagger} = U^{\dagger} U = \mathbf{\hat{1}}
 </script>
 </div>
 <p>Isso significa que</p>
@@ -1543,10 +1567,10 @@ U^{\dagger} = U^{-1}
 <p>Finalmente, outra característica importante desses operadores é que geometricamente eles preservam o produto interno entre vetores, com pode ser facilmente verificado</p>
 <div>
 <div class="MathJax_Preview">
-( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbb{1}}{w}=\bra{v}w\rangle. 
+( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbf{\hat{1}}}{w}=\bra{v}w\rangle. 
 </div>
 <script type="math/tex; mode=display">
-( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbb{1}}{w}=\bra{v}w\rangle. 
+( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbf{\hat{1}}}{w}=\bra{v}w\rangle. 
 </script>
 </div>
 <h3 id="comutadores-e-anticomutadores">Comutadores e anticomutadores</h3>
@@ -1589,7 +1613,7 @@ U^{\dagger} = U^{-1}
 [\hat{A},\hat{B}] = [\hat{B},\hat{C}] = [\hat{A},\hat{C}] = \dots= 0
 </script>
 </div>
-<p>Isso implica que existe uma base comum de autovetores que é única para todos eles, exceto por um fator mutiplicativo.</p>
+<p>Isso implica que existe uma base comum de autovetores que é única para todos eles, exceto por um fator multiplicativo.</p>
 <p>Para avançar para os tópicos das próximas aulas, use o menu de navegação ou <a href="../Aulas_S7/">clique aqui</a>.</p>
                 
                   
@@ -1599,7 +1623,7 @@ U^{\dagger} = U^{-1}
 <div class="md-source-date">
   <small>
     
-      Última atualização: 7 de maio de 2020
+      Última atualização: 17 de maio de 2020
     
   </small>
 </div>

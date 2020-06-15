@@ -333,7 +333,7 @@
         
           <li class="md-nav__item">
   <a href="#representacao-matricial-do-produto-tensorial" class="md-nav__link">
-    Representaçao matricial do produto tensorial
+    Representação matricial do produto tensorial
   </a>
   
 </li>
@@ -370,6 +370,30 @@
   <li class="md-nav__item">
     <a href="../Aula14_Lab2/" title="Aula 14 - Lab 2" class="md-nav__link">
       Aula 14 - Lab 2
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula15/" title="Aula 15" class="md-nav__link">
+      Aula 15
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula21_Lab3/" title="Aula 21 - Lab 3" class="md-nav__link">
+      Aula 21 - Lab 3
     </a>
   </li>
 
@@ -496,7 +520,7 @@
         
           <li class="md-nav__item">
   <a href="#representacao-matricial-do-produto-tensorial" class="md-nav__link">
-    Representaçao matricial do produto tensorial
+    Representação matricial do produto tensorial
   </a>
   
 </li>
@@ -762,7 +786,7 @@ M =
 <p>Mais adiante veremos quais são as condições necessárias para um operador ser diagonalizável. Veremos também como fazer para diagonalizá-lo. Antes, vamos introduzir mais dois conceitos importantes. Os conceitos de <em>mudança de base</em> e <em>transformações de similaridade</em>.</p>
 <h3 id="mudanca-de-base">Mudança de base</h3>
 <p>Para efeito de comparação e analogia, podemos pensar na mudança de base como algo parecido à mudança de sistema de coordenadas, com o qual já estamos acostumados na Física. </p>
-<p>Como sabemos, a representação de um vetor (ou operador), por exemplo, na forma matricial irá depender da base usada para representá-lo, pois em geral os valores das compenentes serão diferentes, mas isso não altera o significado de cada um desses objetos. </p>
+<p>Como sabemos, a representação de um vetor (ou operador), por exemplo, na forma matricial irá depender da base usada para representá-lo, pois em geral os valores das componentes serão diferentes, mas isso não altera o significado de cada um desses objetos. </p>
 <p>Dado um vetor qualquer</p>
 <div>
 <div class="MathJax_Preview">
@@ -787,9 +811,9 @@ M =
 <p>Uma forma de pensar nisso é que a transformação <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> leva os vetores da base <span><span class="MathJax_Preview">\ket{b_i}</span><script type="math/tex">\ket{b_i}</script></span> nos vetores da base <span><span class="MathJax_Preview">\ket{c_i}</span><script type="math/tex">\ket{c_i}</script></span>. Neste caso, <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> é efetivamente um mapa de como fazer essa transformação dos vetores da base, e é uma receita (mapa) de como "levar" cada ponto de um sistema de coordenadas no ponto correspondente no outro sistema de coordenadas. Na verdade, é importante lembrar que aqui estamos interessados nas coordenadas (representação) do vetor, que está sendo representado nas diferentes bases (sistemas de coordenadas).  </p>
 <p><img alt="picture" src="../figuras/grid-transform3.png" />
 <strong>Figura 1: <em>Efeito de uma tranformação linear (S) num grid de pontos e nos versores da base</em></strong></p>
-<p>Note, porém, que nessa interpretação todo o sistema de coordenadas é transformado. Ou seja, o <em>grid</em> de pontos do espaço, onde cada ponto é espaçado pelos versores (vetores unitários) da base é transformado. Isso, em geral, representa "deformação" do espaço (mais estritamente, do grid de prontos representando o espaço). Se for linear, essa tranformação fará com que um conjunto de pontos igualmente espaçados continue igualmente espaçados, mas como eles podem sofrer uma mudança de escala, os comprimentos e áreas do <em>grid</em> não são necessariamente conservados. Na verdade, pode-se demonstar que as áreas serão escaladas por uma fator exatamente igual ao determinante da matriz de transformação.</p>
+<p>Note, porém, que nessa interpretação todo o sistema de coordenadas é transformado. Ou seja, o <em>grid</em> de pontos do espaço, onde cada ponto é espaçado pelos versores (vetores unitários) da base é transformado. Isso, em geral, representa "deformação" do espaço (mais estritamente, do grid de prontos representando o espaço). Se for linear, essa transformação fará com que um conjunto de pontos igualmente espaçados continue igualmente espaçados, mas como eles podem sofrer uma mudança de escala, os comprimentos e áreas do <em>grid</em> não são necessariamente conservados. Na verdade, pode-se demonstrar que as áreas serão escaladas por uma fator exatamente igual ao determinante da matriz de transformação.</p>
 <p>Como determinar a matriz de transformação?</p>
-<p>Na verdade, é bem simples. Basta considerar o efeito nos vetores da base. Usaremos a Fig. 1, acima, para ilustrar com um exemplo que nos ajudará a entender o processo. Imaginando que estamos indo da base <span><span class="MathJax_Preview">\ket{b_i}</span><script type="math/tex">\ket{b_i}</script></span>, com os vetores indicados pelas setas potilhadas, e cujas coordenadas são </p>
+<p>Na verdade, é bem simples. Basta considerar o efeito nos vetores da base. Usaremos a Fig. 1, acima, para ilustrar com um exemplo que nos ajudará a entender o processo. Imaginando que estamos indo da base <span><span class="MathJax_Preview">\ket{b_i}</span><script type="math/tex">\ket{b_i}</script></span>, com os vetores indicados pelas setas pontilhadas, e cujas coordenadas são </p>
 <div>
 <div class="MathJax_Preview">
 \ket{b_1} = \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix};  
@@ -872,16 +896,16 @@ S =
 <div class="admonition info">
 <p class="admonition-title">Matrizes (transformações) similares</p>
 <ul>
-<li>Uma matriz <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> é dita similar a uma matriz <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> se <span><span class="MathJax_Preview">B = S^{-1}A\,S</span><script type="math/tex">B = S^{-1}A\,S</script></span> para qualquer matriz inversível <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>.</li>
+<li>Uma matriz <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> é dita similar a uma matriz <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> se <span><span class="MathJax_Preview">B = S^{-1}A\,S</span><script type="math/tex">B = S^{-1}A\,S</script></span> para qualquer matriz invertível <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>.</li>
 <li>Se <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> é similar a <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>, então <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> tem os mesmo autovalores de <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>. Isso pode ser facilmente demonstrado (<em>verifique!</em>). </li>
 <li>Como consequência de ter os mesmos autovalores, as duas matrizes terão também o mesmo traço (soma dos autovalores) e determinante (produto dos autovalores).</li>
 <li>Se a matriz <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> for <em>unitária</em> ela preservará normas e ângulos, de modo que se <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> for uma representação do operador <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span> numa base ortonormal, então <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> também o será. Como sempre trabalhamos com bases ortogonais, estaremos interessados geralmente em transformações <em>unitárias</em> de similaridade. </li>
 </ul>
 </div>
-<p>Uma questão interessante agora é se seria possível, em geral, encontrar uma transformação <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> que transforme os autovetores de uma matriz <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>, geral, de tal modo que a eles passem a formar uma base do espaço. Algo, por exemplo, inverso ao mostrado na Figura 1. Em outras palavras, será que é possível encontrar uma transformação de similiaridade <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> que coloque a matriz <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> numa forma diagonal (i.e., que diagonalize <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>)?</p>
-<p>Como vimos, nesta formulação da MQ usamos operadores lineares para representar grandezas físicas observáveis. Nesse contexto, vimos que os autovalores do operador estão associados aos valores das medidas daquele observável. Portanto, é muito desejável preservar os autovalores de um operador que represente grandezas físicas, se quiseremos buscar tranformação que o diagonalize. Para esse efeito, portanto, usaremos transformações de similidares. Mas como encontrar tais transformações? Como diagonalizar <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>?</p>
+<p>Uma questão interessante agora é se seria possível, em geral, encontrar uma transformação <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> que transforme os autovetores de uma matriz <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>, geral, de tal modo que a eles passem a formar uma base do espaço. Algo, por exemplo, inverso ao mostrado na Figura 1. Em outras palavras, será que é possível encontrar uma transformação de similaridade <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> que coloque a matriz <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> numa forma diagonal (i.e., que diagonalize <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>)?</p>
+<p>Como vimos, nesta formulação da MQ usamos operadores lineares para representar grandezas físicas observáveis. Nesse contexto, vimos que os autovalores do operador estão associados aos valores das medidas daquele observável. Portanto, é muito desejável preservar os autovalores de um operador que represente grandezas físicas, se quisermos buscar transformação que o diagonalize. Para esse efeito, portanto, usaremos transformações de similaridades. Mas como encontrar tais transformações? Como diagonalizar <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>?</p>
 <h2 id="58-diagonalizacao-de-operadores">5.8 Diagonalização de operadores</h2>
-<p>Como estamos interessados e na diagonalização de operadores observáveis, vamos coniderar aqui uma operador Hermitiano <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>, qualquer, que representa uma dada grandeza física. Estamos interessados em escrever esse operador numa forma diagonal <span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>, seguindo uma transformação de similiaridade <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>:</p>
+<p>Como estamos interessados e na diagonalização de operadores observáveis, vamos considerar aqui uma operador Hermitiano <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>, qualquer, que representa uma dada grandeza física. Estamos interessados em escrever esse operador numa forma diagonal <span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>, seguindo uma transformação de similaridade <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>:</p>
 <div>
 <div class="MathJax_Preview">
 D = S^{-1}C\,S.
@@ -894,7 +918,7 @@ D = S^{-1}C\,S.
 <div class="admonition info">
 <p class="admonition-title">Procedimento para encontrar a transformação S</p>
 <ol>
-<li>Encontre os autovalore e autovetores da matriz <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></li>
+<li>Encontre os autovalores e autovetores da matriz <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></li>
 <li>Normalize os autovetores de <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></li>
 <li>Forme a matriz <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> de modo que as colunas dessa matriz sejam os autovetores (colunas) normalizados de <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></li>
 <li>A matriz <span><span class="MathJax_Preview">S^{-1}</span><script type="math/tex">S^{-1}</script></span> é a matriz inversa<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> de <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>, tal que <span><span class="MathJax_Preview">S^{-1}S=SS^{-1}=\mathbb{1}</span><script type="math/tex">S^{-1}S=SS^{-1}=\mathbb{1}</script></span>.</li>
@@ -924,11 +948,11 @@ D =
 </script>
 </div>
 <p>onde <span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span> são os autovalores de <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> e <span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>.</p>
-<p>Será que esse procedimento funciona sempre? Não, nem sempre! Nem todas as matrizes são diagnalizáveis. Para isso algumas condições devem ser satisfeitas pela matriz <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>. </p>
-<p>A primeira condição é que para ser diagonalizável uma matriz deve ter autovetores que geram o espaço. Assim, se todos os autovetores forem distintos, há uma boa chance dela ser diagonalizável. Mesmo quando há raízes múltiplias (degenerescência), em alguns casos, a matriz ainda pode ser diagonalizada, mas não sempre.</p>
-<p>Pode-se mostrar, porém, que toda matriz <em>normal</em> é diagonalizável. Embora, essa não é uma condição necessária. Além disso, todas as matrizes hermitianas e todas as matrizes unitárias também são diagonalizáveis.</p>
+<p>Será que esse procedimento funciona sempre? Não, nem sempre! Nem todas as matrizes são diagonalizáveis. Para isso algumas condições devem ser satisfeitas pela matriz <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>. </p>
+<p>A primeira condição é que para ser diagonalizável uma matriz deve ter autovetores que geram o espaço. Assim, se todos os autovetores forem distintos, há uma boa chance dela ser diagonalizável. Mesmo quando há raízes múltiplas (degenerescência), em alguns casos, a matriz ainda pode ser diagonalizada, mas não sempre.</p>
+<p>Pode-se mostrar, porém, que toda matriz <em>normal</em> é diagonalizável. Embora, essa não é uma condição necessária. Além disso, todas as matrizes Hermitianas e todas as matrizes unitárias também são diagonalizáveis.</p>
 <h2 id="59-subespacos-e-projetores">5.9 Subespaços e projetores</h2>
-<p>Considere um espaço n-dimensional <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> com um base ortonormal <span><span class="MathJax_Preview">\ket{1},\ket{2},\dots,\ket{n}</span><script type="math/tex">\ket{1},\ket{2},\dots,\ket{n}</script></span>. Um subespaço <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> de <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> é um subconjunto de <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> tal que <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> é ele próprio um espaço vetorial, com respeito as operações de soma e multplicação por um escalar. Podemos verificar que <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> é um espaço vetorial usando os mesmos critérios usuais, mas se <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> for um subconjunto de <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span>, basta verificar dois critérios</p>
+<p>Considere um espaço n-dimensional <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> com um base ortonormal <span><span class="MathJax_Preview">\ket{1},\ket{2},\dots,\ket{n}</span><script type="math/tex">\ket{1},\ket{2},\dots,\ket{n}</script></span>. Um subespaço <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> de <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> é um subconjunto de <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> tal que <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> é ele próprio um espaço vetorial, com respeito as operações de soma e multiplicação por um escalar. Podemos verificar que <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> é um espaço vetorial usando os mesmos critérios usuais, mas se <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> for um subconjunto de <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span>, basta verificar dois critérios</p>
 <ol>
 <li>O vetor <em>zero</em> (nulo) pertence a <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span></li>
 <li>Para todos os  vetores <span><span class="MathJax_Preview">\ket{u}</span><script type="math/tex">\ket{u}</script></span>, <span><span class="MathJax_Preview">\ket{v}</span><script type="math/tex">\ket{v}</script></span> em <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span> e escalar <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>, temos que <span><span class="MathJax_Preview">\ket{u}+\ket{v}</span><script type="math/tex">\ket{u}+\ket{v}</script></span> e <span><span class="MathJax_Preview">\alpha \ket{u}</span><script type="math/tex">\alpha \ket{u}</script></span> pertencem a <span><span class="MathJax_Preview">\mathcal{S}</span><script type="math/tex">\mathcal{S}</script></span>.  </li>
@@ -1206,7 +1230,7 @@ A \otimes B
 \langle\psi | \psi\rangle=\langle v | v\rangle\langle w | w\rangle
 </script>
 </div>
-<h3 id="representacao-matricial-do-produto-tensorial">Representaçao matricial do produto tensorial</h3>
+<h3 id="representacao-matricial-do-produto-tensorial">Representação matricial do produto tensorial</h3>
 <p>Seja <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> uma matriz <span><span class="MathJax_Preview">(m \times n)</span><script type="math/tex">(m \times n)</script></span> e <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> uma matriz <span><span class="MathJax_Preview">(p \times q)</span><script type="math/tex">(p \times q)</script></span>. O produto tensorial <span><span class="MathJax_Preview">A \otimes B</span><script type="math/tex">A \otimes B</script></span> é a matriz com <span><span class="MathJax_Preview">m p</span><script type="math/tex">m p</script></span> linhas e <span><span class="MathJax_Preview">n q</span><script type="math/tex">n q</script></span> colunas. Os elementos desta matriz são construídos pelas submatrizes:</p>
 <div>
 <div class="MathJax_Preview">
@@ -1465,7 +1489,7 @@ f(x_0) = \sum_{k=1}^{\infty} \frac{1}{k!} \left(\frac{df}{dx}\right)^k_{x=x_0} (
 <div class="md-source-date">
   <small>
     
-      Última atualização: 13 de maio de 2020
+      Última atualização: 16 de maio de 2020
     
   </small>
 </div>

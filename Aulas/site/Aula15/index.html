@@ -1,0 +1,1004 @@
+
+
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complemento _online_ às aulas da disciplina de Mecânica Quântica Aplicada do IFSC/USP">
+      
+      
+        <link rel="canonical" href="https://srmuniz.github.io/sfi5774/Aula15/">
+      
+      
+        <meta name="author" content="Sérgio R. Muniz @IFSC/USP">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Aula 15 - SFI5774</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.89dc9fe3.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6-fundamentos-da-mecanica-quantica" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://srmuniz.github.io/sfi5774/" title="SFI5774" class="md-header-nav__button md-logo" aria-label="SFI5774">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SFI5774
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Aula 15
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Digite para iniciar a busca
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://srmuniz.github.io/sfi5774" title="Ir ao repositório" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sfi5774/Aulas/
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://srmuniz.github.io/sfi5774/" title="SFI5774" class="md-nav__button md-logo" aria-label="SFI5774">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    SFI5774
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://srmuniz.github.io/sfi5774" title="Ir ao repositório" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sfi5774/Aulas/
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aulas_S5-S6/" title="Aulas S5 & S6" class="md-nav__link">
+      Aulas S5 & S6
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aulas_S7/" title="Aulas S7" class="md-nav__link">
+      Aulas S7
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula13_Lab1/" title="Aula 13 - Lab 1" class="md-nav__link">
+      Aula 13 - Lab 1
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula14_Lab2/" title="Aula 14 - Lab 2" class="md-nav__link">
+      Aula 14 - Lab 2
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Aula 15
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Aula 15" class="md-nav__link md-nav__link--active">
+      Aula 15
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-introducao" class="md-nav__link">
+    6.1 Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-postulados" class="md-nav__link">
+    6.2 Postulados
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Postulados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postulado-1-estados-de-um-sistema-fisico" class="md-nav__link">
+    Postulado 1: estados de um sistema físico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-2-observaveis-fisicos" class="md-nav__link">
+    Postulado 2: observáveis físicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Postulado 2: observáveis físicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decomposicao-espectral" class="md-nav__link">
+    Decomposição Espectral
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-3-resultados-de-medidas-fisicas" class="md-nav__link">
+    Postulado 3: resultados de medidas físicas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-4-interpretacao-probabilistica" class="md-nav__link">
+    Postulado 4: interpretação probabilística
+  </a>
+  
+    <nav class="md-nav" aria-label="Postulado 4: interpretação probabilística">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#degenerescencia" class="md-nav__link">
+    Degenerescência
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-5-estado-apos-uma-medida" class="md-nav__link">
+    Postulado 5: estado após uma medida
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-6-evolucao-dinamica-do-sistema" class="md-nav__link">
+    Postulado 6: evolução dinâmica do sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulados-funcao-de-onda" class="md-nav__link">
+    Postulados &amp; função de onda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula21_Lab3/" title="Aula 21 - Lab 3" class="md-nav__link">
+      Aula 21 - Lab 3
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-introducao" class="md-nav__link">
+    6.1 Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-postulados" class="md-nav__link">
+    6.2 Postulados
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Postulados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postulado-1-estados-de-um-sistema-fisico" class="md-nav__link">
+    Postulado 1: estados de um sistema físico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-2-observaveis-fisicos" class="md-nav__link">
+    Postulado 2: observáveis físicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Postulado 2: observáveis físicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decomposicao-espectral" class="md-nav__link">
+    Decomposição Espectral
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-3-resultados-de-medidas-fisicas" class="md-nav__link">
+    Postulado 3: resultados de medidas físicas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-4-interpretacao-probabilistica" class="md-nav__link">
+    Postulado 4: interpretação probabilística
+  </a>
+  
+    <nav class="md-nav" aria-label="Postulado 4: interpretação probabilística">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#degenerescencia" class="md-nav__link">
+    Degenerescência
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-5-estado-apos-uma-medida" class="md-nav__link">
+    Postulado 5: estado após uma medida
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulado-6-evolucao-dinamica-do-sistema" class="md-nav__link">
+    Postulado 6: evolução dinâmica do sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postulados-funcao-de-onda" class="md-nav__link">
+    Postulados &amp; função de onda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <p><span><span class="MathJax_Preview">\newcommand{\bra}[1]{\left\langle #1 \right|}</span><script type="math/tex">\newcommand{\bra}[1]{\left\langle #1 \right|}</script></span>
+<span><span class="MathJax_Preview">\newcommand{\ket}[1]{\left| #1 \right\rangle}</span><script type="math/tex">\newcommand{\ket}[1]{\left| #1 \right\rangle}</script></span>
+<span><span class="MathJax_Preview">\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}</span><script type="math/tex">\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}</script></span></p>
+<h1 id="6-fundamentos-da-mecanica-quantica">6. Fundamentos da Mecânica Quântica</h1>
+<h2 id="61-introducao">6.1 Introdução</h2>
+<p>Neste bloco conectamos todos os conceitos matemáticos estudados nas últimas semanas, na construção de uma formulação concisa da teoria quântica. Isso é feito de forma axiomática, através de postulados, motivados por razões físicas. Esses postulados conectam as observações empíricas da natureza com os objetos matemáticos usados para descrevê-la, fornecendo uma prescrição matemática de como usar a teoria para predizer e analisar os resultados de experimentos.</p>
+<p>Na literatura da área, os postulados são apresentados de várias formas, dependendo do contexto e da área de aplicação. Podem também ser expressos em termos de <strong>vetores de estado</strong> ou usando o <strong>operador densidade</strong>. Discutiremos aqui ambas as formas, fazendo ainda referências à descrição dos vetores de estado em em termos de <strong>funções de ondas</strong>, para que percebam as conexões e relações entre essas diferentes representações do sistema físico.</p>
+<p>Essas diferentes formas, em geral, são totalmente equivalentes e muitas vezes a escolha é uma questão de preferência, ou familiaridade com o formalismo. Há, porém, situações em que uma ou outra pode ser mais vantajosa e conveniente. Discutiremos, por exemplo, casos onde a descrição com o operador densidade é conveniente para tratar sistemas quânticos abertos, e introduziremos uma forma alternativa de descrever a dinâmica quântica. </p>
+<p>Para concentrar-se nas ideias principais, toda a discussão aqui será para sistemas isolados (sistemas fechados) de uma única partícula quântica. Estudaremos as extensões necessárias mais adiante, ao falar de sistema de partículas e fazer uma breve introdução às ideias de sistemas quânticos abertos.  </p>
+<h2 id="62-postulados">6.2 Postulados</h2>
+<p>Por razões didáticas, os postulados serão primeiro apresentados em termos de vetores de estado, aproveitando a linguagem introduzida nas últimas aulas.</p>
+<p>Para focar a atenção nos pontos principais, apresento-os primeiro de forma compacta e resumida. Concentre-se na ideia e objetivo principal de <em>cada um deles</em>. </p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Postulados resumidos da mecânica quântica</strong></p>
+<ul>
+<li>
+<p><strong>#1:</strong>
+<em>O <ins>estado de um sistema</ins> físico é descrito pelo <strong>vetor de estado</strong> <span><span class="MathJax_Preview">\ket{\psi}</span><script type="math/tex">\ket{\psi}</script></span> do seu espaço de Hilbert.</em></p>
+</li>
+<li>
+<p><strong>#2:</strong>
+<em>Medidas de <ins>observáveis físicos</ins> são representas por <strong>operadores Hermitianos</strong>.</em></p>
+</li>
+<li>
+<p><strong>#3:</strong>
+<em>Os possíveis <ins>resultados de uma medida</ins> são <strong>autovalores do operador</strong> correspondente.</em></p>
+</li>
+<li>
+<p><strong>#4:</strong> 
+<em>As <ins>probabilidades</ins> de se observar os resultados são dados pelo <strong>regra de Born</strong>.</em></p>
+</li>
+<li>
+<p><strong>#5:</strong> 
+<em>O <ins>estado após uma medida</ins> é um vetor do <strong>subespaço dos autovetores</strong> correspondente ao resultado medido.</em></p>
+</li>
+<li>
+<p><strong>#6:</strong> <em>A <ins>evolução temporal</ins> do vetor de estado é governada pela <strong>equação de Schrödinger</strong>.</em></p>
+</li>
+</ul>
+</div>
+<p>Depois discutiremos com mais detalhe suas implicações, nuances e extensões (para descrições alternativas) nas seções seguintes. Veremos também vários exemplos nas aulas.</p>
+<hr>
+
+<h3 id="postulado-1-estados-de-um-sistema-fisico"><ins>Postulado 1</ins>: estados de um sistema físico</h3>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Vetores de estado</strong></p>
+<p><em>O estado num instante de tempo <span><span class="MathJax_Preview">t_o</span><script type="math/tex">t_o</script></span> é descrito por um vetor <span><span class="MathJax_Preview">\ket{\psi(t_o)}</span><script type="math/tex">\ket{\psi(t_o)}</script></span> pertencente a um espaço de Hilbert complexo, <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span>.</em> </p>
+<p>Se o conjunto <span><span class="MathJax_Preview">\{ |u_1\rangle, |u_2\rangle, \dots,|u_n\rangle \}</span><script type="math/tex">\{ |u_1\rangle, |u_2\rangle, \dots,|u_n\rangle \}</script></span> forma uma base de um espaço finito <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span>, o estado <span><span class="MathJax_Preview">\ket{\psi}</span><script type="math/tex">\ket{\psi}</script></span> pode ser escrito como:</p>
+<div>
+<div class="MathJax_Preview"> |\psi\rangle = c_1 |u_1\rangle + c_2 |u_2\rangle + \dots + c_n |u_n\rangle = \sum_{i=1}^n c_i |u_i\rangle</div>
+<script type="math/tex; mode=display"> |\psi\rangle = c_1 |u_1\rangle + c_2 |u_2\rangle + \dots + c_n |u_n\rangle = \sum_{i=1}^n c_i |u_i\rangle</script>
+</div>
+<p>onde os <strong>coeficientes da expansão</strong> são números complexos dados por</p>
+<div>
+<div class="MathJax_Preview"> c_i = \langle u_i | \psi \rangle,</div>
+<script type="math/tex; mode=display"> c_i = \langle u_i | \psi \rangle,</script>
+</div>
+<p>sempre satisfazendo a condição de normalização <span><span class="MathJax_Preview">\langle \psi | \psi \rangle = 1</span><script type="math/tex">\langle \psi | \psi \rangle = 1</script></span>, para ser consistente com a inerpretação de Born. A condição de normalização exige que </p>
+<div>
+<div class="MathJax_Preview">
+\langle \psi | \psi \rangle = |c_1|^2 + |c_2|^2 + \dots + |c_n|^2 = \sum_i |c_i|^2  = 1.
+</div>
+<script type="math/tex; mode=display">
+\langle \psi | \psi \rangle = |c_1|^2 + |c_2|^2 + \dots + |c_n|^2 = \sum_i |c_i|^2  = 1.
+</script>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+
+<h3 id="postulado-2-observaveis-fisicos"><ins>Postulado 2</ins>: observáveis físicos</h3>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Observáveis são operadores Hermitianos</strong></p>
+<p><em>Quantidades físicas mensuráveis, como energia e momento linear são chamados de <strong>observáveis físicos</strong>. Matematicamente, esses observáveis são descritos por operadores Hermitianos que atuam em vetores do espaço de Hilbert.</em> </p>
+<p>Os <strong>autovetores desses operadores formam uma base ortonormal</strong> do espaço de estados do sistema.</p>
+<p>Dada uma base <span><span class="MathJax_Preview">\{ |u_1\rangle, |u_2\rangle, \dots,|u_n\rangle \}</span><script type="math/tex">\{ |u_1\rangle, |u_2\rangle, \dots,|u_n\rangle \}</script></span>, <em>qualquer</em> operador pode ser escrito na forma de <strong>produtos externos</strong> dessa base, segundo:</p>
+<div>
+<div class="MathJax_Preview">
+\hat{A} = \sum_{i,j=1}^n A_{ij} \ket{u_i} \bra{u_j},
+</div>
+<script type="math/tex; mode=display">
+\hat{A} = \sum_{i,j=1}^n A_{ij} \ket{u_i} \bra{u_j},
+</script>
+</div>
+<p>onde </p>
+<div>
+<div class="MathJax_Preview">
+A_{ij} = \bra{u_i} A \ket{u_j},
+</div>
+<script type="math/tex; mode=display">
+A_{ij} = \bra{u_i} A \ket{u_j},
+</script>
+</div>
+<p>para que o operador seja Hermitiano, devemos ter <span><span class="MathJax_Preview">A_{ij}=A_{ji}^*.</span><script type="math/tex">A_{ij}=A_{ji}^*.</script></span></p>
+</li>
+</ul>
+</div>
+<h4 id="decomposicao-espectral"><mark>Decomposição Espectral</mark></h4>
+<p>Um <a href="../Aulas_S5-S6/#operadores-normais"><em>operador normal</em></a> sempre pode ser escrito em termos de operadores de projeção formados pelos seus <ins>próprios autovetores</ins>. Isso é chamado de <em>decomposição espectral</em>.</p>
+<div class="admonition info">
+<p>Suponha um operador <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span> com autovalores <span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span> e autovetores <span><span class="MathJax_Preview">\ket{a_i}</span><script type="math/tex">\ket{a_i}</script></span>:</p>
+<div>
+<div class="MathJax_Preview">
+\hat{A} \ket{a_i} = \lambda_i \ket{a_i}
+</div>
+<script type="math/tex; mode=display">
+\hat{A} \ket{a_i} = \lambda_i \ket{a_i}
+</script>
+</div>
+<p>A sua decomposição espectral é a representação na forma diagonal, em termos de seus autovalores e autovetores, conforme:</p>
+<div>
+<div class="MathJax_Preview">
+\hat{A} = \sum_{i=1}^n \lambda_i \ket{a_i} \bra{a_i}.
+</div>
+<script type="math/tex; mode=display">
+\hat{A} = \sum_{i=1}^n \lambda_i \ket{a_i} \bra{a_i}.
+</script>
+</div>
+</div>
+<hr>
+
+<h3 id="postulado-3-resultados-de-medidas-fisicas"><ins>Postulado 3</ins>: resultados de medidas físicas</h3>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Resultados de uma medida</strong></p>
+<p><em>Os possíveis resultados de uma medida de um observável físico são autovalores de seus operador correspondente.</em> </p>
+<p>De acordo com este postulado, esses são os <strong>únicos</strong> valores possíveis de serem medidos.</p>
+</li>
+</ul>
+</div>
+<p>A seguir discutimos como calcular as probabilidades de cada uma dessas medidas e como fica o estado do sistema após o processo de medida. O <a href="https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics">processo de medida</a> é um dos pontos críticos na teoria quântica, havendo debates até hoje quando a sua completa interpretação.</p>
+<p>Neste primeiro contato com o conteúdo é preferível concentrar a atenção no tipo mais comum e conhecido, denominadas de <strong>medidas projetivas</strong>, devido ao tratamento introduzido por <a href="https://en.wikipedia.org/wiki/John_von_Neumann">John von Neumann</a><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, e que são expressas em termos de operadores de projeção. A discussão abaixo deixará mais claro a razão do nome.</p>
+<p>Medidas projetivas não não são as únicas formas de medidas na mecânica quântica, mas são as mais simples de entender e, para fixar as ideias, nos concentraremos nelas aqui.
+<hr></p>
+<h3 id="postulado-4-interpretacao-probabilistica"><ins>Postulado 4</ins>: interpretação probabilística</h3>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Probabilidades dos resultados</strong></p>
+<p><em>A probabilidade de medir um resultado <span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>, (autovalor) associado a um autovetor <span><span class="MathJax_Preview">\ket{a_i}</span><script type="math/tex">\ket{a_i}</script></span> de observável <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span>, é dada pela regra de Born.</em></p>
+<p>Se o estado <span><span class="MathJax_Preview">|\psi\rangle</span><script type="math/tex">|\psi\rangle</script></span> for expandido na base dos autovetores <span><span class="MathJax_Preview">\ket{a_i}</span><script type="math/tex">\ket{a_i}</script></span> do operador <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span></p>
+<div>
+<div class="MathJax_Preview">
+|\psi\rangle = \alpha_1 |a_1\rangle + \alpha_2 |a_2\rangle + \dots + \alpha_n |a_n \rangle = \sum_{i=1}^n \alpha_i |a_i\rangle \\
+\text{A probabilidade de obter o resultado } \lambda_i \,: \quad 
+\mathcal{P}_{ \lambda_i } = |\bra{a_i}\psi\rangle|^2 = |\alpha_i|^2.
+</div>
+<script type="math/tex; mode=display">
+|\psi\rangle = \alpha_1 |a_1\rangle + \alpha_2 |a_2\rangle + \dots + \alpha_n |a_n \rangle = \sum_{i=1}^n \alpha_i |a_i\rangle \\
+\text{A probabilidade de obter o resultado } \lambda_i \,: \quad 
+\mathcal{P}_{ \lambda_i } = |\bra{a_i}\psi\rangle|^2 = |\alpha_i|^2.
+</script>
+</div>
+<p>Lembrando-se que o produto interno é um <em>número complexo</em>, cujo produto é comutativo, podemos reescrever</p>
+<div>
+<div class="MathJax_Preview">
+|\bra{a_i}\psi\rangle|^2 = \bra{a_i}\psi\rangle (\bra{a_i}\psi\rangle)^* =
+\bra{a_i}\psi\rangle \bra{\psi} a_i \rangle \\
+\bra{a_i}\psi\rangle \bra{\psi} a_i \rangle = \bra{\psi} a_i \rangle \bra{a_i}\psi\rangle
+= \braket{\psi}{\hat{P}_i}{\psi}.
+</div>
+<script type="math/tex; mode=display">
+|\bra{a_i}\psi\rangle|^2 = \bra{a_i}\psi\rangle (\bra{a_i}\psi\rangle)^* =
+\bra{a_i}\psi\rangle \bra{\psi} a_i \rangle \\
+\bra{a_i}\psi\rangle \bra{\psi} a_i \rangle = \bra{\psi} a_i \rangle \bra{a_i}\psi\rangle
+= \braket{\psi}{\hat{P}_i}{\psi}.
+</script>
+</div>
+<p>onde  <span><span class="MathJax_Preview">\hat{P}_i</span><script type="math/tex">\hat{P}_i</script></span> é o operador projetor <span><span class="MathJax_Preview">\hat{P}_i=\ket{a_i}\bra{a_i}.</span><script type="math/tex">\hat{P}_i=\ket{a_i}\bra{a_i}.</script></span></p>
+</li>
+</ul>
+</div>
+<h4 id="degenerescencia"><mark>Degenerescência</mark></h4>
+<p>Suponha que o operador <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span> tem autovalores degenerados, <span><span class="MathJax_Preview">\lambda_m</span><script type="math/tex">\lambda_m</script></span>, correspondendo ao autovetores <span><span class="MathJax_Preview">\{ \ket{a_m^{1}},\ket{a_m^{2}},...,\ket{a_m^{g_m}} \}</span><script type="math/tex">\{ \ket{a_m^{1}},\ket{a_m^{2}},...,\ket{a_m^{g_m}} \}</script></span>, onde</p>
+<div>
+<div class="MathJax_Preview">
+\hat{A} \ket{a_m^{k}} = \lambda_m \ket{a_m^{k}}, \quad k = 1,2,\dots, g_m.
+</div>
+<script type="math/tex; mode=display">
+\hat{A} \ket{a_m^{k}} = \lambda_m \ket{a_m^{k}}, \quad k = 1,2,\dots, g_m.
+</script>
+</div>
+<p>O conjunto <span><span class="MathJax_Preview">\{ \ket{a_m^{k}} \}</span><script type="math/tex">\{ \ket{a_m^{k}} \}</script></span> constitui um <a href="../Aulas_S7/#59-subespacos-e-projetores">subespaço</a> <span><span class="MathJax_Preview">\mathcal{M}</span><script type="math/tex">\mathcal{M}</script></span> do espaço de Hilbert <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span>.</p>
+<p>No caso de degenerescência, a probabilidade de obter o resultado <span><span class="MathJax_Preview">\lambda_m</span><script type="math/tex">\lambda_m</script></span> é encontrado somando sobre os produtos internos de todos os autovetores do subespaço <span><span class="MathJax_Preview">\mathcal{M}</span><script type="math/tex">\mathcal{M}</script></span>.</p>
+<div>
+<div class="MathJax_Preview">
+\mathcal{P}_m = \sum_{k=1}^{g_m} \left| \bra{a_m^{k}} \psi \rangle \right|^2.
+</div>
+<script type="math/tex; mode=display">
+\mathcal{P}_m = \sum_{k=1}^{g_m} \left| \bra{a_m^{k}} \psi \rangle \right|^2.
+</script>
+</div>
+<hr>
+
+<h3 id="postulado-5-estado-apos-uma-medida"><ins>Postulado 5</ins>: estado após uma medida</h3>
+<p>Considerando apenas <a href="https://en.wikipedia.org/wiki/Projection-valued_measure">medidas projetivas</a>, vamos dividir esta exposição em duas partes: <em>(i) sem</em> e <em>(ii) com</em> degenerescência.</p>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Estado <ins><em>posterior</em></ins> em medidas projetivas</strong></p>
+<p><em>(i) <strong>Caso não degenerado:</strong> se o resultado for um <ins>autovalor não degenerado</ins> <span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>, do operador <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span> observável, teremos que <strong>imediatamente</strong> <ins>após a medida</ins> o estado <span><span class="MathJax_Preview">\ket{ \psi_i }</span><script type="math/tex">\ket{ \psi_i }</script></span> do sistema é dado pelo vetor projetado no autovetor correspondente ao autovalor medido.</em></p>
+<p>Se o estado antes da medida for dado por</p>
+<div>
+<div class="MathJax_Preview">
+|\psi\rangle = \alpha_1 |a_1\rangle + \alpha_2 |a_2\rangle + \dots + \alpha_n |a_n \rangle 
+</div>
+<script type="math/tex; mode=display">
+|\psi\rangle = \alpha_1 |a_1\rangle + \alpha_2 |a_2\rangle + \dots + \alpha_n |a_n \rangle 
+</script>
+</div>
+<p>onde <span><span class="MathJax_Preview">\{ \ket{a_i} \}</span><script type="math/tex">\{ \ket{a_i} \}</script></span> é uma base ortonormal formada pelos autovetores de <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span>, tal que <span><span class="MathJax_Preview">\hat{A} \ket{a_i} = \lambda_i \ket{a_i}</span><script type="math/tex">\hat{A} \ket{a_i} = \lambda_i \ket{a_i}</script></span>. </p>
+<p>Supondo que a medida resultou no valor <span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>, o estado <em>imediatamente</em> após a medida é dado por:</p>
+<div>
+<div class="MathJax_Preview">
+\ket{\psi} \rightarrow \quad \ket{\psi_i} = 
+\frac{1}{\sqrt{\braket{\psi}{ P_i }{\psi}}} \, \hat{P}_i \ket{\psi}
+</div>
+<script type="math/tex; mode=display">
+\ket{\psi} \rightarrow \quad \ket{\psi_i} = 
+\frac{1}{\sqrt{\braket{\psi}{ P_i }{\psi}}} \, \hat{P}_i \ket{\psi}
+</script>
+</div>
+<p>onde  <span><span class="MathJax_Preview">\hat{P}_i</span><script type="math/tex">\hat{P}_i</script></span> é o projetor <span><span class="MathJax_Preview">\hat{P}_i=\ket{a_i}\bra{a_i}.</span><script type="math/tex">\hat{P}_i=\ket{a_i}\bra{a_i}.</script></span>
+<hr></p>
+<p><em>(ii) <strong>Caso degenerado:</strong></em> se o resultado for um <ins>autovalor degenerado</ins> <span><span class="MathJax_Preview">\lambda_m</span><script type="math/tex">\lambda_m</script></span>, do operador <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span>, teremos que <strong>imediatamente</strong> <ins>após a medida</ins> o estado <span><span class="MathJax_Preview">\ket{ \psi_m }</span><script type="math/tex">\ket{ \psi_m }</script></span> do sistema é o estado projetado no subespaço <span><span class="MathJax_Preview">\mathcal{M}</span><script type="math/tex">\mathcal{M}</script></span> dos autovetores correspondentes ao autovalor medido.</p>
+<p>Se o estado <span><span class="MathJax_Preview">\ket{\psi}</span><script type="math/tex">\ket{\psi}</script></span> antes da medida for representado na base dos autovalores do observável, onde <span><span class="MathJax_Preview">\{ \ket{a_m^{k}} \}</span><script type="math/tex">\{ \ket{a_m^{k}} \}</script></span> é um conjunto formado pelos autovetores correspondes ao autovalor <span><span class="MathJax_Preview">\lambda_m</span><script type="math/tex">\lambda_m</script></span>, tal que <span><span class="MathJax_Preview">\hat{A} \ket{a_m^{k}} = \lambda_k \ket{a_m^{k}}</span><script type="math/tex">\hat{A} \ket{a_m^{k}} = \lambda_k \ket{a_m^{k}}</script></span>. </p>
+<p>Supondo que a medida resultou no valor <span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>, o estado <em>imediatamente</em> após a medida é dado por:</p>
+<div>
+<div class="MathJax_Preview">
+\ket{\psi} \rightarrow \quad \ket{\psi_m} = 
+\frac{1}{\sqrt{\braket{\psi}{ P_m }{\psi}}} \, \hat{P}_m \ket{\psi}
+</div>
+<script type="math/tex; mode=display">
+\ket{\psi} \rightarrow \quad \ket{\psi_m} = 
+\frac{1}{\sqrt{\braket{\psi}{ P_m }{\psi}}} \, \hat{P}_m \ket{\psi}
+</script>
+</div>
+<p>onde  <span><span class="MathJax_Preview">\hat{P}_m</span><script type="math/tex">\hat{P}_m</script></span> é o <a href="/Aulas_S7/#59-subespacos-e-projetores">projetor no subespaço</a> <span><span class="MathJax_Preview">\mathcal{M}</span><script type="math/tex">\mathcal{M}</script></span></p>
+<div>
+<div class="MathJax_Preview">\hat{P}_m= \sum_{k=1}^{g_m} \ket{a_m^{k}} \bra{a_m^{k}}.</div>
+<script type="math/tex; mode=display">\hat{P}_m= \sum_{k=1}^{g_m} \ket{a_m^{k}} \bra{a_m^{k}}.</script>
+</div>
+</li>
+</ul>
+</div>
+<p>Note que no caso degenerado, após se observar o resultado da medida <span><span class="MathJax_Preview">\lambda_m</span><script type="math/tex">\lambda_m</script></span>, com degenerescência <span><span class="MathJax_Preview">g_m</span><script type="math/tex">g_m</script></span>, tudo que podemos dizer é que o estado posterior à medida é uma superposição (combinação linear) dos autovetores correspondentes ao autovalor <span><span class="MathJax_Preview">\lambda_m</span><script type="math/tex">\lambda_m</script></span>.<br />
+<hr></p>
+<h3 id="postulado-6-evolucao-dinamica-do-sistema"><ins>Postulado 6</ins>: evolução dinâmica do sistema</h3>
+<div class="admonition note">
+<ul>
+<li>
+<p><strong>Dinâmica de um sistema quântico</strong></p>
+<ul>
+<li><em><strong><ins>Schrödinger Picture</ins>:</strong></em></li>
+</ul>
+<p><em>A evolução temporal de um sistema quântico <strong>fechado</strong> é governada pela equação de Schrödinger.</em></p>
+<p>Assim, sendo <span><span class="MathJax_Preview">\ket{\psi(t_o)}</span><script type="math/tex">\ket{\psi(t_o)}</script></span> o estado inicial, no instante de tempo <span><span class="MathJax_Preview">t_o</span><script type="math/tex">t_o</script></span>, o estado do sistema num instante <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> posterior, <span><span class="MathJax_Preview">\ket{\psi(t)}</span><script type="math/tex">\ket{\psi(t)}</script></span>, pode ser derterminado a partir da equação </p>
+<div>
+<div class="MathJax_Preview">
+i \hbar \frac{\partial}{\partial t} \ket{\psi(t)} = \hat{H} \ket{\psi(t_o)} 
+</div>
+<script type="math/tex; mode=display">
+i \hbar \frac{\partial}{\partial t} \ket{\psi(t)} = \hat{H} \ket{\psi(t_o)} 
+</script>
+</div>
+<p>onde <span><span class="MathJax_Preview">\hat{H}</span><script type="math/tex">\hat{H}</script></span> é o operador Hamiltoniano. Para um sistema isolado com Hamiltoniano independente do tempo, podemos integrar a equação anterrior, para obter</p>
+<div>
+<div class="MathJax_Preview">
+\ket{\psi(t)} = \exp \left( - \frac{i}{\hbar} \hat{H} (t - t_o) \right) \ket{\psi(t_o)}
+</div>
+<script type="math/tex; mode=display">
+\ket{\psi(t)} = \exp \left( - \frac{i}{\hbar} \hat{H} (t - t_o) \right) \ket{\psi(t_o)}
+</script>
+</div>
+<p>onde temos a <a href="../Aulas_S7/#510-funcoes-de-operadores">exponencial do operador Hamiltoniano</a>, como visto numa aula anterior.</p>
+<p>O termo exponencial pode ser entendido como um <strong>operador de evolução temporal</strong>, unitário, denotado <span><span class="MathJax_Preview">\hat{U}</span><script type="math/tex">\hat{U}</script></span> </p>
+<div>
+<div class="MathJax_Preview">
+\hat{U}(t,t_o) = \exp \left( - \frac{i}{\hbar} \hat{H} (t - t_o) \right)
+</div>
+<script type="math/tex; mode=display">
+\hat{U}(t,t_o) = \exp \left( - \frac{i}{\hbar} \hat{H} (t - t_o) \right)
+</script>
+</div>
+<p>que evolui (<em>propaga no tempo</em>) o vetor de estado <span><span class="MathJax_Preview">\ket{\psi(t_o)} \rightarrow \ket{\psi(t)}</span><script type="math/tex">\ket{\psi(t_o)} \rightarrow \ket{\psi(t)}</script></span>, tal que</p>
+<div>
+<div class="MathJax_Preview">
+\ket{\psi(t)} = \hat{U}(t,t_o) \ket{\psi(t_o)}.
+</div>
+<script type="math/tex; mode=display">
+\ket{\psi(t)} = \hat{U}(t,t_o) \ket{\psi(t_o)}.
+</script>
+</div>
+<hr>
+
+<ul>
+<li><em><strong><ins>Heisenberg Picture</ins>:</strong></em></li>
+</ul>
+<p>Na representação de Schrödinger, o operador de evolução temporal evolui o vetor de estado do sistema. Uma representação alternativa, é a representação de Heisenberg, onde os vetores de estados são transformados por operadores que evoluem no tempo. Essas duas representações são completamente equivalentes, pois as predições da mecânica quântica são determinadas por produtos internos</p>
+<div>
+<div class="MathJax_Preview">
+\braket{\psi(t)}{\hat{A}}{\psi(t)} = \braket{\psi(t_o)}{\hat{U}^{\dagger}\hat{A}\,\hat{U}}{\psi(t_o)} 
+</div>
+<script type="math/tex; mode=display">
+\braket{\psi(t)}{\hat{A}}{\psi(t)} = \braket{\psi(t_o)}{\hat{U}^{\dagger}\hat{A}\,\hat{U}}{\psi(t_o)} 
+</script>
+</div>
+<p>Pode-se descrever a evolução temporal do sistema em termos de um operador</p>
+<div>
+<div class="MathJax_Preview">
+\hat{A}(t) = \hat{U}^{\dagger}\hat{A}(t_o)\,\hat{U}
+</div>
+<script type="math/tex; mode=display">
+\hat{A}(t) = \hat{U}^{\dagger}\hat{A}(t_o)\,\hat{U}
+</script>
+</div>
+<p>Neste caso, a dinâmica do sistema é dada pela <a href="https://en.wikipedia.org/wiki/Heisenberg_picture">equação de Heisenberg</a></p>
+<div>
+<div class="MathJax_Preview">
+\frac{d}{dt} \langle \hat{A} \rangle = \frac{1}{i \hbar} [\hat{A},\hat{H}] + \left&lt; \frac{\partial \hat{A}}{\partial t} \right&gt;
+</div>
+<script type="math/tex; mode=display">
+\frac{d}{dt} \langle \hat{A} \rangle = \frac{1}{i \hbar} [\hat{A},\hat{H}] + \left< \frac{\partial \hat{A}}{\partial t} \right>
+</script>
+</div>
+<p>onde <span><span class="MathJax_Preview">[\hat{A},\hat{H}]</span><script type="math/tex">[\hat{A},\hat{H}]</script></span> é o comutador do observável <span><span class="MathJax_Preview">\hat{A}</span><script type="math/tex">\hat{A}</script></span> e o Hamiltoniano <span><span class="MathJax_Preview">\hat{H}</span><script type="math/tex">\hat{H}</script></span>.</p>
+</li>
+</ul>
+</div>
+<hr>
+
+<h3 id="postulados-funcao-de-onda">Postulados &amp; função de onda</h3>
+<p>Lembrando sempre que ainda estamos falando de um sistema físico de uma partícula quântica isolada. Podemos agora expressar os postulados em termos das funções de ondas, ao invés da representação mais geral (e abstrata) de vetores de estados no espaço de Hilbert. </p>
+<p>Na prática, para nós que já caminhamos até aqui, não há muita vantagem, mas acho que vale a pena fazer alguns comentários breves, por completeza e também para deixá-los mais confortáveis com diferentes livros textos (inclusive da bibliografia da disciplina), onde um formulação matemática mais simples é usada. Também farei isso como um forma de praticar os conceitos e ideias de representações e mudanças de bases. Mais importante ainda, a descrição em termos de funções de ondas pode trazer alguns elementos intuitivos e, sobretudo, merece uma discussão mais detalhada sobre as condições que devem ser satisfeitas pelas funções de ondas...</p>
+<p>Quando apropriado, e não houver ambiguidade, a coordenada de posição será representada por <span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> ou <span><span class="MathJax_Preview">\textbf{r}</span><script type="math/tex">\textbf{r}</script></span> (ou ainda <span><span class="MathJax_Preview">\vec{r}</span><script type="math/tex">\vec{r}</script></span>), ao invés da forma unidimensional simplificada, <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>, que temos usado até agora, por simplicidade. O número de dimensões, evidentemente, irá depender do sistema físico e do interesse particular num dado problema. </p>
+<div class="admonition quote">
+<p><strong>Notação</strong>: Sem perda de generalidade, o <em>diferencial</em> <span><span class="MathJax_Preview">d\textbf{r}</span><script type="math/tex">d\textbf{r}</script></span>, ou <span><span class="MathJax_Preview">dr</span><script type="math/tex">dr</script></span>, será uma abreviação do <strong><em>diferencial de volume</em></strong> apropriado às dimensões do espaço considerado. Assim, <span><span class="MathJax_Preview">d\textbf{r}</span><script type="math/tex">d\textbf{r}</script></span> poderá representar igualmente: (<span><span class="MathJax_Preview">dx</span><script type="math/tex">dx</script></span>), ou (<span><span class="MathJax_Preview">dx\,dy\,dz</span><script type="math/tex">dx\,dy\,dz</script></span>) ou (<span><span class="MathJax_Preview">dr\,d\theta\,d\phi</span><script type="math/tex">dr\,d\theta\,d\phi</script></span>), ou ainda (<span><span class="MathJax_Preview">dx_1\,dx_2\dots dx_n</span><script type="math/tex">dx_1\,dx_2\dots dx_n</script></span>), dependendo do contexto.</p>
+</div>
+<hr>
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><em>Mathematical Foundations of Quantum Mechanics</em>, John von Neumann (1932) [<a href="https://gdz.sub.uni-goettingen.de/id/PPN379400774">texto original em Alemão</a>].</p>
+<p>New Edition. Translated by Robert T. Beyer. Princeton University Press (2018) [<a href="https://press.princeton.edu/books/hardcover/9780691178561/mathematical-foundations-of-quantum-mechanics">ISBN: 9781400889921</a>].&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última atualização: 17 de maio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../Aula14_Lab2/" title="Aula 14 - Lab 2" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Aula 14 - Lab 2
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../Aula21_Lab3/" title="Aula 21 - Lab 3" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Próximo
+                </span>
+                Aula 21 - Lab 3
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020  Sérgio R. Muniz  (CC-BY-NC-SA)
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_SVG"></script>
+      
+    
+  </body>
+</html>

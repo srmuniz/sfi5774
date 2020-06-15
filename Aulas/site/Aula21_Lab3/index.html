@@ -1,0 +1,831 @@
+
+
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complemento _online_ às aulas da disciplina de Mecânica Quântica Aplicada do IFSC/USP">
+      
+      
+        <link rel="canonical" href="https://srmuniz.github.io/sfi5774/Aula21_Lab3/">
+      
+      
+        <meta name="author" content="Sérgio R. Muniz @IFSC/USP">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Aula 21 - Lab 3 - SFI5774</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.89dc9fe3.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab3-experimento-stern-gerlach" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://srmuniz.github.io/sfi5774/" title="SFI5774" class="md-header-nav__button md-logo" aria-label="SFI5774">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SFI5774
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Aula 21 - Lab 3
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Digite para iniciar a busca
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://srmuniz.github.io/sfi5774" title="Ir ao repositório" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sfi5774/Aulas/
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://srmuniz.github.io/sfi5774/" title="SFI5774" class="md-nav__button md-logo" aria-label="SFI5774">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    SFI5774
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://srmuniz.github.io/sfi5774" title="Ir ao repositório" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sfi5774/Aulas/
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aulas_S5-S6/" title="Aulas S5 & S6" class="md-nav__link">
+      Aulas S5 & S6
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aulas_S7/" title="Aulas S7" class="md-nav__link">
+      Aulas S7
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula13_Lab1/" title="Aula 13 - Lab 1" class="md-nav__link">
+      Aula 13 - Lab 1
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula14_Lab2/" title="Aula 14 - Lab 2" class="md-nav__link">
+      Aula 14 - Lab 2
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Aula15/" title="Aula 15" class="md-nav__link">
+      Aula 15
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Aula 21 - Lab 3
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Aula 21 - Lab 3" class="md-nav__link md-nav__link--active">
+      Aula 21 - Lab 3
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-experimento-de-stern-gerlach" class="md-nav__link">
+    O experimento de Stern-Gerlach
+  </a>
+  
+    <nav class="md-nav" aria-label="O experimento de Stern-Gerlach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aparato-experimental" class="md-nav__link">
+    Aparato experimental
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carregando-o-qutip" class="md-nav__link">
+    Carregando o QuTiP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esfera-de-bloch" class="md-nav__link">
+    Esfera de Bloch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulando-stern-gerlach-no-python" class="md-nav__link">
+    Simulando Stern-Gerlach no Python!
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulando Stern-Gerlach no Python!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulando-o-caso-classico" class="md-nav__link">
+    Simulando o caso Clássico
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulando o caso Clássico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultado-experimental" class="md-nav__link">
+    &gt;&gt; Resultado Experimental !!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulando-o-caso-quantico" class="md-nav__link">
+    Simulando o caso Quântico
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leituras-complementares" class="md-nav__link">
+    Leituras complementares
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-experimento-de-stern-gerlach" class="md-nav__link">
+    O experimento de Stern-Gerlach
+  </a>
+  
+    <nav class="md-nav" aria-label="O experimento de Stern-Gerlach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aparato-experimental" class="md-nav__link">
+    Aparato experimental
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carregando-o-qutip" class="md-nav__link">
+    Carregando o QuTiP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esfera-de-bloch" class="md-nav__link">
+    Esfera de Bloch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulando-stern-gerlach-no-python" class="md-nav__link">
+    Simulando Stern-Gerlach no Python!
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulando Stern-Gerlach no Python!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulando-o-caso-classico" class="md-nav__link">
+    Simulando o caso Clássico
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulando o caso Clássico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultado-experimental" class="md-nav__link">
+    &gt;&gt; Resultado Experimental !!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulando-o-caso-quantico" class="md-nav__link">
+    Simulando o caso Quântico
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leituras-complementares" class="md-nav__link">
+    Leituras complementares
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="lab3-experimento-stern-gerlach">Lab3 - Experimento Stern-Gerlach</h1>
+<p>Neste notebook aprenderemos um pouco mais sobre o famoso experimento de <a href="https://en.wikipedia.org/wiki/Otto_Stern">Otto Stern</a> e <a href="https://en.wikipedia.org/wiki/Walther_Gerlach">Walther Gerlach</a>, em 1922, que, além da sua <a href="https://physicstoday.scitation.org/doi/10.1063/1.1650229">importância histórica</a>, ilustra bem como estados quânticos são diferentes de estados clássicos. 
+<br>Mais do que simplesmente apresentar os resultados, <strong>iremos simular</strong>, de fato, <strong>o experimento aqui</strong>, pelo menos os elementos mais fundamentais, para mostrar como os resultados são diferentes entre os sistemas clássico e quântico.</p>
+<p>Para concentrar a discussão na física, ao invés da programação, vou usar o <a href="http://qutip.org/"><strong>QuTiP</strong></a> (<em>Quantum Toobox in Python</em>), um framework para cálculos quânticos em Python. Isso permitirá usar ferramentas profissionais que definem e encapsulam em comandos simples toda a <strong>álgebra que aprendemos nas aulas</strong>, de uma forma mais direta e prática. Também é uma oportunidade de lhes apresentar mais uma ferramenta computacional bastante útil.
+<br>Depois da aula você poderá explorar o notebook e a <a href="http://qutip.org/tutorials.html">documentação online do QuTiP</a> para aprender mais, se tiver interesse.</p>
+<p><strong>Créditos</strong>: na preparação desta atividade eu usei como base um dos tutoriais do QuTip, apesentado na EuroSciPy 2019 por Simon Cross, disponível <a href="https://nbviewer.jupyter.org/github/qutip/qutip-notebooks/blob/master/examples/stern-gerlach-tutorial.ipynb">neste link</a>.</p>
+<h2 id="o-experimento-de-stern-gerlach">O experimento de Stern-Gerlach</h2>
+<h3 id="aparato-experimental">Aparato experimental</h3>
+<p><img alt="Aparato experimental" src="../figuras/stern-gerlach-setup.png" /></p>
+<p>Fonte: <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/spin.html">http://hyperphysics.phy-astr.gsu.edu/hbase/spin.html</a> </p>
+<p><hr>
+Veja também:</p>
+<ul>
+<li><a href="https://plato.stanford.edu/entries/physics-experiment/app5.html">https://plato.stanford.edu/entries/physics-experiment/app5.html</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Stern-Gerlach_experiment#History">https://en.wikipedia.org/wiki/Stern-Gerlach_experiment#History</a></li>
+</ul>
+<p>para mais detalhes e informações sobre a história desse importante experimento.</p>
+<hr>
+
+<h2 id="carregando-o-qutip">Carregando o QuTiP</h2>
+<p><strong>Carregando as bibliotecas necessárias em Pyton...</strong>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">qutip</span>
+<span class="kn">from</span> <span class="nn">qutip</span> <span class="kn">import</span> <span class="n">Bloch</span><span class="p">,</span> <span class="n">ket</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># About QuTip  -- visit hhtp://qutip.org</span>
+<span class="n">qutip</span><span class="o">.</span><span class="n">about</span><span class="p">()</span>
+</code></pre></div>
+
+<pre><code>QuTiP: Quantum Toolbox in Python
+================================
+Copyright (c) QuTiP team 2011 and later.
+Original developers: R. J. Johansson &amp; P. D. Nation.
+Current admin team: Alexander Pitchford, Paul D. Nation, Nathan Shammah, Shahnawaz Ahmed, Neill Lambert, and Eric Giguère.
+Project Manager: Franco Nori.
+Currently developed through wide collaboration. See https://github.com/qutip for details.
+
+QuTiP Version:      4.4.1
+Numpy Version:      1.18.1
+Scipy Version:      1.4.1
+Cython Version:     0.29.17
+Matplotlib Version: 3.1.3
+Python Version:     3.7.4
+Number of CPUs:     2
+BLAS Info:          INTEL MKL
+OPENMP Installed:   False
+INTEL MKL Ext:      True
+Platform Info:      Windows (AMD64)
+Installation path:  C:\Users\SergioMuniz\Anaconda3\lib\site-packages\qutip
+==============================================================================
+Please cite QuTiP in your publication.
+==============================================================================
+For your convenience a bibtex reference can be easily generated using `qutip.cite()`
+</code></pre>
+<hr>
+
+<h2 id="esfera-de-bloch">Esfera de Bloch</h2>
+<p><strong>Representação do vetor de estado <span><span class="MathJax_Preview">|\psi\rangle</span><script type="math/tex">|\psi\rangle</script></span> no espaço SU(2): <em>spinors</em> &amp; <em>q-bits</em></strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">bloch</span> <span class="o">=</span> <span class="n">Bloch</span><span class="p">()</span>
+<span class="n">bloch</span><span class="o">.</span><span class="n">zlabel</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">bloch</span><span class="o">.</span><span class="n">add_vectors</span><span class="p">([</span><span class="n">z</span><span class="p">,</span> <span class="n">mu</span><span class="p">])</span>
+<span class="n">bloch</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+<p><img alt="Vetores na espera de Bloch" src="../figuras/output_5_0.png" /></p>
+<p><strong>Exemplo de evolução temporal de vetores de Bloch</strong></p>
+<p><img alt="Evolução temporal do vetor de Bloch" src="../figuras/Bloch-vector-evolution.png" /></p>
+<h2 id="simulando-stern-gerlach-no-python">Simulando Stern-Gerlach no Python!</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definições gerais comuns</span>
+
+<span class="n">Direction</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Direction&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;theta&quot;</span><span class="p">,</span> <span class="s2">&quot;phi&quot;</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">random_direction</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Generate a random direction. &quot;&quot;&quot;</span>
+    <span class="c1"># See http://mathworld.wolfram.com/SpherePointPicking.html</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Direction</span><span class="p">(</span><span class="n">theta</span><span class="o">=</span><span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="o">=</span><span class="n">phi</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">plot_classical_results</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">spins</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">18.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">))</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Stern-Gerlach Experiment: Classical Outcome&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">)</span>
+
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="n">Bloch</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">vector_width</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">vector_color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#ff</span><span class="si">{:x}</span><span class="s2">0ff&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">zlabel</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;$z$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">add_vectors</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+
+    <span class="n">ax2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">spins</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Z-component of spin&quot;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;# of atoms&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">plot_quantum_results</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">spins</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">18.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">))</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Stern-Gerlach Experiment: Quantum Outcome&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">)</span>
+
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="n">Bloch</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">vector_width</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">vector_color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#</span><span class="si">{:x}</span><span class="s2">0</span><span class="si">{:x}</span><span class="s2">0ff&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">add_states</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+
+    <span class="n">ax2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">spins</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Z-component of spin&quot;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;# of atoms&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="simulando-o-caso-classico"><strong>Simulando o caso Clássico</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Simulation of expected results in the classical case</span>
+
+<span class="n">classical_up</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">classical_state</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Prepare a spin state given a direction. &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">phi</span><span class="p">)</span> 
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">classical_spin</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Measure the z-component of the spin. &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">classical_up</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">classical_stern_gerlach</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Simulate the Stern-Gerlach experiment &quot;&quot;&quot;</span>
+    <span class="n">directions</span> <span class="o">=</span> <span class="p">[</span><span class="n">random_direction</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">atoms</span> <span class="o">=</span> <span class="p">[</span><span class="n">classical_state</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">directions</span><span class="p">]</span>
+    <span class="n">spins</span> <span class="o">=</span> <span class="p">[</span><span class="n">classical_spin</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">atoms</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">spins</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">atoms</span><span class="p">,</span> <span class="n">spins</span> <span class="o">=</span> <span class="n">classical_stern_gerlach</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plot_classical_results</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">spins</span><span class="p">)</span>
+</code></pre></div>
+
+<p><img alt="Resultado da simulação sistema clássico" src="../figuras/output_11_0.png" /></p>
+<h4 id="resultado-experimental"><strong>&gt;&gt; Resultado Experimental !!</strong></h4>
+<p><img alt="Resultado do experimento" src="../figuras/stern-gerlach-resultados.png" /></p>
+<h3 id="simulando-o-caso-quantico"><strong>Simulando o caso Quântico</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Simulation of expected results in the quantum case</span>
+<span class="c1"># usando a biblioteca qutip</span>
+<span class="n">up</span> <span class="o">=</span> <span class="n">ket</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+<span class="n">down</span> <span class="o">=</span> <span class="n">ket</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">quantum_state</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Prepare a spin state given a direction. &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">theta</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">up</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">d</span><span class="o">.</span><span class="n">phi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">theta</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">down</span>
+
+
+<span class="k">def</span> <span class="nf">quantum_spin</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Measurement the z-component of the spin. &quot;&quot;&quot;</span>
+    <span class="n">a_up</span> <span class="o">=</span> <span class="p">(</span><span class="n">up</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">tr</span><span class="p">()</span>
+    <span class="n">prob_up</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">a_up</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">prob_up</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">quantum_stern_gerlach</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Simulate the Stern-Gerlach experiment &quot;&quot;&quot;</span>
+    <span class="n">directions</span> <span class="o">=</span> <span class="p">[</span><span class="n">random_direction</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">atoms</span> <span class="o">=</span> <span class="p">[</span><span class="n">quantum_state</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">directions</span><span class="p">]</span>
+    <span class="n">spins</span> <span class="o">=</span> <span class="p">[</span><span class="n">quantum_spin</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">atoms</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">spins</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">atoms</span><span class="p">,</span> <span class="n">spins</span> <span class="o">=</span> <span class="n">quantum_stern_gerlach</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plot_quantum_results</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">spins</span><span class="p">)</span>
+</code></pre></div>
+
+<p><img alt="Resultado simulção sistema quântico" src="../figuras/output_15_0.png" /></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<h2 id="leituras-complementares">Leituras complementares</h2>
+<ol>
+<li>
+<p>QuTiP documentation [ <a href="http://qutip.org/">http://qutip.org/</a> ]</p>
+</li>
+<li>
+<p>History of the Stern-Gerlach experiment
+   [ <a href="https://plato.stanford.edu/entries/physics-experiment/app5.html">https://plato.stanford.edu/entries/physics-experiment/app5.html</a> ]</p>
+</li>
+<li>
+<p>Quantum Computing for the Determined by Michael Nielsen
+   [ <a href="http://michaelnielsen.org/blog/quantum-computing-for-the-determined/">http://michaelnielsen.org/blog/quantum-computing-for-the-determined/</a> ]</p>
+</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última atualização: 15 de junho de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../Aula15/" title="Aula 15" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Aula 15
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../about/" title="About" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Próximo
+                </span>
+                About
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020  Sérgio R. Muniz  (CC-BY-NC-SA)
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_SVG"></script>
+      
+    
+  </body>
+</html>
