@@ -13,7 +13,7 @@ Para concentrar a discussão na física, ao invés da programação, vou usar o 
 
 ### Aparato experimental
 
-<center><img src="./figuras/stern-gerlach-setup.png"></center>
+![Aparato experimental](./figuras/stern-gerlach-setup.png)
 
 
 Fonte: http://hyperphysics.phy-astr.gsu.edu/hbase/spin.html 
@@ -90,12 +90,12 @@ bloch.show()
 ```
 
 
-![png](./figuras/output_5_0.png)
+![Vetores na espera de Bloch](./figuras/output_5_0.png)
 
 
 **Exemplo de evolução temporal de vetores de Bloch**
 
-<img src="\figuras/Bloch-vector-evolution.png">
+![Evolução temporal do vetor de Bloch](./figuras/Bloch-vector-evolution.png)
 
 
 ## Simulando Stern-Gerlach no Python!
@@ -191,12 +191,12 @@ plot_classical_results(atoms, spins)
 ```
 
 
-![png](./figuras/output_11_0.png)
+![Resultado da simulação sistema clássico](./figuras/output_11_0.png)
 
 
 #### **>> Resultado Experimental !!**
 
-<img src="./figuras/stern-gerlach-resultados.png">
+![Resultado do experimento](./figuras/stern-gerlach-resultados.png)
 
 
 ### **Simulando o caso Quântico**
@@ -237,7 +237,7 @@ plot_quantum_results(atoms, spins)
 ```
 
 
-![png](./figuras/output_15_0.png)
+![Resultado simulção sistema quântico](./figuras/output_15_0.png)
 
 
 
