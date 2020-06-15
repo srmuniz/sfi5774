@@ -90,7 +90,7 @@ bloch.show()
 ```
 
 
-![png](\figuras/output_5_0.png)
+![png](./figuras/output_5_0.png)
 
 
 **Exemplo de evolução temporal de vetores de Bloch**
@@ -191,12 +191,12 @@ plot_classical_results(atoms, spins)
 ```
 
 
-![png](figuras/output_11_0.png)
+![png](./figuras/output_11_0.png)
 
 
 #### **>> Resultado Experimental !!**
 
-<img src="\figuras/stern-gerlach-resultados.png">
+<img src="./figuras/stern-gerlach-resultados.png">
 
 
 ### **Simulando o caso Quântico**
@@ -237,7 +237,7 @@ plot_quantum_results(atoms, spins)
 ```
 
 
-![png](figuras/output_15_0.png)
+![png](./figuras/output_15_0.png)
 
 
 
